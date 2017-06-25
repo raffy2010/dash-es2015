@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 
 const phantom = require('phantom');
-
 const Sequelize = require('sequelize');
 
 const contentDir = 'Contents/Resources/Documents/';
@@ -49,12 +48,12 @@ function buildRecord(name, type, path) {
     .save();
 }
 
-function saveSearchIndex(key, pathList) {
+function saveSearchIndex(pathList) {
   var promises = pathList.map(({name, path}) => {
     return buildRecord(
       name,
       'Section',
-      key + '#' + path
+      path
     );
   });
 
@@ -117,28 +116,69 @@ phantom.create()
   .then(() => {
     return pageInstance.evaluate(function() {
       var slice = Array.prototype.slice;
+      var liElems = document.querySelectorAll('#contents > ol > li');
 
-      var firstLevel = slice.call(document.querySelectorAll('#contents > ol > li'));
+      var linkMap = {};
 
-      return firstLevel.filter(function(elem) {
+      var firstLevel = slice.call(
+        liElems
+      ).filter(function(elem) {
         var aLinks = elem.querySelectorAll('.secnum a');
 
         return aLinks.length;
-      }).map(function(elem) {
-        var aLinks = elem.querySelectorAll('.secnum a');
+      });
 
-        aLinks = slice.call(aLinks);
+      var firstLevelBlock = firstLevel.map(function(node) {
+        var href = node.querySelector('.secnum a').href.split('#')[1];
 
-        var fileName = aLinks[0].href.split('#')[1];
+        return {
+          fileName: href,
+          node: document.querySelector('#' + href)
+        };
+      });
 
-        var pathList = aLinks.map(function(elem) {
+      firstLevelBlock.forEach(function(item) {
+        var fileName = item.fileName;
+        var node = item.node;
+        var allSecs = node.querySelectorAll('[id]');
+
+        slice.call(allSecs).forEach(function(node) {
+          var id = node.id;
+
+          linkMap[id] = fileName + '.html';
+        });
+      });
+
+      firstLevelBlock.forEach(function(item) {
+        var node = item.node;
+        var allLinks = node.querySelectorAll('a[href^="#"]');
+
+        slice.call(allLinks).forEach(function(link) {
+          var href = link.href.split('#')[1];
+          var targetFilename = linkMap[href];
+
+          if (targetFilename) {
+            link.href = targetFilename + '#' + href;
+          }
+        });
+      });
+
+      return firstLevelBlock.map(function(item) {
+        var fileName = item.fileName;
+        var node = item.node;
+        var aLinks = node.querySelectorAll('.secnum a');
+
+        var pathList = slice.call(aLinks).map(function(elem) {
+          var arr = elem.href.split('/');
+          var path = arr[arr.length - 1];
+
           return {
-            path: elem.href.split('#')[1],
+            path: path,
             name: elem.parentNode.nextSibling.nodeValue.trim()
           }
         });
 
-        var text = document.querySelector('#' + fileName).innerHTML;
+        var text = node.innerHTML;
 
         return [fileName + '.html', text, pathList];
       });
@@ -153,7 +193,7 @@ phantom.create()
     return Promise.all(ret.map(([key, value, pathList]) =>
       Promise.all([
         writeFile(key, value),
-        saveSearchIndex(key, pathList)
+        saveSearchIndex(pathList)
       ])
     ))
   })
