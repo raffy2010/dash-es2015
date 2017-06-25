@@ -14,11 +14,11 @@
 
   <section id="sec-syntactic-and-lexical-grammars">
     <div class="front">
-      <h1><span class="secnum" id="sec-5.1"><a href="#sec-syntactic-and-lexical-grammars" title="link to this section">5.1</a></span> Syntactic and Lexical Grammars</h1>
+      <h1><span class="secnum" id="sec-5.1"><a href="sec-notational-conventions.html#sec-syntactic-and-lexical-grammars" title="link to this section">5.1</a></span> Syntactic and Lexical Grammars</h1>
     </div>
 
     <section id="sec-context-free-grammars">
-      <h1><span class="secnum" id="sec-5.1.1"><a href="#sec-context-free-grammars" title="link to this section">5.1.1</a></span>
+      <h1><span class="secnum" id="sec-5.1.1"><a href="sec-notational-conventions.html#sec-context-free-grammars" title="link to this section">5.1.1</a></span>
           Context-Free Grammars</h1>
 
       <p>A <i>context-free grammar</i> consists of a number of <i>productions</i>. Each production has an abstract symbol called a
@@ -35,24 +35,24 @@
     </section>
 
     <section id="sec-lexical-and-regexp-grammars">
-      <h1><span class="secnum" id="sec-5.1.2"><a href="#sec-lexical-and-regexp-grammars" title="link to this section">5.1.2</a></span> The Lexical and RegExp Grammars</h1>
+      <h1><span class="secnum" id="sec-5.1.2"><a href="sec-notational-conventions.html#sec-lexical-and-regexp-grammars" title="link to this section">5.1.2</a></span> The Lexical and RegExp Grammars</h1>
 
       <p>A <i>lexical grammar</i> for ECMAScript is given in <a href="#sec-ecmascript-language-lexical-grammar">clause 11</a>.
-      This grammar has as its terminal symbols Unicode code points that conform to the rules for <span class="nt">SourceCharacter</span> defined in <a href="#sec-source-text">10.1</a>. It defines a set of productions, starting
+      This grammar has as its terminal symbols Unicode code points that conform to the rules for <span class="nt">SourceCharacter</span> defined in <a href="sec-ecmascript-language-source-code.html#sec-source-text">10.1</a>. It defines a set of productions, starting
       from the goal symbol <var>InputElementDiv,</var> <var>InputElementTemplateTail,</var> or <span class="nt">InputElementRegExp</span>, or <var>InputElementRegExpOrTemplateTail,</var> that describe how sequences of such
       code points are translated into a sequence of input elements.</p>
 
       <p>Input elements other than white space and comments form the terminal symbols for the syntactic grammar for ECMAScript and
       are called ECMAScript <i>tokens</i>. These tokens are the reserved words, identifiers, literals, and punctuators of the
       ECMAScript language. Moreover, line terminators, although not considered to be tokens, also become part of the stream of
-      input elements and guide the process of <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> (<a href="#sec-automatic-semicolon-insertion">11.9</a>). Simple white space and single-line comments are discarded and do not
+      input elements and guide the process of <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">11.9</a>). Simple white space and single-line comments are discarded and do not
       appear in the stream of input elements for the syntactic grammar. A <span class="nt">MultiLineComment</span> (that is, a
       comment of the form <code>/*</code>…<code>*/</code> regardless of whether it spans more than one line) is likewise
       simply discarded if it contains no line terminator; but if a <span class="nt">MultiLineComment</span> contains one or more
       line terminators, then it is replaced by a single line terminator, which becomes part of the stream of input elements for
       the syntactic grammar.</p>
 
-      <p>A <i>RegExp grammar</i> for ECMAScript is given in <a href="#sec-patterns">21.2.1</a>. This grammar also has as its
+      <p>A <i>RegExp grammar</i> for ECMAScript is given in <a href="sec-text-processing.html#sec-patterns">21.2.1</a>. This grammar also has as its
       terminal symbols the code points as defined by <span class="nt">SourceCharacter</span>. It defines a set of productions,
       starting from the goal symbol <span class="nt">Pattern</span>, that describe how sequences of code points are translated
       into regular expression patterns.</p>
@@ -62,23 +62,23 @@
     </section>
 
     <section id="sec-numeric-string-grammar">
-      <h1><span class="secnum" id="sec-5.1.3"><a href="#sec-numeric-string-grammar" title="link to this section">5.1.3</a></span>
+      <h1><span class="secnum" id="sec-5.1.3"><a href="sec-notational-conventions.html#sec-numeric-string-grammar" title="link to this section">5.1.3</a></span>
           The Numeric String Grammar</h1>
 
       <p>Another grammar is used for translating Strings into numeric values. This grammar is similar to the part of the lexical
       grammar having to do with numeric literals and has as its terminal symbols <span class="nt">SourceCharacter</span>. This
-      grammar appears in <a href="#sec-tonumber-applied-to-the-string-type">7.1.3.1</a>.</p>
+      grammar appears in <a href="sec-abstract-operations.html#sec-tonumber-applied-to-the-string-type">7.1.3.1</a>.</p>
 
       <p>Productions of the numeric string grammar are distinguished by having three colons “<b>:::</b>” as
       punctuation.</p>
     </section>
 
     <section id="sec-syntactic-grammar">
-      <h1><span class="secnum" id="sec-5.1.4"><a href="#sec-syntactic-grammar" title="link to this section">5.1.4</a></span> The
+      <h1><span class="secnum" id="sec-5.1.4"><a href="sec-notational-conventions.html#sec-syntactic-grammar" title="link to this section">5.1.4</a></span> The
           Syntactic Grammar</h1>
 
       <p>The <i>syntactic grammar</i> for ECMAScript is given in clauses 11, 12, 13, 14, and 15. This grammar has ECMAScript
-      tokens defined by the lexical grammar as its terminal symbols (<a href="#sec-lexical-and-regexp-grammars">5.1.2</a>). It
+      tokens defined by the lexical grammar as its terminal symbols (<a href="sec-notational-conventions.html#sec-lexical-and-regexp-grammars">5.1.2</a>). It
       defines a set of productions, starting from two alternative goal symbols <span class="nt">Script</span> and <span class="nt">Module</span>, that describe how sequences of tokens form syntactically correct independent components of
       ECMAScript programs.</p>
 
@@ -108,7 +108,7 @@
     </section>
 
     <section id="sec-grammar-notation">
-      <h1><span class="secnum" id="sec-5.1.5"><a href="#sec-grammar-notation" title="link to this section">5.1.5</a></span>
+      <h1><span class="secnum" id="sec-5.1.5"><a href="sec-notational-conventions.html#sec-grammar-notation" title="link to this section">5.1.5</a></span>
           Grammar Notation</h1>
 
       <p>Terminal symbols of the lexical, RegExp, and numeric string grammars are shown in <code>fixed width</code> font, both in
@@ -447,7 +447,7 @@
   </section>
 
   <section id="sec-algorithm-conventions">
-    <h1><span class="secnum" id="sec-5.2"><a href="#sec-algorithm-conventions" title="link to this section">5.2</a></span>
+    <h1><span class="secnum" id="sec-5.2"><a href="sec-notational-conventions.html#sec-algorithm-conventions" title="link to this section">5.2</a></span>
         Algorithm Conventions</h1>
 
     <p>The specification often uses a numbered list to specify steps in an algorithm. These algorithms are used to precisely
@@ -474,9 +474,9 @@
     ]” grammar annotations. Such annotations should only affect the syntactic recognition of the alternative and have no
     effect on the associated semantics for the alternative.</p>
 
-    <p>Unless explicitly specified otherwise, all <a href="#sec-context-free-grammars">chain productions</a> have an implicit
+    <p>Unless explicitly specified otherwise, all <a href="sec-notational-conventions.html#sec-context-free-grammars">chain productions</a> have an implicit
     definition for every algorithm that might be applied to that production’s left-hand side nonterminal. The implicit
-    definition simply reapplies the same algorithm name with the same parameters, if any, to the <a href="#sec-context-free-grammars">chain production</a>’s sole right-hand side nonterminal and then returns the result.
+    definition simply reapplies the same algorithm name with the same parameters, if any, to the <a href="sec-notational-conventions.html#sec-context-free-grammars">chain production</a>’s sole right-hand side nonterminal and then returns the result.
     For example, assume there is a production:</p>
 
     <div class="gp">
@@ -574,7 +574,7 @@
   </section>
 
   <section id="sec-static-semantic-rules">
-    <h1><span class="secnum" id="sec-5.3"><a href="#sec-static-semantic-rules" title="link to this section">5.3</a></span> Static
+    <h1><span class="secnum" id="sec-5.3"><a href="sec-notational-conventions.html#sec-static-semantic-rules" title="link to this section">5.3</a></span> Static
         Semantic Rules</h1>
 
     <p>Context-free grammars are not sufficiently powerful to express all the rules that define whether a stream of input elements

@@ -23,8 +23,8 @@
 
     <div class="note">
       <p><span class="nh">NOTE</span> The use of multiple lexical goals ensures that there are no lexical ambiguities that would
-      affect <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a>. For example, there are no syntactic
-      grammar contexts where both a leading division or division-assignment, and a leading <span class="nt">RegularExpressionLiteral</span> are permitted. This is not affected by semicolon insertion (<a href="#sec-automatic-semicolon-insertion">see 11.9</a>); in examples such as the following:</p>
+      affect <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a>. For example, there are no syntactic
+      grammar contexts where both a leading division or division-assignment, and a leading <span class="nt">RegularExpressionLiteral</span> are permitted. This is not affected by semicolon insertion (<a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">see 11.9</a>); in examples such as the following:</p>
 
       <p><code>a = b<br>/hi/g.exec(c).map(d);</code></p>
 
@@ -80,7 +80,7 @@
   </div>
 
   <section id="sec-unicode-format-control-characters">
-    <h1><span class="secnum" id="sec-11.1"><a href="#sec-unicode-format-control-characters" title="link to this section">11.1</a></span> Unicode Format-Control Characters</h1>
+    <h1><span class="secnum" id="sec-11.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-unicode-format-control-characters" title="link to this section">11.1</a></span> Unicode Format-Control Characters</h1>
 
     <p>The Unicode format-control characters (i.e., the characters in category “Cf” in the Unicode Character Database
     such as LEFT-TO-RIGHT MARK or RIGHT-TO-LEFT MARK) are control codes used to control the formatting of a range of text in the
@@ -92,16 +92,16 @@
     <p>U+200C <span style="font-family: Times New Roman">(</span>ZERO WIDTH NON-JOINER<span style="font-family: Times New
     Roman">)</span> and U+200D <span style="font-family: Times New Roman">(</span>ZERO WIDTH JOINER<span style="font-family: Times
     New Roman">)</span> are format-control characters that are used to make necessary distinctions when forming words or phrases
-    in certain languages. In ECMAScript source text these code points may also be used in an <span class="nt">IdentifierName</span> (<a href="#sec-identifier-names">see 11.6.1</a>) after the first character.</p>
+    in certain languages. In ECMAScript source text these code points may also be used in an <span class="nt">IdentifierName</span> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-identifier-names">see 11.6.1</a>) after the first character.</p>
 
     <p>U+FEFF <span style="font-family: Times New Roman">(</span>ZERO WIDTH NO-BREAK SPACE<span style="font-family: Times New
     Roman">)</span> is a format-control character used primarily at the start of a text to mark it as Unicode and to allow
     detection of the text's encoding and byte order. &lt;ZWNBSP&gt; characters intended for this purpose can sometimes also appear
     after the start of a text, for example as a result of concatenating files. In ECMAScript source text &lt;ZWNBSP&gt; code
-    points are treated as white space characters (<a href="#sec-white-space">see 11.2</a>).</p>
+    points are treated as white space characters (<a href="sec-ecmascript-language-lexical-grammar.html#sec-white-space">see 11.2</a>).</p>
 
     <p>The special treatment of certain format-control characters outside of comments, string literals, and regular expression
-    literals is summarized in <a href="#table-31">Table 31</a>.</p>
+    literals is summarized in <a href="sec-ecmascript-language-lexical-grammar.html#table-31">Table 31</a>.</p>
 
     <figure>
       <figcaption><span id="table-31">Table 31</span> — Format-Control Code Point Usage</figcaption>
@@ -135,7 +135,7 @@
   </section>
 
   <section id="sec-white-space">
-    <h1><span class="secnum" id="sec-11.2"><a href="#sec-white-space" title="link to this section">11.2</a></span> White
+    <h1><span class="secnum" id="sec-11.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-white-space" title="link to this section">11.2</a></span> White
         Space</h1>
 
     <p>White space code points are used to improve source text readability and to separate tokens (indivisible lexical units) from
@@ -143,7 +143,7 @@
     of input. White space code points may occur within a <span class="nt">StringLiteral</span>, a <span class="nt">RegularExpressionLiteral</span>, a <span class="nt">Template</span>, or a <span class="nt">TemplateSubstitutionTail</span> where they are considered significant code points forming part of a literal value.
     They may also occur within a <span class="nt">Comment</span>, but cannot appear within any other kind of token.</p>
 
-    <p>The ECMAScript white space code points are listed in <a href="#table-32">Table 32</a>.</p>
+    <p>The ECMAScript white space code points are listed in <a href="sec-ecmascript-language-lexical-grammar.html#table-32">Table 32</a>.</p>
 
     <figure>
       <figcaption><span id="table-32">Table 32</span> — White Space Code Points</figcaption>
@@ -196,7 +196,7 @@
     additional category Zs code points from subsequent editions of the Unicode Standard.</p>
 
     <div class="note">
-      <p><span class="nh">NOTE</span> Other than for the code points listed in <a href="#table-32">Table 32</a>, ECMAScript <span class="nt">WhiteSpace</span> intentionally excludes all code points that have the Unicode “White_Space” property
+      <p><span class="nh">NOTE</span> Other than for the code points listed in <a href="sec-ecmascript-language-lexical-grammar.html#table-32">Table 32</a>, ECMAScript <span class="nt">WhiteSpace</span> intentionally excludes all code points that have the Unicode “White_Space” property
       but which are not classified in category “Zs”.</p>
     </div>
 
@@ -215,22 +215,22 @@
   </section>
 
   <section id="sec-line-terminators">
-    <h1><span class="secnum" id="sec-11.3"><a href="#sec-line-terminators" title="link to this section">11.3</a></span> Line
+    <h1><span class="secnum" id="sec-11.3"><a href="sec-ecmascript-language-lexical-grammar.html#sec-line-terminators" title="link to this section">11.3</a></span> Line
         Terminators</h1>
 
     <p>Like white space code points, line terminator code points are used to improve source text readability and to separate
     tokens (indivisible lexical units) from each other. However, unlike white space code points, line terminators have some
     influence over the behaviour of the syntactic grammar. In general, line terminators may occur between any two tokens, but
-    there are a few places where they are forbidden by the syntactic grammar. Line terminators also affect the process of <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> (<a href="#sec-automatic-semicolon-insertion">11.9</a>). A line terminator cannot occur within any token except a <span class="nt">StringLiteral</span>, <span class="nt">Template</span>, or <span class="nt">TemplateSubstitutionTail</span>. Line
+    there are a few places where they are forbidden by the syntactic grammar. Line terminators also affect the process of <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">11.9</a>). A line terminator cannot occur within any token except a <span class="nt">StringLiteral</span>, <span class="nt">Template</span>, or <span class="nt">TemplateSubstitutionTail</span>. Line
     terminators may only occur within a <span class="nt">StringLiteral</span> token as part of a <span class="nt">LineContinuation</span>.</p>
 
-    <p>A line terminator can occur within a <span class="nt">MultiLineComment</span> (<a href="#sec-comments">11.4</a>) but cannot
+    <p>A line terminator can occur within a <span class="nt">MultiLineComment</span> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-comments">11.4</a>) but cannot
     occur within a <span class="nt">SingleLineComment</span>.</p>
 
     <p>Line terminators are included in the set of white space code points that are matched by the <code>\s</code> class in
     regular expressions.</p>
 
-    <p>The ECMAScript line terminator code points are listed in <a href="#table-33">Table 33</a>.</p>
+    <p>The ECMAScript line terminator code points are listed in <a href="sec-ecmascript-language-lexical-grammar.html#table-33">Table 33</a>.</p>
 
     <figure>
       <figcaption><span id="table-33">Table 33</span> — Line Terminator Code Points</figcaption>
@@ -263,9 +263,9 @@
       </tbody></table>
     </figure>
 
-    <p>Only the Unicode code points in <a href="#table-33">Table 33</a> are treated as line terminators. Other new line or line
+    <p>Only the Unicode code points in <a href="sec-ecmascript-language-lexical-grammar.html#table-33">Table 33</a> are treated as line terminators. Other new line or line
     breaking Unicode code points are not treated as line terminators but are treated as white space if they meet the requirements
-    listed in <a href="#table-32">Table 32</a>. The sequence &lt;CR&gt;&lt;LF&gt; is commonly used as a line terminator. It should
+    listed in <a href="sec-ecmascript-language-lexical-grammar.html#table-32">Table 32</a>. The sequence &lt;CR&gt;&lt;LF&gt; is commonly used as a line terminator. It should
     be considered a single <span class="nt">SourceCharacter</span> for the purpose of reporting line numbers.</p>
 
     <h2>Syntax</h2>
@@ -289,7 +289,7 @@
   </section>
 
   <section id="sec-comments">
-    <h1><span class="secnum" id="sec-11.4"><a href="#sec-comments" title="link to this section">11.4</a></span> Comments</h1>
+    <h1><span class="secnum" id="sec-11.4"><a href="sec-ecmascript-language-lexical-grammar.html#sec-comments" title="link to this section">11.4</a></span> Comments</h1>
 
     <p>Comments can be either single or multi-line. Multi-line comments cannot nest.</p>
 
@@ -298,7 +298,7 @@
     all code points from the <code>//</code> marker to the end of the line. However, the <span class="nt">LineTerminator</span> at
     the end of the line is not considered to be part of the single-line comment; it is recognized separately by the lexical
     grammar and becomes part of the stream of input elements for the syntactic grammar. This point is very important, because it
-    implies that the presence or absence of single-line comments does not affect the process of <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> (<a href="#sec-automatic-semicolon-insertion">see
+    implies that the presence or absence of single-line comments does not affect the process of <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">see
     11.9</a>).</p>
 
     <p>Comments behave like white space and are discarded except that, if a <span class="nt">MultiLineComment</span> contains a
@@ -357,7 +357,7 @@
   </section>
 
   <section id="sec-tokens">
-    <h1><span class="secnum" id="sec-11.5"><a href="#sec-tokens" title="link to this section">11.5</a></span> Tokens</h1>
+    <h1><span class="secnum" id="sec-11.5"><a href="sec-ecmascript-language-lexical-grammar.html#sec-tokens" title="link to this section">11.5</a></span> Tokens</h1>
     <h2>Syntax</h2>
 
     <div class="gp">
@@ -378,13 +378,13 @@
 
   <section id="sec-names-and-keywords">
     <div class="front">
-      <h1><span class="secnum" id="sec-11.6"><a href="#sec-names-and-keywords" title="link to this section">11.6</a></span> Names
+      <h1><span class="secnum" id="sec-11.6"><a href="sec-ecmascript-language-lexical-grammar.html#sec-names-and-keywords" title="link to this section">11.6</a></span> Names
           and Keywords</h1>
 
       <p><span class="nt">IdentifierName</span> and <span class="nt">ReservedWord</span> are tokens that are interpreted according
       to the Default Identifier Syntax given in Unicode Standard Annex #31, Identifier and Pattern Syntax, with some small
       modifications. <span class="nt">ReservedWord</span>  is an enumerated subset of <span style="font-family: Times New
-      Roman"><i>IdentifierName</i>.</span> The syntactic grammar defines <span class="nt">Identifier</span> as an <span class="nt">IdentifierName</span> that is not a <span class="nt">ReservedWord</span> (<a href="#sec-reserved-words">see
+      Roman"><i>IdentifierName</i>.</span> The syntactic grammar defines <span class="nt">Identifier</span> as an <span class="nt">IdentifierName</span> that is not a <span class="nt">ReservedWord</span> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-reserved-words">see
       11.6.2</a>). The Unicode identifier grammar is based on character properties specified by the Unicode Standard. The Unicode
       code points in the specified categories in version 5.1.0 of the Unicode standard must be treated as in those categories by
       all conforming ECMAScript implementations. ECMAScript implementations may recognize identifier code points defined in later
@@ -397,7 +397,7 @@
       </div>
 
       <p>Unicode escape sequences are permitted in an <span class="nt">IdentifierName</span>, where they contribute a single
-      Unicode code point to the <span class="nt">IdentifierName</span>. The code point is expressed by the <span class="nt">HexDigits</span> of the <span class="nt">UnicodeEscapeSequence</span> (<a href="#sec-literals-string-literals">see 11.8.4</a>). The <code>\</code> preceding the <span class="nt">UnicodeEscapeSequence</span> and the <code>u</code> and <code>{ }</code> code units, if they appear, do not
+      Unicode code point to the <span class="nt">IdentifierName</span>. The code point is expressed by the <span class="nt">HexDigits</span> of the <span class="nt">UnicodeEscapeSequence</span> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-string-literals">see 11.8.4</a>). The <code>\</code> preceding the <span class="nt">UnicodeEscapeSequence</span> and the <code>u</code> and <code>{ }</code> code units, if they appear, do not
       contribute code points to the <span class="nt">IdentifierName</span>. A <span class="nt">UnicodeEscapeSequence</span> cannot
       be used to put a code point into an <span class="nt">IdentifierName</span> that would otherwise be illegal. In other words,
       if a <code>\</code> <span class="nt">UnicodeEscapeSequence</span> sequence were replaced by the <span class="nt">SourceCharacter</span> it contributes, the result must still be a valid <span class="nt">IdentifierName</span>
@@ -445,7 +445,7 @@
         <div class="rhs"><span class="gprose">any Unicode code point with the Unicode property “ID_Continue”</span></div>
       </div>
 
-      <p>The definitions of the nonterminal <span class="nt">UnicodeEscapeSequence</span> is given in <a href="#sec-literals-string-literals">11.8.4</a>.</p>
+      <p>The definitions of the nonterminal <span class="nt">UnicodeEscapeSequence</span> is given in <a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-string-literals">11.8.4</a>.</p>
 
       <div class="note">
         <p><span class="nh">NOTE 2</span> The sets of code points with Unicode properties “ID_Start” and
@@ -456,17 +456,17 @@
 
     <section id="sec-identifier-names">
       <div class="front">
-        <h1><span class="secnum" id="sec-11.6.1"><a href="#sec-identifier-names" title="link to this section">11.6.1</a></span>
+        <h1><span class="secnum" id="sec-11.6.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-identifier-names" title="link to this section">11.6.1</a></span>
             Identifier Names</h1>
       </div>
 
       <section id="sec-identifier-names-static-semantics-early-errors">
-        <h1><span class="secnum" id="sec-11.6.1.1"><a href="#sec-identifier-names-static-semantics-early-errors" title="link to this section">11.6.1.1</a></span> Static Semantics: Early Errors</h1>
+        <h1><span class="secnum" id="sec-11.6.1.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-identifier-names-static-semantics-early-errors" title="link to this section">11.6.1.1</a></span> Static Semantics: Early Errors</h1>
         <div class="gp prod"><span class="nt">IdentifierStart</span> <span class="geq">::</span> <code class="t">\</code> <span class="nt">UnicodeEscapeSequence</span></div>
         <ul>
           <li>
             <p>It is a Syntax Error if <span style="font-family: Times New Roman">SV(<i>UnicodeEscapeSequence</i>)</span> is none
-            of <code>"$"</code>, or <code>"_"</code>, or the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of a code point matched by the <span class="nt">UnicodeIDStart</span> lexical
+            of <code>"$"</code>, or <code>"_"</code>, or the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of a code point matched by the <span class="nt">UnicodeIDStart</span> lexical
             grammar production.</p>
           </li>
         </ul>
@@ -474,15 +474,15 @@
         <ul>
           <li>
             <p>It is a Syntax Error if <span style="font-family: Times New Roman">SV(<i>UnicodeEscapeSequence</i>)</span> is none
-            of <code>"$"</code>, or <code>"_"</code>, or the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of either &lt;ZWNJ&gt; or &lt;ZWJ&gt;, or the <a href="#sec-utf16encoding">UTF16Encoding</a> of a Unicode code point that would be matched by the <span class="nt">UnicodeIDContinue</span> lexical grammar production.</p>
+            of <code>"$"</code>, or <code>"_"</code>, or the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of either &lt;ZWNJ&gt; or &lt;ZWJ&gt;, or the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> of a Unicode code point that would be matched by the <span class="nt">UnicodeIDContinue</span> lexical grammar production.</p>
           </li>
         </ul>
       </section>
 
       <section id="sec-identifier-names-static-semantics-stringvalue">
-        <h1><span class="secnum" id="sec-11.6.1.2"><a href="#sec-identifier-names-static-semantics-stringvalue" title="link to this section">11.6.1.2</a></span> Static Semantics: <span class="nt">StringValue</span></h1>
+        <h1><span class="secnum" id="sec-11.6.1.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-identifier-names-static-semantics-stringvalue" title="link to this section">11.6.1.2</a></span> Static Semantics: <span class="nt">StringValue</span></h1>
 
-        <p>See also: <a href="#sec-string-literals-static-semantics-stringvalue">11.8.4.2</a>, <a href="#sec-identifiers-static-semantics-stringvalue">12.1.4</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-lexical-grammar.html#sec-string-literals-static-semantics-stringvalue">11.8.4.2</a>, <a href="sec-ecmascript-language-expressions.html#sec-identifiers-static-semantics-stringvalue">12.1.4</a>.</p>
 
         <div class="gp">
           <div class="lhs"><span class="nt">IdentifierName</span> <span class="geq">::</span></div>
@@ -494,14 +494,14 @@
           <li>Return the String value consisting of the sequence of code units corresponding to <i>IdentifierName</i>. In
               determining the sequence any occurrences of <code>\</code> <i>UnicodeEscapeSequence</i> are first replaced with the
               code point represented by the <i>UnicodeEscapeSequence</i> and then the code points of the entire
-              <i>IdentifierName</i> are converted to code units by <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) each code point.</li>
+              <i>IdentifierName</i> are converted to code units by <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) each code point.</li>
         </ol>
       </section>
     </section>
 
     <section id="sec-reserved-words">
       <div class="front">
-        <h1><span class="secnum" id="sec-11.6.2"><a href="#sec-reserved-words" title="link to this section">11.6.2</a></span>
+        <h1><span class="secnum" id="sec-11.6.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-reserved-words" title="link to this section">11.6.2</a></span>
             Reserved Words</h1>
 
         <p>A reserved word is an <span class="nt">IdentifierName</span> that cannot be used as an <span class="nt">Identifier</span>.</p>
@@ -524,7 +524,7 @@
       </div>
 
       <section id="sec-keywords">
-        <h1><span class="secnum" id="sec-11.6.2.1"><a href="#sec-keywords" title="link to this section">11.6.2.1</a></span>
+        <h1><span class="secnum" id="sec-11.6.2.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-keywords" title="link to this section">11.6.2.1</a></span>
             Keywords</h1>
 
         <p>The following tokens are ECMAScript keywords and may not be used as <span class="nt">Identifiers</span> in ECMAScript
@@ -593,14 +593,14 @@
         </figure>
 
         <div class="note">
-          <p><span class="nh">NOTE</span> In some contexts <code>yield</code> is given the semantics of an <span class="nt">Identifier</span>. See <a href="#sec-identifiers-static-semantics-early-errors">12.1.1</a>. In <a href="#sec-strict-mode-code">strict mode code</a>, <code>let</code> and <code>static</code> are treated as reserved
-          keywords through static semantic restrictions (see <a href="#sec-identifiers-static-semantics-early-errors">12.1.1</a>,
-          <a href="#sec-let-and-const-declarations-static-semantics-early-errors">13.3.1.1</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-early-errors">13.7.5.1</a>, and <a href="#sec-class-definitions-static-semantics-early-errors">14.5.1</a>) rather than the lexical grammar.</p>
+          <p><span class="nh">NOTE</span> In some contexts <code>yield</code> is given the semantics of an <span class="nt">Identifier</span>. See <a href="sec-ecmascript-language-expressions.html#sec-identifiers-static-semantics-early-errors">12.1.1</a>. In <a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">strict mode code</a>, <code>let</code> and <code>static</code> are treated as reserved
+          keywords through static semantic restrictions (see <a href="sec-ecmascript-language-expressions.html#sec-identifiers-static-semantics-early-errors">12.1.1</a>,
+          <a href="sec-ecmascript-language-statements-and-declarations.html#sec-let-and-const-declarations-static-semantics-early-errors">13.3.1.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-early-errors">13.7.5.1</a>, and <a href="sec-ecmascript-language-functions-and-classes.html#sec-class-definitions-static-semantics-early-errors">14.5.1</a>) rather than the lexical grammar.</p>
         </div>
       </section>
 
       <section id="sec-future-reserved-words">
-        <h1><span class="secnum" id="sec-11.6.2.2"><a href="#sec-future-reserved-words" title="link to this section">11.6.2.2</a></span> Future Reserved Words</h1>
+        <h1><span class="secnum" id="sec-11.6.2.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-future-reserved-words" title="link to this section">11.6.2.2</a></span> Future Reserved Words</h1>
 
         <p>The following tokens are reserved for used as keywords in future language extensions.</p>
 
@@ -616,9 +616,9 @@
         is the goal symbol of the syntactic grammar.</p>
 
         <div class="note">
-          <p><span class="nh">NOTE</span> Use of the following tokens within <a href="#sec-strict-mode-code">strict mode code</a>
-          (<a href="#sec-strict-mode-code">see 10.2.1</a>) is also reserved. That usage is restricted using static semantic
-          restrictions (<a href="#sec-identifiers-static-semantics-early-errors">see 12.1.1</a>) rather than the lexical
+          <p><span class="nh">NOTE</span> Use of the following tokens within <a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">strict mode code</a>
+          (<a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">see 10.2.1</a>) is also reserved. That usage is restricted using static semantic
+          restrictions (<a href="sec-ecmascript-language-expressions.html#sec-identifiers-static-semantics-early-errors">see 12.1.1</a>) rather than the lexical
           grammar:</p>
         </div>
 
@@ -643,7 +643,7 @@
   </section>
 
   <section id="sec-punctuators">
-    <h1><span class="secnum" id="sec-11.7"><a href="#sec-punctuators" title="link to this section">11.7</a></span>
+    <h1><span class="secnum" id="sec-11.7"><a href="sec-ecmascript-language-lexical-grammar.html#sec-punctuators" title="link to this section">11.7</a></span>
         Punctuators</h1>
     <h2>Syntax</h2>
     <div class="gp prod"><span class="nt">Punctuator</span> <span class="geq">::</span> <span class="grhsmod">one of</span></div>
@@ -731,11 +731,11 @@
 
   <section id="sec-ecmascript-language-lexical-grammar-literals">
     <div class="front">
-      <h1><span class="secnum" id="sec-11.8"><a href="#sec-ecmascript-language-lexical-grammar-literals" title="link to this section">11.8</a></span> Literals</h1>
+      <h1><span class="secnum" id="sec-11.8"><a href="sec-ecmascript-language-lexical-grammar.html#sec-ecmascript-language-lexical-grammar-literals" title="link to this section">11.8</a></span> Literals</h1>
     </div>
 
     <section id="sec-null-literals">
-      <h1><span class="secnum" id="sec-11.8.1"><a href="#sec-null-literals" title="link to this section">11.8.1</a></span> Null
+      <h1><span class="secnum" id="sec-11.8.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-null-literals" title="link to this section">11.8.1</a></span> Null
           Literals</h1>
       <h2>Syntax</h2>
 
@@ -746,7 +746,7 @@
     </section>
 
     <section id="sec-boolean-literals">
-      <h1><span class="secnum" id="sec-11.8.2"><a href="#sec-boolean-literals" title="link to this section">11.8.2</a></span>
+      <h1><span class="secnum" id="sec-11.8.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-boolean-literals" title="link to this section">11.8.2</a></span>
           Boolean Literals</h1>
       <h2>Syntax</h2>
 
@@ -759,7 +759,7 @@
 
     <section id="sec-literals-numeric-literals">
       <div class="front">
-        <h1><span class="secnum" id="sec-11.8.3"><a href="#sec-literals-numeric-literals" title="link to this section">11.8.3</a></span> Numeric Literals</h1>
+        <h1><span class="secnum" id="sec-11.8.3"><a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-numeric-literals" title="link to this section">11.8.3</a></span> Numeric Literals</h1>
         <h2>Syntax</h2>
 
         <div class="gp">
@@ -875,12 +875,12 @@
           error and not the two input elements <code>3</code> and <code>in</code>.</p>
         </div>
 
-        <p>A conforming implementation, when processing <a href="#sec-strict-mode-code">strict mode code</a> (<a href="#sec-strict-mode-code">see 10.2.1</a>), must not extend, as described in <a href="#sec-additional-syntax-numeric-literals">B.1.1</a>, the syntax of <span class="nt">NumericLiteral</span> to include
+        <p>A conforming implementation, when processing <a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">strict mode code</a> (<a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">see 10.2.1</a>), must not extend, as described in <a href="sec-additional-ecmascript-features-for-web-browsers.html#sec-additional-syntax-numeric-literals">B.1.1</a>, the syntax of <span class="nt">NumericLiteral</span> to include
         <i>Legacy<span style="font-family: Times New Roman">OctalIntegerLiteral</span></i>, nor extend the syntax of <span class="nt">DecimalIntegerLiteral</span> to include <span class="nt">NonOctalDecimalIntegerLiteral</span>.</p>
       </div>
 
       <section id="sec-static-semantics-mv">
-        <h1><span class="secnum" id="sec-11.8.3.1"><a href="#sec-static-semantics-mv" title="link to this section">11.8.3.1</a></span> Static Semantics: MV</h1>
+        <h1><span class="secnum" id="sec-11.8.3.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-static-semantics-mv" title="link to this section">11.8.3.1</a></span> Static Semantics: MV</h1>
 
         <p>A numeric literal stands for a value of the Number type. This value is determined in two steps: first, a mathematical
         value (MV) is derived from the literal; second, this mathematical value is rounded as described below.</p>
@@ -1121,7 +1121,7 @@
 
         <p>Once the exact MV for a numeric literal has been determined, it is then rounded to a value of the Number type. If the
         MV is 0, then the rounded value is <span class="value">+0</span>; otherwise, the rounded value must be the Number value
-        for the MV (as specified in <a href="#sec-ecmascript-language-types-number-type">6.1.6</a>), unless the literal is a <span class="nt">DecimalLiteral</span> and the literal has more than 20 significant digits, in which case the Number value may
+        for the MV (as specified in <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types-number-type">6.1.6</a>), unless the literal is a <span class="nt">DecimalLiteral</span> and the literal has more than 20 significant digits, in which case the Number value may
         be either the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a
         <code>0</code> digit or the Number value for the MV of a literal produced by replacing each significant digit after the
         20th with a <code>0</code> digit and then incrementing the literal at the 20th significant digit position. A digit is
@@ -1137,7 +1137,7 @@
 
     <section id="sec-literals-string-literals">
       <div class="front">
-        <h1><span class="secnum" id="sec-11.8.4"><a href="#sec-literals-string-literals" title="link to this section">11.8.4</a></span> String Literals</h1>
+        <h1><span class="secnum" id="sec-11.8.4"><a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-string-literals" title="link to this section">11.8.4</a></span> String Literals</h1>
 
         <div class="note">
           <p><span class="nh">NOTE 1</span> A string literal is zero or more Unicode code points enclosed in single or double
@@ -1145,7 +1145,7 @@
           string literal except for the closing quote code points, U+005C (REVERSE SOLIDUS), U+000D (CARRIAGE RETURN), U+2028
           (LINE SEPARATOR), U+2029 (PARAGRAPH SEPARATOR), and U+000A (LINE FEED). Any code points may appear in the form of an
           escape sequence. String literals evaluate to ECMAScript String values. When generating these String values Unicode code
-          points are UTF-16 encoded as defined in <a href="#sec-utf16encoding">10.1.1</a>. Code points belonging to the Basic
+          points are UTF-16 encoded as defined in <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>. Code points belonging to the Basic
           Multilingual Plane are encoded as a single code unit element of the string. All other code points are encoded as two
           code unit elements of the string.</p>
         </div>
@@ -1195,8 +1195,8 @@
           <div class="rhs"><span class="nt">UnicodeEscapeSequence</span></div>
         </div>
 
-        <p>A conforming implementation, when processing <a href="#sec-strict-mode-code">strict mode code</a> (<a href="#sec-strict-mode-code">see 10.2.1</a>), must not extend the syntax of <span class="nt">EscapeSequence</span> to
-        include <i>Legacy<span style="font-family: Times New Roman">OctalEscapeSequence</span></i> as described in <a href="#sec-additional-syntax-string-literals">B.1.2</a>.</p>
+        <p>A conforming implementation, when processing <a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">strict mode code</a> (<a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">see 10.2.1</a>), must not extend the syntax of <span class="nt">EscapeSequence</span> to
+        include <i>Legacy<span style="font-family: Times New Roman">OctalEscapeSequence</span></i> as described in <a href="sec-additional-ecmascript-features-for-web-browsers.html#sec-additional-syntax-string-literals">B.1.2</a>.</p>
 
         <div class="gp">
           <div class="lhs"><span class="nt">CharacterEscapeSequence</span> <span class="geq">::</span></div>
@@ -1238,7 +1238,7 @@
           <div class="rhs"><span class="nt">HexDigit</span> <span class="nt">HexDigit</span> <span class="nt">HexDigit</span> <span class="nt">HexDigit</span></div>
         </div>
 
-        <p>The definition of the nonterminal <span class="nt">HexDigit</span> is given in <a href="#sec-literals-numeric-literals">11.8.3</a>. <span class="nt">SourceCharacter</span> is defined in <a href="#sec-source-text">10.1</a>.</p>
+        <p>The definition of the nonterminal <span class="nt">HexDigit</span> is given in <a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-numeric-literals">11.8.3</a>. <span class="nt">SourceCharacter</span> is defined in <a href="sec-ecmascript-language-source-code.html#sec-source-text">10.1</a>.</p>
 
         <div class="note">
           <p><span class="nh">NOTE 2</span> A line terminator code point cannot appear in a string literal, except as part of a
@@ -1249,7 +1249,7 @@
       </div>
 
       <section id="sec-string-literals-static-semantics-early-errors">
-        <h1><span class="secnum" id="sec-11.8.4.1"><a href="#sec-string-literals-static-semantics-early-errors" title="link to this section">11.8.4.1</a></span> Static Semantics:  Early Errors</h1>
+        <h1><span class="secnum" id="sec-11.8.4.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-string-literals-static-semantics-early-errors" title="link to this section">11.8.4.1</a></span> Static Semantics:  Early Errors</h1>
         <div class="gp prod"><span class="nt">UnicodeEscapeSequence</span> <span class="geq">::</span> <code class="t">u{</code> <span class="nt">HexDigits</span> <code class="t">}</code></div>
         <ul>
           <li>It is a Syntax Error if the MV of <span class="nt">HexDigits</span> &gt; <span style="font-family: Times New
@@ -1258,9 +1258,9 @@
       </section>
 
       <section id="sec-string-literals-static-semantics-stringvalue">
-        <h1><span class="secnum" id="sec-11.8.4.2"><a href="#sec-string-literals-static-semantics-stringvalue" title="link to this section">11.8.4.2</a></span> Static Semantics: <span class="nt">StringValue</span></h1>
+        <h1><span class="secnum" id="sec-11.8.4.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-string-literals-static-semantics-stringvalue" title="link to this section">11.8.4.2</a></span> Static Semantics: <span class="nt">StringValue</span></h1>
 
-        <p>See also: <a href="#sec-identifier-names-static-semantics-stringvalue">11.6.1.2</a>, <a href="#sec-identifiers-static-semantics-stringvalue">12.1.4</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-lexical-grammar.html#sec-identifier-names-static-semantics-stringvalue">11.6.1.2</a>, <a href="sec-ecmascript-language-expressions.html#sec-identifiers-static-semantics-stringvalue">12.1.4</a>.</p>
 
         <div class="gp">
           <div class="lhs"><span class="nt">StringLiteral</span> <span class="geq">::</span></div>
@@ -1274,11 +1274,11 @@
       </section>
 
       <section id="sec-static-semantics-sv">
-        <h1><span class="secnum" id="sec-11.8.4.3"><a href="#sec-static-semantics-sv" title="link to this section">11.8.4.3</a></span> Static Semantics: <var>SV</var></h1>
+        <h1><span class="secnum" id="sec-11.8.4.3"><a href="sec-ecmascript-language-lexical-grammar.html#sec-static-semantics-sv" title="link to this section">11.8.4.3</a></span> Static Semantics: <var>SV</var></h1>
 
         <p>A string literal stands for a value of the String type. The String value (SV) of the literal is described in terms of
         code unit values contributed by the various parts of the string literal. As part of this process, some Unicode code points
-        within the string literal are interpreted as having a mathematical value (MV), as described below or in <a href="#sec-literals-numeric-literals">11.8.3</a>.</p>
+        within the string literal are interpreted as having a mathematical value (MV), as described below or in <a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-numeric-literals">11.8.3</a>.</p>
 
         <ul>
           <li>
@@ -1322,7 +1322,7 @@
           </li>
 
           <li>
-            <p>The SV of <span class="prod"><span class="nt">DoubleStringCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">"</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of the code point value of <i>SourceCharacter</i>.</p>
+            <p>The SV of <span class="prod"><span class="nt">DoubleStringCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">"</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of the code point value of <i>SourceCharacter</i>.</p>
           </li>
 
           <li>
@@ -1334,7 +1334,7 @@
           </li>
 
           <li>
-            <p>The SV of <span class="prod"><span class="nt">SingleStringCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">'</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of the code point value of <i>SourceCharacter</i>.</p>
+            <p>The SV of <span class="prod"><span class="nt">SingleStringCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">'</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of the code point value of <i>SourceCharacter</i>.</p>
           </li>
 
           <li>
@@ -1363,7 +1363,7 @@
 
           <li>
             <p>The SV of <span class="prod"><span class="nt">CharacterEscapeSequence</span> <span class="geq">::</span> <span class="nt">SingleEscapeCharacter</span></span> is the code unit whose value is determined by  the
-            <i>SingleEscapeCharacter</i> according to <a href="#table-34">Table 34</a>.</p>
+            <i>SingleEscapeCharacter</i> according to <a href="sec-ecmascript-language-lexical-grammar.html#table-34">Table 34</a>.</p>
           </li>
         </ul>
 
@@ -1440,7 +1440,7 @@
 
           <li>
             <p>The SV of <span class="prod"><span class="nt">NonEscapeCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <span class="nt">EscapeCharacter</span>
-            <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of the code point value of
+            <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of the code point value of
             <i>SourceCharacter</i>.</p>
           </li>
 
@@ -1460,7 +1460,7 @@
           </li>
 
           <li>
-            <p>The SV of <span class="prod"><span class="nt">UnicodeEscapeSequence</span> <span class="geq">::</span> <code class="t">u{</code> <span class="nt">HexDigits</span> <code class="t">}</code></span> is the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of the MV of
+            <p>The SV of <span class="prod"><span class="nt">UnicodeEscapeSequence</span> <span class="geq">::</span> <code class="t">u{</code> <span class="nt">HexDigits</span> <code class="t">}</code></span> is the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of the MV of
             <i>HexDigits</i>.</p>
           </li>
         </ul>
@@ -1469,22 +1469,22 @@
 
     <section id="sec-literals-regular-expression-literals">
       <div class="front">
-        <h1><span class="secnum" id="sec-11.8.5"><a href="#sec-literals-regular-expression-literals" title="link to this section">11.8.5</a></span> Regular Expression Literals</h1>
+        <h1><span class="secnum" id="sec-11.8.5"><a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-regular-expression-literals" title="link to this section">11.8.5</a></span> Regular Expression Literals</h1>
 
         <div class="note">
           <p><span class="nh">NOTE 1</span> A regular expression literal is an input element that is converted to a RegExp object
-          (<a href="#sec-regexp-regular-expression-objects">see 21.2</a>) each time the literal is evaluated. Two regular
+          (<a href="sec-text-processing.html#sec-regexp-regular-expression-objects">see 21.2</a>) each time the literal is evaluated. Two regular
           expression literals in a program evaluate to regular expression objects that never compare as <code>===</code> to each
           other even if the two literals' contents are identical. A RegExp object may also be created at runtime by <code>new
-          RegExp</code> or calling the <code>RegExp</code> constructor as a function (<a href="#sec-regexp-constructor">see
+          RegExp</code> or calling the <code>RegExp</code> constructor as a function (<a href="sec-text-processing.html#sec-regexp-constructor">see
           21.2.3</a>).</p>
         </div>
 
         <p>The productions below describe the syntax for a regular expression literal and are used by the input element scanner to
         find the end of the regular expression literal. The source text comprising the <span class="nt">RegularExpressionBody</span> and the <span class="nt">RegularExpressionFlags</span> are subsequently parsed
-        again using the more stringent ECMAScript Regular Expression grammar (<a href="#sec-patterns">21.2.1</a>).</p>
+        again using the more stringent ECMAScript Regular Expression grammar (<a href="sec-text-processing.html#sec-patterns">21.2.1</a>).</p>
 
-        <p>An implementation may extend the ECMAScript Regular Expression grammar defined in <a href="#sec-patterns">21.2.1</a>,
+        <p>An implementation may extend the ECMAScript Regular Expression grammar defined in <a href="sec-text-processing.html#sec-patterns">21.2.1</a>,
         but it must not extend the <span class="nt">RegularExpressionBody</span> and <span class="nt">RegularExpressionFlags</span> productions defined below or the productions used by these productions.</p>
 
         <h2>Syntax</h2>
@@ -1560,7 +1560,7 @@
       </div>
 
       <section id="sec-literals-regular-expression-literals-static-semantics-early-errors">
-        <h1><span class="secnum" id="sec-11.8.5.1"><a href="#sec-literals-regular-expression-literals-static-semantics-early-errors" title="link to this section">11.8.5.1</a></span> Static Semantics:  Early Errors</h1>
+        <h1><span class="secnum" id="sec-11.8.5.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-regular-expression-literals-static-semantics-early-errors" title="link to this section">11.8.5.1</a></span> Static Semantics:  Early Errors</h1>
         <div class="gp prod"><span class="nt">RegularExpressionFlags</span> <span class="geq">::</span> <span class="nt">RegularExpressionFlags</span> <span class="nt">IdentifierPart</span></div>
         <ul>
           <li>It is a Syntax Error if <span class="nt">IdentifierPart</span> contains a Unicode escape sequence<var>.</var></li>
@@ -1568,7 +1568,7 @@
       </section>
 
       <section id="sec-static-semantics-bodytext">
-        <h1><span class="secnum" id="sec-11.8.5.2"><a href="#sec-static-semantics-bodytext" title="link to this section">11.8.5.2</a></span> Static Semantics: <span class="nt">BodyText</span></h1>
+        <h1><span class="secnum" id="sec-11.8.5.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-static-semantics-bodytext" title="link to this section">11.8.5.2</a></span> Static Semantics: <span class="nt">BodyText</span></h1>
         <div class="gp prod"><span class="nt">RegularExpressionLiteral</span> <span class="geq">::</span> <code class="t">/</code> <span class="nt">RegularExpressionBody</span> <code class="t">/</code> <span class="nt">RegularExpressionFlags</span></div>
         <ol class="proc">
           <li>Return the source text that was recognized as <i>RegularExpressionBody</i>.</li>
@@ -1576,7 +1576,7 @@
       </section>
 
       <section id="sec-static-semantics-flagtext">
-        <h1><span class="secnum" id="sec-11.8.5.3"><a href="#sec-static-semantics-flagtext" title="link to this section">11.8.5.3</a></span> Static Semantics: <span class="nt">FlagText</span></h1>
+        <h1><span class="secnum" id="sec-11.8.5.3"><a href="sec-ecmascript-language-lexical-grammar.html#sec-static-semantics-flagtext" title="link to this section">11.8.5.3</a></span> Static Semantics: <span class="nt">FlagText</span></h1>
         <div class="gp prod"><span class="nt">RegularExpressionLiteral</span> <span class="geq">::</span> <code class="t">/</code> <span class="nt">RegularExpressionBody</span> <code class="t">/</code> <span class="nt">RegularExpressionFlags</span></div>
         <ol class="proc">
           <li>Return the source text that was recognized as <i>RegularExpressionFlags</i>.</li>
@@ -1586,7 +1586,7 @@
 
     <section id="sec-template-literal-lexical-components">
       <div class="front">
-        <h1><span class="secnum" id="sec-11.8.6"><a href="#sec-template-literal-lexical-components" title="link to this section">11.8.6</a></span> Template Literal Lexical Components</h1>
+        <h1><span class="secnum" id="sec-11.8.6"><a href="sec-ecmascript-language-lexical-grammar.html#sec-template-literal-lexical-components" title="link to this section">11.8.6</a></span> Template Literal Lexical Components</h1>
         <h2>Syntax</h2>
 
         <div class="gp">
@@ -1636,7 +1636,7 @@
         </div>
 
         <p>A conforming implementation must not use the extended definition of <span class="nt">EscapeSequence</span> described in
-        <a href="#sec-additional-syntax-string-literals">B.1.2</a> when parsing a <span class="nt">TemplateCharacter</span>.</p>
+        <a href="sec-additional-ecmascript-features-for-web-browsers.html#sec-additional-syntax-string-literals">B.1.2</a> when parsing a <span class="nt">TemplateCharacter</span>.</p>
 
         <div class="note">
           <p><span class="nh">NOTE</span> <span class="nt">TemplateSubstitutionTail</span> is used by the <span class="nt">InputElementTemplateTail</span> alternative lexical goal.</p>
@@ -1644,12 +1644,12 @@
       </div>
 
       <section id="sec-static-semantics-tv-and-trv">
-        <h1><span class="secnum" id="sec-11.8.6.1"><a href="#sec-static-semantics-tv-and-trv" title="link to this section">11.8.6.1</a></span> Static Semantics: <var>TV and TRV</var></h1>
+        <h1><span class="secnum" id="sec-11.8.6.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-static-semantics-tv-and-trv" title="link to this section">11.8.6.1</a></span> Static Semantics: <var>TV and TRV</var></h1>
 
         <p>A template literal component is interpreted as a sequence of Unicode code points. The Template Value (TV) of a literal
-        component is described in terms of code unit values (SV, <a href="#sec-literals-string-literals">11.8.4</a>) contributed
+        component is described in terms of code unit values (SV, <a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-string-literals">11.8.4</a>) contributed
         by the various parts of the template literal component. As part of this process, some Unicode code points within the
-        template component are interpreted as having a mathematical value (MV, <a href="#sec-literals-numeric-literals">11.8.3</a>). In determining a TV, escape sequences are replaced by the UTF-16 code
+        template component are interpreted as having a mathematical value (MV, <a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-numeric-literals">11.8.3</a>). In determining a TV, escape sequences are replaced by the UTF-16 code
         unit(s) of the Unicode code point represented by the escape sequence. The Template Raw Value (TRV) is similar to a
         Template Value with the difference that in TRVs escape sequences are interpreted literally.</p>
 
@@ -1702,7 +1702,7 @@
           </li>
 
           <li>
-            <p>The TV of <span class="prod"><span class="nt">TemplateCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">`</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <code class="t">$</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of the code point value of
+            <p>The TV of <span class="prod"><span class="nt">TemplateCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">`</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <code class="t">$</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of the code point value of
             <i>SourceCharacter</i>.</p>
           </li>
 
@@ -1757,7 +1757,7 @@
           </li>
 
           <li>
-            <p>The TRV of <span class="prod"><span class="nt">TemplateCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">`</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <code class="t">$</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of the code point value of
+            <p>The TRV of <span class="prod"><span class="nt">TemplateCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">`</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span> <code class="t">$</code> <span class="grhsmod">or</span> <span class="nt">LineTerminator</span></span> is the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of the code point value of
             <i>SourceCharacter</i>.</p>
           </li>
 
@@ -1886,7 +1886,7 @@
 
   <section id="sec-automatic-semicolon-insertion">
     <div class="front">
-      <h1><span class="secnum" id="sec-11.9"><a href="#sec-automatic-semicolon-insertion" title="link to this section">11.9</a></span> Automatic Semicolon Insertion</h1>
+      <h1><span class="secnum" id="sec-11.9"><a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion" title="link to this section">11.9</a></span> Automatic Semicolon Insertion</h1>
 
       <p>Certain ECMAScript statements (empty statement, <code>let</code>, <code>const</code>, <code>import</code>, and
       <code>export</code> declarations, variable statement, expression statement, <code>debugger</code> statement,
@@ -1897,7 +1897,7 @@
     </div>
 
     <section id="sec-rules-of-automatic-semicolon-insertion">
-      <h1><span class="secnum" id="sec-11.9.1"><a href="#sec-rules-of-automatic-semicolon-insertion" title="link to this section">11.9.1</a></span> Rules of Automatic Semicolon Insertion</h1>
+      <h1><span class="secnum" id="sec-11.9.1"><a href="sec-ecmascript-language-lexical-grammar.html#sec-rules-of-automatic-semicolon-insertion" title="link to this section">11.9.1</a></span> Rules of Automatic Semicolon Insertion</h1>
 
       <p>In the following rules, “token” means the actual recognized lexical token determined using the current
       lexical goal symbol as described in <a href="#sec-ecmascript-language-lexical-grammar">clause 11</a>.</p>
@@ -1920,7 +1920,7 @@
 
             <li>
               <p>The previous token is <code>)</code> and the inserted semicolon would then be parsed as the terminating semicolon
-              of a do-while statement (<a href="#sec-do-while-statement">13.7.2</a>).</p>
+              of a do-while statement (<a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement">13.7.2</a>).</p>
             </li>
           </ul>
         </li>
@@ -1938,7 +1938,7 @@
 
       <p>However, there is an additional overriding condition on the preceding rules: a semicolon is never inserted automatically
       if the semicolon would then be parsed as an empty statement or if that semicolon would become one of the two semicolons in
-      the header of a <code>for</code> statement (<a href="#sec-for-statement">see 13.7.4</a>).</p>
+      the header of a <code>for</code> statement (<a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement">see 13.7.4</a>).</p>
 
       <div class="note">
         <p><span class="nh">NOTE</span> The following are the only restricted productions in the grammar:</p>
@@ -2022,18 +2022,18 @@
     </section>
 
     <section id="sec-examples-of-automatic-semicolon-insertion">
-      <h1><span class="secnum" id="sec-11.9.2"><a href="#sec-examples-of-automatic-semicolon-insertion" title="link to this section">11.9.2</a></span> Examples of Automatic Semicolon Insertion</h1>
+      <h1><span class="secnum" id="sec-11.9.2"><a href="sec-ecmascript-language-lexical-grammar.html#sec-examples-of-automatic-semicolon-insertion" title="link to this section">11.9.2</a></span> Examples of Automatic Semicolon Insertion</h1>
 
       <p>The source</p>
 
       <pre class="NoteCode">{ 1 2 } 3</pre>
 
-      <p>is not a valid sentence in the ECMAScript grammar, even with the <a href="#sec-automatic-semicolon-insertion">automatic
+      <p>is not a valid sentence in the ECMAScript grammar, even with the <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic
       semicolon insertion</a> rules. In contrast, the source</p>
 
       <pre class="NoteCode">{ 1<br>2 } 3</pre>
 
-      <p>is also not a valid ECMAScript sentence, but is transformed by <a href="#sec-automatic-semicolon-insertion">automatic
+      <p>is also not a valid ECMAScript sentence, but is transformed by <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic
       semicolon insertion</a> into the following:</p>
 
       <pre class="NoteCode">{ 1<br>;2 ;} 3;</pre>
@@ -2044,7 +2044,7 @@
 
       <pre class="NoteCode">for (a; b<br>)</pre>
 
-      <p>is not a valid ECMAScript sentence and is not altered by <a href="#sec-automatic-semicolon-insertion">automatic semicolon
+      <p>is not a valid ECMAScript sentence and is not altered by <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon
       insertion</a> because the semicolon is needed for the header of a <code>for</code> statement. Automatic semicolon insertion
       never inserts one of the two semicolons in the header of a <code>for</code> statement.</p>
 
@@ -2052,7 +2052,7 @@
 
       <pre class="NoteCode">return<br>a + b</pre>
 
-      <p>is transformed by <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> into the following:</p>
+      <p>is transformed by <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> into the following:</p>
 
       <pre class="NoteCode">return;<br>a + b;</pre>
 
@@ -2066,7 +2066,7 @@
 
       <pre class="NoteCode">a = b<br>++c</pre>
 
-      <p>is transformed by <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> into the following:</p>
+      <p>is transformed by <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a> into the following:</p>
 
       <pre class="NoteCode">a = b;<br>++c;</pre>
 
@@ -2079,7 +2079,7 @@
 
       <pre class="NoteCode">if (a &gt; b)<br>else c = d</pre>
 
-      <p>is not a valid ECMAScript sentence and is not altered by <a href="#sec-automatic-semicolon-insertion">automatic semicolon
+      <p>is not a valid ECMAScript sentence and is not altered by <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon
       insertion</a> before the <code>else</code> token, even though no production of the grammar applies at that point, because an
       automatically inserted semicolon would then be parsed as an empty statement.</p>
 
@@ -2087,13 +2087,13 @@
 
       <pre class="NoteCode">a = b + c<br>(d + e).print()</pre>
 
-      <p>is <i>not</i> transformed by <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a>, because the
+      <p>is <i>not</i> transformed by <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a>, because the
       parenthesized expression that begins the second line can be interpreted as an argument list for a function call:</p>
 
       <pre class="NoteCode">a = b + c(d + e).print()</pre>
 
       <p>In the circumstance that an assignment statement must begin with a left parenthesis, it is a good idea for the programmer
-      to provide an explicit semicolon at the end of the preceding statement rather than to rely on <a href="#sec-automatic-semicolon-insertion">automatic semicolon insertion</a>.</p>
+      to provide an explicit semicolon at the end of the preceding statement rather than to rely on <a href="sec-ecmascript-language-lexical-grammar.html#sec-automatic-semicolon-insertion">automatic semicolon insertion</a>.</p>
     </section>
   </section>
 

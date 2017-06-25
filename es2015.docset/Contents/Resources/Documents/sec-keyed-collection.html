@@ -14,11 +14,11 @@
 
   <section id="sec-map-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-23.1"><a href="#sec-map-objects" title="link to this section">23.1</a></span> Map
+      <h1><span class="secnum" id="sec-23.1"><a href="sec-keyed-collection.html#sec-map-objects" title="link to this section">23.1</a></span> Map
           Objects</h1>
 
-      <p>Map objects are collections of key/value pairs where both the keys and values may be arbitrary <a href="#sec-ecmascript-language-types">ECMAScript language values</a>. A distinct key value may only occur in one key/value
-      pair within the Map’s collection. Distinct key values are discriminated using the <a href="#sec-samevaluezero">SameValueZero</a> comparison algorithm.</p>
+      <p>Map objects are collections of key/value pairs where both the keys and values may be arbitrary <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language values</a>. A distinct key value may only occur in one key/value
+      pair within the Map’s collection. Distinct key values are discriminated using the <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a> comparison algorithm.</p>
 
       <p>Map object must be implemented using either hash tables or other mechanisms that, on average, provide access times that
       are sublinear on the number of elements in the collection. The data structures used in this Map objects specification is
@@ -28,7 +28,7 @@
 
     <section id="sec-map-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.1.1"><a href="#sec-map-constructor" title="link to this section">23.1.1</a></span> The
+        <h1><span class="secnum" id="sec-23.1.1"><a href="sec-keyed-collection.html#sec-map-constructor" title="link to this section">23.1.1</a></span> The
             Map Constructor</h1>
 
         <p>The Map constructor is the %Map% intrinsic object and the initial value of the <code>Map</code> property of the global
@@ -42,7 +42,7 @@
       </div>
 
       <section id="sec-map-iterable">
-        <h1><span class="secnum" id="sec-23.1.1.1"><a href="#sec-map-iterable" title="link to this section">23.1.1.1</a></span>
+        <h1><span class="secnum" id="sec-23.1.1.1"><a href="sec-keyed-collection.html#sec-map-iterable" title="link to this section">23.1.1.1</a></span>
             Map ( [ iterable ] )</h1>
 
         <p class="normalbefore">When the <code>Map</code> function is called with optional argument the following steps are
@@ -50,45 +50,45 @@
 
         <ol class="proc">
           <li>If NewTarget is <b>undefined</b>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>map</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
+          <li>Let <i>map</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
               <code>"%MapPrototype%"</code>, «‍[[MapData]]» ).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>map</i>).</li>
-          <li>Set <i>map’s</i> [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to a
-              new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>map</i>).</li>
+          <li>Set <i>map’s</i> [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to a
+              new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>If <i>iterable</i> is not present, let <i>iterable</i> be <b>undefined</b>.</li>
           <li>If <i>iterable</i> is either <b>undefined</b> or <b>null</b>, let <i>iter</i> be <b>undefined</b>.</li>
           <li>Else,
             <ol class="block">
-              <li>Let <i>adder</i> be <a href="#sec-get-o-p">Get</a>(<i>map</i>, <code>"set"</code>)<b>.</b></li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
-              <li>If <a href="#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
+              <li>Let <i>adder</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>map</i>, <code>"set"</code>)<b>.</b></li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
+              <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
                   exception.</li>
-              <li>Let <i>iter</i> be <a href="#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
+              <li>Let <i>iter</i> be <a href="sec-abstract-operations.html#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
             </ol>
           </li>
           <li>If <i>iter</i> is <b>undefined</b>, return <i>map</i>.</li>
           <li>Repeat
             <ol class="block">
-              <li>Let <i>next</i> be <a href="#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
+              <li>Let <i>next</i> be <a href="sec-abstract-operations.html#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
               <li>If <i>next</i> is <b>false</b>, return <i>map</i>.</li>
-              <li>Let <i>nextItem</i> be <a href="#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextItem</i>).</li>
+              <li>Let <i>nextItem</i> be <a href="sec-abstract-operations.html#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextItem</i>).</li>
               <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>nextItem</i>) is not Object,
                 <ol class="block">
-                  <li>Let <i>error</i> be <a href="#sec-completion-record-specification-type">Completion</a>{[[type]]: <span style="font-family: sans-serif">throw</span>, [[value]]: a newly created <b>TypeError</b> object,
+                  <li>Let <i>error</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>{[[type]]: <span style="font-family: sans-serif">throw</span>, [[value]]: a newly created <b>TypeError</b> object,
                       [[target]]:<span style="font-family: sans-serif">empty</span>}.</li>
-                  <li>Return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>error</i>).</li>
+                  <li>Return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>error</i>).</li>
                 </ol>
               </li>
-              <li>Let <i>k</i> be <a href="#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"0"</code>).</li>
-              <li>If <i>k</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>k</i>).</li>
-              <li>Let <i>v</i> be <a href="#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"1"</code>).</li>
-              <li>If <i>v</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>v</i>).</li>
-              <li>Let <i>status</i> be <a href="#sec-call">Call</a>(<i>adder</i>, <i>map</i>, «<i>k</i>.[[value]],
+              <li>Let <i>k</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"0"</code>).</li>
+              <li>If <i>k</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>k</i>).</li>
+              <li>Let <i>v</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"1"</code>).</li>
+              <li>If <i>v</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>v</i>).</li>
+              <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>adder</i>, <i>map</i>, «<i>k</i>.[[value]],
                   <i>v</i>.[[value]]»).</li>
-              <li>If <i>status</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
+              <li>If <i>status</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
             </ol>
           </li>
         </ol>
@@ -104,27 +104,27 @@
 
     <section id="sec-properties-of-the-map-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.1.2"><a href="#sec-properties-of-the-map-constructor" title="link to this section">23.1.2</a></span> Properties of the Map Constructor</h1>
+        <h1><span class="secnum" id="sec-23.1.2"><a href="sec-keyed-collection.html#sec-properties-of-the-map-constructor" title="link to this section">23.1.2</a></span> Properties of the Map Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Map
-        constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Map
+        constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>Besides the <code>length</code> property (whose value is <b>0</b>), the Map constructor has the following
         properties:</p>
       </div>
 
       <section id="sec-map.prototype">
-        <h1><span class="secnum" id="sec-23.1.2.1"><a href="#sec-map.prototype" title="link to this section">23.1.2.1</a></span>
+        <h1><span class="secnum" id="sec-23.1.2.1"><a href="sec-keyed-collection.html#sec-map.prototype" title="link to this section">23.1.2.1</a></span>
             Map.prototype</h1>
 
-        <p>The initial value of <code>Map.prototype</code> is the intrinsic object %MapPrototype% (<a href="#sec-properties-of-the-map-prototype-object">23.1.3</a>).</p>
+        <p>The initial value of <code>Map.prototype</code> is the intrinsic object %MapPrototype% (<a href="sec-keyed-collection.html#sec-properties-of-the-map-prototype-object">23.1.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-get-map-@@species">
-        <h1><span class="secnum" id="sec-23.1.2.2"><a href="#sec-get-map-@@species" title="link to this section">23.1.2.2</a></span> get Map [ @@species ]</h1>
+        <h1><span class="secnum" id="sec-23.1.2.2"><a href="sec-keyed-collection.html#sec-get-map-@@species" title="link to this section">23.1.2.2</a></span> get Map [ @@species ]</h1>
 
         <p class="normalbefore"><code>Map[@@species]</code> is an accessor property whose set accessor function is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
 
@@ -144,16 +144,16 @@
 
     <section id="sec-properties-of-the-map-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.1.3"><a href="#sec-properties-of-the-map-prototype-object" title="link to this section">23.1.3</a></span> Properties of the Map Prototype Object</h1>
+        <h1><span class="secnum" id="sec-23.1.3"><a href="sec-keyed-collection.html#sec-properties-of-the-map-prototype-object" title="link to this section">23.1.3</a></span> Properties of the Map Prototype Object</h1>
 
-        <p>The Map prototype object is the intrinsic object %MapPrototype%. The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Map prototype object is the intrinsic
-        object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The Map prototype object
-        is an ordinary object. It does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+        <p>The Map prototype object is the intrinsic object %MapPrototype%. The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Map prototype object is the intrinsic
+        object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The Map prototype object
+        is an ordinary object. It does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
         slot</a>.</p>
       </div>
 
       <section id="sec-map.prototype.clear">
-        <h1><span class="secnum" id="sec-23.1.3.1"><a href="#sec-map.prototype.clear" title="link to this section">23.1.3.1</a></span> Map.prototype.clear ( )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.1"><a href="sec-keyed-collection.html#sec-map.prototype.clear" title="link to this section">23.1.3.1</a></span> Map.prototype.clear ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -161,10 +161,10 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>M</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
               <li>Set <i>p</i>.[[key]] to <span style="font-family: sans-serif">empty</span><i>.</i></li>
@@ -175,20 +175,20 @@
         </ol>
 
         <div class="note">
-          <p><span class="nh">NOTE</span> The existing [[MapData]] <a href="#sec-list-and-record-specification-type">List</a> is
-          preserved because there may be existing MapIterator objects that are <a href="#sec-execution-contexts">suspended</a>
-          midway through iterating over that <a href="#sec-list-and-record-specification-type">List</a>.</p>
+          <p><span class="nh">NOTE</span> The existing [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> is
+          preserved because there may be existing MapIterator objects that are <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">suspended</a>
+          midway through iterating over that <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</p>
         </div>
       </section>
 
       <section id="sec-map.prototype.constructor">
-        <h1><span class="secnum" id="sec-23.1.3.2"><a href="#sec-map.prototype.constructor" title="link to this section">23.1.3.2</a></span> Map.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-23.1.3.2"><a href="sec-keyed-collection.html#sec-map.prototype.constructor" title="link to this section">23.1.3.2</a></span> Map.prototype.constructor</h1>
 
         <p>The initial value of <code>Map.prototype.constructor</code> is the intrinsic object %Map%.</p>
       </section>
 
       <section id="sec-map.prototype.delete">
-        <h1><span class="secnum" id="sec-23.1.3.3"><a href="#sec-map.prototype.delete" title="link to this section">23.1.3.3</a></span> Map.prototype.delete ( key )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.3"><a href="sec-keyed-collection.html#sec-map.prototype.delete" title="link to this section">23.1.3.3</a></span> Map.prototype.delete ( key )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -196,13 +196,13 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>M</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Set <i>p</i>.[[key]] to <span style="font-family: sans-serif">empty</span><i>.</i></li>
                   <li>Set <i>p</i>.[[value]] to <span style="font-family: sans-serif">empty</span><i>.</i></li>
@@ -222,18 +222,18 @@
       </section>
 
       <section id="sec-map.prototype.entries">
-        <h1><span class="secnum" id="sec-23.1.3.4"><a href="#sec-map.prototype.entries" title="link to this section">23.1.3.4</a></span> Map.prototype.entries ( )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.4"><a href="sec-keyed-collection.html#sec-map.prototype.entries" title="link to this section">23.1.3.4</a></span> Map.prototype.entries ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>M</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-createmapiterator">CreateMapIterator</a>(<i>M</i>, <code>"key+value"</code>).</li>
+          <li>Return <a href="sec-keyed-collection.html#sec-createmapiterator">CreateMapIterator</a>(<i>M</i>, <code>"key+value"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-map.prototype.foreach">
-        <h1><span class="secnum" id="sec-23.1.3.5"><a href="#sec-map.prototype.foreach" title="link to this section">23.1.3.5</a></span> Map.prototype.forEach ( callbackfn [ , thisArg ] )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.5"><a href="sec-keyed-collection.html#sec-map.prototype.foreach" title="link to this section">23.1.3.5</a></span> Map.prototype.forEach ( callbackfn [ , thisArg ] )</h1>
 
         <p class="normalbefore">When the <code>forEach</code> method is called with one or two arguments, the following steps are
         taken:</p>
@@ -242,21 +242,21 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>M</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>If <a href="#sec-iscallable">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+          <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
               exception.</li>
           <li>If <i>thisArg</i> was supplied, let <i>T</i> be <i>thisArg</i>; else let <i>T</i> be <b>undefined</b>.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>e</i> that is an element of <i>entries,</i> in original key insertion
               order
             <ol class="block">
               <li>If <i>e</i>.[[key]] is not <span style="font-family: sans-serif">empty</span>, then
                 <ol class="block">
-                  <li>Let <i>funcResult</i> be <a href="#sec-call">Call</a>(<i>callbackfn</i>, <i>T</i>,
+                  <li>Let <i>funcResult</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>callbackfn</i>, <i>T</i>,
                       «<i>e</i>.[[value]], <i>e</i>.[[key]], <i>M</i>»).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>funcResult</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>funcResult</i>).</li>
                 </ol>
               </li>
             </ol>
@@ -288,7 +288,7 @@
       </section>
 
       <section id="sec-map.prototype.get">
-        <h1><span class="secnum" id="sec-23.1.3.6"><a href="#sec-map.prototype.get" title="link to this section">23.1.3.6</a></span> Map.prototype.get ( key )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.6"><a href="sec-keyed-collection.html#sec-map.prototype.get" title="link to this section">23.1.3.6</a></span> Map.prototype.get ( key )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -296,13 +296,13 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>M</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
                   <i>p</i>.[[value]].</li>
             </ol>
           </li>
@@ -311,7 +311,7 @@
       </section>
 
       <section id="sec-map.prototype.has">
-        <h1><span class="secnum" id="sec-23.1.3.7"><a href="#sec-map.prototype.has" title="link to this section">23.1.3.7</a></span> Map.prototype.has ( key )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.7"><a href="sec-keyed-collection.html#sec-map.prototype.has" title="link to this section">23.1.3.7</a></span> Map.prototype.has ( key )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -319,13 +319,13 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>M</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
                   <b>true</b><i>.</i></li>
             </ol>
           </li>
@@ -334,18 +334,18 @@
       </section>
 
       <section id="sec-map.prototype.keys">
-        <h1><span class="secnum" id="sec-23.1.3.8"><a href="#sec-map.prototype.keys" title="link to this section">23.1.3.8</a></span> Map.prototype.keys ( )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.8"><a href="sec-keyed-collection.html#sec-map.prototype.keys" title="link to this section">23.1.3.8</a></span> Map.prototype.keys ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>M</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-createmapiterator">CreateMapIterator</a>(<i>M</i>, <code>"key"</code>).</li>
+          <li>Return <a href="sec-keyed-collection.html#sec-createmapiterator">CreateMapIterator</a>(<i>M</i>, <code>"key"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-map.prototype.set">
-        <h1><span class="secnum" id="sec-23.1.3.9"><a href="#sec-map.prototype.set" title="link to this section">23.1.3.9</a></span> Map.prototype.set ( key , value )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.9"><a href="sec-keyed-collection.html#sec-map.prototype.set" title="link to this section">23.1.3.9</a></span> Map.prototype.set ( key , value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -353,13 +353,13 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>M</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Set <i>p</i>.[[value]] to <i>value.</i></li>
                   <li>Return <i>M</i>.</li>
@@ -375,7 +375,7 @@
       </section>
 
       <section id="sec-get-map.prototype.size">
-        <h1><span class="secnum" id="sec-23.1.3.10"><a href="#sec-get-map.prototype.size" title="link to this section">23.1.3.10</a></span> get Map.prototype.size</h1>
+        <h1><span class="secnum" id="sec-23.1.3.10"><a href="sec-keyed-collection.html#sec-get-map.prototype.size" title="link to this section">23.1.3.10</a></span> get Map.prototype.size</h1>
 
         <p class="normalbefore">Map.prototype.size is an accessor property whose set accessor function is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
 
@@ -383,10 +383,10 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>M</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Let <i>count</i> be 0.</li>
           <li>For each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries</i>
             <ol class="block">
@@ -399,25 +399,25 @@
       </section>
 
       <section id="sec-map.prototype.values">
-        <h1><span class="secnum" id="sec-23.1.3.11"><a href="#sec-map.prototype.values" title="link to this section">23.1.3.11</a></span> Map.prototype.values ( )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.11"><a href="sec-keyed-collection.html#sec-map.prototype.values" title="link to this section">23.1.3.11</a></span> Map.prototype.values ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>M</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-createmapiterator">CreateMapIterator</a>(<i>M</i>, <code>"value"</code>).</li>
+          <li>Return <a href="sec-keyed-collection.html#sec-createmapiterator">CreateMapIterator</a>(<i>M</i>, <code>"value"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-map.prototype-@@iterator">
-        <h1><span class="secnum" id="sec-23.1.3.12"><a href="#sec-map.prototype-@@iterator" title="link to this section">23.1.3.12</a></span> Map.prototype [ @@iterator ]( )</h1>
+        <h1><span class="secnum" id="sec-23.1.3.12"><a href="sec-keyed-collection.html#sec-map.prototype-@@iterator" title="link to this section">23.1.3.12</a></span> Map.prototype [ @@iterator ]( )</h1>
 
         <p>The initial value of the @@iterator property is the same function object as the initial value of the <b>entries</b>
         property.</p>
       </section>
 
       <section id="sec-map.prototype-@@tostringtag">
-        <h1><span class="secnum" id="sec-23.1.3.13"><a href="#sec-map.prototype-@@tostringtag" title="link to this section">23.1.3.13</a></span> Map.prototype [ @@toStringTag ]</h1>
+        <h1><span class="secnum" id="sec-23.1.3.13"><a href="sec-keyed-collection.html#sec-map.prototype-@@tostringtag" title="link to this section">23.1.3.13</a></span> Map.prototype [ @@toStringTag ]</h1>
 
         <p>The initial value of the @@toStringTag property is the String value <code>"Map"</code>.</p>
 
@@ -426,15 +426,15 @@
     </section>
 
     <section id="sec-properties-of-map-instances">
-      <h1><span class="secnum" id="sec-23.1.4"><a href="#sec-properties-of-map-instances" title="link to this section">23.1.4</a></span> Properties of Map Instances</h1>
+      <h1><span class="secnum" id="sec-23.1.4"><a href="sec-keyed-collection.html#sec-properties-of-map-instances" title="link to this section">23.1.4</a></span> Properties of Map Instances</h1>
 
       <p>Map instances are ordinary objects that inherit properties from the Map prototype. Map instances also have a [[MapData]]
-      <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+      <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
     </section>
 
     <section id="sec-map-iterator-objects">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.1.5"><a href="#sec-map-iterator-objects" title="link to this section">23.1.5</a></span> Map Iterator Objects</h1>
+        <h1><span class="secnum" id="sec-23.1.5"><a href="sec-keyed-collection.html#sec-map-iterator-objects" title="link to this section">23.1.5</a></span> Map Iterator Objects</h1>
 
         <p>A Map Iterator is an object, that represents a specific iteration over some specific Map instance object. There is not
         a named constructor for Map Iterator objects. Instead, map iterator objects are created by calling certain methods of Map
@@ -442,7 +442,7 @@
       </div>
 
       <section id="sec-createmapiterator">
-        <h1><span class="secnum" id="sec-23.1.5.1"><a href="#sec-createmapiterator" title="link to this section">23.1.5.1</a></span> CreateMapIterator Abstract Operation</h1>
+        <h1><span class="secnum" id="sec-23.1.5.1"><a href="sec-keyed-collection.html#sec-createmapiterator" title="link to this section">23.1.5.1</a></span> CreateMapIterator Abstract Operation</h1>
 
         <p class="normalbefore">Several methods of Map objects return Iterator objects. The abstract operation CreateMapIterator
         with arguments <var>map</var> and <var>kind</var> is used to create such iterator objects. It performs the following
@@ -451,15 +451,15 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>map</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>map</i> does not have a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>map</i> does not have a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>iterator</i> be <a href="#sec-objectcreate">ObjectCreate</a>(%MapIteratorPrototype%, «‍[[Map]],
+          <li>Let <i>iterator</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(%MapIteratorPrototype%, «‍[[Map]],
               [[MapNextIndex]], [[MapIterationKind]]»).</li>
-          <li>Set <i>iterator’s</i> [[Map]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to
+          <li>Set <i>iterator’s</i> [[Map]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to
               <i>map</i>.</li>
-          <li>Set <i>iterator’s</i> [[MapNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>iterator’s</i> [[MapNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to 0.</li>
-          <li>Set <i>iterator’s</i> [[MapIterationKind]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>iterator’s</i> [[MapIterationKind]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>kind</i>.</li>
           <li>Return <i>iterator</i>.</li>
         </ol>
@@ -467,34 +467,34 @@
 
       <section id="sec-%mapiteratorprototype%-object">
         <div class="front">
-          <h1><span class="secnum" id="sec-23.1.5.2"><a href="#sec-%mapiteratorprototype%-object" title="link to this section">23.1.5.2</a></span> The %MapIteratorPrototype% Object</h1>
+          <h1><span class="secnum" id="sec-23.1.5.2"><a href="sec-keyed-collection.html#sec-%mapiteratorprototype%-object" title="link to this section">23.1.5.2</a></span> The %MapIteratorPrototype% Object</h1>
 
           <p>All Map Iterator Objects inherit properties from the %MapIteratorPrototype% intrinsic object. The
-          %MapIteratorPrototype% intrinsic object is an ordinary object and its [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is the %IteratorPrototype% intrinsic object (<a href="#sec-%iteratorprototype%-object">25.1.2</a>). In addition, %MapIteratorPrototype% has the following
+          %MapIteratorPrototype% intrinsic object is an ordinary object and its [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is the %IteratorPrototype% intrinsic object (<a href="sec-control-abstraction-objects.html#sec-%iteratorprototype%-object">25.1.2</a>). In addition, %MapIteratorPrototype% has the following
           properties:</p>
         </div>
 
         <section id="sec-%mapiteratorprototype%.next">
-          <h1><span class="secnum" id="sec-23.1.5.2.1"><a href="#sec-%mapiteratorprototype%.next" title="link to this section">23.1.5.2.1</a></span> %MapIteratorPrototype%.next ( )</h1>
+          <h1><span class="secnum" id="sec-23.1.5.2.1"><a href="sec-keyed-collection.html#sec-%mapiteratorprototype%.next" title="link to this section">23.1.5.2.1</a></span> %MapIteratorPrototype%.next ( )</h1>
           <ol class="proc">
             <li>Let <i>O</i> be the <b>this</b> value.</li>
             <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
                 exception.</li>
-            <li>If <i>O</i> does not have all of the internal slots of a Map Iterator Instance (<a href="#sec-properties-of-map-iterator-instances">23.1.5.3</a>), throw a <b>TypeError</b> exception.</li>
-            <li>Let <i>m</i> be the value of the [[Map]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+            <li>If <i>O</i> does not have all of the internal slots of a Map Iterator Instance (<a href="sec-keyed-collection.html#sec-properties-of-map-iterator-instances">23.1.5.3</a>), throw a <b>TypeError</b> exception.</li>
+            <li>Let <i>m</i> be the value of the [[Map]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                 slot</a> of <i>O</i>.</li>
-            <li>Let <i>index</i> be the value of the [[MapNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
-            <li>Let <i>itemKind</i> be the value of the [[MapIterationKind]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
-            <li>If <i>m</i> is <b>undefined</b>, return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <i>m</i> has a [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-            <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of the
-                [[MapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>m</i>.</li>
+            <li>Let <i>index</i> be the value of the [[MapNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+            <li>Let <i>itemKind</i> be the value of the [[MapIterationKind]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+            <li>If <i>m</i> is <b>undefined</b>, return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>m</i> has a [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+            <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of the
+                [[MapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>m</i>.</li>
             <li>Repeat while <i>index</i> is less than the total number of elements of <i>entries</i>. The number of elements must
                 be redetermined each time this method is evaluated.
               <ol class="block">
                 <li>Let <i>e</i> be the Record {[[key]], [[value]]} that is the value of <i>entries</i>[<i>index</i>].</li>
                 <li>Set <i>index</i> to <i>index</i>+1.</li>
-                <li>Set the [[MapNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of
+                <li>Set the [[MapNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of
                     <i>O</i> to <i>index</i>.</li>
                 <li>If <i>e</i>.[[key]] is not <span style="font-family: sans-serif">empty</span>, then
                   <ol class="block">
@@ -502,24 +502,24 @@
                     <li>Else if <i>itemKind</i> is <b>"<code>value</code>"</b>, let <i>result</i> be <i>e</i>.[[value]].</li>
                     <li>Else,
                       <ol class="block">
-                        <li><a href="#sec-algorithm-conventions">Assert</a>: <i>itemKind</i> is <code>"key+value"</code>.</li>
-                        <li>Let <i>result</i> be <a href="#sec-createarrayfromlist">CreateArrayFromList</a>(«<i>e</i>.[[key]],
+                        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>itemKind</i> is <code>"key+value"</code>.</li>
+                        <li>Let <i>result</i> be <a href="sec-abstract-operations.html#sec-createarrayfromlist">CreateArrayFromList</a>(«<i>e</i>.[[key]],
                             <i>e</i>.[[value]]»).</li>
                       </ol>
                     </li>
-                    <li>Return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<i>result</i>, <b>false</b>).</li>
+                    <li>Return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<i>result</i>, <b>false</b>).</li>
                   </ol>
                 </li>
               </ol>
             </li>
-            <li>Set the [[Map]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i> to
+            <li>Set the [[Map]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i> to
                 <b>undefined</b>.</li>
-            <li>Return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
+            <li>Return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
           </ol>
         </section>
 
         <section id="sec-%mapiteratorprototype%-@@tostringtag">
-          <h1><span class="secnum" id="sec-23.1.5.2.2"><a href="#sec-%mapiteratorprototype%-@@tostringtag" title="link to this section">23.1.5.2.2</a></span> %MapIteratorPrototype% [ @@toStringTag ]</h1>
+          <h1><span class="secnum" id="sec-23.1.5.2.2"><a href="sec-keyed-collection.html#sec-%mapiteratorprototype%-@@tostringtag" title="link to this section">23.1.5.2.2</a></span> %MapIteratorPrototype% [ @@toStringTag ]</h1>
 
           <p>The initial value of the @@toStringTag property is the String value <code>"Map Iterator"</code>.</p>
 
@@ -528,10 +528,10 @@
       </section>
 
       <section id="sec-properties-of-map-iterator-instances">
-        <h1><span class="secnum" id="sec-23.1.5.3"><a href="#sec-properties-of-map-iterator-instances" title="link to this section">23.1.5.3</a></span> Properties of Map Iterator Instances</h1>
+        <h1><span class="secnum" id="sec-23.1.5.3"><a href="sec-keyed-collection.html#sec-properties-of-map-iterator-instances" title="link to this section">23.1.5.3</a></span> Properties of Map Iterator Instances</h1>
 
         <p>Map Iterator instances are ordinary objects that inherit properties from the %MapIteratorPrototype% intrinsic  object.
-        Map Iterator instances are initially created with the internal slots described in <a href="#table-50">Table 50</a>.</p>
+        Map Iterator instances are initially created with the internal slots described in <a href="sec-keyed-collection.html#table-50">Table 50</a>.</p>
 
         <figure>
           <figcaption><span id="table-50">Table 50</span> — Internal Slots of Map Iterator Instances</figcaption>
@@ -560,11 +560,11 @@
 
   <section id="sec-set-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-23.2"><a href="#sec-set-objects" title="link to this section">23.2</a></span> Set
+      <h1><span class="secnum" id="sec-23.2"><a href="sec-keyed-collection.html#sec-set-objects" title="link to this section">23.2</a></span> Set
           Objects</h1>
 
-      <p>Set objects are collections of <a href="#sec-ecmascript-language-types">ECMAScript language values</a>. A distinct value
-      may only occur once as an element of a Set’s collection. Distinct values are discriminated using the <a href="#sec-samevaluezero">SameValueZero</a> comparison algorithm.</p>
+      <p>Set objects are collections of <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language values</a>. A distinct value
+      may only occur once as an element of a Set’s collection. Distinct values are discriminated using the <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a> comparison algorithm.</p>
 
       <p>Set objects must be implemented using either hash tables or other mechanisms that, on average, provide access times that
       are sublinear on the number of elements in the collection. The data structures used in this Set objects specification is
@@ -574,7 +574,7 @@
 
     <section id="sec-set-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.2.1"><a href="#sec-set-constructor" title="link to this section">23.2.1</a></span> The
+        <h1><span class="secnum" id="sec-23.2.1"><a href="sec-keyed-collection.html#sec-set-constructor" title="link to this section">23.2.1</a></span> The
             Set Constructor</h1>
 
         <p>The Set constructor is the %Set% intrinsic object and the initial value of the <code>Set</code> property of the global
@@ -588,7 +588,7 @@
       </div>
 
       <section id="sec-set-iterable">
-        <h1><span class="secnum" id="sec-23.2.1.1"><a href="#sec-set-iterable" title="link to this section">23.2.1.1</a></span>
+        <h1><span class="secnum" id="sec-23.2.1.1"><a href="sec-keyed-collection.html#sec-set-iterable" title="link to this section">23.2.1.1</a></span>
             Set ( [ iterable ] )</h1>
 
         <p class="normalbefore">When the <code>Set</code> function is called with optional argument <var>iterable</var> the
@@ -596,34 +596,34 @@
 
         <ol class="proc">
           <li>If NewTarget is <b>undefined</b>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>set</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
+          <li>Let <i>set</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
               <code>"%SetPrototype%"</code>, «‍[[SetData]]» ).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>set</i>).</li>
-          <li>Set <i>set’s</i> [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to a
-              new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>set</i>).</li>
+          <li>Set <i>set’s</i> [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to a
+              new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>If <i>iterable</i> is not present, let <i>iterable</i> be <b>undefined</b>.</li>
           <li>If <i>iterable</i> is either <b>undefined</b> or <b>null</b>, let <i>iter</i> be <b>undefined</b>.</li>
           <li>Else,
             <ol class="block">
-              <li>Let <i>adder</i> be <a href="#sec-get-o-p">Get</a>(<i>set</i>, <code>"add"</code>)<b>.</b></li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
-              <li>If <a href="#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
+              <li>Let <i>adder</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>set</i>, <code>"add"</code>)<b>.</b></li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
+              <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
                   exception.</li>
-              <li>Let <i>iter</i> be <a href="#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
+              <li>Let <i>iter</i> be <a href="sec-abstract-operations.html#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
             </ol>
           </li>
           <li>If <i>iter</i> is <b>undefined</b>, return <i>set</i>.</li>
           <li>Repeat
             <ol class="block">
-              <li>Let <i>next</i> be <a href="#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
+              <li>Let <i>next</i> be <a href="sec-abstract-operations.html#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
               <li>If <i>next</i> is <b>false</b>, return <i>set</i>.</li>
-              <li>Let <i>nextValue</i> be <a href="#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextValue</i>).</li>
-              <li>Let <i>status</i> be <a href="#sec-call">Call</a>(<i>adder</i>, <i>set</i>,
+              <li>Let <i>nextValue</i> be <a href="sec-abstract-operations.html#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextValue</i>).</li>
+              <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>adder</i>, <i>set</i>,
                   «<i>nextValue</i>.[[value]]»).</li>
-              <li>If <i>status</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
+              <li>If <i>status</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
             </ol>
           </li>
         </ol>
@@ -632,27 +632,27 @@
 
     <section id="sec-properties-of-the-set-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.2.2"><a href="#sec-properties-of-the-set-constructor" title="link to this section">23.2.2</a></span> Properties of the Set Constructor</h1>
+        <h1><span class="secnum" id="sec-23.2.2"><a href="sec-keyed-collection.html#sec-properties-of-the-set-constructor" title="link to this section">23.2.2</a></span> Properties of the Set Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Set
-        constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Set
+        constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>Besides the <code>length</code> property (whose value is <b>0</b>), the Set constructor has the following
         properties:</p>
       </div>
 
       <section id="sec-set.prototype">
-        <h1><span class="secnum" id="sec-23.2.2.1"><a href="#sec-set.prototype" title="link to this section">23.2.2.1</a></span>
+        <h1><span class="secnum" id="sec-23.2.2.1"><a href="sec-keyed-collection.html#sec-set.prototype" title="link to this section">23.2.2.1</a></span>
             Set.prototype</h1>
 
-        <p>The initial value of <code>Set.prototype</code> is the intrinsic %SetPrototype% object (<a href="#sec-properties-of-the-set-prototype-object">23.2.3</a>).</p>
+        <p>The initial value of <code>Set.prototype</code> is the intrinsic %SetPrototype% object (<a href="sec-keyed-collection.html#sec-properties-of-the-set-prototype-object">23.2.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-get-set-@@species">
-        <h1><span class="secnum" id="sec-23.2.2.2"><a href="#sec-get-set-@@species" title="link to this section">23.2.2.2</a></span> get Set [ @@species ]</h1>
+        <h1><span class="secnum" id="sec-23.2.2.2"><a href="sec-keyed-collection.html#sec-get-set-@@species" title="link to this section">23.2.2.2</a></span> get Set [ @@species ]</h1>
 
         <p class="normalbefore"><code>Set[@@species]</code> is an accessor property whose set accessor function is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
 
@@ -672,16 +672,16 @@
 
     <section id="sec-properties-of-the-set-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.2.3"><a href="#sec-properties-of-the-set-prototype-object" title="link to this section">23.2.3</a></span> Properties of the Set Prototype Object</h1>
+        <h1><span class="secnum" id="sec-23.2.3"><a href="sec-keyed-collection.html#sec-properties-of-the-set-prototype-object" title="link to this section">23.2.3</a></span> Properties of the Set Prototype Object</h1>
 
-        <p>The Set prototype object is the intrinsic object %SetPrototype%. The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Set prototype object is the intrinsic
-        object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The Set prototype object
-        is an ordinary object. It does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+        <p>The Set prototype object is the intrinsic object %SetPrototype%. The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Set prototype object is the intrinsic
+        object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The Set prototype object
+        is an ordinary object. It does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
         slot</a>.</p>
       </div>
 
       <section id="sec-set.prototype.add">
-        <h1><span class="secnum" id="sec-23.2.3.1"><a href="#sec-set.prototype.add" title="link to this section">23.2.3.1</a></span> Set.prototype.add ( value )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.1"><a href="sec-keyed-collection.html#sec-set.prototype.add" title="link to this section">23.2.3.1</a></span> Set.prototype.add ( value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -689,13 +689,13 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>S</i> does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each <i>e</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevaluezero">SameValueZero</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
+              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Return <i>S</i>.</li>
                 </ol>
@@ -709,7 +709,7 @@
       </section>
 
       <section id="sec-set.prototype.clear">
-        <h1><span class="secnum" id="sec-23.2.3.2"><a href="#sec-set.prototype.clear" title="link to this section">23.2.3.2</a></span> Set.prototype.clear ( )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.2"><a href="sec-keyed-collection.html#sec-set.prototype.clear" title="link to this section">23.2.3.2</a></span> Set.prototype.clear ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -717,10 +717,10 @@
           <li>Let <i>S</i> be <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>S</i> does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each <i>e</i> that is an element of <i>entries,</i>
             <ol class="block">
               <li>Replace the element of <i>entries</i> whose value is <i>e</i> with an element whose value is <span style="font-family: sans-serif">empty</span><i>.</i></li>
@@ -731,13 +731,13 @@
       </section>
 
       <section id="sec-set.prototype.constructor">
-        <h1><span class="secnum" id="sec-23.2.3.3"><a href="#sec-set.prototype.constructor" title="link to this section">23.2.3.3</a></span> Set.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-23.2.3.3"><a href="sec-keyed-collection.html#sec-set.prototype.constructor" title="link to this section">23.2.3.3</a></span> Set.prototype.constructor</h1>
 
         <p>The initial value of <code>Set.prototype.constructor</code> is the intrinsic object %Set%.</p>
       </section>
 
       <section id="sec-set.prototype.delete">
-        <h1><span class="secnum" id="sec-23.2.3.4"><a href="#sec-set.prototype.delete" title="link to this section">23.2.3.4</a></span> Set.prototype.delete ( value )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.4"><a href="sec-keyed-collection.html#sec-set.prototype.delete" title="link to this section">23.2.3.4</a></span> Set.prototype.delete ( value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -745,13 +745,13 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>S</i> does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each  <i>e</i> that is an element of <i>entries</i>,
             <ol class="block">
-              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevaluezero">SameValueZero</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
+              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Replace the element of <i>entries</i> whose value is <i>e</i> with an element whose value is <span style="font-family: sans-serif">empty</span><i>.</i></li>
                   <li>Return <b>true</b>.</li>
@@ -770,13 +770,13 @@
       </section>
 
       <section id="sec-set.prototype.entries">
-        <h1><span class="secnum" id="sec-23.2.3.5"><a href="#sec-set.prototype.entries" title="link to this section">23.2.3.5</a></span> Set.prototype.entries ( )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.5"><a href="sec-keyed-collection.html#sec-set.prototype.entries" title="link to this section">23.2.3.5</a></span> Set.prototype.entries ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>S</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-createsetiterator">CreateSetIterator</a>(<i>S</i>, <b>"<code>key+value</code>"</b>).</li>
+          <li>Return <a href="sec-keyed-collection.html#sec-createsetiterator">CreateSetIterator</a>(<i>S</i>, <b>"<code>key+value</code>"</b>).</li>
         </ol>
 
         <div class="note">
@@ -786,7 +786,7 @@
       </section>
 
       <section id="sec-set.prototype.foreach">
-        <h1><span class="secnum" id="sec-23.2.3.6"><a href="#sec-set.prototype.foreach" title="link to this section">23.2.3.6</a></span> Set.prototype.forEach ( callbackfn [ , thisArg ] )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.6"><a href="sec-keyed-collection.html#sec-set.prototype.foreach" title="link to this section">23.2.3.6</a></span> Set.prototype.forEach ( callbackfn [ , thisArg ] )</h1>
 
         <p class="normalbefore">When the <code>forEach</code> method is called with one or two arguments, the following steps are
         taken:</p>
@@ -795,20 +795,20 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>S</i> does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>If <a href="#sec-iscallable">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+          <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
               exception.</li>
           <li>If <i>thisArg</i> was supplied, let <i>T</i> be <i>thisArg</i>; else let <i>T</i> be <b>undefined</b>.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each <i>e</i> that is an element of <i>entries,</i> in original insertion order
             <ol class="block">
               <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span>, then
                 <ol class="block">
-                  <li>Let <i>funcResult</i> be <a href="#sec-call">Call</a>(<i>callbackfn</i>, <i>T</i>, «<i>e</i>,
+                  <li>Let <i>funcResult</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>callbackfn</i>, <i>T</i>, «<i>e</i>,
                       <i>e</i>, <i>S</i>»).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>funcResult</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>funcResult</i>).</li>
                 </ol>
               </li>
             </ol>
@@ -845,7 +845,7 @@
       </section>
 
       <section id="sec-set.prototype.has">
-        <h1><span class="secnum" id="sec-23.2.3.7"><a href="#sec-set.prototype.has" title="link to this section">23.2.3.7</a></span> Set.prototype.has ( value )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.7"><a href="sec-keyed-collection.html#sec-set.prototype.has" title="link to this section">23.2.3.7</a></span> Set.prototype.has ( value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -853,13 +853,13 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>S</i> does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each <i>e</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevaluezero">SameValueZero</a>(<i>e</i>, <i>value</i>) is <b>true</b>, return
+              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>e</i>, <i>value</i>) is <b>true</b>, return
                   <b>true</b><i>.</i></li>
             </ol>
           </li>
@@ -868,7 +868,7 @@
       </section>
 
       <section id="sec-set.prototype.keys">
-        <h1><span class="secnum" id="sec-23.2.3.8"><a href="#sec-set.prototype.keys" title="link to this section">23.2.3.8</a></span> Set.prototype.keys ( )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.8"><a href="sec-keyed-collection.html#sec-set.prototype.keys" title="link to this section">23.2.3.8</a></span> Set.prototype.keys ( )</h1>
 
         <p>The initial value of the <code>keys</code> property is the same function object as the initial value of the
         <code>values</code> property.</p>
@@ -880,7 +880,7 @@
       </section>
 
       <section id="sec-get-set.prototype.size">
-        <h1><span class="secnum" id="sec-23.2.3.9"><a href="#sec-get-set.prototype.size" title="link to this section">23.2.3.9</a></span> get Set.prototype.size</h1>
+        <h1><span class="secnum" id="sec-23.2.3.9"><a href="sec-keyed-collection.html#sec-get-set.prototype.size" title="link to this section">23.2.3.9</a></span> get Set.prototype.size</h1>
 
         <p class="normalbefore"><code>Set.prototype.size</code> is an accessor property whose set accessor function is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
 
@@ -888,10 +888,10 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>If <i>S</i> does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Let <i>count</i> be 0.</li>
           <li>For each <i>e</i> that is an element of <i>entries</i>
             <ol class="block">
@@ -903,25 +903,25 @@
       </section>
 
       <section id="sec-set.prototype.values">
-        <h1><span class="secnum" id="sec-23.2.3.10"><a href="#sec-set.prototype.values" title="link to this section">23.2.3.10</a></span> Set.prototype.values ( )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.10"><a href="sec-keyed-collection.html#sec-set.prototype.values" title="link to this section">23.2.3.10</a></span> Set.prototype.values ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>S</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-createsetiterator">CreateSetIterator</a>(<i>S</i>, <b>"<code>value</code>"</b>).</li>
+          <li>Return <a href="sec-keyed-collection.html#sec-createsetiterator">CreateSetIterator</a>(<i>S</i>, <b>"<code>value</code>"</b>).</li>
         </ol>
       </section>
 
       <section id="sec-set.prototype-@@iterator">
-        <h1><span class="secnum" id="sec-23.2.3.11"><a href="#sec-set.prototype-@@iterator" title="link to this section">23.2.3.11</a></span> Set.prototype [ @@iterator ] ( )</h1>
+        <h1><span class="secnum" id="sec-23.2.3.11"><a href="sec-keyed-collection.html#sec-set.prototype-@@iterator" title="link to this section">23.2.3.11</a></span> Set.prototype [ @@iterator ] ( )</h1>
 
         <p>The initial value of the @@iterator property is the same function object as the initial value of the
         <code>values</code> property.</p>
       </section>
 
       <section id="sec-set.prototype-@@tostringtag">
-        <h1><span class="secnum" id="sec-23.2.3.12"><a href="#sec-set.prototype-@@tostringtag" title="link to this section">23.2.3.12</a></span> Set.prototype [ @@toStringTag ]</h1>
+        <h1><span class="secnum" id="sec-23.2.3.12"><a href="sec-keyed-collection.html#sec-set.prototype-@@tostringtag" title="link to this section">23.2.3.12</a></span> Set.prototype [ @@toStringTag ]</h1>
 
         <p>The initial value of the @@toStringTag property is the String value <code>"Set"</code>.</p>
 
@@ -930,15 +930,15 @@
     </section>
 
     <section id="sec-properties-of-set-instances">
-      <h1><span class="secnum" id="sec-23.2.4"><a href="#sec-properties-of-set-instances" title="link to this section">23.2.4</a></span> Properties of Set Instances</h1>
+      <h1><span class="secnum" id="sec-23.2.4"><a href="sec-keyed-collection.html#sec-properties-of-set-instances" title="link to this section">23.2.4</a></span> Properties of Set Instances</h1>
 
       <p>Set instances are ordinary objects that inherit properties from the Set prototype. Set instances also have a [[SetData]]
-      <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+      <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
     </section>
 
     <section id="sec-set-iterator-objects">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.2.5"><a href="#sec-set-iterator-objects" title="link to this section">23.2.5</a></span> Set Iterator Objects</h1>
+        <h1><span class="secnum" id="sec-23.2.5"><a href="sec-keyed-collection.html#sec-set-iterator-objects" title="link to this section">23.2.5</a></span> Set Iterator Objects</h1>
 
         <p>A Set Iterator is an ordinary object, with the structure defined below, that represents a specific iteration over some
         specific Set instance object. There is not a named constructor for Set Iterator objects. Instead, set iterator objects are
@@ -946,7 +946,7 @@
       </div>
 
       <section id="sec-createsetiterator">
-        <h1><span class="secnum" id="sec-23.2.5.1"><a href="#sec-createsetiterator" title="link to this section">23.2.5.1</a></span> CreateSetIterator Abstract Operation</h1>
+        <h1><span class="secnum" id="sec-23.2.5.1"><a href="sec-keyed-collection.html#sec-createsetiterator" title="link to this section">23.2.5.1</a></span> CreateSetIterator Abstract Operation</h1>
 
         <p class="normalbefore">Several methods of Set objects return Iterator objects. The abstract operation CreateSetIterator
         with arguments <var>set</var> and <var>kind</var> is used to create such iterator objects. It performs the following
@@ -955,15 +955,15 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>set</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>set</i> does not have a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>set</i> does not have a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>iterator</i> be <a href="#sec-objectcreate">ObjectCreate</a>(%SetIteratorPrototype%,
+          <li>Let <i>iterator</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(%SetIteratorPrototype%,
               «‍[[IteratedSet]], [[SetNextIndex]], [[SetIterationKind]]»).</li>
-          <li>Set <i>iterator’s</i> [[IteratedSet]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>iterator’s</i> [[IteratedSet]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>set</i>.</li>
-          <li>Set <i>iterator’s</i> [[SetNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>iterator’s</i> [[SetNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to 0.</li>
-          <li>Set <i>iterator’s</i> [[SetIterationKind]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>iterator’s</i> [[SetIterationKind]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>kind</i>.</li>
           <li>Return <i>iterator</i>.</li>
         </ol>
@@ -971,55 +971,55 @@
 
       <section id="sec-%setiteratorprototype%-object">
         <div class="front">
-          <h1><span class="secnum" id="sec-23.2.5.2"><a href="#sec-%setiteratorprototype%-object" title="link to this section">23.2.5.2</a></span> The %SetIteratorPrototype% Object</h1>
+          <h1><span class="secnum" id="sec-23.2.5.2"><a href="sec-keyed-collection.html#sec-%setiteratorprototype%-object" title="link to this section">23.2.5.2</a></span> The %SetIteratorPrototype% Object</h1>
 
           <p>All Set Iterator Objects inherit properties from the %SetIteratorPrototype% intrinsic object. The
-          %SetIteratorPrototype% intrinsic object is an ordinary object and its [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is the %IteratorPrototype% intrinsic object (<a href="#sec-%iteratorprototype%-object">25.1.2</a>). In addition, %SetIteratorPrototype% has the following
+          %SetIteratorPrototype% intrinsic object is an ordinary object and its [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is the %IteratorPrototype% intrinsic object (<a href="sec-control-abstraction-objects.html#sec-%iteratorprototype%-object">25.1.2</a>). In addition, %SetIteratorPrototype% has the following
           properties:</p>
         </div>
 
         <section id="sec-%setiteratorprototype%.next">
-          <h1><span class="secnum" id="sec-23.2.5.2.1"><a href="#sec-%setiteratorprototype%.next" title="link to this section">23.2.5.2.1</a></span> %SetIteratorPrototype%.next ( )</h1>
+          <h1><span class="secnum" id="sec-23.2.5.2.1"><a href="sec-keyed-collection.html#sec-%setiteratorprototype%.next" title="link to this section">23.2.5.2.1</a></span> %SetIteratorPrototype%.next ( )</h1>
           <ol class="proc">
             <li>Let <i>O</i> be the <b>this</b> value.</li>
             <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
                 exception.</li>
-            <li>If <i>O</i> does not have all of the internal slots of a Set Iterator Instance (<a href="#sec-properties-of-set-iterator-instances">23.2.5.3</a>), throw a <b>TypeError</b> exception.</li>
-            <li>Let <i>s</i> be the value of the [[IteratedSet]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
-            <li>Let <i>index</i> be the value of the [[SetNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
-            <li>Let <i>itemKind</i> be the value of the [[SetIterationKind]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
-            <li>If <i>s</i> is <b>undefined</b>, return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <i>s</i> has a [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-            <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of the
-                [[SetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>s</i>.</li>
+            <li>If <i>O</i> does not have all of the internal slots of a Set Iterator Instance (<a href="sec-keyed-collection.html#sec-properties-of-set-iterator-instances">23.2.5.3</a>), throw a <b>TypeError</b> exception.</li>
+            <li>Let <i>s</i> be the value of the [[IteratedSet]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+            <li>Let <i>index</i> be the value of the [[SetNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+            <li>Let <i>itemKind</i> be the value of the [[SetIterationKind]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+            <li>If <i>s</i> is <b>undefined</b>, return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>s</i> has a [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+            <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of the
+                [[SetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>s</i>.</li>
             <li>Repeat while <i>index</i> is less than the total number of elements of <i>entries</i>. The number of elements must
                 be redetermined each time this method is evaluated.
               <ol class="block">
                 <li>Let <i>e</i> be <i>entries</i>[<i>index</i>].</li>
                 <li>Set <i>index</i> to <i>index</i>+1;</li>
-                <li>Set the [[SetNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of
+                <li>Set the [[SetNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of
                     <i>O</i> to <i>index</i>.</li>
                 <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span>, then
                   <ol class="block">
                     <li>If <i>itemKind</i> is <b>"<code>key+value</code>"</b>, then
                       <ol class="block">
-                        <li>Return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<a href="#sec-createarrayfromlist">CreateArrayFromList</a>(«<i>e</i>, <i>e</i>»),
+                        <li>Return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<a href="sec-abstract-operations.html#sec-createarrayfromlist">CreateArrayFromList</a>(«<i>e</i>, <i>e</i>»),
                             <b>false</b>).</li>
                       </ol>
                     </li>
-                    <li>Return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<i>e</i>, <b>false</b>).</li>
+                    <li>Return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<i>e</i>, <b>false</b>).</li>
                   </ol>
                 </li>
               </ol>
             </li>
-            <li>Set the [[IteratedSet]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i> to
+            <li>Set the [[IteratedSet]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i> to
                 <b>undefined</b>.</li>
-            <li>Return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
+            <li>Return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
           </ol>
         </section>
 
         <section id="sec-%setiteratorprototype%-@@tostringtag">
-          <h1><span class="secnum" id="sec-23.2.5.2.2"><a href="#sec-%setiteratorprototype%-@@tostringtag" title="link to this section">23.2.5.2.2</a></span> %SetIteratorPrototype% [ @@toStringTag ]</h1>
+          <h1><span class="secnum" id="sec-23.2.5.2.2"><a href="sec-keyed-collection.html#sec-%setiteratorprototype%-@@tostringtag" title="link to this section">23.2.5.2.2</a></span> %SetIteratorPrototype% [ @@toStringTag ]</h1>
 
           <p>The initial value of the @@toStringTag property is the String value <code>"Set Iterator"</code>.</p>
 
@@ -1028,10 +1028,10 @@
       </section>
 
       <section id="sec-properties-of-set-iterator-instances">
-        <h1><span class="secnum" id="sec-23.2.5.3"><a href="#sec-properties-of-set-iterator-instances" title="link to this section">23.2.5.3</a></span> Properties of Set Iterator Instances</h1>
+        <h1><span class="secnum" id="sec-23.2.5.3"><a href="sec-keyed-collection.html#sec-properties-of-set-iterator-instances" title="link to this section">23.2.5.3</a></span> Properties of Set Iterator Instances</h1>
 
         <p>Set Iterator instances are ordinary objects that inherit properties from the %SetIteratorPrototype% intrinsic  object.
-        Set Iterator instances are initially created with the internal slots specified in <a href="#table-51">Table 51</a>.</p>
+        Set Iterator instances are initially created with the internal slots specified in <a href="sec-keyed-collection.html#table-51">Table 51</a>.</p>
 
         <figure>
           <figcaption><span id="table-51">Table 51</span> — Internal Slots of Set Iterator Instances</figcaption>
@@ -1060,10 +1060,10 @@
 
   <section id="sec-weakmap-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-23.3"><a href="#sec-weakmap-objects" title="link to this section">23.3</a></span> WeakMap
+      <h1><span class="secnum" id="sec-23.3"><a href="sec-keyed-collection.html#sec-weakmap-objects" title="link to this section">23.3</a></span> WeakMap
           Objects</h1>
 
-      <p>WeakMap objects are collections of key/value pairs where the keys are objects and values may be arbitrary <a href="#sec-ecmascript-language-types">ECMAScript language values</a>. A WeakMap may be queried to see if it contains a
+      <p>WeakMap objects are collections of key/value pairs where the keys are objects and values may be arbitrary <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language values</a>. A WeakMap may be queried to see if it contains a
       key/value pair with a specific key, but no mechanism is provided for enumerating the objects it holds as keys. If an object
       that is being used as the key of a WeakMap key/value pair is only reachable by following a chain of references that start
       within that WeakMap, then that key/value pair is inaccessible and is automatically removed from the WeakMap. WeakMap
@@ -1100,7 +1100,7 @@
 
     <section id="sec-weakmap-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.3.1"><a href="#sec-weakmap-constructor" title="link to this section">23.3.1</a></span>
+        <h1><span class="secnum" id="sec-23.3.1"><a href="sec-keyed-collection.html#sec-weakmap-constructor" title="link to this section">23.3.1</a></span>
             The WeakMap Constructor</h1>
 
         <p>The WeakMap constructor is the %WeakMap% intrinsic object and the initial value of the <code>WeakMap</code> property of
@@ -1110,56 +1110,56 @@
         <p>The <code>WeakMap</code> constructor is designed to be subclassable. It may be used as the value in an
         <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified
         <code>WeakMap</code> behaviour must include a <code>super</code> call to the <code>WeakMap</code> constructor to create
-        and initialize the subclass instance with the internal state necessary to support the <code><a href="#sec-weakmap.prototype">WeakMap.prototype</a></code> built-in methods.</p>
+        and initialize the subclass instance with the internal state necessary to support the <code><a href="sec-keyed-collection.html#sec-weakmap.prototype">WeakMap.prototype</a></code> built-in methods.</p>
       </div>
 
       <section id="sec-weakmap-iterable">
-        <h1><span class="secnum" id="sec-23.3.1.1"><a href="#sec-weakmap-iterable" title="link to this section">23.3.1.1</a></span> WeakMap ( [ iterable ] )</h1>
+        <h1><span class="secnum" id="sec-23.3.1.1"><a href="sec-keyed-collection.html#sec-weakmap-iterable" title="link to this section">23.3.1.1</a></span> WeakMap ( [ iterable ] )</h1>
 
         <p class="normalbefore">When the <code>WeakMap</code> function is called with optional argument <var>iterable</var> the
         following steps are taken:</p>
 
         <ol class="proc">
           <li>If NewTarget is <b>undefined</b>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>map</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
+          <li>Let <i>map</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
               <code>"%WeakMapPrototype%"</code>, «‍[[WeakMapData]]» ).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>map</i>).</li>
-          <li>Set <i>map’s</i> [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>
-              to a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>map</i>).</li>
+          <li>Set <i>map’s</i> [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>
+              to a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>If <i>iterable</i> is not present, let <i>iterable</i> be <b>undefined</b>.</li>
           <li>If <i>iterable</i> is either <b>undefined</b> or <b>null</b>, let <i>iter</i> be <b>undefined</b>.</li>
           <li>Else,
             <ol class="block">
-              <li>Let <i>adder</i> be <a href="#sec-get-o-p">Get</a>(<i>map</i>, <code>"set"</code>)<b>.</b></li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
-              <li>If <a href="#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
+              <li>Let <i>adder</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>map</i>, <code>"set"</code>)<b>.</b></li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
+              <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
                   exception.</li>
-              <li>Let <i>iter</i> be <a href="#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
+              <li>Let <i>iter</i> be <a href="sec-abstract-operations.html#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
             </ol>
           </li>
           <li>If <i>iter</i> is <b>undefined</b>, return <i>map</i>.</li>
           <li>Repeat
             <ol class="block">
-              <li>Let <i>next</i> be <a href="#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
+              <li>Let <i>next</i> be <a href="sec-abstract-operations.html#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
               <li>If <i>next</i> is <b>false</b>, return <i>map</i>.</li>
-              <li>Let <i>nextItem</i> be <a href="#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextItem</i>).</li>
+              <li>Let <i>nextItem</i> be <a href="sec-abstract-operations.html#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextItem</i>).</li>
               <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>nextItem</i>) is not Object,
                 <ol class="block">
-                  <li>Let <i>error</i> be <a href="#sec-completion-record-specification-type">Completion</a>{[[type]]: <span style="font-family: sans-serif">throw</span>, [[value]]: a newly created <b>TypeError</b> object,
+                  <li>Let <i>error</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>{[[type]]: <span style="font-family: sans-serif">throw</span>, [[value]]: a newly created <b>TypeError</b> object,
                       [[target]]:<span style="font-family: sans-serif">empty</span>}.</li>
-                  <li>Return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>error</i>).</li>
+                  <li>Return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>error</i>).</li>
                 </ol>
               </li>
-              <li>Let <i>k</i> be <a href="#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"0"</code>).</li>
-              <li>If <i>k</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>k</i>).</li>
-              <li>Let <i>v</i> be <a href="#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"1"</code>).</li>
-              <li>If <i>v</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>v</i>).</li>
-              <li>Let <i>status</i> be <a href="#sec-call">Call</a>(<i>adder</i>, <i>map</i>, «<i>k</i>.[[value]],
+              <li>Let <i>k</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"0"</code>).</li>
+              <li>If <i>k</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>k</i>).</li>
+              <li>Let <i>v</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>nextItem</i>, <code>"1"</code>).</li>
+              <li>If <i>v</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>v</i>).</li>
+              <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>adder</i>, <i>map</i>, «<i>k</i>.[[value]],
                   <i>v</i>.[[value]]»).</li>
-              <li>If <i>status</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
+              <li>If <i>status</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
             </ol>
           </li>
         </ol>
@@ -1175,19 +1175,19 @@
 
     <section id="sec-properties-of-the-weakmap-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.3.2"><a href="#sec-properties-of-the-weakmap-constructor" title="link to this section">23.3.2</a></span> Properties of the WeakMap Constructor</h1>
+        <h1><span class="secnum" id="sec-23.3.2"><a href="sec-keyed-collection.html#sec-properties-of-the-weakmap-constructor" title="link to this section">23.3.2</a></span> Properties of the WeakMap Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        WeakMap constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        WeakMap constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>Besides the <code>length</code> property (whose value is <b>0</b>), the WeakMap constructor has the following
         properties:</p>
       </div>
 
       <section id="sec-weakmap.prototype">
-        <h1><span class="secnum" id="sec-23.3.2.1"><a href="#sec-weakmap.prototype" title="link to this section">23.3.2.1</a></span> WeakMap.prototype</h1>
+        <h1><span class="secnum" id="sec-23.3.2.1"><a href="sec-keyed-collection.html#sec-weakmap.prototype" title="link to this section">23.3.2.1</a></span> WeakMap.prototype</h1>
 
-        <p>The initial value of <code>WeakMap.prototype</code> is the intrinsic object %WeakMapPrototype% (<a href="#sec-properties-of-the-weakmap-prototype-object">23.3.3</a>).</p>
+        <p>The initial value of <code>WeakMap.prototype</code> is the intrinsic object %WeakMapPrototype% (<a href="sec-keyed-collection.html#sec-properties-of-the-weakmap-prototype-object">23.3.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
@@ -1196,21 +1196,21 @@
 
     <section id="sec-properties-of-the-weakmap-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.3.3"><a href="#sec-properties-of-the-weakmap-prototype-object" title="link to this section">23.3.3</a></span> Properties of the WeakMap Prototype Object</h1>
+        <h1><span class="secnum" id="sec-23.3.3"><a href="sec-keyed-collection.html#sec-properties-of-the-weakmap-prototype-object" title="link to this section">23.3.3</a></span> Properties of the WeakMap Prototype Object</h1>
 
-        <p>The WeakMap prototype object is the intrinsic object %WeakMapPrototype%. The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the WeakMap prototype object is the intrinsic
-        object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The WeakMap prototype
-        object is an ordinary object. It does not have a [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        <p>The WeakMap prototype object is the intrinsic object %WeakMapPrototype%. The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the WeakMap prototype object is the intrinsic
+        object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The WeakMap prototype
+        object is an ordinary object. It does not have a [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
       </div>
 
       <section id="sec-weakmap.prototype.constructor">
-        <h1><span class="secnum" id="sec-23.3.3.1"><a href="#sec-weakmap.prototype.constructor" title="link to this section">23.3.3.1</a></span> WeakMap.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-23.3.3.1"><a href="sec-keyed-collection.html#sec-weakmap.prototype.constructor" title="link to this section">23.3.3.1</a></span> WeakMap.prototype.constructor</h1>
 
         <p>The initial value of <code>WeakMap.prototype.constructor</code> is the intrinsic object %WeakMap%.</p>
       </section>
 
       <section id="sec-weakmap.prototype.delete">
-        <h1><span class="secnum" id="sec-23.3.3.2"><a href="#sec-weakmap.prototype.delete" title="link to this section">23.3.3.2</a></span> WeakMap.prototype.delete ( key )</h1>
+        <h1><span class="secnum" id="sec-23.3.3.2"><a href="sec-keyed-collection.html#sec-weakmap.prototype.delete" title="link to this section">23.3.3.2</a></span> WeakMap.prototype.delete ( key )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1218,14 +1218,14 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>key</i>) is not Object, return <b>false</b>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Set <i>p</i>.[[key]] to <span style="font-family: sans-serif">empty</span><i>.</i></li>
                   <li>Set <i>p</i>.[[value]] to <span style="font-family: sans-serif">empty</span><i>.</i></li>
@@ -1245,7 +1245,7 @@
       </section>
 
       <section id="sec-weakmap.prototype.get">
-        <h1><span class="secnum" id="sec-23.3.3.3"><a href="#sec-weakmap.prototype.get" title="link to this section">23.3.3.3</a></span> WeakMap.prototype.get ( key )</h1>
+        <h1><span class="secnum" id="sec-23.3.3.3"><a href="sec-keyed-collection.html#sec-weakmap.prototype.get" title="link to this section">23.3.3.3</a></span> WeakMap.prototype.get ( key )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1253,15 +1253,15 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>key</i>) is not Object, return
               <b>undefined</b>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
                   <i>p</i>.[[value]].</li>
             </ol>
           </li>
@@ -1270,7 +1270,7 @@
       </section>
 
       <section id="sec-weakmap.prototype.has">
-        <h1><span class="secnum" id="sec-23.3.3.4"><a href="#sec-weakmap.prototype.has" title="link to this section">23.3.3.4</a></span> WeakMap.prototype.has ( key )</h1>
+        <h1><span class="secnum" id="sec-23.3.3.4"><a href="sec-keyed-collection.html#sec-weakmap.prototype.has" title="link to this section">23.3.3.4</a></span> WeakMap.prototype.has ( key )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1278,14 +1278,14 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>key</i>) is not Object, return <b>false</b>.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, return
                   <b>true</b><i>.</i></li>
             </ol>
           </li>
@@ -1294,7 +1294,7 @@
       </section>
 
       <section id="sec-weakmap.prototype.set">
-        <h1><span class="secnum" id="sec-23.3.3.5"><a href="#sec-weakmap.prototype.set" title="link to this section">23.3.3.5</a></span> WeakMap.prototype.set ( key , value )</h1>
+        <h1><span class="secnum" id="sec-23.3.3.5"><a href="sec-keyed-collection.html#sec-weakmap.prototype.set" title="link to this section">23.3.3.5</a></span> WeakMap.prototype.set ( key , value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1302,15 +1302,15 @@
           <li>Let <i>M</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>M</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>M</i> does not have a [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>M</i>’s [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>M</i>’s [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>key</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
           <li>Repeat for each Record {[[key]], [[value]]} <i>p</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
+              <li>If <i>p</i>.[[key]] is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>p</i>.[[key]], <i>key</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Set <i>p</i>.[[value]] to <i>value.</i></li>
                   <li>Return <i>M</i>.</li>
@@ -1325,7 +1325,7 @@
       </section>
 
       <section id="sec-weakmap.prototype-@@tostringtag">
-        <h1><span class="secnum" id="sec-23.3.3.6"><a href="#sec-weakmap.prototype-@@tostringtag" title="link to this section">23.3.3.6</a></span> WeakMap.prototype [ @@toStringTag ]</h1>
+        <h1><span class="secnum" id="sec-23.3.3.6"><a href="sec-keyed-collection.html#sec-weakmap.prototype-@@tostringtag" title="link to this section">23.3.3.6</a></span> WeakMap.prototype [ @@toStringTag ]</h1>
 
         <p>The initial value of the @@toStringTag property is the String value <code>"WeakMap"</code>.</p>
 
@@ -1334,16 +1334,16 @@
     </section>
 
     <section id="sec-properties-of-weakmap-instances">
-      <h1><span class="secnum" id="sec-23.3.4"><a href="#sec-properties-of-weakmap-instances" title="link to this section">23.3.4</a></span> Properties of WeakMap Instances</h1>
+      <h1><span class="secnum" id="sec-23.3.4"><a href="sec-keyed-collection.html#sec-properties-of-weakmap-instances" title="link to this section">23.3.4</a></span> Properties of WeakMap Instances</h1>
 
       <p>WeakMap instances are ordinary objects that inherit properties from the WeakMap prototype. WeakMap instances also have a
-      [[WeakMapData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+      [[WeakMapData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
     </section>
   </section>
 
   <section id="sec-weakset-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-23.4"><a href="#sec-weakset-objects" title="link to this section">23.4</a></span> WeakSet
+      <h1><span class="secnum" id="sec-23.4"><a href="sec-keyed-collection.html#sec-weakset-objects" title="link to this section">23.4</a></span> WeakSet
           Objects</h1>
 
       <p>WeakSet objects are collections of objects. A distinct object may only occur once as an element of a WeakSet’s
@@ -1364,13 +1364,13 @@
       viable implementation model.</p>
 
       <div class="note">
-        <p><span class="nh">NOTE</span> See the NOTE in <a href="#sec-weakmap-objects">23.3</a>.</p>
+        <p><span class="nh">NOTE</span> See the NOTE in <a href="sec-keyed-collection.html#sec-weakmap-objects">23.3</a>.</p>
       </div>
     </div>
 
     <section id="sec-weakset-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.4.1"><a href="#sec-weakset-constructor" title="link to this section">23.4.1</a></span>
+        <h1><span class="secnum" id="sec-23.4.1"><a href="sec-keyed-collection.html#sec-weakset-constructor" title="link to this section">23.4.1</a></span>
             The WeakSet Constructor</h1>
 
         <p>The WeakSet constructor is the %WeakSet% intrinsic object and the initial value of the <code>WeakSet</code> property of
@@ -1380,45 +1380,45 @@
         <p>The <code>WeakSet</code> constructor is designed to be subclassable. It may be used as the value in an
         <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified
         <code>WeakSet</code> behaviour must include a <code>super</code> call to the <code>WeakSet</code> constructor to create
-        and initialize the subclass instance with the internal state necessary to support the <code><a href="#sec-weakset.prototype">WeakSet.prototype</a></code> built-in methods.</p>
+        and initialize the subclass instance with the internal state necessary to support the <code><a href="sec-keyed-collection.html#sec-weakset.prototype">WeakSet.prototype</a></code> built-in methods.</p>
       </div>
 
       <section id="sec-weakset-iterable">
-        <h1><span class="secnum" id="sec-23.4.1.1"><a href="#sec-weakset-iterable" title="link to this section">23.4.1.1</a></span> WeakSet ( [ iterable ] )</h1>
+        <h1><span class="secnum" id="sec-23.4.1.1"><a href="sec-keyed-collection.html#sec-weakset-iterable" title="link to this section">23.4.1.1</a></span> WeakSet ( [ iterable ] )</h1>
 
         <p class="normalbefore">When the <code>WeakSet</code> function is called with optional argument <var>iterable</var> the
         following steps are taken:</p>
 
         <ol class="proc">
           <li>If NewTarget is <b>undefined</b>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>set</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
+          <li>Let <i>set</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
               <code>"%WeakSetPrototype%"</code>, «‍[[WeakSetData]]» ).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>set</i>).</li>
-          <li>Set <i>set’s</i> [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>
-              to a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>set</i>).</li>
+          <li>Set <i>set’s</i> [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>
+              to a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>If <i>iterable</i> is not present, let <i>iterable</i> be <b>undefined</b>.</li>
           <li>If <i>iterable</i> is either <b>undefined</b> or <b>null</b>, let <i>iter</i> be <b>undefined</b>.</li>
           <li>Else,
             <ol class="block">
-              <li>Let <i>adder</i> be <a href="#sec-get-o-p">Get</a>(<i>set</i>, <code>"add"</code>)<b>.</b></li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
-              <li>If <a href="#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
+              <li>Let <i>adder</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>set</i>, <code>"add"</code>)<b>.</b></li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>adder</i>).</li>
+              <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>adder</i>) is <b>false</b>, throw a <b>TypeError</b>
                   exception.</li>
-              <li>Let <i>iter</i> be <a href="#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
+              <li>Let <i>iter</i> be <a href="sec-abstract-operations.html#sec-getiterator">GetIterator</a>(<i>iterable</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iter</i>).</li>
             </ol>
           </li>
           <li>If <i>iter</i> is <b>undefined</b>, return <i>set</i>.</li>
           <li>Repeat
             <ol class="block">
-              <li>Let <i>next</i> be <a href="#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
+              <li>Let <i>next</i> be <a href="sec-abstract-operations.html#sec-iteratorstep">IteratorStep</a>(<i>iter</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
               <li>If <i>next</i> is <b>false</b>, return <i>set</i>.</li>
-              <li>Let <i>nextValue</i> be <a href="#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextValue</i>).</li>
-              <li>Let <i>status</i> be <a href="#sec-call">Call</a>(<i>adder</i>, <i>set</i>, «<i>nextValue</i>
+              <li>Let <i>nextValue</i> be <a href="sec-abstract-operations.html#sec-iteratorvalue">IteratorValue</a>(<i>next</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextValue</i>).</li>
+              <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>adder</i>, <i>set</i>, «<i>nextValue</i>
                   »).</li>
-              <li>If <i>status</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <a href="#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
+              <li>If <i>status</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <a href="sec-abstract-operations.html#sec-iteratorclose">IteratorClose</a>(<i>iter</i>, <i>status</i>).</li>
             </ol>
           </li>
         </ol>
@@ -1427,19 +1427,19 @@
 
     <section id="sec-properties-of-the-weakset-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.4.2"><a href="#sec-properties-of-the-weakset-constructor" title="link to this section">23.4.2</a></span> Properties of the WeakSet Constructor</h1>
+        <h1><span class="secnum" id="sec-23.4.2"><a href="sec-keyed-collection.html#sec-properties-of-the-weakset-constructor" title="link to this section">23.4.2</a></span> Properties of the WeakSet Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        WeakSet constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        WeakSet constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>Besides the <code>length</code> property (whose value is <b>0</b>), the WeakSet constructor has the following
         properties:</p>
       </div>
 
       <section id="sec-weakset.prototype">
-        <h1><span class="secnum" id="sec-23.4.2.1"><a href="#sec-weakset.prototype" title="link to this section">23.4.2.1</a></span> WeakSet.prototype</h1>
+        <h1><span class="secnum" id="sec-23.4.2.1"><a href="sec-keyed-collection.html#sec-weakset.prototype" title="link to this section">23.4.2.1</a></span> WeakSet.prototype</h1>
 
-        <p>The initial value of <code>WeakSet.prototype</code> is the intrinsic %WeakSetPrototype% object (<a href="#sec-properties-of-the-weakset-prototype-object">23.4.3</a>).</p>
+        <p>The initial value of <code>WeakSet.prototype</code> is the intrinsic %WeakSetPrototype% object (<a href="sec-keyed-collection.html#sec-properties-of-the-weakset-prototype-object">23.4.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
@@ -1448,15 +1448,15 @@
 
     <section id="sec-properties-of-the-weakset-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-23.4.3"><a href="#sec-properties-of-the-weakset-prototype-object" title="link to this section">23.4.3</a></span> Properties of the WeakSet Prototype Object</h1>
+        <h1><span class="secnum" id="sec-23.4.3"><a href="sec-keyed-collection.html#sec-properties-of-the-weakset-prototype-object" title="link to this section">23.4.3</a></span> Properties of the WeakSet Prototype Object</h1>
 
-        <p>The WeakSet prototype object is the intrinsic object %WeakSetPrototype%. The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the WeakSet prototype object is the intrinsic
-        object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The WeakSet prototype
-        object is an ordinary object. It does not have a [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        <p>The WeakSet prototype object is the intrinsic object %WeakSetPrototype%. The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the WeakSet prototype object is the intrinsic
+        object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The WeakSet prototype
+        object is an ordinary object. It does not have a [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
       </div>
 
       <section id="sec-weakset.prototype.add">
-        <h1><span class="secnum" id="sec-23.4.3.1"><a href="#sec-weakset.prototype.add" title="link to this section">23.4.3.1</a></span> WeakSet.prototype.add ( value )</h1>
+        <h1><span class="secnum" id="sec-23.4.3.1"><a href="sec-keyed-collection.html#sec-weakset.prototype.add" title="link to this section">23.4.3.1</a></span> WeakSet.prototype.add ( value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1464,15 +1464,15 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>S</i> does not have a [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each <i>e</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevalue">SameValue</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
+              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Return <i>S</i>.</li>
                 </ol>
@@ -1485,13 +1485,13 @@
       </section>
 
       <section id="sec-weakset.prototype.constructor">
-        <h1><span class="secnum" id="sec-23.4.3.2"><a href="#sec-weakset.prototype.constructor" title="link to this section">23.4.3.2</a></span> WeakSet.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-23.4.3.2"><a href="sec-keyed-collection.html#sec-weakset.prototype.constructor" title="link to this section">23.4.3.2</a></span> WeakSet.prototype.constructor</h1>
 
         <p>The initial value of <code>WeakSet.prototype.constructor</code> is the %WeakSet% intrinsic object.</p>
       </section>
 
       <section id="sec-weakset.prototype.delete">
-        <h1><span class="secnum" id="sec-23.4.3.3"><a href="#sec-weakset.prototype.delete" title="link to this section">23.4.3.3</a></span> WeakSet.prototype.delete ( value )</h1>
+        <h1><span class="secnum" id="sec-23.4.3.3"><a href="sec-keyed-collection.html#sec-weakset.prototype.delete" title="link to this section">23.4.3.3</a></span> WeakSet.prototype.delete ( value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1499,14 +1499,14 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>S</i> does not have a [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is not Object, return <b>false</b>.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Repeat for each  <i>e</i> that is an element of <i>entries</i>,
             <ol class="block">
-              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevalue">SameValue</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
+              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>e</i>, <i>value</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Replace the element of <i>entries</i> whose value is <i>e</i> with an element whose value is <span style="font-family: sans-serif">empty</span><i>.</i></li>
                   <li>Return <b>true</b>.</li>
@@ -1525,7 +1525,7 @@
       </section>
 
       <section id="sec-weakset.prototype.has">
-        <h1><span class="secnum" id="sec-23.4.3.4"><a href="#sec-weakset.prototype.has" title="link to this section">23.4.3.4</a></span> WeakSet.prototype.has ( value )</h1>
+        <h1><span class="secnum" id="sec-23.4.3.4"><a href="sec-keyed-collection.html#sec-weakset.prototype.has" title="link to this section">23.4.3.4</a></span> WeakSet.prototype.has ( value )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1533,14 +1533,14 @@
           <li>Let <i>S</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>S</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>S</i> does not have a [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>S</i> does not have a [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>entries</i> be the <a href="#sec-list-and-record-specification-type">List</a> that is the value of
-              <i>S</i>’s [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>entries</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is the value of
+              <i>S</i>’s [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is not Object, return <b>false.</b></li>
           <li>Repeat for each <i>e</i> that is an element of <i>entries,</i>
             <ol class="block">
-              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="#sec-samevalue">SameValue</a>(<i>e</i>, <i>value</i>) is <b>true</b>, return <b>true</b><i>.</i></li>
+              <li>If <i>e</i> is not <span style="font-family: sans-serif">empty</span> and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>e</i>, <i>value</i>) is <b>true</b>, return <b>true</b><i>.</i></li>
             </ol>
           </li>
           <li>Return <b>false</b>.</li>
@@ -1548,7 +1548,7 @@
       </section>
 
       <section id="sec-weakset.prototype-@@tostringtag">
-        <h1><span class="secnum" id="sec-23.4.3.5"><a href="#sec-weakset.prototype-@@tostringtag" title="link to this section">23.4.3.5</a></span> WeakSet.prototype [ @@toStringTag ]</h1>
+        <h1><span class="secnum" id="sec-23.4.3.5"><a href="sec-keyed-collection.html#sec-weakset.prototype-@@tostringtag" title="link to this section">23.4.3.5</a></span> WeakSet.prototype [ @@toStringTag ]</h1>
 
         <p>The initial value of the @@toStringTag property is the String value <code>"WeakSet"</code>.</p>
 
@@ -1557,10 +1557,10 @@
     </section>
 
     <section id="sec-properties-of-weakset-instances">
-      <h1><span class="secnum" id="sec-23.4.4"><a href="#sec-properties-of-weakset-instances" title="link to this section">23.4.4</a></span> Properties of WeakSet Instances</h1>
+      <h1><span class="secnum" id="sec-23.4.4"><a href="sec-keyed-collection.html#sec-properties-of-weakset-instances" title="link to this section">23.4.4</a></span> Properties of WeakSet Instances</h1>
 
       <p>WeakSet instances are ordinary objects that inherit properties from the WeakSet prototype. WeakSet instances also have a
-      [[WeakSetData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+      [[WeakSetData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
     </section>
   </section>
 

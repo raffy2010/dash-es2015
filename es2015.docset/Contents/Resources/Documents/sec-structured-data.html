@@ -14,67 +14,67 @@
 
   <section id="sec-arraybuffer-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-24.1"><a href="#sec-arraybuffer-objects" title="link to this section">24.1</a></span>
+      <h1><span class="secnum" id="sec-24.1"><a href="sec-structured-data.html#sec-arraybuffer-objects" title="link to this section">24.1</a></span>
           ArrayBuffer Objects</h1>
     </div>
 
     <section id="sec-abstract-operations-for-arraybuffer-objects">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.1.1"><a href="#sec-abstract-operations-for-arraybuffer-objects" title="link to this section">24.1.1</a></span> Abstract Operations For ArrayBuffer Objects</h1>
+        <h1><span class="secnum" id="sec-24.1.1"><a href="sec-structured-data.html#sec-abstract-operations-for-arraybuffer-objects" title="link to this section">24.1.1</a></span> Abstract Operations For ArrayBuffer Objects</h1>
       </div>
 
       <section id="sec-allocatearraybuffer">
-        <h1><span class="secnum" id="sec-24.1.1.1"><a href="#sec-allocatearraybuffer" title="link to this section">24.1.1.1</a></span> AllocateArrayBuffer( constructor, byteLength )</h1>
+        <h1><span class="secnum" id="sec-24.1.1.1"><a href="sec-structured-data.html#sec-allocatearraybuffer" title="link to this section">24.1.1.1</a></span> AllocateArrayBuffer( constructor, byteLength )</h1>
 
         <p class="normalbefore">The abstract operation AllocateArrayBuffer with arguments <var>constructor</var> and
         <var>byteLength</var> is used to create an ArrayBuffer object. It performs the following steps:</p>
 
         <ol class="proc">
-          <li>Let <i>obj</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(<i>constructor</i>,
+          <li>Let <i>obj</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(<i>constructor</i>,
               <code>"%ArrayBufferPrototype%"</code>, «‍[[ArrayBufferData]], [[ArrayBufferByteLength]]» ).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>byteLength</i> is a positive integer.</li>
-          <li>Let <i>block</i> be <a href="#sec-createbytedatablock">CreateByteDataBlock</a>(<i>byteLength</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>block</i>).</li>
-          <li>Set <i>obj’s</i> [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>byteLength</i> is a positive integer.</li>
+          <li>Let <i>block</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-createbytedatablock">CreateByteDataBlock</a>(<i>byteLength</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>block</i>).</li>
+          <li>Set <i>obj’s</i> [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>block</i>.</li>
-          <li>Set <i>obj</i>’s [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>obj</i>’s [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>byteLength</i>.</li>
           <li>Return <i>obj</i>.</li>
         </ol>
       </section>
 
       <section id="sec-isdetachedbuffer">
-        <h1><span class="secnum" id="sec-24.1.1.2"><a href="#sec-isdetachedbuffer" title="link to this section">24.1.1.2</a></span> IsDetachedBuffer( arrayBuffer )</h1>
+        <h1><span class="secnum" id="sec-24.1.1.2"><a href="sec-structured-data.html#sec-isdetachedbuffer" title="link to this section">24.1.1.2</a></span> IsDetachedBuffer( arrayBuffer )</h1>
 
         <p class="normalbefore">The abstract operation IsDetachedBuffer with argument  <var>arrayBuffer</var> performs the
         following steps:</p>
 
         <ol class="proc">
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>arrayBuffer</i>) is Object and it has an
-              [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>If <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>arrayBuffer</i>) is Object and it has an
+              [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>If <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> is <b>null</b>, return <b>true</b>.</li>
           <li>Return <b>false</b>.</li>
         </ol>
       </section>
 
       <section id="sec-detacharraybuffer">
-        <h1><span class="secnum" id="sec-24.1.1.3"><a href="#sec-detacharraybuffer" title="link to this section">24.1.1.3</a></span> DetachArrayBuffer( arrayBuffer )</h1>
+        <h1><span class="secnum" id="sec-24.1.1.3"><a href="sec-structured-data.html#sec-detacharraybuffer" title="link to this section">24.1.1.3</a></span> DetachArrayBuffer( arrayBuffer )</h1>
 
         <p class="normalbefore">The abstract operation DetachArrayBuffer with argument  <var>arrayBuffer</var> performs the
         following steps:</p>
 
         <ol class="proc">
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>arrayBuffer</i>) is Object and it has [[ArrayBufferData]]
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>arrayBuffer</i>) is Object and it has [[ArrayBufferData]]
               and [[ArrayBufferByteLength]] internal slots.</li>
-          <li>Set <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to <b>null</b>.</li>
-          <li>Set <i>arrayBuffer</i>’s [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to 0.</li>
-          <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<b>null</b>).</li>
+          <li>Set <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to <b>null</b>.</li>
+          <li>Set <i>arrayBuffer</i>’s [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to 0.</li>
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<b>null</b>).</li>
         </ol>
 
         <div class="note">
-          <p><span class="nh">NOTE</span> Detaching an ArrayBuffer instance disassociates the <a href="#sec-data-blocks">Data
+          <p><span class="nh">NOTE</span> Detaching an ArrayBuffer instance disassociates the <a href="sec-ecmascript-data-types-and-values.html#sec-data-blocks">Data
           Block</a> used as its backing store from the instance and sets the byte length of the buffer to 0. No operations defined
           by this specification use the DetachArrayBuffer abstract operation. However, an ECMAScript implementation or host
           environment may define such operations.</p>
@@ -82,7 +82,7 @@
       </section>
 
       <section id="sec-clonearraybuffer">
-        <h1><span class="secnum" id="sec-24.1.1.4"><a href="#sec-clonearraybuffer" title="link to this section">24.1.1.4</a></span> CloneArrayBuffer( srcBuffer, srcByteOffset [, cloneConstructor]
+        <h1><span class="secnum" id="sec-24.1.1.4"><a href="sec-structured-data.html#sec-clonearraybuffer" title="link to this section">24.1.1.4</a></span> CloneArrayBuffer( srcBuffer, srcByteOffset [, cloneConstructor]
             )</h1>
 
         <p class="normalbefore">The abstract operation CloneArrayBuffer takes three parameters, an ArrayBuffer
@@ -91,36 +91,36 @@
         starting at <var>srcByteOffset</var>. This operation performs the following steps:</p>
 
         <ol class="proc">
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>srcBuffer</i>) is Object and it has an [[ArrayBufferData]]
-              <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>srcBuffer</i>) is Object and it has an [[ArrayBufferData]]
+              <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>If <i>cloneConstructor</i> is not present, then
             <ol class="block">
-              <li>Let <i>cloneConstructor</i> be <a href="#sec-speciesconstructor">SpeciesConstructor</a>(<i>srcBuffer</i>,
+              <li>Let <i>cloneConstructor</i> be <a href="sec-abstract-operations.html#sec-speciesconstructor">SpeciesConstructor</a>(<i>srcBuffer</i>,
                   %ArrayBuffer%).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>cloneConstructor</i>).</li>
-              <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>srcBuffer</i>) is <b>true</b>, throw a
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>cloneConstructor</i>).</li>
+              <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>srcBuffer</i>) is <b>true</b>, throw a
                   <b>TypeError</b> exception.</li>
             </ol>
           </li>
-          <li>Else, <a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-isconstructor">IsConstructor</a>(<i>cloneConstructor</i>) is <b>true</b>.</li>
-          <li>Let <i>srcLength</i> be the value of <i>srcBuffer</i>’s [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>srcByteOffset</i> ≤ <i>srcLength</i>.</li>
+          <li>Else, <a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-abstract-operations.html#sec-isconstructor">IsConstructor</a>(<i>cloneConstructor</i>) is <b>true</b>.</li>
+          <li>Let <i>srcLength</i> be the value of <i>srcBuffer</i>’s [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>srcByteOffset</i> ≤ <i>srcLength</i>.</li>
           <li>Let <i>cloneLength</i> be <i>srcLength</i> – <i>srcByteOffset.</i></li>
-          <li>Let <i>srcBlock</i> be the value of <i>srcBuffer’s</i> [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>targetBuffer</i> be <a href="#sec-allocatearraybuffer">AllocateArrayBuffer</a>(<i>cloneConstructor</i>,
+          <li>Let <i>srcBlock</i> be the value of <i>srcBuffer’s</i> [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>targetBuffer</i> be <a href="sec-structured-data.html#sec-allocatearraybuffer">AllocateArrayBuffer</a>(<i>cloneConstructor</i>,
               <i>cloneLength</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetBuffer</i>).</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>srcBuffer</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetBuffer</i>).</li>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>srcBuffer</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>targetBlock</i> be the value of <i>targetBuffer’s</i> [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Perform <a href="#sec-copydatablockbytes">CopyDataBlockBytes</a>(<i>targetBlock</i>, 0, <i>srcBlock</i>,
+          <li>Let <i>targetBlock</i> be the value of <i>targetBuffer’s</i> [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Perform <a href="sec-ecmascript-data-types-and-values.html#sec-copydatablockbytes">CopyDataBlockBytes</a>(<i>targetBlock</i>, 0, <i>srcBlock</i>,
               <i>srcByteOffset</i>, <i>cloneLength</i>).</li>
           <li>Return <i>targetBuffer</i>.</li>
         </ol>
       </section>
 
       <section id="sec-getvaluefrombuffer">
-        <h1><span class="secnum" id="sec-24.1.1.5"><a href="#sec-getvaluefrombuffer" title="link to this section">24.1.1.5</a></span> GetValueFromBuffer ( arrayBuffer, byteIndex, type, isLittleEndian
+        <h1><span class="secnum" id="sec-24.1.1.5"><a href="sec-structured-data.html#sec-getvaluefrombuffer" title="link to this section">24.1.1.5</a></span> GetValueFromBuffer ( arrayBuffer, byteIndex, type, isLittleEndian
             )</h1>
 
         <p class="normalbefore">The abstract operation GetValueFromBuffer takes four parameters, an ArrayBuffer
@@ -128,20 +128,20 @@
         <var>isLittleEndian</var>. This operation performs the following steps:</p>
 
         <ol class="proc">
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>arrayBuffer</i>) is <b>false</b>.</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: There are sufficient bytes in <i>arrayBuffer</i> starting at
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>arrayBuffer</i>) is <b>false</b>.</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: There are sufficient bytes in <i>arrayBuffer</i> starting at
               <i>byteIndex</i> to represent a value of <i>type</i>.</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>byteIndex</i> is a positive integer.</li>
-          <li>Let <i>block</i> be <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="#table-49">Table 49</a>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>byteIndex</i> is a positive integer.</li>
+          <li>Let <i>block</i> be <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="sec-indexed-collections.html#table-49">Table 49</a>
               for Element Type <i>type</i>.</li>
-          <li>Let <i>rawValue</i> be a <a href="#sec-list-and-record-specification-type">List</a> of <i>elementSize</i>
+          <li>Let <i>rawValue</i> be a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of <i>elementSize</i>
               containing, in order<i>,</i> the <i>elementSize</i> sequence of bytes starting with
               <i>block</i>[<i>byteIndex</i>].</li>
           <li>If <i>isLittleEndian</i> is not present, set <i>isLittleEndian</i> to either <b>true</b> or <b>false</b>. The choice
               is implementation dependent and should be the alternative that is most efficient for the implementation. An
               implementation must use the same value each time this step is executed and the same value must be used for the
-              corresponding step in the <a href="#sec-setvalueinbuffer">SetValueInBuffer</a> abstract operation.</li>
+              corresponding step in the <a href="sec-structured-data.html#sec-setvalueinbuffer">SetValueInBuffer</a> abstract operation.</li>
           <li>If <i>isLittleEndian</i> is <b>false</b>, reverse the order of the elements of <i>rawValue</i>.</li>
           <li>If <i>type</i> is <code>"Float32"</code>, then
             <ol class="block">
@@ -176,7 +176,7 @@
       </section>
 
       <section id="sec-setvalueinbuffer">
-        <h1><span class="secnum" id="sec-24.1.1.6"><a href="#sec-setvalueinbuffer" title="link to this section">24.1.1.6</a></span> SetValueInBuffer ( arrayBuffer, byteIndex, type, value,
+        <h1><span class="secnum" id="sec-24.1.1.6"><a href="sec-structured-data.html#sec-setvalueinbuffer" title="link to this section">24.1.1.6</a></span> SetValueInBuffer ( arrayBuffer, byteIndex, type, value,
             isLittleEndian )</h1>
 
         <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">SetValueInBuffer</span> takes
@@ -185,22 +185,22 @@
         steps:</p>
 
         <ol class="proc">
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>arrayBuffer</i>) is <b>false</b>.</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: There are sufficient bytes in <i>arrayBuffer</i> starting at
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>arrayBuffer</i>) is <b>false</b>.</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: There are sufficient bytes in <i>arrayBuffer</i> starting at
               <i>byteIndex</i> to represent a value of <i>type</i>.</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>byteIndex</i> is a positive integer.</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Number.</li>
-          <li>Let <i>block</i> be <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>:  <i>block</i> is not <b>undefined</b>.</li>
-          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="#table-49">Table 49</a>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>byteIndex</i> is a positive integer.</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Number.</li>
+          <li>Let <i>block</i> be <i>arrayBuffer’s</i> [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <i>block</i> is not <b>undefined</b>.</li>
+          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="sec-indexed-collections.html#table-49">Table 49</a>
               for Element Type <i>type</i>.</li>
           <li>If <i>isLittleEndian</i> is not present, set <i>isLittleEndian</i> to either <b>true</b> or <b>false</b>. The choice
               is implementation dependent and should be the alternative that is most efficient for the implementation. An
               implementation must use the same value each time this step is executed and the same value must be used for the
-              corresponding step in the <a href="#sec-getvaluefrombuffer">GetValueFromBuffer</a> abstract operation.</li>
+              corresponding step in the <a href="sec-structured-data.html#sec-getvaluefrombuffer">GetValueFromBuffer</a> abstract operation.</li>
           <li>If <i>type</i> is <code>"Float32"</code>, then
             <ol class="block">
-              <li>Set <i>rawBytes</i> to a <a href="#sec-list-and-record-specification-type">List</a> containing the 4 bytes that
+              <li>Set <i>rawBytes</i> to a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the 4 bytes that
                   are the result of converting <i>value</i> to IEEE 754-2008 binary32 format using “Round to nearest, ties
                   to even” rounding mode. If <i>isLittleEndian</i> is <b>false</b>, the bytes are arranged in big endian
                   order. Otherwise, the bytes are arranged in little endian order. If <i>value</i> is <b>NaN</b>, <i>rawValue</i>
@@ -210,7 +210,7 @@
           </li>
           <li>Else, if <i>type</i> is <code>"Float64"</code>, then
             <ol class="block">
-              <li>Set <i>rawBytes</i> to a <a href="#sec-list-and-record-specification-type">List</a> containing the 8 bytes that
+              <li>Set <i>rawBytes</i> to a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the 8 bytes that
                   are the IEEE 754-2008 binary64 format encoding of <i>value</i>. If <i>isLittleEndian</i> is <b>false</b>, the
                   bytes are arranged in big endian order. Otherwise, the bytes are arranged in little endian order. If
                   <i>value</i> is <b>NaN</b>, <i>rawValue</i> may be set to any implementation chosen IEEE 754-2008 binary32
@@ -220,20 +220,20 @@
           </li>
           <li>Else,
             <ol class="block">
-              <li>Let <i>n</i> be the Number value of the Element Size specified in <a href="#table-49">Table 49</a> for Element
+              <li>Let <i>n</i> be the Number value of the Element Size specified in <a href="sec-indexed-collections.html#table-49">Table 49</a> for Element
                   Type <i>type</i>.</li>
-              <li>Let <i>convOp</i> be the abstract operation named in the Conversion Operation column in <a href="#table-49">Table 49</a> for Element Type <i>type</i>.</li>
+              <li>Let <i>convOp</i> be the abstract operation named in the Conversion Operation column in <a href="sec-indexed-collections.html#table-49">Table 49</a> for Element Type <i>type</i>.</li>
               <li>Let <i>intValue</i> be <i>convOp</i>(<i>value</i>).</li>
               <li>If <i>intValue</i> ≥ 0, then
                 <ol class="block">
-                  <li>Let <i>rawBytes</i> be a <a href="#sec-list-and-record-specification-type">List</a> containing the
+                  <li>Let <i>rawBytes</i> be a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the
                       <i>n</i>-byte binary encoding of <i>intValue</i>. If <i>isLittleEndian</i> is <b>false</b>, the bytes are
                       ordered in big endian order. Otherwise, the bytes are ordered in little endian order.</li>
                 </ol>
               </li>
               <li>Else,
                 <ol class="block">
-                  <li>Let <i>rawBytes</i> be a <a href="#sec-list-and-record-specification-type">List</a> containing the
+                  <li>Let <i>rawBytes</i> be a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the
                       <i>n</i>-byte binary 2’s complement encoding of <i>intValue</i>. If <i>isLittleEndian</i> is
                       <b>false</b>, the bytes are ordered in big endian order. Otherwise, the bytes are ordered in little endian
                       order.</li>
@@ -243,14 +243,14 @@
           </li>
           <li>Store the individual bytes of <i>rawBytes</i> into <i>block</i>, in order, starting at
               <i>block</i>[<i>byteIndex</i>].</li>
-          <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
         </ol>
       </section>
     </section>
 
     <section id="sec-arraybuffer-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.1.2"><a href="#sec-arraybuffer-constructor" title="link to this section">24.1.2</a></span> The ArrayBuffer Constructor</h1>
+        <h1><span class="secnum" id="sec-24.1.2"><a href="sec-structured-data.html#sec-arraybuffer-constructor" title="link to this section">24.1.2</a></span> The ArrayBuffer Constructor</h1>
 
         <p>The ArrayBuffer constructor is the %ArrayBuffer% intrinsic object and the initial value of the <code>ArrayBuffer</code>
         property of the global object. When called as a constructor it creates and initializes a new ArrayBuffer object.
@@ -260,62 +260,62 @@
         <p>The <code>ArrayBuffer</code> constructor is designed to be subclassable. It may be used as the value of an
         <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified
         <code>ArrayBuffer</code> behaviour must include a <code>super</code> call to the <code>ArrayBuffer</code> constructor to
-        create and initialize subclass instances with the internal state necessary to support the <code><a href="#sec-arraybuffer.prototype">ArrayBuffer.prototype</a></code> built-in methods.</p>
+        create and initialize subclass instances with the internal state necessary to support the <code><a href="sec-structured-data.html#sec-arraybuffer.prototype">ArrayBuffer.prototype</a></code> built-in methods.</p>
       </div>
 
       <section id="sec-arraybuffer-length">
-        <h1><span class="secnum" id="sec-24.1.2.1"><a href="#sec-arraybuffer-length" title="link to this section">24.1.2.1</a></span> ArrayBuffer( length )</h1>
+        <h1><span class="secnum" id="sec-24.1.2.1"><a href="sec-structured-data.html#sec-arraybuffer-length" title="link to this section">24.1.2.1</a></span> ArrayBuffer( length )</h1>
 
         <p class="normalbefore">ArrayBuffer called with argument <var>length</var> performs the following steps:</p>
 
         <ol class="proc">
           <li>If NewTarget is <b>undefined</b>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>numberLength</i> be <a href="#sec-tonumber">ToNumber</a>(<i>length</i>).</li>
-          <li>Let <i>byteLength</i> be <a href="#sec-tolength">ToLength</a>(<i>numberLength</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>byteLength</i>).</li>
-          <li>If <a href="#sec-samevaluezero">SameValueZero</a>(<i>numberLength</i>, <i>byteLength</i>) is <b>false</b>, throw a
+          <li>Let <i>numberLength</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>length</i>).</li>
+          <li>Let <i>byteLength</i> be <a href="sec-abstract-operations.html#sec-tolength">ToLength</a>(<i>numberLength</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>byteLength</i>).</li>
+          <li>If <a href="sec-abstract-operations.html#sec-samevaluezero">SameValueZero</a>(<i>numberLength</i>, <i>byteLength</i>) is <b>false</b>, throw a
               <b>RangeError</b> exception.</li>
-          <li>Return <a href="#sec-allocatearraybuffer">AllocateArrayBuffer</a>(NewTarget, <i>byteLength</i>).</li>
+          <li>Return <a href="sec-structured-data.html#sec-allocatearraybuffer">AllocateArrayBuffer</a>(NewTarget, <i>byteLength</i>).</li>
         </ol>
       </section>
     </section>
 
     <section id="sec-properties-of-the-arraybuffer-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.1.3"><a href="#sec-properties-of-the-arraybuffer-constructor" title="link to this section">24.1.3</a></span> Properties of the ArrayBuffer Constructor</h1>
+        <h1><span class="secnum" id="sec-24.1.3"><a href="sec-structured-data.html#sec-properties-of-the-arraybuffer-constructor" title="link to this section">24.1.3</a></span> Properties of the ArrayBuffer Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        ArrayBuffer constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        ArrayBuffer constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>Besides its <code>length</code> property (whose value is 1), the ArrayBuffer constructor has the following
         properties:</p>
       </div>
 
       <section id="sec-arraybuffer.isview">
-        <h1><span class="secnum" id="sec-24.1.3.1"><a href="#sec-arraybuffer.isview" title="link to this section">24.1.3.1</a></span> ArrayBuffer.isView ( arg )</h1>
+        <h1><span class="secnum" id="sec-24.1.3.1"><a href="sec-structured-data.html#sec-arraybuffer.isview" title="link to this section">24.1.3.1</a></span> ArrayBuffer.isView ( arg )</h1>
 
         <p class="normalbefore">The isView function takes one argument <var>arg</var>, and performs the following steps are
         taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>arg</i>) is not Object, return <b>false</b>.</li>
-          <li>If <i>arg</i> has a [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>arg</i> has a [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, return <b>true</b>.</li>
           <li>Return <b>false</b>.</li>
         </ol>
       </section>
 
       <section id="sec-arraybuffer.prototype">
-        <h1><span class="secnum" id="sec-24.1.3.2"><a href="#sec-arraybuffer.prototype" title="link to this section">24.1.3.2</a></span> ArrayBuffer.prototype</h1>
+        <h1><span class="secnum" id="sec-24.1.3.2"><a href="sec-structured-data.html#sec-arraybuffer.prototype" title="link to this section">24.1.3.2</a></span> ArrayBuffer.prototype</h1>
 
-        <p>The initial value of ArrayBuffer.prototype is the intrinsic object %ArrayBufferPrototype% (<a href="#sec-properties-of-the-arraybuffer-prototype-object">24.1.4</a>).</p>
+        <p>The initial value of ArrayBuffer.prototype is the intrinsic object %ArrayBufferPrototype% (<a href="sec-structured-data.html#sec-properties-of-the-arraybuffer-prototype-object">24.1.4</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-get-arraybuffer-@@species">
-        <h1><span class="secnum" id="sec-24.1.3.3"><a href="#sec-get-arraybuffer-@@species" title="link to this section">24.1.3.3</a></span> get ArrayBuffer [ @@species ]</h1>
+        <h1><span class="secnum" id="sec-24.1.3.3"><a href="sec-structured-data.html#sec-get-arraybuffer-@@species" title="link to this section">24.1.3.3</a></span> get ArrayBuffer [ @@species ]</h1>
 
         <p class="normalbefore"><code>ArrayBuffer[@@species]</code> is an accessor property whose set accessor function is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
 
@@ -335,15 +335,15 @@
 
     <section id="sec-properties-of-the-arraybuffer-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.1.4"><a href="#sec-properties-of-the-arraybuffer-prototype-object" title="link to this section">24.1.4</a></span> Properties of the ArrayBuffer Prototype Object</h1>
+        <h1><span class="secnum" id="sec-24.1.4"><a href="sec-structured-data.html#sec-properties-of-the-arraybuffer-prototype-object" title="link to this section">24.1.4</a></span> Properties of the ArrayBuffer Prototype Object</h1>
 
-        <p>The ArrayBuffer prototype object is the intrinsic object %ArrayBufferPrototype%. The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the ArrayBuffer prototype object is the
-        intrinsic object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The ArrayBuffer
-        prototype object is an ordinary object. It does not have an [[ArrayBufferData]] or [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        <p>The ArrayBuffer prototype object is the intrinsic object %ArrayBufferPrototype%. The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the ArrayBuffer prototype object is the
+        intrinsic object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The ArrayBuffer
+        prototype object is an ordinary object. It does not have an [[ArrayBufferData]] or [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
       </div>
 
       <section id="sec-get-arraybuffer.prototype.bytelength">
-        <h1><span class="secnum" id="sec-24.1.4.1"><a href="#sec-get-arraybuffer.prototype.bytelength" title="link to this section">24.1.4.1</a></span> get ArrayBuffer.prototype.byteLength</h1>
+        <h1><span class="secnum" id="sec-24.1.4.1"><a href="sec-structured-data.html#sec-get-arraybuffer.prototype.bytelength" title="link to this section">24.1.4.1</a></span> get ArrayBuffer.prototype.byteLength</h1>
 
         <p class="normalbefore"><code>ArrayBuffer.prototype.byteLength</code> is an accessor property whose set accessor function
         is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
@@ -352,23 +352,23 @@
           <li>Let <i>O</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>O</i> does not have an [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>O</i> does not have an [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>length</i> be the value of <i>O</i>’s [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>length</i> be the value of <i>O</i>’s [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Return <i>length</i>.</li>
         </ol>
       </section>
 
       <section id="sec-arraybuffer.prototype.constructor">
-        <h1><span class="secnum" id="sec-24.1.4.2"><a href="#sec-arraybuffer.prototype.constructor" title="link to this section">24.1.4.2</a></span> ArrayBuffer.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-24.1.4.2"><a href="sec-structured-data.html#sec-arraybuffer.prototype.constructor" title="link to this section">24.1.4.2</a></span> ArrayBuffer.prototype.constructor</h1>
 
         <p>The initial value of <code>ArrayBuffer.prototype.constructor</code> is the intrinsic object %ArrayBuffer%.</p>
       </section>
 
       <section id="sec-arraybuffer.prototype.slice">
-        <h1><span class="secnum" id="sec-24.1.4.3"><a href="#sec-arraybuffer.prototype.slice" title="link to this section">24.1.4.3</a></span> ArrayBuffer.prototype.slice ( start, end )</h1>
+        <h1><span class="secnum" id="sec-24.1.4.3"><a href="sec-structured-data.html#sec-arraybuffer.prototype.slice" title="link to this section">24.1.4.3</a></span> ArrayBuffer.prototype.slice ( start, end )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -376,45 +376,45 @@
           <li>Let <i>O</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>O</i> does not have an [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>O</i> does not have an [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>len</i> be the value of <i>O</i>’s [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>relativeStart</i> be <a href="#sec-tointeger">ToInteger</a>(<i>start</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>relativeStart</i>).</li>
+          <li>Let <i>len</i> be the value of <i>O</i>’s [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>relativeStart</i> be <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>start</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>relativeStart</i>).</li>
           <li>If <i>relativeStart</i> &lt; 0, let <i>first</i> be max((<i>len</i> + <i>relativeStart</i>),0); else let
               <i>first</i> be min(<i>relativeStart</i>, <i>len</i>).</li>
-          <li>If <i>end</i> is <b>undefined</b>, let <i>relativeEnd</i> be <i>len</i>; else let <i>relativeEnd</i> be <a href="#sec-tointeger">ToInteger</a>(<i>end</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>relativeEnd</i>).</li>
+          <li>If <i>end</i> is <b>undefined</b>, let <i>relativeEnd</i> be <i>len</i>; else let <i>relativeEnd</i> be <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>end</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>relativeEnd</i>).</li>
           <li>If <i>relativeEnd</i> &lt; 0, let <i>final</i> be max((<i>len</i> + <i>relativeEnd</i>),0); else let <i>final</i> be
               min(<i>relativeEnd</i>, <i>len</i>).</li>
           <li>Let <i>newLen</i> be max(<i>final</i>-<i>first</i>,0).</li>
-          <li>Let <i>ctor</i> be <a href="#sec-speciesconstructor">SpeciesConstructor</a>(<i>O</i>, %ArrayBuffer%).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>ctor</i>).</li>
-          <li>Let <i>new</i> be <a href="#sec-construct">Construct</a>(<i>ctor</i>, «<i>newLen</i>»).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>new</i>).</li>
-          <li>If <i>new</i> does not have an [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>new</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>Let <i>ctor</i> be <a href="sec-abstract-operations.html#sec-speciesconstructor">SpeciesConstructor</a>(<i>O</i>, %ArrayBuffer%).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>ctor</i>).</li>
+          <li>Let <i>new</i> be <a href="sec-abstract-operations.html#sec-construct">Construct</a>(<i>ctor</i>, «<i>newLen</i>»).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>new</i>).</li>
+          <li>If <i>new</i> does not have an [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>, throw a <b>TypeError</b> exception.</li>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>new</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <a href="#sec-samevalue">SameValue</a>(<i>new</i>, <i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>new</i>, <i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>If the value of <i>new</i>’s [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> &lt; <i>newLen</i>, throw a
+          <li>If the value of <i>new</i>’s [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> &lt; <i>newLen</i>, throw a
               <b>TypeError</b> exception.</li>
           <li>NOTE: Side-effects of the above steps may have <span style="font-family: Times New Roman">detached</span>
               <i>O</i>.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>O</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>fromBuf</i> be the value of <i>O</i>’s [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>toBuf</i> be the value of <i>new</i>’s [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Perform <a href="#sec-copydatablockbytes">CopyDataBlockBytes</a>(<i>toBuf</i>, 0, <i>fromBuf</i>, <i>first</i>,
+          <li>Let <i>fromBuf</i> be the value of <i>O</i>’s [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>toBuf</i> be the value of <i>new</i>’s [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Perform <a href="sec-ecmascript-data-types-and-values.html#sec-copydatablockbytes">CopyDataBlockBytes</a>(<i>toBuf</i>, 0, <i>fromBuf</i>, <i>first</i>,
               <i>newLen</i>).</li>
           <li>Return <i>new</i>.</li>
         </ol>
       </section>
 
       <section id="sec-arraybuffer.prototype-@@tostringtag">
-        <h1><span class="secnum" id="sec-24.1.4.4"><a href="#sec-arraybuffer.prototype-@@tostringtag" title="link to this section">24.1.4.4</a></span> ArrayBuffer.prototype [ @@toStringTag ]</h1>
+        <h1><span class="secnum" id="sec-24.1.4.4"><a href="sec-structured-data.html#sec-arraybuffer.prototype-@@tostringtag" title="link to this section">24.1.4.4</a></span> ArrayBuffer.prototype [ @@toStringTag ]</h1>
 
         <p>The initial value of the @@toStringTag property is the String value <code>"ArrayBuffer"</code>.</p>
 
@@ -423,11 +423,11 @@
     </section>
 
     <section id="sec-properties-of-the-arraybuffer-instances">
-      <h1><span class="secnum" id="sec-24.1.5"><a href="#sec-properties-of-the-arraybuffer-instances" title="link to this section">24.1.5</a></span> Properties of the ArrayBuffer Instances</h1>
+      <h1><span class="secnum" id="sec-24.1.5"><a href="sec-structured-data.html#sec-properties-of-the-arraybuffer-instances" title="link to this section">24.1.5</a></span> Properties of the ArrayBuffer Instances</h1>
 
       <p>ArrayBuffer instances inherit properties from the ArrayBuffer prototype object. ArrayBuffer instances each have an
-      [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> and an
-      [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+      [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> and an
+      [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
 
       <p>ArrayBuffer instances whose [[ArrayBufferData]] is <b>null</b> are considered to be detached and all operators to access
       or modify data contained in the ArrayBuffer instance will fail.</p>
@@ -436,17 +436,17 @@
 
   <section id="sec-dataview-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-24.2"><a href="#sec-dataview-objects" title="link to this section">24.2</a></span> DataView
+      <h1><span class="secnum" id="sec-24.2"><a href="sec-structured-data.html#sec-dataview-objects" title="link to this section">24.2</a></span> DataView
           Objects</h1>
     </div>
 
     <section id="sec-abstract-operations-for-dataview-objects">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.2.1"><a href="#sec-abstract-operations-for-dataview-objects" title="link to this section">24.2.1</a></span> Abstract Operations For DataView Objects</h1>
+        <h1><span class="secnum" id="sec-24.2.1"><a href="sec-structured-data.html#sec-abstract-operations-for-dataview-objects" title="link to this section">24.2.1</a></span> Abstract Operations For DataView Objects</h1>
       </div>
 
       <section id="sec-getviewvalue">
-        <h1><span class="secnum" id="sec-24.2.1.1"><a href="#sec-getviewvalue" title="link to this section">24.2.1.1</a></span>
+        <h1><span class="secnum" id="sec-24.2.1.1"><a href="sec-structured-data.html#sec-getviewvalue" title="link to this section">24.2.1.1</a></span>
             GetViewValue ( view, requestIndex, isLittleEndian, type )</h1>
 
         <p class="normalbefore">The abstract operation GetViewValue with arguments <var>view</var>, <var>requestIndex</var>,
@@ -456,29 +456,29 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>view</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>view</i> does not have a [[DataView]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>view</i> does not have a [[DataView]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>numberIndex</i> be <a href="#sec-tonumber">ToNumber</a>(<i>requestIndex</i>).</li>
-          <li>Let <i>getIndex</i> be <a href="#sec-tointeger">ToInteger</a>(<i>numberIndex</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>getIndex</i>).</li>
+          <li>Let <i>numberIndex</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>requestIndex</i>).</li>
+          <li>Let <i>getIndex</i> be <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>numberIndex</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>getIndex</i>).</li>
           <li>If <i>numberIndex</i> ≠ <i>getIndex</i> or <i>getIndex</i> &lt; 0, throw a <b>RangeError</b> exception.</li>
-          <li>Let <i>isLittleEndian</i> be <a href="#sec-toboolean">ToBoolean</a>(<i>isLittleEndian</i>).</li>
-          <li>Let <i>buffer</i> be the value of <i>view’s</i> [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>Let <i>isLittleEndian</i> be <a href="sec-abstract-operations.html#sec-toboolean">ToBoolean</a>(<i>isLittleEndian</i>).</li>
+          <li>Let <i>buffer</i> be the value of <i>view’s</i> [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>viewOffset</i> be the value of <i>view’s</i> [[ByteOffset]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>viewSize</i> be the value of <i>view’s</i> [[ByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="#table-49">Table 49</a>
+          <li>Let <i>viewOffset</i> be the value of <i>view’s</i> [[ByteOffset]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>viewSize</i> be the value of <i>view’s</i> [[ByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="sec-indexed-collections.html#table-49">Table 49</a>
               for Element Type <i>type</i>.</li>
           <li>If <i>getIndex</i> +<i>elementSize</i> &gt; <i>viewSize</i>, throw a <b>RangeError</b> exception.</li>
           <li>Let <i>bufferIndex</i> be <i>getIndex</i> + <i>viewOffset</i>.</li>
-          <li>Return <a href="#sec-getvaluefrombuffer">GetValueFromBuffer</a>(<i>buffer</i>, <i>bufferIndex</i>, <i>type</i>,
+          <li>Return <a href="sec-structured-data.html#sec-getvaluefrombuffer">GetValueFromBuffer</a>(<i>buffer</i>, <i>bufferIndex</i>, <i>type</i>,
               <i>isLittleEndian</i>).</li>
         </ol>
       </section>
 
       <section id="sec-setviewvalue">
-        <h1><span class="secnum" id="sec-24.2.1.2"><a href="#sec-setviewvalue" title="link to this section">24.2.1.2</a></span>
+        <h1><span class="secnum" id="sec-24.2.1.2"><a href="sec-structured-data.html#sec-setviewvalue" title="link to this section">24.2.1.2</a></span>
             SetViewValue ( view, requestIndex, isLittleEndian, type, value )</h1>
 
         <p class="normalbefore">The abstract operation SetViewValue with arguments <var>view</var>, <var>requestIndex</var>,
@@ -488,28 +488,28 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>view</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>view</i> does not have a [[DataView]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>view</i> does not have a [[DataView]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>numberIndex</i> be <a href="#sec-tonumber">ToNumber</a>(<i>requestIndex</i>).</li>
-          <li>Let <i>getIndex</i> be <a href="#sec-tointeger">ToInteger</a>(<i>numberIndex</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>getIndex</i>).</li>
+          <li>Let <i>numberIndex</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>requestIndex</i>).</li>
+          <li>Let <i>getIndex</i> be <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>numberIndex</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>getIndex</i>).</li>
           <li>If <i>numberIndex</i> ≠ <i>getIndex</i> or <i>getIndex</i> &lt; 0, throw a <b>RangeError</b> exception.</li>
-          <li>Let <i>isLittleEndian</i> be <a href="#sec-toboolean">ToBoolean</a>(<i>isLittleEndian</i>).</li>
-          <li>Let <i>buffer</i> be the value of <i>view’s</i> [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>Let <i>isLittleEndian</i> be <a href="sec-abstract-operations.html#sec-toboolean">ToBoolean</a>(<i>isLittleEndian</i>).</li>
+          <li>Let <i>buffer</i> be the value of <i>view’s</i> [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>viewOffset</i> be the value of <i>view’s</i> [[ByteOffset]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>viewSize</i> be the value of <i>view’s</i> [[ByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="#table-49">Table 49</a>
+          <li>Let <i>viewOffset</i> be the value of <i>view’s</i> [[ByteOffset]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>viewSize</i> be the value of <i>view’s</i> [[ByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>elementSize</i> be the Number value of the Element Size value specified in <a href="sec-indexed-collections.html#table-49">Table 49</a>
               for Element Type <i>type</i>.</li>
           <li>If <i>getIndex</i> +<i>elementSize</i> &gt; <i>viewSize</i>, throw a <b>RangeError</b> exception.</li>
           <li>Let <i>bufferIndex</i> be <i>getIndex</i> + <i>viewOffset</i>.</li>
-          <li>Return <a href="#sec-setvalueinbuffer">SetValueInBuffer</a>(<i>buffer</i>, <i>bufferIndex</i>, <i>type</i>,
+          <li>Return <a href="sec-structured-data.html#sec-setvalueinbuffer">SetValueInBuffer</a>(<i>buffer</i>, <i>bufferIndex</i>, <i>type</i>,
               <i>value</i>, <i>isLittleEndian</i>).</li>
         </ol>
 
         <div class="note">
-          <p><span class="nh">NOTE</span> The algorithms for <a href="#sec-getviewvalue">GetViewValue</a> and SetViewValue are
+          <p><span class="nh">NOTE</span> The algorithms for <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a> and SetViewValue are
           identical except for their final steps.</p>
         </div>
       </section>
@@ -517,7 +517,7 @@
 
     <section id="sec-dataview-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.2.2"><a href="#sec-dataview-constructor" title="link to this section">24.2.2</a></span> The DataView Constructor</h1>
+        <h1><span class="secnum" id="sec-24.2.2"><a href="sec-structured-data.html#sec-dataview-constructor" title="link to this section">24.2.2</a></span> The DataView Constructor</h1>
 
         <p>The DataView constructor is the %DataView% intrinsic object and the initial value of the <code>DataView</code> property
         of the global object. When called as a constructor it creates and initializes a new DataView object. <code>DataView</code>
@@ -526,11 +526,11 @@
         <p>The <code>DataView</code> constructor is designed to be subclassable. It may be used as the value of an
         <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified
         <code>DataView</code> behaviour must include a <code>super</code> call to the <code>DataView</code> constructor to create
-        and initialize subclass instances with the internal state necessary to support the <code><a href="#sec-dataview.prototype">DataView.prototype</a></code> built-in methods.</p>
+        and initialize subclass instances with the internal state necessary to support the <code><a href="sec-structured-data.html#sec-dataview.prototype">DataView.prototype</a></code> built-in methods.</p>
       </div>
 
       <section id="sec-dataview-buffer-byteoffset-bytelength">
-        <h1><span class="secnum" id="sec-24.2.2.1"><a href="#sec-dataview-buffer-byteoffset-bytelength" title="link to this section">24.2.2.1</a></span> DataView (buffer [ , byteOffset [ , byteLength ] ] )</h1>
+        <h1><span class="secnum" id="sec-24.2.2.1"><a href="sec-structured-data.html#sec-dataview-buffer-byteoffset-bytelength" title="link to this section">24.2.2.1</a></span> DataView (buffer [ , byteOffset [ , byteLength ] ] )</h1>
 
         <p class="normalbefore"><code>DataView</code> called with arguments <span style="font-family: Times New
         Roman"><i>buffer</i>, <i>byteOffset</i>, and <i>length</i></span> performs the following steps:</p>
@@ -539,14 +539,14 @@
           <li>If NewTarget is <b>undefined</b>, throw a <b>TypeError</b> exception.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>buffer</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>buffer</i> does not have an [[ArrayBufferData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>numberOffset</i> be <a href="#sec-tonumber">ToNumber</a>(<i>byteOffset</i>).</li>
-          <li>Let <i>offset</i> be <a href="#sec-tointeger">ToInteger</a>(<i>numberOffset</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>offset</i>).</li>
+          <li>If <i>buffer</i> does not have an [[ArrayBufferData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>, throw a <b>TypeError</b> exception.</li>
+          <li>Let <i>numberOffset</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>byteOffset</i>).</li>
+          <li>Let <i>offset</i> be <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>numberOffset</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>offset</i>).</li>
           <li>If <i>numberOffset</i> ≠ <i>offset</i> or <i>offset</i> &lt; 0, throw a <b>RangeError</b> exception.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>bufferByteLength</i> be the value of <i>buffer’s</i> [[ArrayBufferByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>bufferByteLength</i> be the value of <i>buffer’s</i> [[ArrayBufferByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>If <i>offset</i> &gt; <i>bufferByteLength</i>, throw a <b>RangeError</b> exception.</li>
           <li>If <i>byteLength</i> is <b>undefined</b>, then
             <ol class="block">
@@ -555,22 +555,22 @@
           </li>
           <li>Else,
             <ol class="block">
-              <li>Let <i>viewByteLength</i> be <a href="#sec-tolength">ToLength</a>(<i>byteLength</i>)<i>.</i></li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>viewByteLength</i>).</li>
+              <li>Let <i>viewByteLength</i> be <a href="sec-abstract-operations.html#sec-tolength">ToLength</a>(<i>byteLength</i>)<i>.</i></li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>viewByteLength</i>).</li>
               <li>If <i>offset</i>+<i>viewByteLength</i> &gt; <i>bufferByteLength</i>, throw a <b>RangeError</b> exception.</li>
             </ol>
           </li>
-          <li>Let <i>O</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
+          <li>Let <i>O</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
               <code>"%DataViewPrototype%"</code>, «‍[[DataView]], [[ViewedArrayBuffer]], [[ByteLength]],
               [[ByteOffset]]» ).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
-          <li>Set <i>O’s</i> [[DataView]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+          <li>Set <i>O’s</i> [[DataView]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to
               <b>true</b>.</li>
-          <li>Set <i>O’s</i> [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>O’s</i> [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>buffer</i>.</li>
-          <li>Set <i>O</i>’s [[ByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to
+          <li>Set <i>O</i>’s [[ByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to
               <i>viewByteLength</i>.</li>
-          <li>Set <i>O</i>’s [[ByteOffset]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to
+          <li>Set <i>O</i>’s [[ByteOffset]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to
               <i>offset</i>.</li>
           <li>Return <i>O</i>.</li>
         </ol>
@@ -579,18 +579,18 @@
 
     <section id="sec-properties-of-the-dataview-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.2.3"><a href="#sec-properties-of-the-dataview-constructor" title="link to this section">24.2.3</a></span> Properties of the DataView Constructor</h1>
+        <h1><span class="secnum" id="sec-24.2.3"><a href="sec-structured-data.html#sec-properties-of-the-dataview-constructor" title="link to this section">24.2.3</a></span> Properties of the DataView Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        <code>DataView</code> constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        <code>DataView</code> constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>Besides the <code>length</code> property (whose value is 3), the DataView constructor has the following properties:</p>
       </div>
 
       <section id="sec-dataview.prototype">
-        <h1><span class="secnum" id="sec-24.2.3.1"><a href="#sec-dataview.prototype" title="link to this section">24.2.3.1</a></span> DataView.prototype</h1>
+        <h1><span class="secnum" id="sec-24.2.3.1"><a href="sec-structured-data.html#sec-dataview.prototype" title="link to this section">24.2.3.1</a></span> DataView.prototype</h1>
 
-        <p>The initial value of <code>DataView.prototype</code> is the intrinsic object %DataViewPrototype% (<a href="#sec-properties-of-the-dataview-prototype-object">24.2.4</a>).</p>
+        <p>The initial value of <code>DataView.prototype</code> is the intrinsic object %DataViewPrototype% (<a href="sec-structured-data.html#sec-properties-of-the-dataview-prototype-object">24.2.4</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
@@ -599,15 +599,15 @@
 
     <section id="sec-properties-of-the-dataview-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.2.4"><a href="#sec-properties-of-the-dataview-prototype-object" title="link to this section">24.2.4</a></span> Properties of the DataView Prototype Object</h1>
+        <h1><span class="secnum" id="sec-24.2.4"><a href="sec-structured-data.html#sec-properties-of-the-dataview-prototype-object" title="link to this section">24.2.4</a></span> Properties of the DataView Prototype Object</h1>
 
-        <p>The DataView prototype object is the intrinsic object %DataViewPrototype%. The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the DataView prototype object is the intrinsic
-        object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The DataView prototype
-        object is an ordinary object. It does not have a [[DataView]], [[ViewedArrayBuffer]], [[ByteLength]], or [[ByteOffset]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        <p>The DataView prototype object is the intrinsic object %DataViewPrototype%. The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the DataView prototype object is the intrinsic
+        object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The DataView prototype
+        object is an ordinary object. It does not have a [[DataView]], [[ViewedArrayBuffer]], [[ByteLength]], or [[ByteOffset]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
       </div>
 
       <section id="sec-get-dataview.prototype.buffer">
-        <h1><span class="secnum" id="sec-24.2.4.1"><a href="#sec-get-dataview.prototype.buffer" title="link to this section">24.2.4.1</a></span> get DataView.prototype.buffer</h1>
+        <h1><span class="secnum" id="sec-24.2.4.1"><a href="sec-structured-data.html#sec-get-dataview.prototype.buffer" title="link to this section">24.2.4.1</a></span> get DataView.prototype.buffer</h1>
 
         <p class="normalbefore"><code>DataView.prototype.buffer</code> is an accessor property whose set accessor function is
         <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
@@ -616,15 +616,15 @@
           <li>Let <i>O</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>O</i> does not have a [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>O</i> does not have a [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>buffer</i> be the value of <i>O</i>’s [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>buffer</i> be the value of <i>O</i>’s [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Return <i>buffer</i>.</li>
         </ol>
       </section>
 
       <section id="sec-get-dataview.prototype.bytelength">
-        <h1><span class="secnum" id="sec-24.2.4.2"><a href="#sec-get-dataview.prototype.bytelength" title="link to this section">24.2.4.2</a></span> get DataView.prototype.byteLength</h1>
+        <h1><span class="secnum" id="sec-24.2.4.2"><a href="sec-structured-data.html#sec-get-dataview.prototype.bytelength" title="link to this section">24.2.4.2</a></span> get DataView.prototype.byteLength</h1>
 
         <p class="normalbefore"><code>DataView</code>.<code>prototype.byteLength</code> is an accessor property whose set accessor
         function is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
@@ -633,18 +633,18 @@
           <li>Let <i>O</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>O</i> does not have a [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>O</i> does not have a [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>buffer</i> be the value of <i>O</i>’s [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>Let <i>buffer</i> be the value of <i>O</i>’s [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>size</i> be the value of <i>O</i>’s [[ByteLength]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>size</i> be the value of <i>O</i>’s [[ByteLength]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Return <i>size</i>.</li>
         </ol>
       </section>
 
       <section id="sec-get-dataview.prototype.byteoffset">
-        <h1><span class="secnum" id="sec-24.2.4.3"><a href="#sec-get-dataview.prototype.byteoffset" title="link to this section">24.2.4.3</a></span> get DataView.prototype.byteOffset</h1>
+        <h1><span class="secnum" id="sec-24.2.4.3"><a href="sec-structured-data.html#sec-get-dataview.prototype.byteoffset" title="link to this section">24.2.4.3</a></span> get DataView.prototype.byteOffset</h1>
 
         <p class="normalbefore"><code>DataView</code>.<code>prototype.byteOffset</code> is an accessor property whose set accessor
         function is <span class="value">undefined</span>. Its get accessor function performs the following steps:</p>
@@ -653,24 +653,24 @@
           <li>Let <i>O</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>O</i> does not have a [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>O</i> does not have a [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>buffer</i> be the value of <i>O</i>’s [[ViewedArrayBuffer]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>If <a href="#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
+          <li>Let <i>buffer</i> be the value of <i>O</i>’s [[ViewedArrayBuffer]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>If <a href="sec-structured-data.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<i>buffer</i>) is <b>true</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>offset</i> be the value of <i>O</i>’s [[ByteOffset]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Let <i>offset</i> be the value of <i>O</i>’s [[ByteOffset]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Return <i>offset</i>.</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.constructor">
-        <h1><span class="secnum" id="sec-24.2.4.4"><a href="#sec-dataview.prototype.constructor" title="link to this section">24.2.4.4</a></span> DataView.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-24.2.4.4"><a href="sec-structured-data.html#sec-dataview.prototype.constructor" title="link to this section">24.2.4.4</a></span> DataView.prototype.constructor</h1>
 
         <p>The initial value of <code>DataView.prototype.constructor</code> is the intrinsic object %DataView%.</p>
       </section>
 
       <section id="sec-dataview.prototype.getfloat32">
-        <h1><span class="secnum" id="sec-24.2.4.5"><a href="#sec-dataview.prototype.getfloat32" title="link to this section">24.2.4.5</a></span> DataView.prototype.getFloat32 ( byteOffset [ , littleEndian ] )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.5"><a href="sec-structured-data.html#sec-dataview.prototype.getfloat32" title="link to this section">24.2.4.5</a></span> DataView.prototype.getFloat32 ( byteOffset [ , littleEndian ] )</h1>
 
         <p class="normalbefore">When the <code>getFloat32</code> method is called with argument <var>byteOffset</var> and optional
         argument <i>littleEndian</i> the following steps are taken:</p>
@@ -678,13 +678,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Float32"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.getfloat64">
-        <h1><span class="secnum" id="sec-24.2.4.6"><a href="#sec-dataview.prototype.getfloat64" title="link to this section">24.2.4.6</a></span> DataView.prototype.getFloat64 ( byteOffset [ , littleEndian ] )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.6"><a href="sec-structured-data.html#sec-dataview.prototype.getfloat64" title="link to this section">24.2.4.6</a></span> DataView.prototype.getFloat64 ( byteOffset [ , littleEndian ] )</h1>
 
         <p class="normalbefore">When the <code>getFloat64</code> method is called with argument <var>byteOffset</var> and optional
         argument <i>littleEndian</i> the following steps are taken:</p>
@@ -692,26 +692,26 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Float64"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.getint8">
-        <h1><span class="secnum" id="sec-24.2.4.7"><a href="#sec-dataview.prototype.getint8" title="link to this section">24.2.4.7</a></span> DataView.prototype.getInt8 ( byteOffset )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.7"><a href="sec-structured-data.html#sec-dataview.prototype.getint8" title="link to this section">24.2.4.7</a></span> DataView.prototype.getInt8 ( byteOffset )</h1>
 
         <p class="normalbefore">When the <code>getInt8</code> method is called with argument <var>byteOffset</var> the following
         steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>,
               <code>"Int8"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.getint16">
-        <h1><span class="secnum" id="sec-24.2.4.8"><a href="#sec-dataview.prototype.getint16" title="link to this section">24.2.4.8</a></span> DataView.prototype.getInt16 ( byteOffset [ , littleEndian ] )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.8"><a href="sec-structured-data.html#sec-dataview.prototype.getint16" title="link to this section">24.2.4.8</a></span> DataView.prototype.getInt16 ( byteOffset [ , littleEndian ] )</h1>
 
         <p class="normalbefore">When the <code>getInt16</code> method is called with argument <var>byteOffset</var> and optional
         argument <i>littleEndian</i> the following steps are taken:</p>
@@ -719,13 +719,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Int16"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.getint32">
-        <h1><span class="secnum" id="sec-24.2.4.9"><a href="#sec-dataview.prototype.getint32" title="link to this section">24.2.4.9</a></span> DataView.prototype.getInt32 ( byteOffset [ , littleEndian ] )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.9"><a href="sec-structured-data.html#sec-dataview.prototype.getint32" title="link to this section">24.2.4.9</a></span> DataView.prototype.getInt32 ( byteOffset [ , littleEndian ] )</h1>
 
         <p class="normalbefore">When the <code>getInt32</code> method is called with argument <var>byteOffset</var> and optional
         argument <i>littleEndian</i> the following steps are taken:</p>
@@ -733,26 +733,26 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>undefined</b>.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Int32"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.getuint8">
-        <h1><span class="secnum" id="sec-24.2.4.10"><a href="#sec-dataview.prototype.getuint8" title="link to this section">24.2.4.10</a></span> DataView.prototype.getUint8 ( byteOffset )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.10"><a href="sec-structured-data.html#sec-dataview.prototype.getuint8" title="link to this section">24.2.4.10</a></span> DataView.prototype.getUint8 ( byteOffset )</h1>
 
         <p class="normalbefore">When the <code>getUint8</code> method is called with argument <var>byteOffset</var> the following
         steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>,
               <code>"Uint8"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.getuint16">
-        <h1><span class="secnum" id="sec-24.2.4.11"><a href="#sec-dataview.prototype.getuint16" title="link to this section">24.2.4.11</a></span> DataView.prototype.getUint16 ( byteOffset [ , littleEndian ] )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.11"><a href="sec-structured-data.html#sec-dataview.prototype.getuint16" title="link to this section">24.2.4.11</a></span> DataView.prototype.getUint16 ( byteOffset [ , littleEndian ] )</h1>
 
         <p class="normalbefore">When the <code>getUint16</code> method is called with argument <var>byteOffset</var> and optional
         argument <i>littleEndian</i> the following steps are taken:</p>
@@ -760,13 +760,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Uint16"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.getuint32">
-        <h1><span class="secnum" id="sec-24.2.4.12"><a href="#sec-dataview.prototype.getuint32" title="link to this section">24.2.4.12</a></span> DataView.prototype.getUint32 ( byteOffset [ , littleEndian ] )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.12"><a href="sec-structured-data.html#sec-dataview.prototype.getuint32" title="link to this section">24.2.4.12</a></span> DataView.prototype.getUint32 ( byteOffset [ , littleEndian ] )</h1>
 
         <p class="normalbefore">When the <code>getUint32</code> method is called with argument <var>byteOffset</var> and optional
         argument <i>littleEndian</i> the following steps are taken:</p>
@@ -774,13 +774,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-getviewvalue">GetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Uint32"</code>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setfloat32">
-        <h1><span class="secnum" id="sec-24.2.4.13"><a href="#sec-dataview.prototype.setfloat32" title="link to this section">24.2.4.13</a></span> DataView.prototype.setFloat32 ( byteOffset, value [ , littleEndian ]
+        <h1><span class="secnum" id="sec-24.2.4.13"><a href="sec-structured-data.html#sec-dataview.prototype.setfloat32" title="link to this section">24.2.4.13</a></span> DataView.prototype.setFloat32 ( byteOffset, value [ , littleEndian ]
             )</h1>
 
         <p class="normalbefore">When the <code>setFloat32</code> method is called with arguments <var>byteOffset</var> and
@@ -789,13 +789,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Float32"</code>, <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setfloat64">
-        <h1><span class="secnum" id="sec-24.2.4.14"><a href="#sec-dataview.prototype.setfloat64" title="link to this section">24.2.4.14</a></span> DataView.prototype.setFloat64 ( byteOffset, value [ , littleEndian ]
+        <h1><span class="secnum" id="sec-24.2.4.14"><a href="sec-structured-data.html#sec-dataview.prototype.setfloat64" title="link to this section">24.2.4.14</a></span> DataView.prototype.setFloat64 ( byteOffset, value [ , littleEndian ]
             )</h1>
 
         <p class="normalbefore">When the <code>setFloat64</code> method is called with arguments <var>byteOffset</var> and
@@ -804,26 +804,26 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Float64"</code>, <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setint8">
-        <h1><span class="secnum" id="sec-24.2.4.15"><a href="#sec-dataview.prototype.setint8" title="link to this section">24.2.4.15</a></span> DataView.prototype.setInt8 ( byteOffset, value )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.15"><a href="sec-structured-data.html#sec-dataview.prototype.setint8" title="link to this section">24.2.4.15</a></span> DataView.prototype.setInt8 ( byteOffset, value )</h1>
 
         <p class="normalbefore">When the <code>setInt8</code> method is called with arguments <var>byteOffset</var> and
         <var>value</var> the following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>, <code>"Int8"</code>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>, <code>"Int8"</code>,
               <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setint16">
-        <h1><span class="secnum" id="sec-24.2.4.16"><a href="#sec-dataview.prototype.setint16" title="link to this section">24.2.4.16</a></span> DataView.prototype.setInt16 ( byteOffset, value [ , littleEndian ]
+        <h1><span class="secnum" id="sec-24.2.4.16"><a href="sec-structured-data.html#sec-dataview.prototype.setint16" title="link to this section">24.2.4.16</a></span> DataView.prototype.setInt16 ( byteOffset, value [ , littleEndian ]
             )</h1>
 
         <p class="normalbefore">When the <code>setInt16</code> method is called with arguments <var>byteOffset</var> and
@@ -832,13 +832,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Int16"</code>, <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setint32">
-        <h1><span class="secnum" id="sec-24.2.4.17"><a href="#sec-dataview.prototype.setint32" title="link to this section">24.2.4.17</a></span> DataView.prototype.setInt32 ( byteOffset, value [ , littleEndian ]
+        <h1><span class="secnum" id="sec-24.2.4.17"><a href="sec-structured-data.html#sec-dataview.prototype.setint32" title="link to this section">24.2.4.17</a></span> DataView.prototype.setInt32 ( byteOffset, value [ , littleEndian ]
             )</h1>
 
         <p class="normalbefore">When the <code>setInt32</code> method is called with arguments <var>byteOffset</var> and
@@ -847,26 +847,26 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Int32"</code>, <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setuint8">
-        <h1><span class="secnum" id="sec-24.2.4.18"><a href="#sec-dataview.prototype.setuint8" title="link to this section">24.2.4.18</a></span> DataView.prototype.setUint8 ( byteOffset, value )</h1>
+        <h1><span class="secnum" id="sec-24.2.4.18"><a href="sec-structured-data.html#sec-dataview.prototype.setuint8" title="link to this section">24.2.4.18</a></span> DataView.prototype.setUint8 ( byteOffset, value )</h1>
 
         <p class="normalbefore">When the <code>setUint8</code> method is called with arguments <var>byteOffset</var> and
         <var>value</var> the following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>, <code>"Uint8"</code>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <b>true</b>, <code>"Uint8"</code>,
               <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setuint16">
-        <h1><span class="secnum" id="sec-24.2.4.19"><a href="#sec-dataview.prototype.setuint16" title="link to this section">24.2.4.19</a></span> DataView.prototype.setUint16 ( byteOffset, value [ , littleEndian ]
+        <h1><span class="secnum" id="sec-24.2.4.19"><a href="sec-structured-data.html#sec-dataview.prototype.setuint16" title="link to this section">24.2.4.19</a></span> DataView.prototype.setUint16 ( byteOffset, value [ , littleEndian ]
             )</h1>
 
         <p class="normalbefore">When the <code>setUint16</code> method is called with arguments <var>byteOffset</var> and
@@ -875,13 +875,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Uint16"</code>, <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype.setuint32">
-        <h1><span class="secnum" id="sec-24.2.4.20"><a href="#sec-dataview.prototype.setuint32" title="link to this section">24.2.4.20</a></span> DataView.prototype.setUint32 ( byteOffset, value [ , littleEndian ]
+        <h1><span class="secnum" id="sec-24.2.4.20"><a href="sec-structured-data.html#sec-dataview.prototype.setuint32" title="link to this section">24.2.4.20</a></span> DataView.prototype.setUint32 ( byteOffset, value [ , littleEndian ]
             )</h1>
 
         <p class="normalbefore">When the <code>setUint32</code> method is called with arguments <var>byteOffset</var> and
@@ -890,13 +890,13 @@
         <ol class="proc">
           <li>Let <i>v</i> be the <b>this</b> value.</li>
           <li>If <i>littleEndian</i> is not present, let <i>littleEndian</i> be <b>false</b>.</li>
-          <li>Return <a href="#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
+          <li>Return <a href="sec-structured-data.html#sec-setviewvalue">SetViewValue</a>(<i>v</i>, <i>byteOffset</i>, <i>littleEndian</i>,
               <code>"Uint32"</code>, <i>value</i>).</li>
         </ol>
       </section>
 
       <section id="sec-dataview.prototype-@@tostringtag">
-        <h1><span class="secnum" id="sec-24.2.4.21"><a href="#sec-dataview.prototype-@@tostringtag" title="link to this section">24.2.4.21</a></span> DataView.prototype[ @@toStringTag ]</h1>
+        <h1><span class="secnum" id="sec-24.2.4.21"><a href="sec-structured-data.html#sec-dataview.prototype-@@tostringtag" title="link to this section">24.2.4.21</a></span> DataView.prototype[ @@toStringTag ]</h1>
 
         <p>The initial value of the @@toStringTag property is the String value <code>"DataView"</code>.</p>
 
@@ -905,14 +905,14 @@
     </section>
 
     <section id="sec-properties-of-dataview-instances">
-      <h1><span class="secnum" id="sec-24.2.5"><a href="#sec-properties-of-dataview-instances" title="link to this section">24.2.5</a></span> Properties of DataView Instances</h1>
+      <h1><span class="secnum" id="sec-24.2.5"><a href="sec-structured-data.html#sec-properties-of-dataview-instances" title="link to this section">24.2.5</a></span> Properties of DataView Instances</h1>
 
       <p>DataView instances are ordinary objects that inherit properties from the DataView prototype object. DataView instances
       each have [[DataView]], [[ViewedArrayBuffer]], [[ByteLength]], and [[ByteOffset]] internal slots.</p>
 
       <div class="note">
-        <p><span class="nh">NOTE</span> The value of the [[DataView]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is not used within this specification. The simple
-        presence of that <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is used within the
+        <p><span class="nh">NOTE</span> The value of the [[DataView]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is not used within this specification. The simple
+        presence of that <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is used within the
         specification to identify objects created using the <code>DataView</code> constructor.</p>
       </div>
     </section>
@@ -920,7 +920,7 @@
 
   <section id="sec-json-object">
     <div class="front">
-      <h1><span class="secnum" id="sec-24.3"><a href="#sec-json-object" title="link to this section">24.3</a></span> The JSON
+      <h1><span class="secnum" id="sec-24.3"><a href="sec-structured-data.html#sec-json-object" title="link to this section">24.3</a></span> The JSON
           Object</h1>
 
       <p>The JSON object is the %JSON% intrinsic object and the initial value of the <code>JSON</code> property of the global
@@ -928,12 +928,12 @@
       used to parse and construct JSON texts. The JSON Data Interchange Format is defined in ECMA-404. The JSON interchange format
       used in this specification is exactly that described by ECMA-404.</p>
 
-      <p>Conforming implementations of <code><a href="#sec-json.parse">JSON.parse</a></code> and <code><a href="#sec-json.stringify">JSON.stringify</a></code> must support the exact interchange format described in the ECMA-404
+      <p>Conforming implementations of <code><a href="sec-structured-data.html#sec-json.parse">JSON.parse</a></code> and <code><a href="sec-structured-data.html#sec-json.stringify">JSON.stringify</a></code> must support the exact interchange format described in the ECMA-404
       specification without any deletions or extensions to the format.</p>
 
-      <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the JSON
-      object is the intrinsic object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The
-      value of the [[Extensible]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the JSON object
+      <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the JSON
+      object is the intrinsic object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The
+      value of the [[Extensible]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the JSON object
       is set to <b>true</b>.</p>
 
       <p>The JSON object does not have a [[Construct]] internal method; it is not possible to use the JSON object as a constructor
@@ -944,7 +944,7 @@
 
     <section id="sec-json.parse">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.3.1"><a href="#sec-json.parse" title="link to this section">24.3.1</a></span>
+        <h1><span class="secnum" id="sec-24.3.1"><a href="sec-structured-data.html#sec-json.parse" title="link to this section">24.3.1</a></span>
             JSON.parse ( text [ , reviver ] )</h1>
 
         <p>The <code>parse</code> function parses a JSON text (a JSON-formatted String) and produces an ECMAScript value. The JSON
@@ -958,25 +958,25 @@
         structure is not modified. If it returns <b>undefined</b> then the property is deleted from the result.</p>
 
         <ol class="proc">
-          <li>Let <i>JText</i> be <a href="#sec-tostring">ToString</a>(<i>text</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>JText</i>).</li>
-          <li>Parse <i>JText</i> interpreted as UTF-16 encoded Unicode points (<a href="#sec-ecmascript-language-types-string-type">6.1.4</a>) as a JSON text as specified in <br>ECMA-404. Throw a
+          <li>Let <i>JText</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>text</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>JText</i>).</li>
+          <li>Parse <i>JText</i> interpreted as UTF-16 encoded Unicode points (<a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types-string-type">6.1.4</a>) as a JSON text as specified in <br>ECMA-404. Throw a
               <b>SyntaxError</b> exception if <i>JText</i> is not a valid JSON text as defined in that specification.</li>
           <li>Let <i>scriptText</i> be the result of concatenating <code>"("</code>, <i>JText</i>, and <code>");"</code>.</li>
           <li>Let <i>completion</i> be the result of parsing and evaluating <i>scriptText</i> as if it was the source text of an
               ECMAScript <i>Script</i>. but using the alternative definition of <i>DoubleStringCharacter</i> provided below. The
-              extended PropertyDefinitionEvaluation semantics defined in <a href="#sec-__proto__-property-names-in-object-initializers">B.3.1</a> must not be used during the evaluation.</li>
+              extended PropertyDefinitionEvaluation semantics defined in <a href="sec-additional-ecmascript-features-for-web-browsers.html#sec-__proto__-property-names-in-object-initializers">B.3.1</a> must not be used during the evaluation.</li>
           <li>Let <i>unfiltered</i> be <i>completion</i>.[[value]].</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>unfiltered</i> will be either a primitive value or an object
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>unfiltered</i> will be either a primitive value or an object
               that is defined by either an <i>ArrayLiteral</i> or an <i>ObjectLiteral</i>.</li>
-          <li>If <a href="#sec-iscallable">IsCallable</a>(<i>reviver</i>) is <b>true</b>, then
+          <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>reviver</i>) is <b>true</b>, then
             <ol class="block">
-              <li>Let <i>root</i> be <a href="#sec-objectcreate">ObjectCreate</a>(%ObjectPrototype%).</li>
+              <li>Let <i>root</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(%ObjectPrototype%).</li>
               <li>Let <i>rootName</i> be the empty String.</li>
-              <li>Let <i>status</i> be <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>root</i>, <i>rootName</i>,
+              <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>root</i>, <i>rootName</i>,
                   <i>unfiltered</i>).</li>
-              <li><a href="#sec-algorithm-conventions">Assert</a>: <i>status</i> is <b>true</b>.</li>
-              <li>Return <a href="#sec-internalizejsonproperty">InternalizeJSONProperty</a>(<i>root</i>, <i>rootName</i>).</li>
+              <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>status</i> is <b>true</b>.</li>
+              <li>Return <a href="sec-structured-data.html#sec-internalizejsonproperty">InternalizeJSONProperty</a>(<i>root</i>, <i>rootName</i>).</li>
             </ol>
           </li>
           <li>Else
@@ -998,7 +998,7 @@
         <ul>
           <li>
             <p>The SV of <span class="prod"><span class="nt">DoubleStringCharacter</span> <span class="geq">::</span> <span class="nt">SourceCharacter</span> <span class="grhsmod">but not one of</span> <code class="t">"</code> <span class="grhsmod">or</span> <code class="t">\</code> <span class="grhsmod">or</span></span> U+0000 <b>through</b> U+001F
-            is the <a href="#sec-utf16encoding">UTF16Encoding</a> (<a href="#sec-utf16encoding">10.1.1</a>) of the code point
+            is the <a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">UTF16Encoding</a> (<a href="sec-ecmascript-language-source-code.html#sec-utf16encoding">10.1.1</a>) of the code point
             value of <i>SourceCharacter</i>.</p>
           </li>
         </ul>
@@ -1012,41 +1012,41 @@
       </div>
 
       <section id="sec-internalizejsonproperty">
-        <h1><span class="secnum" id="sec-24.3.1.1"><a href="#sec-internalizejsonproperty" title="link to this section">24.3.1.1</a></span> Runtime Semantics: InternalizeJSONProperty( holder, name)</h1>
+        <h1><span class="secnum" id="sec-24.3.1.1"><a href="sec-structured-data.html#sec-internalizejsonproperty" title="link to this section">24.3.1.1</a></span> Runtime Semantics: InternalizeJSONProperty( holder, name)</h1>
 
         <p class="normalbefore">The abstract operation InternalizeJSONProperty is a recursive abstract operation that takes two
         parameters: a <var>holder</var> object and the String <var>name</var> of a property in that object.
         InternalizeJSONProperty uses the value of <var>reviver</var> that was originally passed to the above parse function.</p>
 
         <ol class="proc">
-          <li>Let <i>val</i> be <a href="#sec-get-o-p">Get</a>(<i>holder</i>, <i>name</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>val</i>).</li>
+          <li>Let <i>val</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>holder</i>, <i>name</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>val</i>).</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>val</i>) is Object, then
             <ol class="block">
-              <li>Let <i>isArray</i> be <a href="#sec-isarray">IsArray</a>(<i>val</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
+              <li>Let <i>isArray</i> be <a href="sec-abstract-operations.html#sec-isarray">IsArray</a>(<i>val</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
               <li>If <i>isArray</i> is <b>true</b>,  then
                 <ol class="block">
                   <li>Set <i>I</i> to 0.</li>
-                  <li>Let <i>len</i> be <a href="#sec-tolength">ToLength</a>(<a href="#sec-get-o-p">Get</a>(<i>val</i>,
+                  <li>Let <i>len</i> be <a href="sec-abstract-operations.html#sec-tolength">ToLength</a>(<a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>val</i>,
                       <code>"length"</code>)).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
                   <li>Repeat while <i>I</i> &lt; <i>len</i>,
                     <ol class="block">
-                      <li>Let <i>newElement</i> be InternalizeJSONProperty(<i>val</i>, <a href="#sec-tostring">ToString</a>(<i>I</i>)).</li>
-                      <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>newElement</i>).</li>
+                      <li>Let <i>newElement</i> be InternalizeJSONProperty(<i>val</i>, <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>I</i>)).</li>
+                      <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>newElement</i>).</li>
                       <li>If <i>newElement</i> is <b>undefined</b>, then
                         <ol class="block">
-                          <li>Let <i>status</i> be <i>val</i>.[[Delete]](<a href="#sec-tostring">ToString</a>(<i>I</i>)).</li>
+                          <li>Let <i>status</i> be <i>val</i>.[[Delete]](<a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>I</i>)).</li>
                         </ol>
                       </li>
                       <li>Else
                         <ol class="block">
-                          <li>Let <i>status</i> be <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>val</i>, <a href="#sec-tostring">ToString</a>(<i>I</i>), <i>newElement</i>).</li>
+                          <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>val</i>, <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>I</i>), <i>newElement</i>).</li>
                           <li>NOTE This algorithm intentionally does not throw an exception if status is <b>false</b>.</li>
                         </ol>
                       </li>
-                      <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                      <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
                       <li>Add 1 to <i>I</i>.</li>
                     </ol>
                   </li>
@@ -1054,12 +1054,12 @@
               </li>
               <li>Else
                 <ol class="block">
-                  <li>Let <i>keys</i> be <a href="#sec-enumerableownnames">EnumerableOwnNames</a>(<i>val</i>).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
+                  <li>Let <i>keys</i> be <a href="sec-abstract-operations.html#sec-enumerableownnames">EnumerableOwnNames</a>(<i>val</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
                   <li>For each String <i>P</i> in <i>keys</i> do,
                     <ol class="block">
                       <li>Let <i>newElement</i> be InternalizeJSONProperty(<i>val</i>, <i>P</i>).</li>
-                      <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>newElement</i>).</li>
+                      <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>newElement</i>).</li>
                       <li>If <i>newElement</i> is <b>undefined</b>, then
                         <ol class="block">
                           <li>Let <i>status</i> be <i>val</i>.[[Delete]](<i>P</i>).</li>
@@ -1067,22 +1067,22 @@
                       </li>
                       <li>Else
                         <ol class="block">
-                          <li>Let <i>status</i> be <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>val</i>, <i>P</i>,
+                          <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>val</i>, <i>P</i>,
                               <i>newElement</i>).</li>
                           <li>NOTE This algorithm intentionally does not throw an exception if status is <b>false</b>.</li>
                         </ol>
                       </li>
-                      <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                      <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
                     </ol>
                   </li>
                 </ol>
               </li>
             </ol>
           </li>
-          <li>Return <a href="#sec-call">Call</a>(<i>reviver</i>, <i>holder</i>, «<i>name</i>, <i>val</i>»).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>reviver</i>, <i>holder</i>, «<i>name</i>, <i>val</i>»).</li>
         </ol>
 
-        <p>It is not permitted for a conforming implementation of <code><a href="#sec-json.parse">JSON.parse</a></code> to extend
+        <p>It is not permitted for a conforming implementation of <code><a href="sec-structured-data.html#sec-json.parse">JSON.parse</a></code> to extend
         the JSON grammars. If an implementation wishes to support a modified or extended JSON interchange format it must do so by
         defining a different parse function.</p>
 
@@ -1095,7 +1095,7 @@
 
     <section id="sec-json.stringify">
       <div class="front">
-        <h1><span class="secnum" id="sec-24.3.2"><a href="#sec-json.stringify" title="link to this section">24.3.2</a></span>
+        <h1><span class="secnum" id="sec-24.3.2"><a href="sec-structured-data.html#sec-json.stringify" title="link to this section">24.3.2</a></span>
             JSON.stringify ( value [ , replacer [ , space ] ] )</h1>
 
         <p>The <code>stringify</code> function returns a String in UTF-16 encoded JSON format representing an ECMAScript value. It
@@ -1108,40 +1108,40 @@
         <p class="normalbefore">These are the steps in stringifying an object:</p>
 
         <ol class="proc">
-          <li>Let <i>stack</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Let <i>stack</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>Let <i>indent</i> be the empty String.</li>
           <li>Let <i>PropertyList</i> and <i>ReplacerFunction</i> be <b>undefined</b>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>replacer</i>) is Object, then
             <ol class="block">
-              <li>If <a href="#sec-iscallable">IsCallable</a>(<i>replacer</i>) is <b>true</b>, then
+              <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>replacer</i>) is <b>true</b>, then
                 <ol class="block">
                   <li>Let <i>ReplacerFunction</i> be <i>replacer</i>.</li>
                 </ol>
               </li>
               <li>Else,
                 <ol class="block">
-                  <li>Let <i>isArray</i> be <a href="#sec-isarray">IsArray</a>(<i>replacer</i>).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
+                  <li>Let <i>isArray</i> be <a href="sec-abstract-operations.html#sec-isarray">IsArray</a>(<i>replacer</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
                   <li>If <i>isArray</i> is <b>true</b>, then
                     <ol class="block">
-                      <li>Let <i>PropertyList</i> be an empty <a href="#sec-list-and-record-specification-type">List</a></li>
-                      <li>Let <i>len</i> be <a href="#sec-tolength">ToLength</a>(<a href="#sec-get-o-p">Get</a>(<i>replacer</i>,
+                      <li>Let <i>PropertyList</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a></li>
+                      <li>Let <i>len</i> be <a href="sec-abstract-operations.html#sec-tolength">ToLength</a>(<a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>replacer</i>,
                           <code>"length"</code>)).</li>
-                      <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
+                      <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
                       <li>Let <i>k</i> be 0.</li>
                       <li>Repeat while <i>k</i>&lt;<i>len</i>.
                         <ol class="block">
-                          <li>Let <i>v</i> be <a href="#sec-get-o-p">Get</a>(<i>replacer</i>, <a href="#sec-tostring">ToString</a>(<i>k</i>)).</li>
-                          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>v</i>).</li>
+                          <li>Let <i>v</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>replacer</i>, <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>k</i>)).</li>
+                          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>v</i>).</li>
                           <li>Let <i>item</i> be <b>undefined</b>.</li>
                           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>v</i>) is String, let <i>item</i> be
                               <i>v.</i></li>
                           <li>Else if <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>v</i>) is Number, let
-                              <i>item</i> be <a href="#sec-tostring">ToString</a>(<i>v</i>).</li>
+                              <i>item</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>v</i>).</li>
                           <li>Else if <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>v</i>) is Object, then
                             <ol class="block">
-                              <li>If <i>v</i> has a [[StringData]] or [[NumberData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>, let <i>item</i> be <a href="#sec-tostring">ToString</a>(<i>v</i>).</li>
-                              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>item</i>).</li>
+                              <li>If <i>v</i> has a [[StringData]] or [[NumberData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>, let <i>item</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>v</i>).</li>
+                              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>item</i>).</li>
                             </ol>
                           </li>
                           <li>If <i>item</i> is not <b>undefined</b> and <i>item</i> is not currently an element of
@@ -1161,25 +1161,25 @@
           </li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>space</i>) is Object, then
             <ol class="block">
-              <li>If <i>space</i> has a [[NumberData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+              <li>If <i>space</i> has a [[NumberData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                   slot</a>, then
                 <ol class="block">
-                  <li>Let <i>space</i> be <a href="#sec-tonumber">ToNumber</a>(<i>space</i>).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>space</i>).</li>
+                  <li>Let <i>space</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>space</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>space</i>).</li>
                 </ol>
               </li>
-              <li>Else if <i>space</i> has a [[StringData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+              <li>Else if <i>space</i> has a [[StringData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                   slot</a>, then
                 <ol class="block">
-                  <li>Let <i>space</i> be <a href="#sec-tostring">ToString</a>(<i>space</i>).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>space</i>).</li>
+                  <li>Let <i>space</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>space</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>space</i>).</li>
                 </ol>
               </li>
             </ol>
           </li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>space</i>) is Number, then
             <ol class="block">
-              <li>Let <i>space</i> be min(10, <a href="#sec-tointeger">ToInteger</a>(<i>space</i>)).</li>
+              <li>Let <i>space</i> be min(10, <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>space</i>)).</li>
               <li>Set <i>gap</i> to a String containing <i>space</i> occurrences of code unit 0x0020 (SPACE). This will be the
                   empty String if <i>space</i> is less than 1.</li>
             </ol>
@@ -1195,11 +1195,11 @@
               <li>Set <i>gap</i> to the empty String.</li>
             </ol>
           </li>
-          <li>Let <i>wrapper</i> be <a href="#sec-objectcreate">ObjectCreate</a>(%ObjectPrototype%).</li>
-          <li>Let <i>status</i> be <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>wrapper</i>, the empty String,
+          <li>Let <i>wrapper</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(%ObjectPrototype%).</li>
+          <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>wrapper</i>, the empty String,
               <i>value</i>).</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>status</i> is <b>true</b>.</li>
-          <li>Return <a href="#sec-serializejsonproperty">SerializeJSONProperty</a>(the empty String, <i>wrapper</i>).</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>status</i> is <b>true</b>.</li>
+          <li>Return <a href="sec-structured-data.html#sec-serializejsonproperty">SerializeJSONProperty</a>(the empty String, <i>wrapper</i>).</li>
         </ol>
 
         <div class="note">
@@ -1233,7 +1233,7 @@
 
         <div class="note">
           <p><span class="nh">NOTE 4</span> Finite numbers are stringified as if by calling <span style="font-family: Times New
-          Roman"><a href="#sec-tostring">ToString</a>(<i>number</i>)</span>. <b>NaN</b> and Infinity regardless of sign are
+          Roman"><a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>number</i>)</span>. <b>NaN</b> and Infinity regardless of sign are
           represented as the String <code>null</code>.</p>
         </div>
 
@@ -1254,54 +1254,54 @@
       </div>
 
       <section id="sec-serializejsonproperty">
-        <h1><span class="secnum" id="sec-24.3.2.1"><a href="#sec-serializejsonproperty" title="link to this section">24.3.2.1</a></span> Runtime Semantics: SerializeJSONProperty ( key, holder )</h1>
+        <h1><span class="secnum" id="sec-24.3.2.1"><a href="sec-structured-data.html#sec-serializejsonproperty" title="link to this section">24.3.2.1</a></span> Runtime Semantics: SerializeJSONProperty ( key, holder )</h1>
 
         <p class="normalbefore">The abstract operation SerializeJSONProperty with arguments <var>key</var>, <span style="font-family: Times New Roman">and</span> <var>holder</var> has access to <span class="nt">ReplacerFunction</span>
         from the invocation of the <code>stringify</code> method. Its algorithm is as follows:</p>
 
         <ol class="proc">
-          <li>Let <i>value</i> be <a href="#sec-get-o-p">Get</a>(<i>holder</i>, <i>key</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
+          <li>Let <i>value</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>holder</i>, <i>key</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Object, then
             <ol class="block">
-              <li>Let <i>toJSON</i> be <a href="#sec-get-o-p">Get</a>(<i>value</i>, <code>"toJSON"</code>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>toJSON</i>).</li>
-              <li>If <a href="#sec-iscallable">IsCallable</a>(<i>toJSON</i>) is <b>true</b>
+              <li>Let <i>toJSON</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>value</i>, <code>"toJSON"</code>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>toJSON</i>).</li>
+              <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>toJSON</i>) is <b>true</b>
                 <ol class="block">
-                  <li>Let <i>value</i> be <a href="#sec-call">Call</a>(<i>toJSON</i>, <i>value</i>,
+                  <li>Let <i>value</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>toJSON</i>, <i>value</i>,
                       «<i>key</i>»).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
                 </ol>
               </li>
             </ol>
           </li>
           <li>If <i>ReplacerFunction</i> is not <b>undefined</b>, then
             <ol class="block">
-              <li>Let <i>value</i> be <a href="#sec-call">Call</a>(<i>ReplacerFunction</i>, <i>holder</i>, «<i>key</i>,
+              <li>Let <i>value</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>ReplacerFunction</i>, <i>holder</i>, «<i>key</i>,
                   <i>value</i>»).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
             </ol>
           </li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Object, then
             <ol class="block">
-              <li>If <i>value</i> has a [[NumberData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+              <li>If <i>value</i> has a [[NumberData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                   slot</a>, then
                 <ol class="block">
-                  <li>Let <i>value</i> be <a href="#sec-tonumber">ToNumber</a>(<i>value</i>).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
+                  <li>Let <i>value</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>value</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
                 </ol>
               </li>
-              <li>Else if <i>value</i> has a [[StringData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+              <li>Else if <i>value</i> has a [[StringData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                   slot</a>, then
                 <ol class="block">
-                  <li>Let <i>value</i> be <a href="#sec-tostring">ToString</a>(<i>value</i>).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
+                  <li>Let <i>value</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>value</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
                 </ol>
               </li>
-              <li>Else if <i>value</i> has a [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+              <li>Else if <i>value</i> has a [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                   slot</a>, then
                 <ol class="block">
-                  <li>Let <i>value</i> be the value of the [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>value</i>.</li>
+                  <li>Let <i>value</i> be the value of the [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>value</i>.</li>
                 </ol>
               </li>
             </ol>
@@ -1309,19 +1309,19 @@
           <li>If <i>value</i> is <b>null</b>, return <code>"null"</code>.</li>
           <li>If <i>value</i> is <b>true</b>, return <code>"true"</code>.</li>
           <li>If <i>value</i> is <b>false</b>, return <code>"false"</code>.</li>
-          <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is String, return <a href="#sec-quotejsonstring">QuoteJSONString</a>(<i>value</i>).</li>
+          <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is String, return <a href="sec-structured-data.html#sec-quotejsonstring">QuoteJSONString</a>(<i>value</i>).</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Number, then
             <ol class="block">
-              <li>If <i>value</i> is finite, return <a href="#sec-tostring">ToString</a>(<i>value</i>).</li>
+              <li>If <i>value</i> is finite, return <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>value</i>).</li>
               <li>Else, return <code>"null"</code>.</li>
             </ol>
           </li>
-          <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Object, and <a href="#sec-iscallable">IsCallable</a>(<i>value</i>) is <b>false</b>, then
+          <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Object, and <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>value</i>) is <b>false</b>, then
             <ol class="block">
-              <li>Let <i>isArray</i> be <a href="#sec-isarray">IsArray</a>(<i>value</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
-              <li>If <i>isArray</i> is <b>true</b>, return <a href="#sec-serializejsonarray">SerializeJSONArray</a>(<i>value</i>).</li>
-              <li>Else, return <a href="#sec-serializejsonobject">SerializeJSONObject</a>(<i>value</i>).</li>
+              <li>Let <i>isArray</i> be <a href="sec-abstract-operations.html#sec-isarray">IsArray</a>(<i>value</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
+              <li>If <i>isArray</i> is <b>true</b>, return <a href="sec-structured-data.html#sec-serializejsonarray">SerializeJSONArray</a>(<i>value</i>).</li>
+              <li>Else, return <a href="sec-structured-data.html#sec-serializejsonobject">SerializeJSONObject</a>(<i>value</i>).</li>
             </ol>
           </li>
           <li>Return <b>undefined</b>.</li>
@@ -1329,7 +1329,7 @@
       </section>
 
       <section id="sec-quotejsonstring">
-        <h1><span class="secnum" id="sec-24.3.2.2"><a href="#sec-quotejsonstring" title="link to this section">24.3.2.2</a></span>
+        <h1><span class="secnum" id="sec-24.3.2.2"><a href="sec-structured-data.html#sec-quotejsonstring" title="link to this section">24.3.2.2</a></span>
             Runtime Semantics: QuoteJSONString ( value )</h1>
 
         <p class="normalbefore">The abstract operation QuoteJSONString with argument <var>value</var> wraps a String value in
@@ -1398,7 +1398,7 @@
       </section>
 
       <section id="sec-serializejsonobject">
-        <h1><span class="secnum" id="sec-24.3.2.3"><a href="#sec-serializejsonobject" title="link to this section">24.3.2.3</a></span> Runtime Semantics: SerializeJSONObject ( value )</h1>
+        <h1><span class="secnum" id="sec-24.3.2.3"><a href="sec-structured-data.html#sec-serializejsonobject" title="link to this section">24.3.2.3</a></span> Runtime Semantics: SerializeJSONObject ( value )</h1>
 
         <p class="normalbefore">The abstract operation SerializeJSONObject with argument <var>value</var> serializes an object. It
         has access to the <var>stack</var>, <var>indent</var>, <var>gap</var>, and <span class="nt">PropertyList</span> values of
@@ -1416,17 +1416,17 @@
           </li>
           <li>Else,
             <ol class="block">
-              <li>Let <i>K</i> be <a href="#sec-enumerableownnames">EnumerableOwnNames</a>(<i>value</i>).</li>
+              <li>Let <i>K</i> be <a href="sec-abstract-operations.html#sec-enumerableownnames">EnumerableOwnNames</a>(<i>value</i>).</li>
             </ol>
           </li>
-          <li>Let <i>partial</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Let <i>partial</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>For each element <i>P</i> of <i>K</i>,
             <ol class="block">
-              <li>Let <i>strP</i> be <a href="#sec-serializejsonproperty">SerializeJSONProperty</a>(<i>P</i>, <i>value</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>strP</i>).</li>
+              <li>Let <i>strP</i> be <a href="sec-structured-data.html#sec-serializejsonproperty">SerializeJSONProperty</a>(<i>P</i>, <i>value</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>strP</i>).</li>
               <li>If <i>strP</i> is not <b>undefined</b>, then
                 <ol class="block">
-                  <li>Let <i>member</i> be <a href="#sec-quotejsonstring">QuoteJSONString</a>(<i>P</i>).</li>
+                  <li>Let <i>member</i> be <a href="sec-structured-data.html#sec-quotejsonstring">QuoteJSONString</a>(<i>P</i>).</li>
                   <li>Let <i>member</i> be the concatenation of <i>member</i> and the string <code>":"</code>.</li>
                   <li>If <i>gap</i> is not the empty String, then
                     <ol class="block">
@@ -1475,7 +1475,7 @@
       </section>
 
       <section id="sec-serializejsonarray">
-        <h1><span class="secnum" id="sec-24.3.2.4"><a href="#sec-serializejsonarray" title="link to this section">24.3.2.4</a></span> Runtime Semantics: SerializeJSONArray ( value )</h1>
+        <h1><span class="secnum" id="sec-24.3.2.4"><a href="sec-structured-data.html#sec-serializejsonarray" title="link to this section">24.3.2.4</a></span> Runtime Semantics: SerializeJSONArray ( value )</h1>
 
         <p class="normalbefore">The abstract operation SerializeJSONArray with argument <var>value</var> serializes an array. It
         has access to the <var>stack</var>, <var>indent</var>, and <var>gap</var> values of the current invocation of the
@@ -1486,15 +1486,15 @@
           <li>Append <i>value</i> to <i>stack</i>.</li>
           <li>Let <i>stepback</i> be <i>indent</i>.</li>
           <li>Let <i>indent</i> be the concatenation of <i>indent</i> and <i>gap</i>.</li>
-          <li>Let <i>partial</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-          <li>Let <i>len</i> be <a href="#sec-tolength">ToLength</a>(<a href="#sec-get-o-p">Get</a>(<i>value</i>,
+          <li>Let <i>partial</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Let <i>len</i> be <a href="sec-abstract-operations.html#sec-tolength">ToLength</a>(<a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>value</i>,
               <code>"length"</code>)).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
           <li>Let <i>index</i> be 0.</li>
           <li>Repeat while <i>index</i> &lt; <i>len</i>
             <ol class="block">
-              <li>Let <i>strP</i> be <a href="#sec-serializejsonproperty">SerializeJSONProperty</a>(<a href="#sec-tostring">ToString</a>(<i>index</i>), <i>value</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>strP</i>).</li>
+              <li>Let <i>strP</i> be <a href="sec-structured-data.html#sec-serializejsonproperty">SerializeJSONProperty</a>(<a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>index</i>), <i>value</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>strP</i>).</li>
               <li>If <i>strP</i> is <b>undefined</b>, then
                 <ol class="block">
                   <li>Append <code>"null"</code> to <i>partial</i>.</li>
@@ -1552,7 +1552,7 @@
     </section>
 
     <section id="sec-json-@@tostringtag">
-      <h1><span class="secnum" id="sec-24.3.3"><a href="#sec-json-@@tostringtag" title="link to this section">24.3.3</a></span>
+      <h1><span class="secnum" id="sec-24.3.3"><a href="sec-structured-data.html#sec-json-@@tostringtag" title="link to this section">24.3.3</a></span>
           JSON [ @@toStringTag ]</h1>
 
       <p>The initial value of the @@toStringTag property is the String value <code>"JSON"</code>.</p>

@@ -18,21 +18,21 @@
 
   <section id="sec-type-conversion">
     <div class="front">
-      <h1><span class="secnum" id="sec-7.1"><a href="#sec-type-conversion" title="link to this section">7.1</a></span> Type
+      <h1><span class="secnum" id="sec-7.1"><a href="sec-abstract-operations.html#sec-type-conversion" title="link to this section">7.1</a></span> Type
           Conversion</h1>
 
       <p>The ECMAScript language implicitly performs automatic type conversion as needed. To clarify the semantics of certain
       constructs it is useful to define a set of conversion abstract operations. The conversion abstract operations are
-      polymorphic; they can accept a value of any <a href="#sec-ecmascript-language-types">ECMAScript language type</a> or of a <a href="#sec-completion-record-specification-type">Completion Record</a> value. But no other specification types are used with
+      polymorphic; they can accept a value of any <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language type</a> or of a <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a> value. But no other specification types are used with
       these operations.</p>
     </div>
 
     <section id="sec-toprimitive">
-      <h1><span class="secnum" id="sec-7.1.1"><a href="#sec-toprimitive" title="link to this section">7.1.1</a></span> ToPrimitive
+      <h1><span class="secnum" id="sec-7.1.1"><a href="sec-abstract-operations.html#sec-toprimitive" title="link to this section">7.1.1</a></span> ToPrimitive
           ( input [, PreferredType] )</h1>
 
       <p>The abstract operation ToPrimitive takes an <var>input</var> argument and an optional argument <span class="nt">PreferredType</span>. The abstract operation ToPrimitive converts its <var>input</var> argument to a non-Object
-      type. If an object is capable of converting to more than one primitive type, it may use the optional hint <span class="nt">PreferredType</span> to favour that type. Conversion occurs according to <a href="#table-9">Table 9</a>:</p>
+      type. If an object is capable of converting to more than one primitive type, it may use the optional hint <span class="nt">PreferredType</span> to favour that type. Conversion occurs according to <a href="sec-abstract-operations.html#table-9">Table 9</a>:</p>
 
       <figure>
         <figcaption><span id="table-9">Table 9</span> — ToPrimitive Conversions</figcaption>
@@ -42,8 +42,8 @@
             <th>Result</th>
           </tr>
           <tr>
-            <td><a href="#sec-completion-record-specification-type">Completion Record</a></td>
-            <td>If <var>input</var> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <var>input</var>. Otherwise return ToPrimitive(<var>input</var>.[[value]]) also passing the optional hint <span class="nt">PreferredType</span>.</td>
+            <td><a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a></td>
+            <td>If <var>input</var> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <var>input</var>. Otherwise return ToPrimitive(<var>input</var>.[[value]]) also passing the optional hint <span class="nt">PreferredType</span>.</td>
           </tr>
           <tr>
             <td>Undefined</td>
@@ -82,13 +82,13 @@
         <li>If <i>PreferredType</i> was not passed, let <i>hint</i> be <code>"default"</code>.</li>
         <li>Else if <i>PreferredType</i> is hint String, let <i>hint</i> be <code>"string"</code>.</li>
         <li>Else <i>PreferredType</i> is hint Number, let <i>hint</i> be <code>"number"</code>.</li>
-        <li>Let <i>exoticToPrim</i>  be <a href="#sec-getmethod">GetMethod</a>(<i>input</i>, @@toPrimitive).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>exoticToPrim</i>).</li>
+        <li>Let <i>exoticToPrim</i>  be <a href="sec-abstract-operations.html#sec-getmethod">GetMethod</a>(<i>input</i>, @@toPrimitive).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>exoticToPrim</i>).</li>
         <li>If <i>exoticToPrim</i> is not <b>undefined</b>, then
           <ol class="block">
-            <li>Let <i>result</i> be <a href="#sec-call">Call</a>(<i>exoticToPrim</i>, <i>input,</i>
+            <li>Let <i>result</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>exoticToPrim</i>, <i>input,</i>
                 «<i>hint</i>»).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
             <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>result</i>) is not Object, return
                 <i>result</i>.</li>
             <li>Throw a <b>TypeError</b> exception.</li>
@@ -102,9 +102,9 @@
       <var>hint</var>, the following steps are taken:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>hint</i>)
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>hint</i>)
             is String and its value is either <code>"string"</code> or <code>"number"</code>.</li>
         <li>If <i>hint</i> is <code>"string"</code>, then
           <ol class="block">
@@ -116,14 +116,14 @@
             <li>Let <i>methodNames</i> be «<code>"valueOf"</code>, <code>"toString"</code>».</li>
           </ol>
         </li>
-        <li>For each <i>name</i> in <i>methodNames</i> in <a href="#sec-list-and-record-specification-type">List</a> order, do
+        <li>For each <i>name</i> in <i>methodNames</i> in <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> order, do
           <ol class="block">
-            <li>Let <i>method</i> be <a href="#sec-get-o-p">Get</a>(<i>O</i>, <i>name</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>method</i>).</li>
-            <li>If <a href="#sec-iscallable">IsCallable</a>(<i>method</i>) is <b>true</b>, then
+            <li>Let <i>method</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>O</i>, <i>name</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>method</i>).</li>
+            <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>method</i>) is <b>true</b>, then
               <ol class="block">
-                <li>Let <i>result</i> be <a href="#sec-call">Call</a>(<i>method</i>, <i>O</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
+                <li>Let <i>result</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>method</i>, <i>O</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
                 <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>result</i>) is not Object, return
                     <i>result</i>.</li>
               </ol>
@@ -136,16 +136,16 @@
       <div class="note">
         <p><span class="nh">NOTE</span> When ToPrimitive is called with no hint, then it generally behaves as if the hint were
         Number. However, objects may over-ride this behaviour by defining a @@toPrimitive method. Of the objects defined in this
-        specification only Date objects (<a href="#sec-date.prototype-@@toprimitive">see 20.3.4.45</a>) and Symbol objects (<a href="#sec-symbol.prototype-@@toprimitive">see 19.4.3.4</a>) over-ride the default ToPrimitive behaviour. Date objects
+        specification only Date objects (<a href="sec-numbers-and-dates.html#sec-date.prototype-@@toprimitive">see 20.3.4.45</a>) and Symbol objects (<a href="sec-fundamental-objects.html#sec-symbol.prototype-@@toprimitive">see 19.4.3.4</a>) over-ride the default ToPrimitive behaviour. Date objects
         treat no hint as if the hint were String.</p>
       </div>
     </section>
 
     <section id="sec-toboolean">
-      <h1><span class="secnum" id="sec-7.1.2"><a href="#sec-toboolean" title="link to this section">7.1.2</a></span> ToBoolean (
+      <h1><span class="secnum" id="sec-7.1.2"><a href="sec-abstract-operations.html#sec-toboolean" title="link to this section">7.1.2</a></span> ToBoolean (
           argument )</h1>
 
-      <p>The abstract operation ToBoolean converts <var>argument</var> to a value of type Boolean according to <a href="#table-10">Table 10</a>:</p>
+      <p>The abstract operation ToBoolean converts <var>argument</var> to a value of type Boolean according to <a href="sec-abstract-operations.html#table-10">Table 10</a>:</p>
 
       <figure>
         <figcaption><span id="table-10">Table 10</span> — ToBoolean Conversions</figcaption>
@@ -155,8 +155,8 @@
             <th>Result</th>
           </tr>
           <tr>
-            <td><a href="#sec-completion-record-specification-type">Completion Record</a></td>
-            <td>If <var>argument</var> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return ToBoolean(<var>argument</var>.[[value]]).</td>
+            <td><a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a></td>
+            <td>If <var>argument</var> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return ToBoolean(<var>argument</var>.[[value]]).</td>
           </tr>
           <tr>
             <td>Undefined</td>
@@ -192,10 +192,10 @@
 
     <section id="sec-tonumber">
       <div class="front">
-        <h1><span class="secnum" id="sec-7.1.3"><a href="#sec-tonumber" title="link to this section">7.1.3</a></span> ToNumber (
+        <h1><span class="secnum" id="sec-7.1.3"><a href="sec-abstract-operations.html#sec-tonumber" title="link to this section">7.1.3</a></span> ToNumber (
             argument )</h1>
 
-        <p>The abstract operation ToNumber converts <var>argument</var> to a value of type Number according to <a href="#table-11">Table 11</a>:</p>
+        <p>The abstract operation ToNumber converts <var>argument</var> to a value of type Number according to <a href="sec-abstract-operations.html#table-11">Table 11</a>:</p>
 
         <figure>
           <figcaption><span id="table-11">Table 11</span> — ToNumber Conversions</figcaption>
@@ -205,8 +205,8 @@
               <th>Result</th>
             </tr>
             <tr>
-              <td><a href="#sec-completion-record-specification-type">Completion Record</a></td>
-              <td>If <var>argument</var> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return ToNumber(<var>argument</var>.[[value]]).</td>
+              <td><a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a></td>
+              <td>If <var>argument</var> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return ToNumber(<var>argument</var>.[[value]]).</td>
             </tr>
             <tr>
               <td>Undefined</td>
@@ -239,7 +239,7 @@
                 <p>Apply the following steps:</p>
 
                 <ol class="proc">
-                  <li>Let <i>primValue</i> be <a href="#sec-toprimitive">ToPrimitive</a>(<i>argument</i>, hint Number).</li>
+                  <li>Let <i>primValue</i> be <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>argument</i>, hint Number).</li>
                   <li>Return ToNumber(<i>primValue</i>).</li>
                 </ol>
               </td>
@@ -250,12 +250,12 @@
 
       <section id="sec-tonumber-applied-to-the-string-type">
         <div class="front">
-          <h1><span class="secnum" id="sec-7.1.3.1"><a href="#sec-tonumber-applied-to-the-string-type" title="link to this section">7.1.3.1</a></span> ToNumber Applied to the String Type</h1>
+          <h1><span class="secnum" id="sec-7.1.3.1"><a href="sec-abstract-operations.html#sec-tonumber-applied-to-the-string-type" title="link to this section">7.1.3.1</a></span> ToNumber Applied to the String Type</h1>
 
-          <p><a href="#sec-tonumber">ToNumber</a> applied to Strings applies the following grammar to the input String interpreted
-          as a sequence of UTF-16 encoded code points (<a href="#sec-ecmascript-language-types-string-type">6.1.4</a>). If the
+          <p><a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a> applied to Strings applies the following grammar to the input String interpreted
+          as a sequence of UTF-16 encoded code points (<a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types-string-type">6.1.4</a>). If the
           grammar cannot interpret the String as an expansion of <span class="nt">StringNumericLiteral</span>, then the result of
-          <a href="#sec-tonumber">ToNumber</a> is <b>NaN</b>.</p>
+          <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a> is <b>NaN</b>.</p>
 
           <div class="note">
             <p><span class="nh">NOTE 1</span> The terminal symbols of this grammar are all composed of Unicode BMP code points so
@@ -334,10 +334,10 @@
           </div>
 
           <p>All grammar symbols not explicitly defined above have the definitions used in the Lexical Grammar for numeric
-          literals (<a href="#sec-literals-numeric-literals">11.8.3</a>)</p>
+          literals (<a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-numeric-literals">11.8.3</a>)</p>
 
           <div class="note">
-            <p><span class="nh">NOTE 2</span> Some differences should be noted between the syntax of a <span class="nt">StringNumericLiteral</span> and a <span class="nt">NumericLiteral</span> (<a href="#sec-literals-numeric-literals">see 11.8.3</a>):</p>
+            <p><span class="nh">NOTE 2</span> Some differences should be noted between the syntax of a <span class="nt">StringNumericLiteral</span> and a <span class="nt">NumericLiteral</span> (<a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-numeric-literals">see 11.8.3</a>):</p>
 
             <ul>
               <li>
@@ -368,13 +368,13 @@
         </div>
 
         <section id="sec-runtime-semantics-mv-s">
-          <h1><span class="secnum" id="sec-7.1.3.1.1"><a href="#sec-runtime-semantics-mv-s" title="link to this section">7.1.3.1.1</a></span> Runtime Semantics: MV’s</h1>
+          <h1><span class="secnum" id="sec-7.1.3.1.1"><a href="sec-abstract-operations.html#sec-runtime-semantics-mv-s" title="link to this section">7.1.3.1.1</a></span> Runtime Semantics: MV’s</h1>
 
           <p>The conversion of a String to a Number value is similar overall to the determination of the Number value for a
-          numeric literal (<a href="#sec-literals-numeric-literals">see 11.8.3</a>), but some of the details are different, so the
+          numeric literal (<a href="sec-ecmascript-language-lexical-grammar.html#sec-literals-numeric-literals">see 11.8.3</a>), but some of the details are different, so the
           process for converting a String numeric literal to a value of Number type is given here. This value is determined in two
           steps: first, a mathematical value (MV) is derived from the String numeric literal; second, this mathematical value is
-          rounded as described below. The MV on any grammar symbol, not provided below, is the MV for that symbol defined in <a href="#sec-static-semantics-mv">11.8.3.1</a>.</p>
+          rounded as described below. The MV on any grammar symbol, not provided below, is the MV for that symbol defined in <a href="sec-ecmascript-language-lexical-grammar.html#sec-static-semantics-mv">11.8.3.1</a>.</p>
 
           <ul>
             <li>
@@ -470,7 +470,7 @@
           <p>Once the exact MV for a String numeric literal has been determined, it is then rounded to a value of the Number type.
           If the MV is 0, then the rounded value is +0 unless the first non white space code point in the String numeric literal
           is ‘<code>-</code>’, in which case the rounded value is −0. Otherwise, the rounded value must be the
-          Number value for the MV (in the sense defined in <a href="#sec-ecmascript-language-types-number-type">6.1.6</a>), unless
+          Number value for the MV (in the sense defined in <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types-number-type">6.1.6</a>), unless
           the literal includes a <span class="nt">StrUnsignedDecimalLiteral</span> and the literal has more than 20 significant
           digits, in which case the Number value may be either the Number value for the MV of a literal produced by replacing each
           significant digit after the 20th with a 0 digit or the Number value for the MV of a literal produced by replacing each
@@ -486,23 +486,23 @@
     </section>
 
     <section id="sec-tointeger">
-      <h1><span class="secnum" id="sec-7.1.4"><a href="#sec-tointeger" title="link to this section">7.1.4</a></span> ToInteger (
+      <h1><span class="secnum" id="sec-7.1.4"><a href="sec-abstract-operations.html#sec-tointeger" title="link to this section">7.1.4</a></span> ToInteger (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation ToInteger converts <var>argument</var> to an integral numeric value. This
       abstract operation functions as follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, return <b>+0</b>.</li>
         <li>If <i>number</i> is <b>+0</b>, <b>−0</b>, <b>+∞,</b> or <b>−∞</b>, return <i>number</i>.</li>
-        <li>Return the number value that is the same sign as  <i>number</i> and whose magnitude is <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
+        <li>Return the number value that is the same sign as  <i>number</i> and whose magnitude is <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
       </ol>
     </section>
 
     <section id="sec-toint32">
-      <h1><span class="secnum" id="sec-7.1.5"><a href="#sec-toint32" title="link to this section">7.1.5</a></span> ToInt32 (
+      <h1><span class="secnum" id="sec-7.1.5"><a href="sec-abstract-operations.html#sec-toint32" title="link to this section">7.1.5</a></span> ToInt32 (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation ToInt32 converts <var>argument</var> to one of <span style="font-family:
@@ -511,12 +511,12 @@
       inclusive. This abstract operation functions as follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, <b>+0</b>, <b>−0</b>, <b>+∞</b>, or <b>−∞</b>, return
             <b>+0</b>.</li>
-        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
-        <li>Let <i>int32bit</i> be <i>int</i> <a href="#sec-algorithm-conventions">modulo</a> 2<sup>32</sup>.</li>
+        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
+        <li>Let <i>int32bit</i> be <i>int</i> <a href="sec-notational-conventions.html#sec-algorithm-conventions">modulo</a> 2<sup>32</sup>.</li>
         <li>If <i>int32bit</i> ≥ 2<sup>31</sup>, return <i>int32bit</i> − 2<sup>32</sup>, otherwise return
             <i>int32bit</i>.</li>
       </ol>
@@ -531,7 +531,7 @@
           </li>
 
           <li>
-            <p><var>ToInt32(<a href="#sec-touint32">ToUint32</a>(x))</var> is equal to <span style="font-family: Times New
+            <p><var>ToInt32(<a href="sec-abstract-operations.html#sec-touint32">ToUint32</a>(x))</var> is equal to <span style="font-family: Times New
             Roman">ToInt32(<i>x</i>)</span> for all values of <var>x</var>. (It is to preserve this latter property that
             +<b>∞</b> and −<b>∞</b> are mapped to <b>+0</b>.)</p>
           </li>
@@ -544,7 +544,7 @@
     </section>
 
     <section id="sec-touint32">
-      <h1><span class="secnum" id="sec-7.1.6"><a href="#sec-touint32" title="link to this section">7.1.6</a></span> ToUint32 (
+      <h1><span class="secnum" id="sec-7.1.6"><a href="sec-abstract-operations.html#sec-touint32" title="link to this section">7.1.6</a></span> ToUint32 (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation ToUint32 converts <var>argument</var> to one of <span style="font-family:
@@ -553,12 +553,12 @@
       functions as follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, <b>+0</b>, <b>−0</b>, <b>+∞</b>, or <b>−∞</b>, return
             <b>+0</b>.</li>
-        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
-        <li>Let <i>int32bit</i> be <i>int</i> <a href="#sec-algorithm-conventions">modulo</a> 2<sup>32</sup>.</li>
+        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
+        <li>Let <i>int32bit</i> be <i>int</i> <a href="sec-notational-conventions.html#sec-algorithm-conventions">modulo</a> 2<sup>32</sup>.</li>
         <li>Return <i>int32bit</i>.</li>
       </ol>
 
@@ -567,7 +567,7 @@
 
         <ul>
           <li>
-            <p>Step 6 is the only difference between ToUint32 and <a href="#sec-toint32">ToInt32</a>.</p>
+            <p>Step 6 is the only difference between ToUint32 and <a href="sec-abstract-operations.html#sec-toint32">ToInt32</a>.</p>
           </li>
 
           <li>
@@ -576,7 +576,7 @@
           </li>
 
           <li>
-            <p><span style="font-family: Times New Roman">ToUint32(<a href="#sec-toint32">ToInt32</a>(<i>x</i>))</span> is equal
+            <p><span style="font-family: Times New Roman">ToUint32(<a href="sec-abstract-operations.html#sec-toint32">ToInt32</a>(<i>x</i>))</span> is equal
             to <span style="font-family: Times New Roman">ToUint32(<i>x</i>)</span> for all values of <var>x</var>. (It is to
             preserve this latter property that <b>+∞</b> and <b>−∞</b> are mapped to <b>+0</b>.)</p>
           </li>
@@ -589,7 +589,7 @@
     </section>
 
     <section id="sec-toint16">
-      <h1><span class="secnum" id="sec-7.1.7"><a href="#sec-toint16" title="link to this section">7.1.7</a></span> ToInt16 (
+      <h1><span class="secnum" id="sec-7.1.7"><a href="sec-abstract-operations.html#sec-toint16" title="link to this section">7.1.7</a></span> ToInt16 (
           argument )</h1>
 
       <p>The abstract operation ToInt16 converts <var>argument</var> to one of <span style="font-family: Times New
@@ -598,19 +598,19 @@
       follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, <b>+0</b>, <b>−0</b>, <b>+∞</b>, or <b>−∞</b>, return
             <b>+0</b>.</li>
-        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
-        <li>Let <i>int16bit</i> be <i>int</i> <a href="#sec-algorithm-conventions">modulo</a> 2<sup>16</sup>.</li>
+        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
+        <li>Let <i>int16bit</i> be <i>int</i> <a href="sec-notational-conventions.html#sec-algorithm-conventions">modulo</a> 2<sup>16</sup>.</li>
         <li>If <i>int16bit</i> ≥ 2<sup>15</sup>, return <i>int16bit</i> − 2<sup>16</sup>, otherwise return
             <i>int16bit</i>.</li>
       </ol>
     </section>
 
     <section id="sec-touint16">
-      <h1><span class="secnum" id="sec-7.1.8"><a href="#sec-touint16" title="link to this section">7.1.8</a></span> ToUint16 (
+      <h1><span class="secnum" id="sec-7.1.8"><a href="sec-abstract-operations.html#sec-touint16" title="link to this section">7.1.8</a></span> ToUint16 (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation ToUint16 converts <var>argument</var> to one of <span style="font-family:
@@ -619,12 +619,12 @@
       functions as follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, <b>+0</b>, <b>−0</b>, <b>+∞</b>, or <b>−∞</b>, return
             <b>+0</b>.</li>
-        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
-        <li>Let <i>int16bit</i> be <i>int</i> <a href="#sec-algorithm-conventions">modulo</a> 2<sup>16</sup>.</li>
+        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
+        <li>Let <i>int16bit</i> be <i>int</i> <a href="sec-notational-conventions.html#sec-algorithm-conventions">modulo</a> 2<sup>16</sup>.</li>
         <li>Return <i>int16bit</i>.</li>
       </ol>
 
@@ -633,7 +633,7 @@
 
         <ul>
           <li>The substitution of <span style="font-family: Times New Roman">2<sup>16</sup></span> for <span style="font-family:
-              Times New Roman">2<sup>32</sup></span> in step 5 is the only difference between <a href="#sec-touint32">ToUint32</a>
+              Times New Roman">2<sup>32</sup></span> in step 5 is the only difference between <a href="sec-abstract-operations.html#sec-touint32">ToUint32</a>
               and ToUint16.</li>
           <li>ToUint16 maps <b>−0</b> to <b>+0</b>.</li>
         </ul>
@@ -641,7 +641,7 @@
     </section>
 
     <section id="sec-toint8">
-      <h1><span class="secnum" id="sec-7.1.9"><a href="#sec-toint8" title="link to this section">7.1.9</a></span> ToInt8 (
+      <h1><span class="secnum" id="sec-7.1.9"><a href="sec-abstract-operations.html#sec-toint8" title="link to this section">7.1.9</a></span> ToInt8 (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation ToInt8 converts <var>argument</var> to one of <span style="font-family: Times
@@ -649,19 +649,19 @@
       through <span style="font-family: Times New Roman">127</span>, inclusive. This abstract operation functions as follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, <b>+0</b>, <b>−0</b>, <b>+∞</b>, or <b>−∞</b>, return
             <b>+0</b>.</li>
-        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
-        <li>Let <i>int8bit</i> be <i>int</i> <a href="#sec-algorithm-conventions">modulo</a> 2<sup>8</sup>.</li>
+        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
+        <li>Let <i>int8bit</i> be <i>int</i> <a href="sec-notational-conventions.html#sec-algorithm-conventions">modulo</a> 2<sup>8</sup>.</li>
         <li>If <i>int8bit</i> ≥ 2<sup>7</sup>, return <i>int8bit</i> − 2<sup>8</sup>, otherwise return
             <i>int8bit</i>.</li>
       </ol>
     </section>
 
     <section id="sec-touint8">
-      <h1><span class="secnum" id="sec-7.1.10"><a href="#sec-touint8" title="link to this section">7.1.10</a></span> ToUint8 (
+      <h1><span class="secnum" id="sec-7.1.10"><a href="sec-abstract-operations.html#sec-touint8" title="link to this section">7.1.10</a></span> ToUint8 (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation ToUint8 converts <var>argument</var> to one of <span style="font-family:
@@ -669,18 +669,18 @@
       through <span style="font-family: Times New Roman">255</span>, inclusive. This abstract operation functions as follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, <b>+0</b>, <b>−0</b>, <b>+∞</b>, or <b>−∞</b>, return
             <b>+0</b>.</li>
-        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
-        <li>Let <i>int8bit</i> be <i>int</i> <a href="#sec-algorithm-conventions">modulo</a> 2<sup>8</sup>.</li>
+        <li>Let <i>int</i> be the mathematical value that is the same sign as <i>number</i> and whose magnitude is <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>number</i>)).</li>
+        <li>Let <i>int8bit</i> be <i>int</i> <a href="sec-notational-conventions.html#sec-algorithm-conventions">modulo</a> 2<sup>8</sup>.</li>
         <li>Return <i>int8bit</i>.</li>
       </ol>
     </section>
 
     <section id="sec-touint8clamp">
-      <h1><span class="secnum" id="sec-7.1.11"><a href="#sec-touint8clamp" title="link to this section">7.1.11</a></span>
+      <h1><span class="secnum" id="sec-7.1.11"><a href="sec-abstract-operations.html#sec-touint8clamp" title="link to this section">7.1.11</a></span>
           ToUint8Clamp ( argument )</h1>
 
       <p class="normalbefore">The abstract operation ToUint8Clamp converts <var>argument</var> to one of <span style="font-family:
@@ -688,12 +688,12 @@
       through <span style="font-family: Times New Roman">255</span>, inclusive. This abstract operation functions as follows:</p>
 
       <ol class="proc">
-        <li>Let <i>number</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
+        <li>Let <i>number</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>number</i>).</li>
         <li>If <i>number</i> is <b>NaN</b>, return <b>+0</b>.</li>
         <li>If <i>number</i> ≤ 0, return <b>+0</b>.</li>
         <li>If <i>number</i> ≥ 255, return 255.</li>
-        <li>Let <i>f</i> be <a href="#sec-algorithm-conventions">floor</a>(<i>number</i>).</li>
+        <li>Let <i>f</i> be <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<i>number</i>).</li>
         <li>If <i>f +</i> 0.5 &lt; <i>number</i>, return <i>f</i> + 1.</li>
         <li>If <i>number</i> &lt; <i>f +</i> 0.5, return <i>f</i>.</li>
         <li>If <i>f</i> is odd, return <i>f</i> + 1.</li>
@@ -703,17 +703,17 @@
       <div class="note">
         <p><span class="nh">NOTE</span> Unlike the other ECMAScript integer conversion abstract operation, ToUint8Clamp rounds
         rather than truncates non-integer values and does not convert +<b>∞</b> to 0. ToUint8Clamp does “round half to
-        even” tie-breaking. This differs from <code><a href="#sec-math.round">Math.round</a></code> which does “round
+        even” tie-breaking. This differs from <code><a href="sec-numbers-and-dates.html#sec-math.round">Math.round</a></code> which does “round
         half up” tie-breaking.</p>
       </div>
     </section>
 
     <section id="sec-tostring">
       <div class="front">
-        <h1><span class="secnum" id="sec-7.1.12"><a href="#sec-tostring" title="link to this section">7.1.12</a></span> ToString (
+        <h1><span class="secnum" id="sec-7.1.12"><a href="sec-abstract-operations.html#sec-tostring" title="link to this section">7.1.12</a></span> ToString (
             argument )</h1>
 
-        <p>The abstract operation ToString converts <var>argument</var> to a value of type String according to <a href="#table-12">Table 12</a>:</p>
+        <p>The abstract operation ToString converts <var>argument</var> to a value of type String according to <a href="sec-abstract-operations.html#table-12">Table 12</a>:</p>
 
         <figure>
           <figcaption><span id="table-12">Table 12</span> — ToString Conversions</figcaption>
@@ -723,8 +723,8 @@
               <th>Result</th>
             </tr>
             <tr>
-              <td><a href="#sec-completion-record-specification-type">Completion Record</a></td>
-              <td>If <var>argument</var> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return ToString(<var>argument</var>.[[value]]).</td>
+              <td><a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a></td>
+              <td>If <var>argument</var> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return ToString(<var>argument</var>.[[value]]).</td>
             </tr>
             <tr>
               <td>Undefined</td>
@@ -745,7 +745,7 @@
             </tr>
             <tr>
               <td>Number</td>
-              <td>See <a href="#sec-tostring-applied-to-the-number-type">7.1.12.1</a>.</td>
+              <td>See <a href="sec-abstract-operations.html#sec-tostring-applied-to-the-number-type">7.1.12.1</a>.</td>
             </tr>
             <tr>
               <td>String</td>
@@ -761,7 +761,7 @@
               <td>
                 <p>Apply the following steps:</p>
 
-                <p>1. Let <i>primValue</i> be <a href="#sec-toprimitive">ToPrimitive</a>(<i>argument</i>, hint String).</p>
+                <p>1. Let <i>primValue</i> be <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>argument</i>, hint String).</p>
 
                 <p>2. Return ToString(<i>primValue</i>).</p>
               </td>
@@ -771,15 +771,15 @@
       </div>
 
       <section id="sec-tostring-applied-to-the-number-type">
-        <h1><span class="secnum" id="sec-7.1.12.1"><a href="#sec-tostring-applied-to-the-number-type" title="link to this section">7.1.12.1</a></span> ToString Applied to the Number Type</h1>
+        <h1><span class="secnum" id="sec-7.1.12.1"><a href="sec-abstract-operations.html#sec-tostring-applied-to-the-number-type" title="link to this section">7.1.12.1</a></span> ToString Applied to the Number Type</h1>
 
-        <p class="normalbefore">The abstract operation <a href="#sec-tostring">ToString</a> converts a Number <var>m</var> to
+        <p class="normalbefore">The abstract operation <a href="sec-abstract-operations.html#sec-tostring">ToString</a> converts a Number <var>m</var> to
         String format as follows:</p>
 
         <ol class="proc">
           <li>If <i>m</i> is <b>NaN</b>, return the String <code>"NaN"</code>.</li>
           <li>If <i>m</i> is <b>+0</b> or <b>−0</b>, return the String <code>"0"</code>.</li>
-          <li>If <i>m</i> is less than zero, return the String concatenation of the String <code>"-"</code> and <a href="#sec-tostring">ToString</a>(−<i>m</i>).</li>
+          <li>If <i>m</i> is less than zero, return the String concatenation of the String <code>"-"</code> and <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(−<i>m</i>).</li>
           <li>If <i>m</i> is +∞, return the String <code>"Infinity"</code>.</li>
           <li>Otherwise, let <i>n</i>, <i>k</i>, and <i>s</i> be integers such that <i>k</i> ≥ 1, 10<sup><i>k</i>−1</sup>
               ≤ <i>s</i> &lt; 10<sup><i>k</i></sup>, the Number value for <i>s</i> × 10<sup><i>n−k</i></sup> is
@@ -798,13 +798,13 @@
           <li>Otherwise, if <i>k</i> = 1, return the String consisting of the code unit of the single digit of <i>s</i>, followed
               by code unit 0x0065 (LATIN SMALL LETTER E), followed by the code unit 0x002B (PLUS SIGN) or the code unit 0x002D
               (HYPHEN-MINUS) according to whether <i>n</i>−1 is positive or negative, followed by the code units of the
-              decimal representation of the integer <a href="#sec-algorithm-conventions">abs</a>(<i>n</i>−1) (with no
+              decimal representation of the integer <a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>n</i>−1) (with no
               leading zeroes).</li>
           <li>Return the String consisting of the code units of the most significant digit of the decimal representation of
               <i>s</i>, followed by code unit 0x002E (FULL STOP), followed by the code units of the remaining <i>k</i>−1
               digits of the decimal representation of <i>s</i>, followed by code unit 0x0065 (LATIN SMALL LETTER E), followed by
               code unit 0x002B (PLUS SIGN) or the code unit 0x002D (HYPHEN-MINUS) according to whether <i>n</i>−1 is
-              positive or negative, followed by the code units of the decimal representation of the integer <a href="#sec-algorithm-conventions">abs</a>(<i>n</i>−1) (with no leading zeroes).</li>
+              positive or negative, followed by the code units of the decimal representation of the integer <a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>n</i>−1) (with no leading zeroes).</li>
         </ol>
 
         <div class="note">
@@ -813,7 +813,7 @@
 
           <ul>
             <li>
-              <p>If x is any Number value other than <b>−0</b>, then <a href="#sec-tonumber">ToNumber</a>(<a href="#sec-tostring">ToString</a>(x)) is exactly the same Number value as x.</p>
+              <p>If x is any Number value other than <b>−0</b>, then <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<a href="sec-abstract-operations.html#sec-tostring">ToString</a>(x)) is exactly the same Number value as x.</p>
             </li>
 
             <li>
@@ -848,10 +848,10 @@
     </section>
 
     <section id="sec-toobject">
-      <h1><span class="secnum" id="sec-7.1.13"><a href="#sec-toobject" title="link to this section">7.1.13</a></span> ToObject (
+      <h1><span class="secnum" id="sec-7.1.13"><a href="sec-abstract-operations.html#sec-toobject" title="link to this section">7.1.13</a></span> ToObject (
           argument )</h1>
 
-      <p>The abstract operation ToObject converts <var>argument</var> to a value of type Object according to <a href="#table-13">Table 13</a>:</p>
+      <p>The abstract operation ToObject converts <var>argument</var> to a value of type Object according to <a href="sec-abstract-operations.html#table-13">Table 13</a>:</p>
 
       <figure>
         <figcaption><span id="table-13">Table 13</span> — ToObject Conversions</figcaption>
@@ -861,8 +861,8 @@
             <th>Result</th>
           </tr>
           <tr>
-            <td><a href="#sec-completion-record-specification-type">Completion Record</a></td>
-            <td>If <i>argument</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <i>argument</i>. Otherwise return ToObject(<i>argument</i>.[[value]]).</td>
+            <td><a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a></td>
+            <td>If <i>argument</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <i>argument</i>. Otherwise return ToObject(<i>argument</i>.[[value]]).</td>
           </tr>
           <tr>
             <td>Undefined</td>
@@ -874,19 +874,19 @@
           </tr>
           <tr>
             <td>Boolean</td>
-            <td>Return a new Boolean object whose [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="#sec-boolean-objects">19.3</a> for a description of Boolean objects.</td>
+            <td>Return a new Boolean object whose [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="sec-fundamental-objects.html#sec-boolean-objects">19.3</a> for a description of Boolean objects.</td>
           </tr>
           <tr>
             <td>Number</td>
-            <td>Return a new Number object whose [[NumberData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="#sec-number-objects">20.1</a> for a description of Number objects.</td>
+            <td>Return a new Number object whose [[NumberData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="sec-numbers-and-dates.html#sec-number-objects">20.1</a> for a description of Number objects.</td>
           </tr>
           <tr>
             <td>String</td>
-            <td>Return a new String object whose [[StringData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="#sec-string-objects">21.1</a> for a description of String objects.</td>
+            <td>Return a new String object whose [[StringData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="sec-text-processing.html#sec-string-objects">21.1</a> for a description of String objects.</td>
           </tr>
           <tr>
             <td>Symbol</td>
-            <td>Return a new Symbol object whose [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="#sec-symbol-objects">19.4</a> for a description of Symbol objects.</td>
+            <td>Return a new Symbol object whose [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is set to the value of <i>argument</i>. See <a href="sec-fundamental-objects.html#sec-symbol-objects">19.4</a> for a description of Symbol objects.</td>
           </tr>
           <tr>
             <td>Object</td>
@@ -897,35 +897,35 @@
     </section>
 
     <section id="sec-topropertykey">
-      <h1><span class="secnum" id="sec-7.1.14"><a href="#sec-topropertykey" title="link to this section">7.1.14</a></span>
+      <h1><span class="secnum" id="sec-7.1.14"><a href="sec-abstract-operations.html#sec-topropertykey" title="link to this section">7.1.14</a></span>
           ToPropertyKey ( argument )</h1>
 
       <p class="normalbefore">The abstract operation ToPropertyKey converts <var>argument</var> to a value that can be used as a
-      <a href="#sec-object-type">property key</a> by performing the following steps:</p>
+      <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a> by performing the following steps:</p>
 
       <ol class="proc">
-        <li>Let <i>key</i> be <a href="#sec-toprimitive">ToPrimitive</a>(<i>argument</i>, hint String).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>key</i>).</li>
+        <li>Let <i>key</i> be <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>argument</i>, hint String).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>key</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>key</i>) is Symbol, then
           <ol class="block">
             <li>Return <i>key</i>.</li>
           </ol>
         </li>
-        <li>Return <a href="#sec-tostring">ToString</a>(<i>key</i>).</li>
+        <li>Return <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>key</i>).</li>
       </ol>
     </section>
 
     <section id="sec-tolength">
-      <h1><span class="secnum" id="sec-7.1.15"><a href="#sec-tolength" title="link to this section">7.1.15</a></span> ToLength (
+      <h1><span class="secnum" id="sec-7.1.15"><a href="sec-abstract-operations.html#sec-tolength" title="link to this section">7.1.15</a></span> ToLength (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation ToLength converts <var>argument</var> to an integer suitable for use as the
       length of an array-like object. It performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
-        <li>Let <i>len</i> be <a href="#sec-tointeger">ToInteger</a>(<i>argument</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
+        <li>Let <i>len</i> be <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
         <li>If <i>len</i> ≤ +0, return +0.</li>
         <li>If <i>len</i> is <b>+∞</b>, return 2<sup>53</sup>-1.</li>
         <li>Return min(<i>len</i>, 2<sup>53</sup>-1).</li>
@@ -933,18 +933,18 @@
     </section>
 
     <section id="sec-canonicalnumericindexstring">
-      <h1><span class="secnum" id="sec-7.1.16"><a href="#sec-canonicalnumericindexstring" title="link to this section">7.1.16</a></span> CanonicalNumericIndexString ( argument )</h1>
+      <h1><span class="secnum" id="sec-7.1.16"><a href="sec-abstract-operations.html#sec-canonicalnumericindexstring" title="link to this section">7.1.16</a></span> CanonicalNumericIndexString ( argument )</h1>
 
       <p class="normalbefore">The abstract operation CanonicalNumericIndexString returns <var>argument</var> converted to a
-      numeric value if it is a String representation of a Number that would be produced by <a href="#sec-tostring">ToString</a>,
+      numeric value if it is a String representation of a Number that would be produced by <a href="sec-abstract-operations.html#sec-tostring">ToString</a>,
       or the string <code>"-0"</code>. Otherwise, it returns <span class="value">undefined.</span> This abstract operation
       functions as follows:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is String.</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is String.</li>
         <li>If <i>argument</i> is <code>"-0"</code>, return −0.</li>
-        <li>Let <i>n</i> be <a href="#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
-        <li>If <a href="#sec-samevalue">SameValue</a>(<a href="#sec-tostring">ToString</a>(<i>n</i>), <i>argument</i>) is
+        <li>Let <i>n</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>argument</i>).</li>
+        <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>n</i>), <i>argument</i>) is
             <b>false</b>, return <b>undefined</b>.</li>
         <li>Return <i>n</i>.</li>
       </ol>
@@ -956,15 +956,15 @@
 
   <section id="sec-testing-and-comparison-operations">
     <div class="front">
-      <h1><span class="secnum" id="sec-7.2"><a href="#sec-testing-and-comparison-operations" title="link to this section">7.2</a></span> Testing and Comparison Operations</h1>
+      <h1><span class="secnum" id="sec-7.2"><a href="sec-abstract-operations.html#sec-testing-and-comparison-operations" title="link to this section">7.2</a></span> Testing and Comparison Operations</h1>
     </div>
 
     <section id="sec-requireobjectcoercible">
-      <h1><span class="secnum" id="sec-7.2.1"><a href="#sec-requireobjectcoercible" title="link to this section">7.2.1</a></span>
+      <h1><span class="secnum" id="sec-7.2.1"><a href="sec-abstract-operations.html#sec-requireobjectcoercible" title="link to this section">7.2.1</a></span>
           RequireObjectCoercible ( argument )</h1>
 
       <p>The abstract operation RequireObjectCoercible throws an error if <var>argument</var> is a value that cannot be converted
-      to an Object using <a href="#sec-toobject">ToObject</a>. It is defined by <a href="#table-14">Table 14</a>:</p>
+      to an Object using <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>. It is defined by <a href="sec-abstract-operations.html#table-14">Table 14</a>:</p>
 
       <figure>
         <figcaption><span id="table-14">Table 14</span>&nbsp;— RequireObjectCoercible Results</figcaption>
@@ -974,8 +974,8 @@
             <th>Result</th>
           </tr>
           <tr>
-            <td><a href="#sec-completion-record-specification-type">Completion Record</a></td>
-            <td>If <var>argument</var> is an <a href="#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return RequireObjectCoercible(<var>argument</var>.[[value]]).</td>
+            <td><a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a></td>
+            <td>If <var>argument</var> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, return <var>argument</var>. Otherwise return RequireObjectCoercible(<var>argument</var>.[[value]]).</td>
           </tr>
           <tr>
             <td>Undefined</td>
@@ -1010,7 +1010,7 @@
     </section>
 
     <section id="sec-isarray">
-      <h1><span class="secnum" id="sec-7.2.2"><a href="#sec-isarray" title="link to this section">7.2.2</a></span> IsArray (
+      <h1><span class="secnum" id="sec-7.2.2"><a href="sec-abstract-operations.html#sec-isarray" title="link to this section">7.2.2</a></span> IsArray (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation IsArray takes one argument <var>argument</var>, and performs the following
@@ -1018,12 +1018,12 @@
 
       <ol class="proc">
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is not Object, return <b>false</b>.</li>
-        <li>If <i>argument</i> is an <a href="#sec-array-exotic-objects">Array exotic object</a>, return <b>true</b>.</li>
+        <li>If <i>argument</i> is an <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-array-exotic-objects">Array exotic object</a>, return <b>true</b>.</li>
         <li>If <i>argument</i> is a Proxy exotic object, then
           <ol class="block">
-            <li>If the value of the [[ProxyHandler]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>
+            <li>If the value of the [[ProxyHandler]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>
                 of <i>argument</i> is <b>null</b>, throw a <b>TypeError</b> exception.</li>
-            <li>Let <i>target</i> be the value of the [[ProxyTarget]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>argument</i>.</li>
+            <li>Let <i>target</i> be the value of the [[ProxyTarget]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>argument</i>.</li>
             <li>Return IsArray(<i>target</i>).</li>
           </ol>
         </li>
@@ -1032,14 +1032,14 @@
     </section>
 
     <section id="sec-iscallable">
-      <h1><span class="secnum" id="sec-7.2.3"><a href="#sec-iscallable" title="link to this section">7.2.3</a></span> IsCallable (
+      <h1><span class="secnum" id="sec-7.2.3"><a href="sec-abstract-operations.html#sec-iscallable" title="link to this section">7.2.3</a></span> IsCallable (
           argument )</h1>
 
-      <p>The abstract operation IsCallable determines if <var>argument</var>, which must be an <a href="#sec-ecmascript-language-types">ECMAScript language value</a> or a <a href="#sec-completion-record-specification-type">Completion Record</a>, is a callable function with a [[Call]] internal
+      <p>The abstract operation IsCallable determines if <var>argument</var>, which must be an <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language value</a> or a <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a>, is a callable function with a [[Call]] internal
       method.</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is not Object, return <b>false</b>.</li>
         <li>If <i>argument</i> has a [[Call]] internal method, return <b>true</b>.</li>
         <li>Return <b>false</b>.</li>
@@ -1047,14 +1047,14 @@
     </section>
 
     <section id="sec-isconstructor">
-      <h1><span class="secnum" id="sec-7.2.4"><a href="#sec-isconstructor" title="link to this section">7.2.4</a></span>
+      <h1><span class="secnum" id="sec-7.2.4"><a href="sec-abstract-operations.html#sec-isconstructor" title="link to this section">7.2.4</a></span>
           IsConstructor ( argument )</h1>
 
-      <p class="normalbefore">The abstract operation IsConstructor determines if <var>argument</var>, which must be an <a href="#sec-ecmascript-language-types">ECMAScript language value</a> or a <a href="#sec-completion-record-specification-type">Completion Record</a>, is a function object with a [[Construct]] internal
+      <p class="normalbefore">The abstract operation IsConstructor determines if <var>argument</var>, which must be an <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language value</a> or a <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a>, is a function object with a [[Construct]] internal
       method.</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is not Object, return <b>false</b>.</li>
         <li>If <i>argument</i> has a [[Construct]] internal method, return <b>true</b>.</li>
         <li>Return <b>false</b>.</li>
@@ -1062,7 +1062,7 @@
     </section>
 
     <section id="sec-isextensible-o">
-      <h1><span class="secnum" id="sec-7.2.5"><a href="#sec-isextensible-o" title="link to this section">7.2.5</a></span>
+      <h1><span class="secnum" id="sec-7.2.5"><a href="sec-abstract-operations.html#sec-isextensible-o" title="link to this section">7.2.5</a></span>
           IsExtensible (O)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">IsExtensible</span> is used to
@@ -1070,37 +1070,37 @@
       abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
         <li>Return <i>O</i>.[[IsExtensible]]().</li>
       </ol>
     </section>
 
     <section id="sec-isinteger">
-      <h1><span class="secnum" id="sec-7.2.6"><a href="#sec-isinteger" title="link to this section">7.2.6</a></span> IsInteger (
+      <h1><span class="secnum" id="sec-7.2.6"><a href="sec-abstract-operations.html#sec-isinteger" title="link to this section">7.2.6</a></span> IsInteger (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation IsInteger determines if <var>argument</var> is a finite integer numeric
       value.</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is not Number, return <b>false</b>.</li>
         <li>If <i>argument</i> is <b>NaN</b>, <b>+∞</b>, or <b>−∞</b>, return <b>false</b>.</li>
-        <li>If <a href="#sec-algorithm-conventions">floor</a>(<a href="#sec-algorithm-conventions">abs</a>(<i>argument</i>)) ≠
-            <a href="#sec-algorithm-conventions">abs</a>(<i>argument</i>), return <b>false</b>.</li>
+        <li>If <a href="sec-notational-conventions.html#sec-algorithm-conventions">floor</a>(<a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>argument</i>)) ≠
+            <a href="sec-notational-conventions.html#sec-algorithm-conventions">abs</a>(<i>argument</i>), return <b>false</b>.</li>
         <li>Return <b>true</b>.</li>
       </ol>
     </section>
 
     <section id="sec-ispropertykey">
-      <h1><span class="secnum" id="sec-7.2.7"><a href="#sec-ispropertykey" title="link to this section">7.2.7</a></span>
+      <h1><span class="secnum" id="sec-7.2.7"><a href="sec-abstract-operations.html#sec-ispropertykey" title="link to this section">7.2.7</a></span>
           IsPropertyKey ( argument )</h1>
 
-      <p class="normalbefore">The abstract operation IsPropertyKey determines if <var>argument</var>, which must be an <a href="#sec-ecmascript-language-types">ECMAScript language value</a> or a <a href="#sec-completion-record-specification-type">Completion Record</a>, is a value that may be used as a <a href="#sec-object-type">property key</a>.</p>
+      <p class="normalbefore">The abstract operation IsPropertyKey determines if <var>argument</var>, which must be an <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language value</a> or a <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a>, is a value that may be used as a <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>.</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argument</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is String, return <b>true</b>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is Symbol, return <b>true</b>.</li>
         <li>Return <b>false</b>.</li>
@@ -1108,33 +1108,33 @@
     </section>
 
     <section id="sec-isregexp">
-      <h1><span class="secnum" id="sec-7.2.8"><a href="#sec-isregexp" title="link to this section">7.2.8</a></span> IsRegExp (
+      <h1><span class="secnum" id="sec-7.2.8"><a href="sec-abstract-operations.html#sec-isregexp" title="link to this section">7.2.8</a></span> IsRegExp (
           argument )</h1>
 
       <p class="normalbefore">The abstract operation IsRegExp with argument <var>argument</var> performs the following steps:</p>
 
       <ol class="proc">
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>argument</i>) is not Object, return <b>false</b>.</li>
-        <li>Let <i>isRegExp</i> be <a href="#sec-get-o-p">Get</a>(<i>argument</i>, @@match).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isRegExp</i>).</li>
-        <li>If <i>isRegExp</i> is not <b>undefined</b>, return <a href="#sec-toboolean">ToBoolean</a>(<i>isRegExp</i>).</li>
-        <li>If <i>argument</i> has a [[RegExpMatcher]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+        <li>Let <i>isRegExp</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>argument</i>, @@match).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isRegExp</i>).</li>
+        <li>If <i>isRegExp</i> is not <b>undefined</b>, return <a href="sec-abstract-operations.html#sec-toboolean">ToBoolean</a>(<i>isRegExp</i>).</li>
+        <li>If <i>argument</i> has a [[RegExpMatcher]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
             slot</a>, return <b>true</b>.</li>
         <li>Return <b>false</b>.</li>
       </ol>
     </section>
 
     <section id="sec-samevalue">
-      <h1><span class="secnum" id="sec-7.2.9"><a href="#sec-samevalue" title="link to this section">7.2.9</a></span> SameValue(x,
+      <h1><span class="secnum" id="sec-7.2.9"><a href="sec-abstract-operations.html#sec-samevalue" title="link to this section">7.2.9</a></span> SameValue(x,
           y)</h1>
 
       <p class="normalbefore">The internal comparison abstract operation SameValue(<var>x</var>, <var>y</var>), where <var>x</var>
-      and <var>y</var> are <a href="#sec-ecmascript-language-types">ECMAScript language values</a>, produces <b>true</b> or
+      and <var>y</var> are <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language values</a>, produces <b>true</b> or
       <b>false</b>. Such a comparison is performed as follows:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is different from <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>), return <b>false</b>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is Null, return <b>true</b>.</li>
@@ -1168,21 +1168,21 @@
       </ol>
 
       <div class="note">
-        <p><span class="nh">NOTE</span> This algorithm differs from the Strict Equality Comparison Algorithm (<a href="#sec-strict-equality-comparison">7.2.13</a>) in its treatment of signed zeroes and NaNs.</p>
+        <p><span class="nh">NOTE</span> This algorithm differs from the Strict Equality Comparison Algorithm (<a href="sec-abstract-operations.html#sec-strict-equality-comparison">7.2.13</a>) in its treatment of signed zeroes and NaNs.</p>
       </div>
     </section>
 
     <section id="sec-samevaluezero">
-      <h1><span class="secnum" id="sec-7.2.10"><a href="#sec-samevaluezero" title="link to this section">7.2.10</a></span>
+      <h1><span class="secnum" id="sec-7.2.10"><a href="sec-abstract-operations.html#sec-samevaluezero" title="link to this section">7.2.10</a></span>
           SameValueZero(x, y)</h1>
 
       <p class="normalbefore">The internal comparison abstract operation SameValueZero(<var>x</var>, <var>y</var>), where
-      <var>x</var> and <var>y</var> are <a href="#sec-ecmascript-language-types">ECMAScript language values</a>, produces
+      <var>x</var> and <var>y</var> are <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language values</a>, produces
       <b>true</b> or <b>false</b>. Such a comparison is performed as follows:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is different from <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>), return <b>false</b>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is Null, return <b>true</b>.</li>
@@ -1221,7 +1221,7 @@
     </section>
 
     <section id="sec-abstract-relational-comparison">
-      <h1><span class="secnum" id="sec-7.2.11"><a href="#sec-abstract-relational-comparison" title="link to this section">7.2.11</a></span> Abstract Relational Comparison</h1>
+      <h1><span class="secnum" id="sec-7.2.11"><a href="sec-abstract-operations.html#sec-abstract-relational-comparison" title="link to this section">7.2.11</a></span> Abstract Relational Comparison</h1>
 
       <p class="normalbefore">The comparison <var>x</var> &lt; <var>y</var>, where <var>x</var> and <var>y</var> are values,
       produces <b>true</b>, <b>false</b>, or <b>undefined</b> (which indicates that at least one operand is <b>NaN</b>). In
@@ -1234,22 +1234,22 @@
       <var>y</var> before <var>x</var>. Such a comparison is performed as follows:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
         <li>If the <i>LeftFirst</i> flag is <b>true</b>, then
           <ol class="block">
-            <li>Let <i>px</i> be <a href="#sec-toprimitive">ToPrimitive</a>(<i>x</i>, hint Number).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>px</i>).</li>
-            <li>Let <i>py</i> be <a href="#sec-toprimitive">ToPrimitive</a>(<i>y</i>, hint Number).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>py</i>).</li>
+            <li>Let <i>px</i> be <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>x</i>, hint Number).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>px</i>).</li>
+            <li>Let <i>py</i> be <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>y</i>, hint Number).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>py</i>).</li>
           </ol>
         </li>
         <li>Else the order of evaluation needs to be reversed to preserve left to right evaluation
           <ol class="block">
-            <li>Let <i>py</i> be <a href="#sec-toprimitive">ToPrimitive</a>(<i>y</i>, hint Number).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>py</i>).</li>
-            <li>Let <i>px</i> be <a href="#sec-toprimitive">ToPrimitive</a>(<i>x</i>, hint Number).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>px</i>).</li>
+            <li>Let <i>py</i> be <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>y</i>, hint Number).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>py</i>).</li>
+            <li>Let <i>px</i> be <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>x</i>, hint Number).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>px</i>).</li>
           </ol>
         </li>
         <li>If both <i>px</i> and <i>py</i> are Strings, then
@@ -1268,11 +1268,11 @@
         </li>
         <li>Else,
           <ol class="block">
-            <li>Let <i>nx</i> be <a href="#sec-tonumber">ToNumber</a>(<i>px</i>). Because <i>px</i> and <i>py</i> are primitive
+            <li>Let <i>nx</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>px</i>). Because <i>px</i> and <i>py</i> are primitive
                 values evaluation order is not important.</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nx</i>).</li>
-            <li>Let <i>ny</i> be <a href="#sec-tonumber">ToNumber</a>(<i>py</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>ny</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nx</i>).</li>
+            <li>Let <i>ny</i> be <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>py</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>ny</i>).</li>
             <li>If <i>nx</i> is <b>NaN</b>, return <b>undefined</b>.</li>
             <li>If <i>ny</i> is <b>NaN</b>, return <b>undefined</b>.</li>
             <li>If <i>nx</i> and <i>ny</i> are the same Number value, return <b>false</b>.</li>
@@ -1291,7 +1291,7 @@
 
       <div class="note">
         <p><span class="nh">NOTE 1</span> Step 5 differs from step 11 in the algorithm for the addition operator <code>+</code>
-        (<a href="#sec-addition-operator-plus">12.7.3</a>) in using “and” instead of “or”.</p>
+        (<a href="sec-ecmascript-language-expressions.html#sec-addition-operator-plus">12.7.3</a>) in using “and” instead of “or”.</p>
       </div>
 
       <div class="note">
@@ -1305,14 +1305,14 @@
     </section>
 
     <section id="sec-abstract-equality-comparison">
-      <h1><span class="secnum" id="sec-7.2.12"><a href="#sec-abstract-equality-comparison" title="link to this section">7.2.12</a></span> Abstract Equality Comparison</h1>
+      <h1><span class="secnum" id="sec-7.2.12"><a href="sec-abstract-operations.html#sec-abstract-equality-comparison" title="link to this section">7.2.12</a></span> Abstract Equality Comparison</h1>
 
       <p class="normalbefore">The comparison <var>x</var> == <var>y</var>, where <var>x</var> and <var>y</var> are values,
       produces <b>true</b> or <b>false</b>. Such a comparison is performed as follows:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>x</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>y</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is the same as <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>), then
           <ol class="block">
             <li>Return the result of performing Strict Equality Comparison <i>x</i> === <i>y</i>.</li>
@@ -1321,22 +1321,22 @@
         <li>If <i>x</i> is <b>null</b> and <i>y</i> is <b>undefined</b>, return <b>true</b>.</li>
         <li>If <i>x</i> is <b>undefined</b> and <i>y</i> is <b>null</b>, return <b>true</b>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is Number and <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>) is String,<br>return the result of the comparison
-            <i>x</i> == <a href="#sec-tonumber">ToNumber</a>(<i>y</i>).</li>
-        <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is String and <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>) is Number,<br>return the result of the comparison <a href="#sec-tonumber">ToNumber</a>(<i>x</i>) == <i>y</i>.</li>
+            <i>x</i> == <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>y</i>).</li>
+        <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is String and <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>) is Number,<br>return the result of the comparison <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>x</i>) == <i>y</i>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is Boolean, return the result of the comparison
-            <a href="#sec-tonumber">ToNumber</a>(<i>x</i>) == <i>y</i>.</li>
+            <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>x</i>) == <i>y</i>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>) is Boolean, return the result of the comparison
-            <i>x</i> == <a href="#sec-tonumber">ToNumber</a>(<i>y</i>).</li>
+            <i>x</i> == <a href="sec-abstract-operations.html#sec-tonumber">ToNumber</a>(<i>y</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is either String, Number, or Symbol and <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>) is Object, then<br>return the result of the comparison
-            <i>x</i> == <a href="#sec-toprimitive">ToPrimitive</a>(<i>y</i>).</li>
+            <i>x</i> == <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>y</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>x</i>) is Object and <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>y</i>) is either String, Number, or Symbol, then<br>return
-            the result of the comparison <a href="#sec-toprimitive">ToPrimitive</a>(<i>x</i>) == <i>y</i>.</li>
+            the result of the comparison <a href="sec-abstract-operations.html#sec-toprimitive">ToPrimitive</a>(<i>x</i>) == <i>y</i>.</li>
         <li>Return <b>false</b>.</li>
       </ol>
     </section>
 
     <section id="sec-strict-equality-comparison">
-      <h1><span class="secnum" id="sec-7.2.13"><a href="#sec-strict-equality-comparison" title="link to this section">7.2.13</a></span> Strict Equality Comparison</h1>
+      <h1><span class="secnum" id="sec-7.2.13"><a href="sec-abstract-operations.html#sec-strict-equality-comparison" title="link to this section">7.2.13</a></span> Strict Equality Comparison</h1>
 
       <p class="normalbefore">The comparison <var>x</var> === <var>y</var>, where <var>x</var> and <var>y</var> are values,
       produces <b>true</b> or <b>false</b>. Such a comparison is performed as follows:</p>
@@ -1374,87 +1374,87 @@
       </ol>
 
       <div class="note">
-        <p><span class="nh">NOTE</span> This algorithm differs from <a href="#sec-samevalue">the SameValue Algorithm</a> (<a href="#sec-samevalue">7.2.9</a>) in its treatment of signed zeroes and NaNs.</p>
+        <p><span class="nh">NOTE</span> This algorithm differs from <a href="sec-abstract-operations.html#sec-samevalue">the SameValue Algorithm</a> (<a href="sec-abstract-operations.html#sec-samevalue">7.2.9</a>) in its treatment of signed zeroes and NaNs.</p>
       </div>
     </section>
   </section>
 
   <section id="sec-operations-on-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-7.3"><a href="#sec-operations-on-objects" title="link to this section">7.3</a></span>
+      <h1><span class="secnum" id="sec-7.3"><a href="sec-abstract-operations.html#sec-operations-on-objects" title="link to this section">7.3</a></span>
           Operations on Objects</h1>
     </div>
 
     <section id="sec-get-o-p">
-      <h1><span class="secnum" id="sec-7.3.1"><a href="#sec-get-o-p" title="link to this section">7.3.1</a></span> Get (O, P)</h1>
+      <h1><span class="secnum" id="sec-7.3.1"><a href="sec-abstract-operations.html#sec-get-o-p" title="link to this section">7.3.1</a></span> Get (O, P)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">Get</span> is used to retrieve the
       value of a specific property of an object. The operation is called with arguments  <var>O</var> and <var>P</var> where
-      <var>O</var> is the object and <var>P</var> is the <a href="#sec-object-type">property key</a>. This abstract operation
+      <var>O</var> is the object and <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. This abstract operation
       performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
         <li>Return <i>O</i>.[[Get]](<i>P</i>, <i>O</i>).</li>
       </ol>
     </section>
 
     <section id="sec-getv">
-      <h1><span class="secnum" id="sec-7.3.2"><a href="#sec-getv" title="link to this section">7.3.2</a></span> GetV (V, P)</h1>
+      <h1><span class="secnum" id="sec-7.3.2"><a href="sec-abstract-operations.html#sec-getv" title="link to this section">7.3.2</a></span> GetV (V, P)</h1>
 
-      <p class="normalbefore">The abstract operation GetV is used to retrieve the value of a specific property of an <a href="#sec-ecmascript-language-types">ECMAScript language value</a>. If the value is not an object, the property lookup is
+      <p class="normalbefore">The abstract operation GetV is used to retrieve the value of a specific property of an <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language value</a>. If the value is not an object, the property lookup is
       performed using a wrapper object appropriate for the type of the value. The operation is called with arguments <var>V</var>
-      and <var>P</var> where <var>V</var> is the value and <var>P</var> is the <a href="#sec-object-type">property key</a>. This
+      and <var>P</var> where <var>V</var> is the value and <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. This
       abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
-        <li>Let <i>O</i> be <a href="#sec-toobject">ToObject</a>(<i>V</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+        <li>Let <i>O</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>V</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
         <li>Return <i>O</i>.[[Get]](<i>P</i>, <i>V</i>).</li>
       </ol>
     </section>
 
     <section id="sec-set-o-p-v-throw">
-      <h1><span class="secnum" id="sec-7.3.3"><a href="#sec-set-o-p-v-throw" title="link to this section">7.3.3</a></span> Set (O,
+      <h1><span class="secnum" id="sec-7.3.3"><a href="sec-abstract-operations.html#sec-set-o-p-v-throw" title="link to this section">7.3.3</a></span> Set (O,
           P, V, Throw)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">Set</span> is used to set the
       value of a specific property of an object. The operation is called with arguments  <var>O</var>, <var>P</var>, <var>V</var>,
-      and <span class="nt">Throw</span> where <var>O</var> is the object, <var>P</var> is the <a href="#sec-object-type">property
+      and <span class="nt">Throw</span> where <var>O</var> is the object, <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property
       key</a>, <var>V</var> is the new value for the property and <span class="nt">Throw</span> is a Boolean flag. This abstract
       operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>Throw</i>) is Boolean.</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>Throw</i>) is Boolean.</li>
         <li>Let  <i>success</i> be <i>O</i>.[[Set]](<i>P</i>, <i>V</i>, <i>O</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
         <li>If <i>success</i> is <b>false</b> and <i>Throw</i> is <b>true</b>, throw a <b>TypeError</b> exception.</li>
         <li>Return <i>success</i>.</li>
       </ol>
     </section>
 
     <section id="sec-createdataproperty">
-      <h1><span class="secnum" id="sec-7.3.4"><a href="#sec-createdataproperty" title="link to this section">7.3.4</a></span>
+      <h1><span class="secnum" id="sec-7.3.4"><a href="sec-abstract-operations.html#sec-createdataproperty" title="link to this section">7.3.4</a></span>
           CreateDataProperty (O, P, V)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">CreateDataProperty</span> is used
       to create a new own property of an object. The operation is called with arguments  <var>O</var>, <var>P</var>, and
-      <var>V</var> where <var>O</var> is the object, <var>P</var> is the <a href="#sec-object-type">property key</a>, and
+      <var>V</var> where <var>O</var> is the object, <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>, and
       <var>V</var> is the value for the property. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
         <li>Let <i>newDesc</i> be the PropertyDescriptor{[[Value]]: <i>V</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
             <b>true</b>, [[Configurable]]: <b>true</b>}.</li>
@@ -1469,18 +1469,18 @@
     </section>
 
     <section id="sec-createmethodproperty">
-      <h1><span class="secnum" id="sec-7.3.5"><a href="#sec-createmethodproperty" title="link to this section">7.3.5</a></span>
+      <h1><span class="secnum" id="sec-7.3.5"><a href="sec-abstract-operations.html#sec-createmethodproperty" title="link to this section">7.3.5</a></span>
           CreateMethodProperty (O, P, V)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">CreateMethodProperty</span> is
       used to create a new own property of an object. The operation is called with arguments <var>O</var>, <var>P</var>, and
-      <var>V</var> where <var>O</var> is the object, <var>P</var> is the <a href="#sec-object-type">property key</a>, and
+      <var>V</var> where <var>O</var> is the object, <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>, and
       <var>V</var> is the value for the property. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
         <li>Let <i>newDesc</i> be the PropertyDescriptor{[[Value]]: <i>V</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
             <b>false</b>, [[Configurable]]: <b>true</b>}.</li>
@@ -1496,21 +1496,21 @@
     </section>
 
     <section id="sec-createdatapropertyorthrow">
-      <h1><span class="secnum" id="sec-7.3.6"><a href="#sec-createdatapropertyorthrow" title="link to this section">7.3.6</a></span> CreateDataPropertyOrThrow (O, P, V)</h1>
+      <h1><span class="secnum" id="sec-7.3.6"><a href="sec-abstract-operations.html#sec-createdatapropertyorthrow" title="link to this section">7.3.6</a></span> CreateDataPropertyOrThrow (O, P, V)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">CreateDataPropertyOrThrow</span>
       is used to create a new own property of an object. It throws a <span class="value">TypeError</span> exception if the
       requested property update cannot be performed. The operation is called with arguments  <var>O</var>, <var>P</var>, and
-      <var>V</var> where <var>O</var> is the object, <var>P</var> is the <a href="#sec-object-type">property key</a>, and
+      <var>V</var> where <var>O</var> is the object, <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>, and
       <var>V</var> is the value for the property. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
-        <li>Let  <i>success</i> be <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>O</i>,  <i>P</i>, <i>V</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
+        <li>Let  <i>success</i> be <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>O</i>,  <i>P</i>, <i>V</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
         <li>If <i>success</i> is <b>false</b>, throw a <b>TypeError</b> exception.</li>
         <li>Return <i>success</i>.</li>
       </ol>
@@ -1523,144 +1523,144 @@
     </section>
 
     <section id="sec-definepropertyorthrow">
-      <h1><span class="secnum" id="sec-7.3.7"><a href="#sec-definepropertyorthrow" title="link to this section">7.3.7</a></span>
+      <h1><span class="secnum" id="sec-7.3.7"><a href="sec-abstract-operations.html#sec-definepropertyorthrow" title="link to this section">7.3.7</a></span>
           DefinePropertyOrThrow (O, P, desc)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">DefinePropertyOrThrow</span> is
       used to call the [[DefineOwnProperty]] internal method of an object in a manner that will throw a <b>TypeError</b> exception
       if the requested property update cannot be performed. The operation is called with arguments  <var>O</var>, <var>P</var>,
-      and <var>desc</var> where <var>O</var> is the object, <var>P</var> is the <a href="#sec-object-type">property key</a>, and
-      <var>desc</var> is the <a href="#sec-property-descriptor-specification-type">Property Descriptor</a> for the property. This
+      and <var>desc</var> where <var>O</var> is the object, <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>, and
+      <var>desc</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-property-descriptor-specification-type">Property Descriptor</a> for the property. This
       abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
         <li>Let  <i>success</i> be <i>O</i>.[[DefineOwnProperty]](<i>P</i>, <i>desc</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
         <li>If <i>success</i> is <b>false</b>, throw a <b>TypeError</b> exception.</li>
         <li>Return <i>success</i>.</li>
       </ol>
     </section>
 
     <section id="sec-deletepropertyorthrow">
-      <h1><span class="secnum" id="sec-7.3.8"><a href="#sec-deletepropertyorthrow" title="link to this section">7.3.8</a></span>
+      <h1><span class="secnum" id="sec-7.3.8"><a href="sec-abstract-operations.html#sec-deletepropertyorthrow" title="link to this section">7.3.8</a></span>
           DeletePropertyOrThrow (O, P)</h1>
 
       <p class="normalbefore">The abstract operation DeletePropertyOrThrow is used to remove a specific own property of an object.
       It throws an exception if the property is not configurable. The operation is called with arguments  <var>O</var> and
-      <var>P</var> where <var>O</var> is the object and <var>P</var> is the <a href="#sec-object-type">property key</a>. This
+      <var>P</var> where <var>O</var> is the object and <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. This
       abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
         <li>Let  <i>success</i> be <i>O</i>.[[Delete]](<i>P</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
         <li>If <i>success</i> is <b>false</b>, throw a <b>TypeError</b> exception.</li>
         <li>Return <i>success</i>.</li>
       </ol>
     </section>
 
     <section id="sec-getmethod">
-      <h1><span class="secnum" id="sec-7.3.9"><a href="#sec-getmethod" title="link to this section">7.3.9</a></span> GetMethod (O,
+      <h1><span class="secnum" id="sec-7.3.9"><a href="sec-abstract-operations.html#sec-getmethod" title="link to this section">7.3.9</a></span> GetMethod (O,
           P)</h1>
 
       <p>The abstract operation GetMethod is used to get the value of a specific property of an object when the value of the
       property is expected to be a function. The operation is called with arguments <var>O</var> and <var>P</var> where
-      <var>O</var> is the object, <var>P</var> is the <a href="#sec-object-type">property key</a>. This abstract operation
+      <var>O</var> is the object, <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. This abstract operation
       performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
-        <li>Let  <i>func</i> be <a href="#sec-getv">GetV</a>(<i>O</i>, <i>P</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>func</i>).</li>
+        <li>Let  <i>func</i> be <a href="sec-abstract-operations.html#sec-getv">GetV</a>(<i>O</i>, <i>P</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>func</i>).</li>
         <li>If <i>func</i> is either <b>undefined</b> or <b>null</b>, return <b>undefined</b>.</li>
-        <li>If <a href="#sec-iscallable">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
+        <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
         <li>Return <i>func</i>.</li>
       </ol>
     </section>
 
     <section id="sec-hasproperty">
-      <h1><span class="secnum" id="sec-7.3.10"><a href="#sec-hasproperty" title="link to this section">7.3.10</a></span>
+      <h1><span class="secnum" id="sec-7.3.10"><a href="sec-abstract-operations.html#sec-hasproperty" title="link to this section">7.3.10</a></span>
           HasProperty (O, P)</h1>
 
       <p class="normalbefore">The abstract operation HasProperty is used to determine whether an object has a property with the
-      specified <a href="#sec-object-type">property key</a>. The property may be either an own or inherited. A Boolean value is
+      specified <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. The property may be either an own or inherited. A Boolean value is
       returned. The operation is called with arguments  <var>O</var> and <var>P</var> where <var>O</var> is the object and
-      <var>P</var> is the <a href="#sec-object-type">property key</a>. This abstract operation performs the following steps:</p>
+      <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
         <li>Return <i>O</i>.[[HasProperty]](<i>P</i>).</li>
       </ol>
     </section>
 
     <section id="sec-hasownproperty">
-      <h1><span class="secnum" id="sec-7.3.11"><a href="#sec-hasownproperty" title="link to this section">7.3.11</a></span>
+      <h1><span class="secnum" id="sec-7.3.11"><a href="sec-abstract-operations.html#sec-hasownproperty" title="link to this section">7.3.11</a></span>
           HasOwnProperty (O, P)</h1>
 
       <p class="normalbefore">The abstract operation HasOwnProperty is used to determine whether an object has an own property
-      with the specified <a href="#sec-object-type">property key</a>. A Boolean value is returned. The operation is called with
-      arguments  <var>O</var> and <var>P</var> where <var>O</var> is the object and <var>P</var> is the <a href="#sec-object-type">property key</a>. This abstract operation performs the following steps:</p>
+      with the specified <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. A Boolean value is returned. The operation is called with
+      arguments  <var>O</var> and <var>P</var> where <var>O</var> is the object and <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
         <li>Let <i>desc</i> be <i>O</i>.[[GetOwnProperty]](<i>P</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
         <li>If <i>desc</i> is <b>undefined</b>, return <b>false</b>.</li>
         <li>Return <b>true</b>.</li>
       </ol>
     </section>
 
     <section id="sec-call">
-      <h1><span class="secnum" id="sec-7.3.12"><a href="#sec-call" title="link to this section">7.3.12</a></span> Call(F, V,
+      <h1><span class="secnum" id="sec-7.3.12"><a href="sec-abstract-operations.html#sec-call" title="link to this section">7.3.12</a></span> Call(F, V,
           [argumentsList])</h1>
 
       <p class="normalbefore">The abstract operation Call is used to call the [[Call]] internal method of a function object. The
       operation is called with arguments  <var>F</var>, <var>V</var> , and optionally <var>argumentsList</var> where <var>F</var>
-      is the function object, <var>V</var> is an <a href="#sec-ecmascript-language-types">ECMAScript language value</a> that is
+      is the function object, <var>V</var> is an <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language value</a> that is
       the <b>this</b> value of the [[Call]], and <var>argumentsList</var> is the value passed to the corresponding argument of the
-      internal method. If <var>argumentsList</var> is not present, an empty <a href="#sec-list-and-record-specification-type">List</a> is used as its value. This abstract operation performs the following
+      internal method. If <var>argumentsList</var> is not present, an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> is used as its value. This abstract operation performs the following
       steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>F</i>).</li>
-        <li>If <i>argumentsList</i> was not passed, let <i>argumentsList</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-        <li>If <a href="#sec-iscallable">IsCallable</a>(<i>F</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>F</i>).</li>
+        <li>If <i>argumentsList</i> was not passed, let <i>argumentsList</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+        <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>F</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
         <li>Return <i>F</i>.[[Call]](<i>V</i>, <i>argumentsList</i>).</li>
       </ol>
     </section>
 
     <section id="sec-construct">
-      <h1><span class="secnum" id="sec-7.3.13"><a href="#sec-construct" title="link to this section">7.3.13</a></span> Construct
+      <h1><span class="secnum" id="sec-7.3.13"><a href="sec-abstract-operations.html#sec-construct" title="link to this section">7.3.13</a></span> Construct
           (F, [argumentsList], [newTarget])</h1>
 
       <p class="normalbefore">The abstract operation Construct is used to call the [[Construct]] internal method of a function
       object. The operation is called with arguments  <var>F</var>, and optionally <span style="font-family: Times New
       Roman"><i>argumentsList</i>, and <i>newTarget</i></span> where <var>F</var> is the function object. <var>argumentsList</var>
       and <var>newTarget</var> are the values to be passed as the corresponding arguments of the internal method. If
-      <var>argumentsList</var> is not present, an empty <a href="#sec-list-and-record-specification-type">List</a> is used as its
+      <var>argumentsList</var> is not present, an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> is used as its
       value. If <var>newTarget</var> is not present, <var>F</var> is used as its value. This abstract operation performs the
       following steps:</p>
 
       <ol class="proc">
         <li>If <i>newTarget</i> was not passed, let <i>newTarget</i> be <i>F</i>.</li>
-        <li>If <i>argumentsList</i> was not passed, let <i>argumentsList</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-isconstructor">IsConstructor</a> (<i>F</i>) is
+        <li>If <i>argumentsList</i> was not passed, let <i>argumentsList</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-abstract-operations.html#sec-isconstructor">IsConstructor</a> (<i>F</i>) is
             <b>true</b>.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-isconstructor">IsConstructor</a> (<i>newTarget</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-abstract-operations.html#sec-isconstructor">IsConstructor</a> (<i>newTarget</i>) is
             <b>true</b>.</li>
         <li>Return <i>F</i>.[[Construct]](<i>argumentsList</i>, <i>newTarget</i>).</li>
       </ol>
@@ -1672,29 +1672,29 @@
     </section>
 
     <section id="sec-setintegritylevel">
-      <h1><span class="secnum" id="sec-7.3.14"><a href="#sec-setintegritylevel" title="link to this section">7.3.14</a></span>
+      <h1><span class="secnum" id="sec-7.3.14"><a href="sec-abstract-operations.html#sec-setintegritylevel" title="link to this section">7.3.14</a></span>
           SetIntegrityLevel (O, level)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">SetIntegrityLevel</span> is used
       to fix the set of own properties of an object. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <i>level</i> is either <code>"sealed"</code> or
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>level</i> is either <code>"sealed"</code> or
             <code>"frozen"</code>.</li>
         <li>Let <i>status</i> be <i>O</i>.[[PreventExtensions]]().</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
         <li>If <i>status</i> is <b>false</b>, return <b>false</b>.</li>
         <li>Let <i>keys</i> be <i>O</i>.[[OwnPropertyKeys]]().</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
         <li>If <i>level</i> is <code>"sealed"</code>, then
           <ol class="block">
             <li>Repeat for each element <i>k</i> of <i>keys</i>,
               <ol class="block">
-                <li>Let <i>status</i> be <a href="#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>, <i>k</i>,
+                <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>, <i>k</i>,
                     PropertyDescriptor{ [[Configurable]]: <b>false</b>}).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
               </ol>
             </li>
           </ol>
@@ -1704,10 +1704,10 @@
             <li>Repeat for each element <i>k</i> of <i>keys</i>,
               <ol class="block">
                 <li>Let <i>currentDesc</i> be <i>O</i>.[[GetOwnProperty]](<i>k</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>currentDesc</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>currentDesc</i>).</li>
                 <li>If <i>currentDesc</i> is not <b>undefined</b>, then
                   <ol class="block">
-                    <li>If <a href="#sec-isaccessordescriptor">IsAccessorDescriptor</a>(<i>currentDesc</i>) is <b>true</b>, then
+                    <li>If <a href="sec-ecmascript-data-types-and-values.html#sec-isaccessordescriptor">IsAccessorDescriptor</a>(<i>currentDesc</i>) is <b>true</b>, then
                       <ol class="block">
                         <li>Let <i>desc</i> be the PropertyDescriptor{[[Configurable]]: <b>false</b>}.</li>
                       </ol>
@@ -1718,9 +1718,9 @@
                             }.</li>
                       </ol>
                     </li>
-                    <li>Let <i>status</i> be <a href="#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>, <i>k</i>,
+                    <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>, <i>k</i>,
                         <i>desc</i>).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
                   </ol>
                 </li>
               </ol>
@@ -1732,31 +1732,31 @@
     </section>
 
     <section id="sec-testintegritylevel">
-      <h1><span class="secnum" id="sec-7.3.15"><a href="#sec-testintegritylevel" title="link to this section">7.3.15</a></span>
+      <h1><span class="secnum" id="sec-7.3.15"><a href="sec-abstract-operations.html#sec-testintegritylevel" title="link to this section">7.3.15</a></span>
           TestIntegrityLevel (O, level)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">TestIntegrityLevel</span> is used
       to determine if the set of own properties of an object are fixed. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <i>level</i> is either <code>"sealed"</code> or
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>level</i> is either <code>"sealed"</code> or
             <code>"frozen"</code>.</li>
-        <li>Let <i>status</i> be <a href="#sec-isextensible-o">IsExtensible</a>(<i>O</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+        <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-isextensible-o">IsExtensible</a>(<i>O</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
         <li>If <i>status</i> is <b>true</b>, return <b>false</b></li>
         <li>NOTE  If the object is extensible, none of its properties are examined.</li>
         <li>Let <i>keys</i> be <i>O</i>.[[OwnPropertyKeys]]().</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
         <li>Repeat for each element <i>k</i> of <i>keys</i>,
           <ol class="block">
             <li>Let <i>currentDesc</i> be <i>O</i>.[[GetOwnProperty]](<i>k</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>currentDesc</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>currentDesc</i>).</li>
             <li>If <i>currentDesc</i> is not <b>undefined</b>, then
               <ol class="block">
                 <li>If <i>currentDesc</i>.[[Configurable]] is <b>true</b>, return <b>false</b>.</li>
-                <li>If <i>level</i> is <code>"frozen"</code> and  <a href="#sec-isdatadescriptor">IsDataDescriptor</a>(<i>currentDesc</i>) is <b>true</b>, then
+                <li>If <i>level</i> is <code>"frozen"</code> and  <a href="sec-ecmascript-data-types-and-values.html#sec-isdatadescriptor">IsDataDescriptor</a>(<i>currentDesc</i>) is <b>true</b>, then
                   <ol class="block">
                     <li>If <i>currentDesc</i>.[[Writable]] is <b>true</b>, return <b>false</b>.</li>
                   </ol>
@@ -1770,21 +1770,21 @@
     </section>
 
     <section id="sec-createarrayfromlist">
-      <h1><span class="secnum" id="sec-7.3.16"><a href="#sec-createarrayfromlist" title="link to this section">7.3.16</a></span>
+      <h1><span class="secnum" id="sec-7.3.16"><a href="sec-abstract-operations.html#sec-createarrayfromlist" title="link to this section">7.3.16</a></span>
           CreateArrayFromList (elements)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">CreateArrayFromList</span> is used
-      to create an Array object whose elements are provided by a <a href="#sec-list-and-record-specification-type">List</a>. This
+      to create an Array object whose elements are provided by a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>. This
       abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <i>elements</i> is a <a href="#sec-list-and-record-specification-type">List</a> whose elements are all <a href="#sec-ecmascript-language-types">ECMAScript language values</a>.</li>
-        <li>Let <i>array</i> be <a href="#sec-arraycreate">ArrayCreate</a>(0) (<a href="#sec-arraycreate">see 9.4.2.2</a>).</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>elements</i> is a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> whose elements are all <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMAScript language values</a>.</li>
+        <li>Let <i>array</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-arraycreate">ArrayCreate</a>(0) (<a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-arraycreate">see 9.4.2.2</a>).</li>
         <li>Let <i>n</i> be 0.</li>
         <li>For each element <i>e</i> of <i>elements</i>
           <ol class="block">
-            <li>Let <i>status</i> be <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>array</i>, <a href="#sec-tostring">ToString</a>(<i>n</i>), <i>e</i>).</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>:  <i>status</i> is <b>true</b>.</li>
+            <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>array</i>, <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>n</i>), <i>e</i>).</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <i>status</i> is <b>true</b>.</li>
             <li>Increment <i>n</i> by 1.</li>
           </ol>
         </li>
@@ -1793,30 +1793,30 @@
     </section>
 
     <section id="sec-createlistfromarraylike">
-      <h1><span class="secnum" id="sec-7.3.17"><a href="#sec-createlistfromarraylike" title="link to this section">7.3.17</a></span> CreateListFromArrayLike (obj [, elementTypes] )</h1>
+      <h1><span class="secnum" id="sec-7.3.17"><a href="sec-abstract-operations.html#sec-createlistfromarraylike" title="link to this section">7.3.17</a></span> CreateListFromArrayLike (obj [, elementTypes] )</h1>
 
       <p class="normalbefore">The abstract operation CreateListFromArrayLike is used to create a List value whose elements are
       provided by the indexed properties of an array-like object, <var>obj</var>. The optional argument <var>elementTypes</var> is
-      a <a href="#sec-list-and-record-specification-type">List</a> containing the names of ECMAScript Language Types that are
-      allowed for element values of the <a href="#sec-list-and-record-specification-type">List</a> that is created. This abstract
+      a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the names of ECMAScript Language Types that are
+      allowed for element values of the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is created. This abstract
       operation performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
         <li>If <i>elementTypes</i> was not passed, let <i>elementTypes</i> be (Undefined, Null, Boolean, String, Symbol, Number,
             Object).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>obj</i>) is not Object, throw a <b>TypeError</b>
             exception.</li>
-        <li>Let <i>len</i> be <a href="#sec-tolength">ToLength</a>(<a href="#sec-get-o-p">Get</a>(<i>obj</i>,
+        <li>Let <i>len</i> be <a href="sec-abstract-operations.html#sec-tolength">ToLength</a>(<a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>obj</i>,
             <code>"length"</code>)).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
-        <li>Let <i>list</i>  be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>len</i>).</li>
+        <li>Let <i>list</i>  be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         <li>Let <i>index</i> be 0.</li>
         <li>Repeat while <i>index</i> &lt; <i>len</i>
           <ol class="block">
-            <li>Let <i>indexName</i> be <a href="#sec-tostring">ToString</a>(<i>index</i>).</li>
-            <li>Let <i>next</i> be <a href="#sec-get-o-p">Get</a>(<i>obj</i>, <i>indexName</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
+            <li>Let <i>indexName</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>index</i>).</li>
+            <li>Let <i>next</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>obj</i>, <i>indexName</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>next</i>).</li>
             <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>next</i>) is not an element of <i>elementTypes</i>,
                 throw a <b>TypeError</b> exception.</li>
             <li>Append <i>next</i> as the last element of <i>list</i>.</li>
@@ -1828,27 +1828,27 @@
     </section>
 
     <section id="sec-invoke">
-      <h1><span class="secnum" id="sec-7.3.18"><a href="#sec-invoke" title="link to this section">7.3.18</a></span> Invoke(O,P,
+      <h1><span class="secnum" id="sec-7.3.18"><a href="sec-abstract-operations.html#sec-invoke" title="link to this section">7.3.18</a></span> Invoke(O,P,
           [argumentsList])</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">Invoke</span> is used to call a
       method property of an object. The operation is called with arguments  <var>O</var>, <var>P</var> , and optionally
       <var>argumentsList</var> where <var>O</var> serves as both the lookup point for the property and the <b>this</b> value of
-      the call, <var>P</var> is the <a href="#sec-object-type">property key</a>, and <var>argumentsList</var> is the list of
-      arguments values passed to the method. If <var>argumentsList</var> is not present, an empty <a href="#sec-list-and-record-specification-type">List</a> is used as its value. This abstract operation performs the following
+      the call, <var>P</var> is the <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a>, and <var>argumentsList</var> is the list of
+      arguments values passed to the method. If <var>argumentsList</var> is not present, an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> is used as its value. This abstract operation performs the following
       steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-abstract-operations.html#sec-ispropertykey">IsPropertyKey</a>(<i>P</i>) is
             <b>true</b>.</li>
-        <li>If <i>argumentsList</i> was not passed, let <i>argumentsList</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-        <li>Let  <i>func</i> be <a href="#sec-getv">GetV</a>(<i>O</i>, <i>P</i>).</li>
-        <li>Return <a href="#sec-call">Call</a>(<i>func</i>, <i>O</i>, <i>argumentsList</i>).</li>
+        <li>If <i>argumentsList</i> was not passed, let <i>argumentsList</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+        <li>Let  <i>func</i> be <a href="sec-abstract-operations.html#sec-getv">GetV</a>(<i>O</i>, <i>P</i>).</li>
+        <li>Return <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>func</i>, <i>O</i>, <i>argumentsList</i>).</li>
       </ol>
     </section>
 
     <section id="sec-ordinaryhasinstance">
-      <h1><span class="secnum" id="sec-7.3.19"><a href="#sec-ordinaryhasinstance" title="link to this section">7.3.19</a></span>
+      <h1><span class="secnum" id="sec-7.3.19"><a href="sec-abstract-operations.html#sec-ordinaryhasinstance" title="link to this section">7.3.19</a></span>
           OrdinaryHasInstance (C, O)</h1>
 
       <p class="normalbefore">The abstract operation <span style="font-family: Times New Roman">OrdinaryHasInstance</span>
@@ -1856,31 +1856,31 @@
       path provided by constructor <var>C</var>. This abstract operation performs the following steps:</p>
 
       <ol class="proc">
-        <li>If <a href="#sec-iscallable">IsCallable</a>(<i>C</i>) is <b>false</b>, return <b>false</b>.</li>
-        <li>If <i>C</i> has a <a href="#sec-bound-function-exotic-objects">[[BoundTargetFunction]]</a> <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>, then
+        <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>C</i>) is <b>false</b>, return <b>false</b>.</li>
+        <li>If <i>C</i> has a <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">[[BoundTargetFunction]]</a> <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>, then
           <ol class="block">
-            <li>Let <i>BC</i> be the value of <i>C’s</i> <a href="#sec-bound-function-exotic-objects">[[BoundTargetFunction]]</a> <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-            <li>Return <a href="#sec-instanceofoperator">InstanceofOperator</a>(<i>O</i>,<i>BC</i>)  (<a href="#sec-instanceofoperator">see 12.9.4</a>).</li>
+            <li>Let <i>BC</i> be the value of <i>C’s</i> <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">[[BoundTargetFunction]]</a> <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+            <li>Return <a href="sec-ecmascript-language-expressions.html#sec-instanceofoperator">InstanceofOperator</a>(<i>O</i>,<i>BC</i>)  (<a href="sec-ecmascript-language-expressions.html#sec-instanceofoperator">see 12.9.4</a>).</li>
           </ol>
         </li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <b>false</b>.</li>
-        <li>Let <i>P</i> be <a href="#sec-get-o-p">Get</a>(<i>C</i>, <code>"prototype"</code>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
+        <li>Let <i>P</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>C</i>, <code>"prototype"</code>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>P</i>) is not Object, throw a <b>TypeError</b>
             exception.</li>
         <li>Repeat
           <ol class="block">
             <li>Let <i>O</i> be <i>O</i>.[[GetPrototypeOf]]().</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
             <li>If <i>O</i> is <code>null</code>, return <b>false</b>.</li>
-            <li>If <a href="#sec-samevalue">SameValue</a>(<i>P</i>, <i>O</i>) is <b>true</b>, return <b>true</b>.</li>
+            <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>P</i>, <i>O</i>) is <b>true</b>, return <b>true</b>.</li>
           </ol>
         </li>
       </ol>
     </section>
 
     <section id="sec-speciesconstructor">
-      <h1><span class="secnum" id="sec-7.3.20"><a href="#sec-speciesconstructor" title="link to this section">7.3.20</a></span>
+      <h1><span class="secnum" id="sec-7.3.20"><a href="sec-abstract-operations.html#sec-speciesconstructor" title="link to this section">7.3.20</a></span>
           SpeciesConstructor ( O, defaultConstructor )</h1>
 
       <p class="normalbefore">The abstract operation SpeciesConstructor is used to retrieve the constructor that should be used to
@@ -1889,41 +1889,41 @@
       performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is
             Object.</li>
-        <li>Let <i>C</i> be <a href="#sec-get-o-p">Get</a>(<i>O</i>, <code>"constructor"</code>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>C</i>).</li>
+        <li>Let <i>C</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>O</i>, <code>"constructor"</code>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>C</i>).</li>
         <li>If <i>C</i> is <b>undefined</b>, return <i>defaultConstructor</i>.</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>C</i>) is not Object, throw a <b>TypeError</b>
             exception.</li>
-        <li>Let <i>S</i> be <a href="#sec-get-o-p">Get</a>(<i>C</i>, @@species).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>S</i>).</li>
+        <li>Let <i>S</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>C</i>, @@species).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>S</i>).</li>
         <li>If <i>S</i> is either <b>undefined</b> or <b>null</b>, return <i>defaultConstructor</i>.</li>
-        <li>If <a href="#sec-isconstructor">IsConstructor</a>(<i>S</i>) is <b>true</b>, return <i>S.</i></li>
+        <li>If <a href="sec-abstract-operations.html#sec-isconstructor">IsConstructor</a>(<i>S</i>) is <b>true</b>, return <i>S.</i></li>
         <li>Throw a <b>TypeError</b> exception.</li>
       </ol>
     </section>
 
     <section id="sec-enumerableownnames">
-      <h1><span class="secnum" id="sec-7.3.21"><a href="#sec-enumerableownnames" title="link to this section">7.3.21</a></span>
+      <h1><span class="secnum" id="sec-7.3.21"><a href="sec-abstract-operations.html#sec-enumerableownnames" title="link to this section">7.3.21</a></span>
           EnumerableOwnNames (O)</h1>
 
       <p class="normalbefore">When the abstract operation EnumerableOwnNames is called with Object <var>O</var> the following
       steps are taken:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>)
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>)
             is Object.</li>
         <li>Let <i>ownKeys</i> be <i>O</i>.[[OwnPropertyKeys]]().</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>ownKeys</i>).</li>
-        <li>Let <i>names</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-        <li>Repeat, for each element <i>key</i> of <i>ownKeys</i> in <a href="#sec-list-and-record-specification-type">List</a>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>ownKeys</i>).</li>
+        <li>Let <i>names</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+        <li>Repeat, for each element <i>key</i> of <i>ownKeys</i> in <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>
             order
           <ol class="block">
             <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>key</i>) is String, then
               <ol class="block">
                 <li>Let <i>desc</i> be <i>O</i>.[[GetOwnProperty]](<i>key</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
                 <li>If <i>desc</i> is not <b>undefined</b>, then
                   <ol class="block">
                     <li>If <i>desc.</i>[[Enumerable]] is <b>true</b>, append <i>key</i> to <i>names</i>.</li>
@@ -1945,69 +1945,69 @@
     </section>
 
     <section id="sec-getfunctionrealm">
-      <h1><span class="secnum" id="sec-7.3.22"><a href="#sec-getfunctionrealm" title="link to this section">7.3.22</a></span>
+      <h1><span class="secnum" id="sec-7.3.22"><a href="sec-abstract-operations.html#sec-getfunctionrealm" title="link to this section">7.3.22</a></span>
           GetFunctionRealm ( obj )</h1>
 
       <p class="normalbefore">The abstract operation GetFunctionRealm with argument <var>obj</var> performs the following
       steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <i>obj</i> is a callable object.</li>
-        <li>If <i>obj</i> has a [[Realm]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>, then
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>obj</i> is a callable object.</li>
+        <li>If <i>obj</i> has a [[Realm]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>, then
           <ol class="block">
-            <li>Return <i>obj</i>’s [[Realm]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+            <li>Return <i>obj</i>’s [[Realm]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                 slot</a>.</li>
           </ol>
         </li>
-        <li>If <i>obj</i> is a <a href="#sec-bound-function-exotic-objects">Bound Function</a> exotic object, then
+        <li>If <i>obj</i> is a <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">Bound Function</a> exotic object, then
           <ol class="block">
-            <li>Let <i>target</i> be <i>obj</i>’s <a href="#sec-bound-function-exotic-objects">[[BoundTargetFunction]]</a>
-                <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+            <li>Let <i>target</i> be <i>obj</i>’s <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">[[BoundTargetFunction]]</a>
+                <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
             <li>Return GetFunctionRealm(<i>target</i>).</li>
           </ol>
         </li>
         <li>If <i>obj</i> is a Proxy exotic object, then
           <ol class="block">
-            <li>If the value of the [[ProxyHandler]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>
+            <li>If the value of the [[ProxyHandler]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>
                 of <i>obj</i> is <b>null</b>, throw a <b>TypeError</b> exception.</li>
-            <li>Let <i>proxyTarget</i> be the value of <i>obj</i>’s [[ProxyTarget]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+            <li>Let <i>proxyTarget</i> be the value of <i>obj</i>’s [[ProxyTarget]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
             <li>Return GetFunctionRealm(<i>proxyTarget</i>).</li>
           </ol>
         </li>
-        <li>Return <a href="#sec-execution-contexts">the running execution context</a>’s <a href="#sec-code-realms">Realm</a>.</li>
+        <li>Return <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>’s <a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a>.</li>
       </ol>
 
       <div class="note">
         <p><span class="nh">NOTE</span> Step 5 will only be reached if <var>target</var> is a non-standard exotic function object
-        that does not have a [[Realm]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        that does not have a [[Realm]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
       </div>
     </section>
   </section>
 
   <section id="sec-operations-on-iterator-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-7.4"><a href="#sec-operations-on-iterator-objects" title="link to this section">7.4</a></span> Operations on Iterator Objects</h1>
+      <h1><span class="secnum" id="sec-7.4"><a href="sec-abstract-operations.html#sec-operations-on-iterator-objects" title="link to this section">7.4</a></span> Operations on Iterator Objects</h1>
 
-      <p>See Common Iteration Interfaces (<a href="#sec-iteration">25.1</a>).</p>
+      <p>See Common Iteration Interfaces (<a href="sec-control-abstraction-objects.html#sec-iteration">25.1</a>).</p>
     </div>
 
     <section id="sec-getiterator">
-      <h1><span class="secnum" id="sec-7.4.1"><a href="#sec-getiterator" title="link to this section">7.4.1</a></span> GetIterator
+      <h1><span class="secnum" id="sec-7.4.1"><a href="sec-abstract-operations.html#sec-getiterator" title="link to this section">7.4.1</a></span> GetIterator
           ( obj, method )</h1>
 
       <p class="normalbefore">The abstract operation GetIterator with argument <span style="font-family: Times New
       Roman"><i>obj</i> and</span> optional argument <var>method</var> performs the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
         <li>If <i>method</i> was not passed, then
           <ol class="block">
-            <li>Let <i>method</i> be <a href="#sec-getmethod">GetMethod</a>(<i>obj</i>, @@iterator).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>method</i>).</li>
+            <li>Let <i>method</i> be <a href="sec-abstract-operations.html#sec-getmethod">GetMethod</a>(<i>obj</i>, @@iterator).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>method</i>).</li>
           </ol>
         </li>
-        <li>Let <i>iterator</i> be <a href="#sec-call">Call</a>(<i>method</i>,<i>obj</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iterator</i>)<i>.</i></li>
+        <li>Let <i>iterator</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>method</i>,<i>obj</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>iterator</i>)<i>.</i></li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>iterator</i>) is not Object, throw a <b>TypeError</b>
             exception.</li>
         <li>Return <i>iterator</i>.</li>
@@ -2015,7 +2015,7 @@
     </section>
 
     <section id="sec-iteratornext">
-      <h1><span class="secnum" id="sec-7.4.2"><a href="#sec-iteratornext" title="link to this section">7.4.2</a></span>
+      <h1><span class="secnum" id="sec-7.4.2"><a href="sec-abstract-operations.html#sec-iteratornext" title="link to this section">7.4.2</a></span>
           IteratorNext ( iterator, value )</h1>
 
       <p class="normalbefore">The abstract operation IteratorNext with argument <var>iterator</var> and optional argument
@@ -2024,17 +2024,17 @@
       <ol class="proc">
         <li>If <i>value</i> was not passed, then
           <ol class="block">
-            <li>Let <i>result</i> be <a href="#sec-invoke">Invoke</a>(<i>iterator</i>, <code>"next"</code>, «‍
+            <li>Let <i>result</i> be <a href="sec-abstract-operations.html#sec-invoke">Invoke</a>(<i>iterator</i>, <code>"next"</code>, «‍
                 »).</li>
           </ol>
         </li>
         <li>Else,
           <ol class="block">
-            <li>Let <i>result</i> be <a href="#sec-invoke">Invoke</a>(<i>iterator</i>, <code>"next"</code>,
+            <li>Let <i>result</i> be <a href="sec-abstract-operations.html#sec-invoke">Invoke</a>(<i>iterator</i>, <code>"next"</code>,
                 «‍<i>value</i>»).</li>
           </ol>
         </li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>result</i>) is not Object, throw a <b>TypeError</b>
             exception.</li>
         <li>Return <i>result</i>.</li>
@@ -2042,34 +2042,34 @@
     </section>
 
     <section id="sec-iteratorcomplete">
-      <h1><span class="secnum" id="sec-7.4.3"><a href="#sec-iteratorcomplete" title="link to this section">7.4.3</a></span>
+      <h1><span class="secnum" id="sec-7.4.3"><a href="sec-abstract-operations.html#sec-iteratorcomplete" title="link to this section">7.4.3</a></span>
           IteratorComplete ( iterResult )</h1>
 
       <p class="normalbefore">The abstract operation IteratorComplete with argument <var>iterResult</var> performs the following
       steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>iterResult</i>) is Object.</li>
-        <li>Return <a href="#sec-toboolean">ToBoolean</a>(<a href="#sec-get-o-p">Get</a>(<i>iterResult</i>,
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>iterResult</i>) is Object.</li>
+        <li>Return <a href="sec-abstract-operations.html#sec-toboolean">ToBoolean</a>(<a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>iterResult</i>,
             <code>"done"</code>)).</li>
       </ol>
     </section>
 
     <section id="sec-iteratorvalue">
-      <h1><span class="secnum" id="sec-7.4.4"><a href="#sec-iteratorvalue" title="link to this section">7.4.4</a></span>
+      <h1><span class="secnum" id="sec-7.4.4"><a href="sec-abstract-operations.html#sec-iteratorvalue" title="link to this section">7.4.4</a></span>
           IteratorValue ( iterResult )</h1>
 
       <p class="normalbefore">The abstract operation IteratorValue with argument <var>iterResult</var> performs the following
       steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>iterResult</i>) is Object.</li>
-        <li>Return <a href="#sec-get-o-p">Get</a>(<i>iterResult</i>, <code>"value"</code>).</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>iterResult</i>) is Object.</li>
+        <li>Return <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>iterResult</i>, <code>"value"</code>).</li>
       </ol>
     </section>
 
     <section id="sec-iteratorstep">
-      <h1><span class="secnum" id="sec-7.4.5"><a href="#sec-iteratorstep" title="link to this section">7.4.5</a></span>
+      <h1><span class="secnum" id="sec-7.4.5"><a href="sec-abstract-operations.html#sec-iteratorstep" title="link to this section">7.4.5</a></span>
           IteratorStep ( iterator )</h1>
 
       <p class="normalbefore">The abstract operation IteratorStep with argument <var>iterator</var> requests the next value from
@@ -2077,17 +2077,17 @@
       the IteratorResult object if a next value is available. IteratorStep performs the following steps:</p>
 
       <ol class="proc">
-        <li>Let <i>result</i> be <a href="#sec-iteratornext">IteratorNext</a>(<i>iterator</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
-        <li>Let <i>done</i> be <a href="#sec-iteratorcomplete">IteratorComplete</a>(<i>result</i>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>done</i>).</li>
+        <li>Let <i>result</i> be <a href="sec-abstract-operations.html#sec-iteratornext">IteratorNext</a>(<i>iterator</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>result</i>).</li>
+        <li>Let <i>done</i> be <a href="sec-abstract-operations.html#sec-iteratorcomplete">IteratorComplete</a>(<i>result</i>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>done</i>).</li>
         <li>If <i>done</i> is <b>true</b>, return <b>false</b>.</li>
         <li>Return <i>result</i>.</li>
       </ol>
     </section>
 
     <section id="sec-iteratorclose">
-      <h1><span class="secnum" id="sec-7.4.6"><a href="#sec-iteratorclose" title="link to this section">7.4.6</a></span>
+      <h1><span class="secnum" id="sec-7.4.6"><a href="sec-abstract-operations.html#sec-iteratorclose" title="link to this section">7.4.6</a></span>
           IteratorClose( iterator, completion )</h1>
 
       <p class="normalbefore">The abstract operation IteratorClose with arguments <var>iterator</var> and <var>completion</var> is
@@ -2095,63 +2095,63 @@
       state:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>iterator</i>) is Object.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>:  <i>completion</i> is a <a href="#sec-completion-record-specification-type">Completion Record</a>.</li>
-        <li>Let <i>return</i> be <a href="#sec-getmethod">GetMethod</a>(<i>iterator</i>, <code>"return"</code>).</li>
-        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>return</i>).</li>
-        <li>If <i>return</i> is <b>undefined</b>, return <a href="#sec-completion-record-specification-type">Completion</a>(<i>completion</i>).</li>
-        <li>Let <i>innerResult</i> be <a href="#sec-call">Call</a>(<i>return</i>, <i>iterator</i>, «‍ »).</li>
-        <li>If <i>completion</i>.[[type]] is <span style="font-family: sans-serif">throw</span>, return <a href="#sec-completion-record-specification-type">Completion</a>(<i>completion</i>).</li>
-        <li>If <i>innerResult</i>.[[type]] is <span style="font-family: sans-serif">throw</span>, return <a href="#sec-completion-record-specification-type">Completion</a>(<i>innerResult</i>).</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>iterator</i>) is Object.</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <i>completion</i> is a <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion Record</a>.</li>
+        <li>Let <i>return</i> be <a href="sec-abstract-operations.html#sec-getmethod">GetMethod</a>(<i>iterator</i>, <code>"return"</code>).</li>
+        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>return</i>).</li>
+        <li>If <i>return</i> is <b>undefined</b>, return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>completion</i>).</li>
+        <li>Let <i>innerResult</i> be <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>return</i>, <i>iterator</i>, «‍ »).</li>
+        <li>If <i>completion</i>.[[type]] is <span style="font-family: sans-serif">throw</span>, return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>completion</i>).</li>
+        <li>If <i>innerResult</i>.[[type]] is <span style="font-family: sans-serif">throw</span>, return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>innerResult</i>).</li>
         <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>innerResult</i>.[[value]]) is not Object<i>,</i> throw
             a <b>TypeError</b> exception.</li>
-        <li>Return <a href="#sec-completion-record-specification-type">Completion</a>(<i>completion</i>).</li>
+        <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>completion</i>).</li>
       </ol>
     </section>
 
     <section id="sec-createiterresultobject">
-      <h1><span class="secnum" id="sec-7.4.7"><a href="#sec-createiterresultobject" title="link to this section">7.4.7</a></span>
+      <h1><span class="secnum" id="sec-7.4.7"><a href="sec-abstract-operations.html#sec-createiterresultobject" title="link to this section">7.4.7</a></span>
           CreateIterResultObject ( value, done )</h1>
 
       <p class="normalbefore">The abstract operation CreateIterResultObject with arguments <var>value</var> and <var>done</var>
       creates an object that supports the IteratorResult interface by performing the following steps:</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>done</i>)
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>done</i>)
             is Boolean.</li>
-        <li>Let <i>obj</i> be <a href="#sec-objectcreate">ObjectCreate</a>(<span style="font-family:
+        <li>Let <i>obj</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(<span style="font-family:
             sans-serif">%ObjectPrototype%</span>).</li>
-        <li>Perform <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>obj</i>, <code>"value"</code>, <i>value</i>).</li>
-        <li>Perform <a href="#sec-createdataproperty">CreateDataProperty</a>(<i>obj</i>, <code>"done"</code>, <i>done</i>).</li>
+        <li>Perform <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>obj</i>, <code>"value"</code>, <i>value</i>).</li>
+        <li>Perform <a href="sec-abstract-operations.html#sec-createdataproperty">CreateDataProperty</a>(<i>obj</i>, <code>"done"</code>, <i>done</i>).</li>
         <li>Return <i>obj</i>.</li>
       </ol>
     </section>
 
     <section id="sec-createlistiterator">
       <div class="front">
-        <h1><span class="secnum" id="sec-7.4.8"><a href="#sec-createlistiterator" title="link to this section">7.4.8</a></span>
+        <h1><span class="secnum" id="sec-7.4.8"><a href="sec-abstract-operations.html#sec-createlistiterator" title="link to this section">7.4.8</a></span>
             CreateListIterator ( list )</h1>
 
-        <p class="normalbefore">The abstract operation CreateListIterator with argument <var>list</var>  creates an Iterator (<a href="#sec-iterator-interface">25.1.1.2</a>) object whose next method returns the successive elements of <var>list</var>.
+        <p class="normalbefore">The abstract operation CreateListIterator with argument <var>list</var>  creates an Iterator (<a href="sec-control-abstraction-objects.html#sec-iterator-interface">25.1.1.2</a>) object whose next method returns the successive elements of <var>list</var>.
         It performs the following steps:</p>
 
         <ol class="proc">
-          <li>Let <i>iterator</i> be <a href="#sec-objectcreate">ObjectCreate</a>(%IteratorPrototype%, «[[IteratorNext]],
+          <li>Let <i>iterator</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(%IteratorPrototype%, «[[IteratorNext]],
               [[IteratedList]], [[ListIteratorNextIndex]]»).</li>
-          <li>Set <i>iterator’s</i> [[IteratedList]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>iterator’s</i> [[IteratedList]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>list</i>.</li>
-          <li>Set <i>iterator’s</i> [[ListIteratorNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> to 0.</li>
-          <li>Let <i>next</i> be a new built-in function object as defined in ListIterator <code>next</code> (<a href="#sec-listiterator-next">7.4.8.1</a>).</li>
-          <li>Set <i>iterator’s</i> [[IteratorNext]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set <i>iterator’s</i> [[ListIteratorNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> to 0.</li>
+          <li>Let <i>next</i> be a new built-in function object as defined in ListIterator <code>next</code> (<a href="sec-abstract-operations.html#sec-listiterator-next">7.4.8.1</a>).</li>
+          <li>Set <i>iterator’s</i> [[IteratorNext]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>next</i>.</li>
-          <li>Perform <a href="#sec-createmethodproperty">CreateMethodProperty</a>(<i>iterator</i>, <code>"next"</code>,
+          <li>Perform <a href="sec-abstract-operations.html#sec-createmethodproperty">CreateMethodProperty</a>(<i>iterator</i>, <code>"next"</code>,
               <i>next</i>).</li>
           <li>Return <i>iterator</i>.</li>
         </ol>
       </div>
 
       <section id="sec-listiterator-next">
-        <h1><span class="secnum" id="sec-7.4.8.1"><a href="#sec-listiterator-next" title="link to this section">7.4.8.1</a></span>
+        <h1><span class="secnum" id="sec-7.4.8.1"><a href="sec-abstract-operations.html#sec-listiterator-next" title="link to this section">7.4.8.1</a></span>
             ListIterator next( )</h1>
 
         <p class="normalbefore">The ListIterator <code>next</code> method is a standard built-in function object (<a href="#sec-ecmascript-standard-built-in-objects">clause 17</a>) that performs the following steps:</p>
@@ -2159,24 +2159,24 @@
         <ol class="proc">
           <li>Let <i>O</i> be the <b>this</b> value.</li>
           <li>Let <i>f</i> be the active function object.</li>
-          <li>If <i>O</i> does not have a [[IteratorNext]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>O</i> does not have a [[IteratorNext]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>next</i> be the value of the [[IteratorNext]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
-          <li>If <a href="#sec-samevalue">SameValue</a>(<i>f</i>, <i>next</i>) is <b>false</b>, throw a <b>TypeError</b>
+          <li>Let <i>next</i> be the value of the [[IteratorNext]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+          <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>f</i>, <i>next</i>) is <b>false</b>, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>O</i> does not have a [[IteratedList]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>O</i> does not have a [[IteratedList]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>list</i> be the value of the [[IteratedList]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
-          <li>Let <i>index</i> be the value of the [[ListIteratorNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+          <li>Let <i>list</i> be the value of the [[IteratedList]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
+          <li>Let <i>index</i> be the value of the [[ListIteratorNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of <i>O</i>.</li>
           <li>Let <i>len</i> be the number of elements of <i>list</i>.</li>
           <li>If <i>index</i> ≥ <i>len</i>, then
             <ol class="block">
-              <li>Return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
+              <li>Return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<b>undefined</b>, <b>true</b>).</li>
             </ol>
           </li>
-          <li>Set the value of the [[ListIteratorNextIndex]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Set the value of the [[ListIteratorNextIndex]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> of <i>O</i> to <i>index</i>+1.</li>
-          <li>Return <a href="#sec-createiterresultobject">CreateIterResultObject</a>(<i>list</i>[<i>index</i>],
+          <li>Return <a href="sec-abstract-operations.html#sec-createiterresultobject">CreateIterResultObject</a>(<i>list</i>[<i>index</i>],
               <b>false</b>).</li>
         </ol>
 

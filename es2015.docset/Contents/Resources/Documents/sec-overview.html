@@ -51,7 +51,7 @@
   </div>
 
   <section id="sec-web-scripting">
-    <h1><span class="secnum" id="sec-4.1"><a href="#sec-web-scripting" title="link to this section">4.1</a></span> Web
+    <h1><span class="secnum" id="sec-4.1"><a href="sec-overview.html#sec-web-scripting" title="link to this section">4.1</a></span> Web
         Scripting</h1>
 
     <p>A web browser provides an ECMAScript host environment for client-side computation including, for instance, objects that
@@ -72,7 +72,7 @@
 
   <section id="sec-ecmascript-overview">
     <div class="front">
-      <h1><span class="secnum" id="sec-4.2"><a href="#sec-ecmascript-overview" title="link to this section">4.2</a></span>
+      <h1><span class="secnum" id="sec-4.2"><a href="sec-overview.html#sec-ecmascript-overview" title="link to this section">4.2</a></span>
           ECMAScript Overview</h1>
 
       <p>The following is an informal overview of ECMAScript—not all parts of the language are described. This overview is
@@ -113,7 +113,7 @@
     </div>
 
     <section id="sec-objects">
-      <h1><span class="secnum" id="sec-4.2.1"><a href="#sec-objects" title="link to this section">4.2.1</a></span> Objects</h1>
+      <h1><span class="secnum" id="sec-4.2.1"><a href="sec-overview.html#sec-objects" title="link to this section">4.2.1</a></span> Objects</h1>
 
       <p>Even though ECMAScript includes syntax for class definitions, ECMAScript objects are not fundamentally class-based such
       as those in C++, Smalltalk, or Java. Instead objects may be created in various ways including via a literal notation or via
@@ -172,7 +172,7 @@
     </section>
 
     <section id="sec-strict-variant-of-ecmascript">
-      <h1><span class="secnum" id="sec-4.2.2"><a href="#sec-strict-variant-of-ecmascript" title="link to this section">4.2.2</a></span> The Strict Variant of ECMAScript</h1>
+      <h1><span class="secnum" id="sec-4.2.2"><a href="sec-overview.html#sec-strict-variant-of-ecmascript" title="link to this section">4.2.2</a></span> The Strict Variant of ECMAScript</h1>
 
       <p>The ECMAScript Language recognizes the possibility that some users of the language may wish to restrict their usage of
       some features available in the language. They might do so in the interests of security, to avoid what they consider to be
@@ -199,20 +199,20 @@
 
   <section id="sec-terms-and-definitions">
     <div class="front">
-      <h1><span class="secnum" id="sec-4.3"><a href="#sec-terms-and-definitions" title="link to this section">4.3</a></span> Terms
+      <h1><span class="secnum" id="sec-4.3"><a href="sec-overview.html#sec-terms-and-definitions" title="link to this section">4.3</a></span> Terms
           and definitions</h1>
 
       <p>For the purposes of this document, the following terms and definitions apply.</p>
     </div>
 
     <section id="sec-type">
-      <h1><span class="secnum" id="sec-4.3.1"><a href="#sec-type" title="link to this section">4.3.1</a></span> type</h1>
+      <h1><span class="secnum" id="sec-4.3.1"><a href="sec-overview.html#sec-type" title="link to this section">4.3.1</a></span> type</h1>
 
       <p>set of data values as defined in <a href="#sec-ecmascript-data-types-and-values">clause 6</a> of this specification</p>
     </section>
 
     <section id="sec-primitive-value">
-      <h1><span class="secnum" id="sec-4.3.2"><a href="#sec-primitive-value" title="link to this section">4.3.2</a></span>
+      <h1><span class="secnum" id="sec-4.3.2"><a href="sec-overview.html#sec-primitive-value" title="link to this section">4.3.2</a></span>
           primitive value</h1>
 
       <p>member of one of the types Undefined, Null, Boolean, Number, Symbol, or String as defined in <a href="#sec-ecmascript-data-types-and-values">clause 6</a></p>
@@ -224,7 +224,7 @@
     </section>
 
     <section id="sec-terms-and-definitions-object">
-      <h1><span class="secnum" id="sec-4.3.3"><a href="#sec-terms-and-definitions-object" title="link to this section">4.3.3</a></span> object</h1>
+      <h1><span class="secnum" id="sec-4.3.3"><a href="sec-overview.html#sec-terms-and-definitions-object" title="link to this section">4.3.3</a></span> object</h1>
 
       <p>member of the type Object</p>
 
@@ -235,7 +235,7 @@
     </section>
 
     <section id="sec-constructor">
-      <h1><span class="secnum" id="sec-4.3.4"><a href="#sec-constructor" title="link to this section">4.3.4</a></span>
+      <h1><span class="secnum" id="sec-4.3.4"><a href="sec-overview.html#sec-constructor" title="link to this section">4.3.4</a></span>
           constructor</h1>
 
       <p>function object that creates and initializes objects</p>
@@ -247,7 +247,7 @@
     </section>
 
     <section id="sec-terms-and-definitions-prototype">
-      <h1><span class="secnum" id="sec-4.3.5"><a href="#sec-terms-and-definitions-prototype" title="link to this section">4.3.5</a></span> prototype</h1>
+      <h1><span class="secnum" id="sec-4.3.5"><a href="sec-overview.html#sec-terms-and-definitions-prototype" title="link to this section">4.3.5</a></span> prototype</h1>
 
       <p>object that provides shared properties for other objects</p>
 
@@ -257,19 +257,19 @@
         constructor’s <code>prototype</code> property can be referenced by the program expression
         <code><i>constructor</i><b>.prototype</b></code>, and properties added to an object’s prototype are shared, through
         inheritance, by all objects sharing the prototype. Alternatively, a new object may be created with an explicitly specified
-        prototype by using the <code><a href="#sec-object.create">Object.create</a></code> built-in function.</p>
+        prototype by using the <code><a href="sec-fundamental-objects.html#sec-object.create">Object.create</a></code> built-in function.</p>
       </div>
     </section>
 
     <section id="sec-ordinary-object">
-      <h1><span class="secnum" id="sec-4.3.6"><a href="#sec-ordinary-object" title="link to this section">4.3.6</a></span>
+      <h1><span class="secnum" id="sec-4.3.6"><a href="sec-overview.html#sec-ordinary-object" title="link to this section">4.3.6</a></span>
           ordinary object</h1>
 
       <p>object that has the default behaviour for the essential internal methods that must be supported by all objects</p>
     </section>
 
     <section id="sec-exotic-object">
-      <h1><span class="secnum" id="sec-4.3.7"><a href="#sec-exotic-object" title="link to this section">4.3.7</a></span> exotic
+      <h1><span class="secnum" id="sec-4.3.7"><a href="sec-overview.html#sec-exotic-object" title="link to this section">4.3.7</a></span> exotic
           object</h1>
 
       <p>object that does not have the default behaviour for one or more of the essential internal methods that must be supported
@@ -281,14 +281,14 @@
     </section>
 
     <section id="sec-standard-object">
-      <h1><span class="secnum" id="sec-4.3.8"><a href="#sec-standard-object" title="link to this section">4.3.8</a></span>
+      <h1><span class="secnum" id="sec-4.3.8"><a href="sec-overview.html#sec-standard-object" title="link to this section">4.3.8</a></span>
           standard object</h1>
 
       <p>object whose semantics are defined by this specification</p>
     </section>
 
     <section id="sec-built-in-object">
-      <h1><span class="secnum" id="sec-4.3.9"><a href="#sec-built-in-object" title="link to this section">4.3.9</a></span>
+      <h1><span class="secnum" id="sec-4.3.9"><a href="sec-overview.html#sec-built-in-object" title="link to this section">4.3.9</a></span>
           built-in object</h1>
 
       <p>object specified and supplied by an ECMAScript implementation</p>
@@ -301,33 +301,33 @@
     </section>
 
     <section id="sec-undefined-value">
-      <h1><span class="secnum" id="sec-4.3.10"><a href="#sec-undefined-value" title="link to this section">4.3.10</a></span>
+      <h1><span class="secnum" id="sec-4.3.10"><a href="sec-overview.html#sec-undefined-value" title="link to this section">4.3.10</a></span>
           undefined value</h1>
 
       <p>primitive value used when a variable has not been assigned a value</p>
     </section>
 
     <section id="sec-terms-and-definitions-undefined-type">
-      <h1><span class="secnum" id="sec-4.3.11"><a href="#sec-terms-and-definitions-undefined-type" title="link to this section">4.3.11</a></span> Undefined type</h1>
+      <h1><span class="secnum" id="sec-4.3.11"><a href="sec-overview.html#sec-terms-and-definitions-undefined-type" title="link to this section">4.3.11</a></span> Undefined type</h1>
 
       <p>type whose sole value is the <b>undefined</b> value</p>
     </section>
 
     <section id="sec-null-value">
-      <h1><span class="secnum" id="sec-4.3.12"><a href="#sec-null-value" title="link to this section">4.3.12</a></span> null
+      <h1><span class="secnum" id="sec-4.3.12"><a href="sec-overview.html#sec-null-value" title="link to this section">4.3.12</a></span> null
           value</h1>
 
       <p>primitive value that represents the intentional absence of any object value</p>
     </section>
 
     <section id="sec-terms-and-definitions-null-type">
-      <h1><span class="secnum" id="sec-4.3.13"><a href="#sec-terms-and-definitions-null-type" title="link to this section">4.3.13</a></span> Null type</h1>
+      <h1><span class="secnum" id="sec-4.3.13"><a href="sec-overview.html#sec-terms-and-definitions-null-type" title="link to this section">4.3.13</a></span> Null type</h1>
 
       <p>type whose sole value is the <b>null</b> value</p>
     </section>
 
     <section id="sec-terms-and-definitions-boolean-value">
-      <h1><span class="secnum" id="sec-4.3.14"><a href="#sec-terms-and-definitions-boolean-value" title="link to this section">4.3.14</a></span> Boolean value</h1>
+      <h1><span class="secnum" id="sec-4.3.14"><a href="sec-overview.html#sec-terms-and-definitions-boolean-value" title="link to this section">4.3.14</a></span> Boolean value</h1>
 
       <p>member of the Boolean type</p>
 
@@ -337,26 +337,26 @@
     </section>
 
     <section id="sec-terms-and-definitions-boolean-type">
-      <h1><span class="secnum" id="sec-4.3.15"><a href="#sec-terms-and-definitions-boolean-type" title="link to this section">4.3.15</a></span> Boolean type</h1>
+      <h1><span class="secnum" id="sec-4.3.15"><a href="sec-overview.html#sec-terms-and-definitions-boolean-type" title="link to this section">4.3.15</a></span> Boolean type</h1>
 
       <p>type consisting of the primitive values <b>true</b> and <b>false</b></p>
     </section>
 
     <section id="sec-boolean-object">
-      <h1><span class="secnum" id="sec-4.3.16"><a href="#sec-boolean-object" title="link to this section">4.3.16</a></span>
+      <h1><span class="secnum" id="sec-4.3.16"><a href="sec-overview.html#sec-boolean-object" title="link to this section">4.3.16</a></span>
           Boolean object</h1>
 
       <p>member of the Object type that is an instance of the standard built-in <code>Boolean</code> constructor</p>
 
       <div class="note">
         <p><span class="nh">NOTE</span> A Boolean object is created by using the <code>Boolean</code> constructor in a
-        <code>new</code> expression, supplying a Boolean value as an argument. The resulting object has an <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is the Boolean value. A Boolean
+        <code>new</code> expression, supplying a Boolean value as an argument. The resulting object has an <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is the Boolean value. A Boolean
         object can be coerced to a Boolean value.</p>
       </div>
     </section>
 
     <section id="sec-terms-and-definitions-string-value">
-      <h1><span class="secnum" id="sec-4.3.17"><a href="#sec-terms-and-definitions-string-value" title="link to this section">4.3.17</a></span> String value</h1>
+      <h1><span class="secnum" id="sec-4.3.17"><a href="sec-overview.html#sec-terms-and-definitions-string-value" title="link to this section">4.3.17</a></span> String value</h1>
 
       <p>primitive value that is a finite ordered sequence of zero or more 16-bit unsigned integer</p>
 
@@ -368,26 +368,26 @@
     </section>
 
     <section id="sec-terms-and-definitions-string-type">
-      <h1><span class="secnum" id="sec-4.3.18"><a href="#sec-terms-and-definitions-string-type" title="link to this section">4.3.18</a></span> String type</h1>
+      <h1><span class="secnum" id="sec-4.3.18"><a href="sec-overview.html#sec-terms-and-definitions-string-type" title="link to this section">4.3.18</a></span> String type</h1>
 
       <p>set of all possible String values</p>
     </section>
 
     <section id="sec-string-object">
-      <h1><span class="secnum" id="sec-4.3.19"><a href="#sec-string-object" title="link to this section">4.3.19</a></span> String
+      <h1><span class="secnum" id="sec-4.3.19"><a href="sec-overview.html#sec-string-object" title="link to this section">4.3.19</a></span> String
           object</h1>
 
       <p>member of the Object type that is an instance of the standard built-in <code>String</code> constructor</p>
 
       <div class="note">
         <p><span class="nh">NOTE</span> A String object is created by using the <code>String</code> constructor in a
-        <code>new</code> expression, supplying a String value as an argument. The resulting object has an <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is the String value. A String object
-        can be coerced to a String value by calling the <code>String</code> constructor as a function (<a href="#sec-string-constructor-string-value">21.1.1.1</a>).</p>
+        <code>new</code> expression, supplying a String value as an argument. The resulting object has an <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is the String value. A String object
+        can be coerced to a String value by calling the <code>String</code> constructor as a function (<a href="sec-text-processing.html#sec-string-constructor-string-value">21.1.1.1</a>).</p>
       </div>
     </section>
 
     <section id="sec-terms-and-definitions-number-value">
-      <h1><span class="secnum" id="sec-4.3.20"><a href="#sec-terms-and-definitions-number-value" title="link to this section">4.3.20</a></span> Number value</h1>
+      <h1><span class="secnum" id="sec-4.3.20"><a href="sec-overview.html#sec-terms-and-definitions-number-value" title="link to this section">4.3.20</a></span> Number value</h1>
 
       <p>primitive value corresponding to a double-precision 64-bit binary format IEEE 754-2008 value</p>
 
@@ -398,59 +398,59 @@
     </section>
 
     <section id="sec-terms-and-definitions-number-type">
-      <h1><span class="secnum" id="sec-4.3.21"><a href="#sec-terms-and-definitions-number-type" title="link to this section">4.3.21</a></span> Number type</h1>
+      <h1><span class="secnum" id="sec-4.3.21"><a href="sec-overview.html#sec-terms-and-definitions-number-type" title="link to this section">4.3.21</a></span> Number type</h1>
 
       <p>set of all possible Number values including the special “Not-a-Number” (NaN) value, positive infinity, and
       negative infinity</p>
     </section>
 
     <section id="sec-number-object">
-      <h1><span class="secnum" id="sec-4.3.22"><a href="#sec-number-object" title="link to this section">4.3.22</a></span> Number
+      <h1><span class="secnum" id="sec-4.3.22"><a href="sec-overview.html#sec-number-object" title="link to this section">4.3.22</a></span> Number
           object</h1>
 
       <p>member of the Object type that is an instance of the standard built-in <code>Number</code> constructor</p>
 
       <div class="note">
         <p><span class="nh">NOTE</span> A Number object is created by using the <code>Number</code> constructor in a
-        <code>new</code> expression, supplying a number value as an argument. The resulting object has an <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is the number value. A Number object
-        can be coerced to a number value by calling the <code>Number</code> constructor as a function (<a href="#sec-number-constructor-number-value">20.1.1.1</a>).</p>
+        <code>new</code> expression, supplying a number value as an argument. The resulting object has an <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is the number value. A Number object
+        can be coerced to a number value by calling the <code>Number</code> constructor as a function (<a href="sec-numbers-and-dates.html#sec-number-constructor-number-value">20.1.1.1</a>).</p>
       </div>
     </section>
 
     <section id="sec-terms-and-definitions-infinity">
-      <h1><span class="secnum" id="sec-4.3.23"><a href="#sec-terms-and-definitions-infinity" title="link to this section">4.3.23</a></span> Infinity</h1>
+      <h1><span class="secnum" id="sec-4.3.23"><a href="sec-overview.html#sec-terms-and-definitions-infinity" title="link to this section">4.3.23</a></span> Infinity</h1>
 
       <p>number value that is the positive infinite number value</p>
     </section>
 
     <section id="sec-terms-and-definitions-nan">
-      <h1><span class="secnum" id="sec-4.3.24"><a href="#sec-terms-and-definitions-nan" title="link to this section">4.3.24</a></span> NaN</h1>
+      <h1><span class="secnum" id="sec-4.3.24"><a href="sec-overview.html#sec-terms-and-definitions-nan" title="link to this section">4.3.24</a></span> NaN</h1>
 
       <p>number value that is an IEEE 754-2008 “Not-a-Number” value</p>
     </section>
 
     <section id="sec-symbol-value">
-      <h1><span class="secnum" id="sec-4.3.25"><a href="#sec-symbol-value" title="link to this section">4.3.25</a></span> Symbol
+      <h1><span class="secnum" id="sec-4.3.25"><a href="sec-overview.html#sec-symbol-value" title="link to this section">4.3.25</a></span> Symbol
           value</h1>
 
-      <p>primitive value that represents a unique, non-String Object <a href="#sec-object-type">property key</a></p>
+      <p>primitive value that represents a unique, non-String Object <a href="sec-ecmascript-data-types-and-values.html#sec-object-type">property key</a></p>
     </section>
 
     <section id="sec-terms-and-definitions-symbol-type">
-      <h1><span class="secnum" id="sec-4.3.26"><a href="#sec-terms-and-definitions-symbol-type" title="link to this section">4.3.26</a></span> Symbol type</h1>
+      <h1><span class="secnum" id="sec-4.3.26"><a href="sec-overview.html#sec-terms-and-definitions-symbol-type" title="link to this section">4.3.26</a></span> Symbol type</h1>
 
       <p>set of all possible Symbol values</p>
     </section>
 
     <section id="sec-symbol-object">
-      <h1><span class="secnum" id="sec-4.3.27"><a href="#sec-symbol-object" title="link to this section">4.3.27</a></span> Symbol
+      <h1><span class="secnum" id="sec-4.3.27"><a href="sec-overview.html#sec-symbol-object" title="link to this section">4.3.27</a></span> Symbol
           object</h1>
 
       <p>member of the Object type that is an instance of the standard built-in <code>Symbol</code> constructor</p>
     </section>
 
     <section id="sec-terms-and-definitions-function">
-      <h1><span class="secnum" id="sec-4.3.28"><a href="#sec-terms-and-definitions-function" title="link to this section">4.3.28</a></span> function</h1>
+      <h1><span class="secnum" id="sec-4.3.28"><a href="sec-overview.html#sec-terms-and-definitions-function" title="link to this section">4.3.28</a></span> function</h1>
 
       <p>member of the Object type that may be invoked as a subroutine</p>
 
@@ -461,19 +461,19 @@
     </section>
 
     <section id="sec-built-in-function">
-      <h1><span class="secnum" id="sec-4.3.29"><a href="#sec-built-in-function" title="link to this section">4.3.29</a></span>
+      <h1><span class="secnum" id="sec-4.3.29"><a href="sec-overview.html#sec-built-in-function" title="link to this section">4.3.29</a></span>
           built-in function</h1>
 
       <p>built-in object that is a function</p>
 
       <div class="note">
-        <p><span class="nh">NOTE</span> Examples of built-in functions include <code>parseInt</code> and <code><a href="#sec-math.exp">Math.exp</a></code>. An implementation may provide implementation-dependent built-in functions that
+        <p><span class="nh">NOTE</span> Examples of built-in functions include <code>parseInt</code> and <code><a href="sec-numbers-and-dates.html#sec-math.exp">Math.exp</a></code>. An implementation may provide implementation-dependent built-in functions that
         are not described in this specification.</p>
       </div>
     </section>
 
     <section id="sec-property">
-      <h1><span class="secnum" id="sec-4.3.30"><a href="#sec-property" title="link to this section">4.3.30</a></span>
+      <h1><span class="secnum" id="sec-4.3.30"><a href="sec-overview.html#sec-property" title="link to this section">4.3.30</a></span>
           property</h1>
 
       <p>part of an object that associates a key (either a String value or a Symbol value) and a value</p>
@@ -485,7 +485,7 @@
     </section>
 
     <section id="sec-method">
-      <h1><span class="secnum" id="sec-4.3.31"><a href="#sec-method" title="link to this section">4.3.31</a></span> method</h1>
+      <h1><span class="secnum" id="sec-4.3.31"><a href="sec-overview.html#sec-method" title="link to this section">4.3.31</a></span> method</h1>
 
       <p>function that is the value of a property</p>
 
@@ -496,7 +496,7 @@
     </section>
 
     <section id="sec-built-in-method">
-      <h1><span class="secnum" id="sec-4.3.32"><a href="#sec-built-in-method" title="link to this section">4.3.32</a></span>
+      <h1><span class="secnum" id="sec-4.3.32"><a href="sec-overview.html#sec-built-in-method" title="link to this section">4.3.32</a></span>
           built-in method</h1>
 
       <p>method that is a built-in function</p>
@@ -508,21 +508,21 @@
     </section>
 
     <section id="sec-attribute">
-      <h1><span class="secnum" id="sec-4.3.33"><a href="#sec-attribute" title="link to this section">4.3.33</a></span>
+      <h1><span class="secnum" id="sec-4.3.33"><a href="sec-overview.html#sec-attribute" title="link to this section">4.3.33</a></span>
           attribute</h1>
 
       <p>internal value that defines some characteristic of a property</p>
     </section>
 
     <section id="sec-own-property">
-      <h1><span class="secnum" id="sec-4.3.34"><a href="#sec-own-property" title="link to this section">4.3.34</a></span> own
+      <h1><span class="secnum" id="sec-4.3.34"><a href="sec-overview.html#sec-own-property" title="link to this section">4.3.34</a></span> own
           property</h1>
 
       <p>property that is directly contained by its object</p>
     </section>
 
     <section id="sec-inherited-property">
-      <h1><span class="secnum" id="sec-4.3.35"><a href="#sec-inherited-property" title="link to this section">4.3.35</a></span>
+      <h1><span class="secnum" id="sec-4.3.35"><a href="sec-overview.html#sec-inherited-property" title="link to this section">4.3.35</a></span>
           inherited property</h1>
 
       <p>property of an object that is not an own property but is a property (either own or inherited) of the object’s
@@ -531,7 +531,7 @@
   </section>
 
   <section id="sec-organization-of-this-specification">
-    <h1><span class="secnum" id="sec-4.4"><a href="#sec-organization-of-this-specification" title="link to this section">4.4</a></span> Organization of This Specification</h1>
+    <h1><span class="secnum" id="sec-4.4"><a href="sec-overview.html#sec-organization-of-this-specification" title="link to this section">4.4</a></span> Organization of This Specification</h1>
 
     <p>The remainder of this specification is organized as follows:</p>
 

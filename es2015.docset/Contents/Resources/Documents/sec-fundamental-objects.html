@@ -14,13 +14,13 @@
 
   <section id="sec-object-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-19.1"><a href="#sec-object-objects" title="link to this section">19.1</a></span> Object
+      <h1><span class="secnum" id="sec-19.1"><a href="sec-fundamental-objects.html#sec-object-objects" title="link to this section">19.1</a></span> Object
           Objects</h1>
     </div>
 
     <section id="sec-object-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.1.1"><a href="#sec-object-constructor" title="link to this section">19.1.1</a></span>
+        <h1><span class="secnum" id="sec-19.1.1"><a href="sec-fundamental-objects.html#sec-object-constructor" title="link to this section">19.1.1</a></span>
             The Object Constructor</h1>
 
         <p>The Object constructor is the %Object% intrinsic object and the initial value of the <code>Object</code> property of
@@ -32,7 +32,7 @@
       </div>
 
       <section id="sec-object-value">
-        <h1><span class="secnum" id="sec-19.1.1.1"><a href="#sec-object-value" title="link to this section">19.1.1.1</a></span>
+        <h1><span class="secnum" id="sec-19.1.1.1"><a href="sec-fundamental-objects.html#sec-object-value" title="link to this section">19.1.1.1</a></span>
             Object ( [ value ] )</h1>
 
         <p class="normalbefore">When <code>Object</code> function is called with optional argument <var>value</var>, the following
@@ -41,21 +41,21 @@
         <ol class="proc">
           <li>If NewTarget is neither <b>undefined</b> nor the active function<i>,</i> then
             <ol class="block">
-              <li>Return <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
+              <li>Return <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
                   <code>"%ObjectPrototype%"</code>).</li>
             </ol>
           </li>
-          <li>If <i>value</i> is <b>null</b>, <b>undefined</b> or not supplied, return <a href="#sec-objectcreate">ObjectCreate</a>(%ObjectPrototype%).</li>
-          <li>Return <a href="#sec-toobject">ToObject</a>(<i>value</i>).</li>
+          <li>If <i>value</i> is <b>null</b>, <b>undefined</b> or not supplied, return <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(%ObjectPrototype%).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>value</i>).</li>
         </ol>
       </section>
     </section>
 
     <section id="sec-properties-of-the-object-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.1.2"><a href="#sec-properties-of-the-object-constructor" title="link to this section">19.1.2</a></span> Properties of the Object Constructor</h1>
+        <h1><span class="secnum" id="sec-19.1.2"><a href="sec-fundamental-objects.html#sec-properties-of-the-object-constructor" title="link to this section">19.1.2</a></span> Properties of the Object Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
         Object constructor is the intrinsic object %FunctionPrototype%.</p>
 
         <p>Besides the <code>length</code> property (whose value is <b>1</b>), the Object constructor has the following
@@ -63,7 +63,7 @@
       </div>
 
       <section id="sec-object.assign">
-        <h1><span class="secnum" id="sec-19.1.2.1"><a href="#sec-object.assign" title="link to this section">19.1.2.1</a></span>
+        <h1><span class="secnum" id="sec-19.1.2.1"><a href="sec-fundamental-objects.html#sec-object.assign" title="link to this section">19.1.2.1</a></span>
             Object.assign ( target, ...sources )</h1>
 
         <p class="normalbefore">The <b>assign</b> function is used to copy the values of all of the enumerable own properties from
@@ -71,32 +71,32 @@
         are taken:</p>
 
         <ol class="proc">
-          <li>Let <i>to</i> be <a href="#sec-toobject">ToObject</a>(<i>target</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>to</i>).</li>
+          <li>Let <i>to</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>target</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>to</i>).</li>
           <li>If only one argument was passed, return <i>to</i>.</li>
-          <li>Let <i>sources</i> be the <a href="#sec-list-and-record-specification-type">List</a> of argument values starting
+          <li>Let <i>sources</i> be the <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of argument values starting
               with the second argument.</li>
           <li>For each element <i>nextSource</i> of <i>sources</i>, in ascending index order,
             <ol class="block">
-              <li>If <i>nextSource</i> is <b>undefined</b> or <b>null</b>, let <i>keys</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+              <li>If <i>nextSource</i> is <b>undefined</b> or <b>null</b>, let <i>keys</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
               <li>Else,
                 <ol class="block">
-                  <li>Let <i>from</i> be <a href="#sec-toobject">ToObject</a>(<i>nextSource</i>).</li>
+                  <li>Let <i>from</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>nextSource</i>).</li>
                   <li>Let <i>keys</i> be <i>from</i>.[[OwnPropertyKeys]]().</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
                 </ol>
               </li>
-              <li>Repeat for each element <i>nextKey</i> of <i>keys</i> in <a href="#sec-list-and-record-specification-type">List</a> order,
+              <li>Repeat for each element <i>nextKey</i> of <i>keys</i> in <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> order,
                 <ol class="block">
                   <li>Let <i>desc</i> be <i>from</i>.[[GetOwnProperty]](<i>nextKey</i>).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
                   <li>if <i>desc</i> is not <b>undefined</b> and <i>desc</i>.[[Enumerable]] is <b>true</b>, then
                     <ol class="block">
-                      <li>Let <i>propValue</i> be <a href="#sec-get-o-p">Get</a>(<i>from</i>, <i>nextKey</i>).</li>
-                      <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>propValue</i>).</li>
-                      <li>Let <i>status</i> be <a href="#sec-set-o-p-v-throw">Set</a>(<i>to</i>, <i>nextKey</i>, <i>propValue</i>,
+                      <li>Let <i>propValue</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>from</i>, <i>nextKey</i>).</li>
+                      <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>propValue</i>).</li>
+                      <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-set-o-p-v-throw">Set</a>(<i>to</i>, <i>nextKey</i>, <i>propValue</i>,
                           <b>true</b>).</li>
-                      <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                      <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
                     </ol>
                   </li>
                 </ol>
@@ -110,7 +110,7 @@
       </section>
 
       <section id="sec-object.create">
-        <h1><span class="secnum" id="sec-19.1.2.2"><a href="#sec-object.create" title="link to this section">19.1.2.2</a></span>
+        <h1><span class="secnum" id="sec-19.1.2.2"><a href="sec-fundamental-objects.html#sec-object.create" title="link to this section">19.1.2.2</a></span>
             Object.create ( O [ , Properties ] )</h1>
 
         <p class="normalbefore">The <b>create</b> function creates a new object with a specified prototype. When the <b>create</b>
@@ -119,10 +119,10 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is neither Object nor Null, throw a
               <b>TypeError</b> exception.</li>
-          <li>Let <i>obj</i> be <a href="#sec-objectcreate">ObjectCreate</a>(<i>O</i>).</li>
+          <li>Let <i>obj</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(<i>O</i>).</li>
           <li>If the argument <i>Properties</i> is present and not <b>undefined</b>, then
             <ol class="block">
-              <li>Return <a href="#sec-objectdefineproperties">ObjectDefineProperties</a>(<i>obj</i>, <i>Properties</i>).</li>
+              <li>Return <a href="sec-fundamental-objects.html#sec-objectdefineproperties">ObjectDefineProperties</a>(<i>obj</i>, <i>Properties</i>).</li>
             </ol>
           </li>
           <li>Return <i>obj</i>.</li>
@@ -131,41 +131,41 @@
 
       <section id="sec-object.defineproperties">
         <div class="front">
-          <h1><span class="secnum" id="sec-19.1.2.3"><a href="#sec-object.defineproperties" title="link to this section">19.1.2.3</a></span> Object.defineProperties ( O, Properties )</h1>
+          <h1><span class="secnum" id="sec-19.1.2.3"><a href="sec-fundamental-objects.html#sec-object.defineproperties" title="link to this section">19.1.2.3</a></span> Object.defineProperties ( O, Properties )</h1>
 
           <p class="normalbefore">The <b>defineProperties</b> function is used to add own properties and/or update the attributes
           of existing own properties of an object. When the <b>defineProperties</b> function is called, the following steps are
           taken:</p>
 
           <ol class="proc">
-            <li>Return <a href="#sec-objectdefineproperties">ObjectDefineProperties</a>(<i>O</i>, <i>Properties</i>).</li>
+            <li>Return <a href="sec-fundamental-objects.html#sec-objectdefineproperties">ObjectDefineProperties</a>(<i>O</i>, <i>Properties</i>).</li>
           </ol>
         </div>
 
         <section id="sec-objectdefineproperties">
-          <h1><span class="secnum" id="sec-19.1.2.3.1"><a href="#sec-objectdefineproperties" title="link to this section">19.1.2.3.1</a></span> Runtime Semantics: ObjectDefineProperties ( O, Properties )</h1>
+          <h1><span class="secnum" id="sec-19.1.2.3.1"><a href="sec-fundamental-objects.html#sec-objectdefineproperties" title="link to this section">19.1.2.3.1</a></span> Runtime Semantics: ObjectDefineProperties ( O, Properties )</h1>
 
           <p class="normalbefore">The abstract operation ObjectDefineProperties with arguments <var>O</var> and <span class="nt">Properties</span> performs the following steps:</p>
 
           <ol class="proc">
             <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
                 exception.</li>
-            <li>Let <i>props</i> be <a href="#sec-toobject">ToObject</a>(<i>Properties</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>props</i>).</li>
+            <li>Let <i>props</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>Properties</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>props</i>).</li>
             <li>Let <i>keys</i> be <i>props</i>.[[OwnPropertyKeys]]().</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
-            <li>Let <i>descriptors</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-            <li>Repeat for each element <i>nextKey</i> of <i>keys</i> in <a href="#sec-list-and-record-specification-type">List</a> order,
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
+            <li>Let <i>descriptors</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+            <li>Repeat for each element <i>nextKey</i> of <i>keys</i> in <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> order,
               <ol class="block">
                 <li>Let <i>propDesc</i> be <i>props</i>.[[GetOwnProperty]](<i>nextKey</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>propDesc</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>propDesc</i>).</li>
                 <li>If <i>propDesc</i> is not <b>undefined</b> and <i>propDesc</i>.[[Enumerable]] is <b>true</b>, then
                   <ol class="block">
-                    <li>Let <i>descObj</i> be <a href="#sec-get-o-p">Get</a>( <i>props</i>, <i>nextKey</i>).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>descObj</i>).</li>
-                    <li>Let <i>desc</i> be <a href="#sec-topropertydescriptor">ToPropertyDescriptor</a>(<i>descObj</i>).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
-                    <li>Append the pair (a two element <a href="#sec-list-and-record-specification-type">List</a>) consisting of
+                    <li>Let <i>descObj</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>( <i>props</i>, <i>nextKey</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>descObj</i>).</li>
+                    <li>Let <i>desc</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-topropertydescriptor">ToPropertyDescriptor</a>(<i>descObj</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
+                    <li>Append the pair (a two element <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>) consisting of
                         <i>nextKey</i> and <i>desc</i> to the end of <i>descriptors</i>.</li>
                   </ol>
                 </li>
@@ -175,9 +175,9 @@
               <ol class="block">
                 <li>Let <i>P</i> be the first element of <i>pair</i>.</li>
                 <li>Let <i>desc</i> be the second element of <i>pair</i>.</li>
-                <li>Let <i>status</i> be <a href="#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>,<i>P</i>,
+                <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>,<i>P</i>,
                     <i>desc</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
               </ol>
             </li>
             <li>Return <i>O</i>.</li>
@@ -186,7 +186,7 @@
       </section>
 
       <section id="sec-object.defineproperty">
-        <h1><span class="secnum" id="sec-19.1.2.4"><a href="#sec-object.defineproperty" title="link to this section">19.1.2.4</a></span> Object.defineProperty ( O, P, Attributes )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.4"><a href="sec-fundamental-objects.html#sec-object.defineproperty" title="link to this section">19.1.2.4</a></span> Object.defineProperty ( O, P, Attributes )</h1>
 
         <p class="normalbefore">The <b>defineProperty</b> function is used to add an own property and/or update the attributes of
         an existing own property of an object. When the <b>defineProperty</b> function is called, the following steps are
@@ -195,84 +195,84 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>key</i> be <a href="#sec-topropertykey">ToPropertyKey</a>(<i>P</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>key</i>).</li>
-          <li>Let <i>desc</i> be <a href="#sec-topropertydescriptor">ToPropertyDescriptor</a>(<i>Attributes</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
-          <li>Let <i>success</i> be <a href="#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O,key</i>,
+          <li>Let <i>key</i> be <a href="sec-abstract-operations.html#sec-topropertykey">ToPropertyKey</a>(<i>P</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>key</i>).</li>
+          <li>Let <i>desc</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-topropertydescriptor">ToPropertyDescriptor</a>(<i>Attributes</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
+          <li>Let <i>success</i> be <a href="sec-abstract-operations.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O,key</i>,
               <i>desc</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>success</i>).</li>
           <li>Return <i>O</i>.</li>
         </ol>
       </section>
 
       <section id="sec-object.freeze">
-        <h1><span class="secnum" id="sec-19.1.2.5"><a href="#sec-object.freeze" title="link to this section">19.1.2.5</a></span>
+        <h1><span class="secnum" id="sec-19.1.2.5"><a href="sec-fundamental-objects.html#sec-object.freeze" title="link to this section">19.1.2.5</a></span>
             Object.freeze ( O )</h1>
 
         <p class="normalbefore">When the <b>freeze</b> function is called, the following steps are taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <i>O</i>.</li>
-          <li>Let <i>status</i> be <a href="#sec-setintegritylevel">SetIntegrityLevel</a>( <i>O</i>, "<code>frozen</code>").</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+          <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-setintegritylevel">SetIntegrityLevel</a>( <i>O</i>, "<code>frozen</code>").</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
           <li>If <i>status</i> is <b>false</b>, throw a <b>TypeError</b> exception.</li>
           <li>Return <i>O</i>.</li>
         </ol>
       </section>
 
       <section id="sec-object.getownpropertydescriptor">
-        <h1><span class="secnum" id="sec-19.1.2.6"><a href="#sec-object.getownpropertydescriptor" title="link to this section">19.1.2.6</a></span> Object.getOwnPropertyDescriptor ( O, P )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.6"><a href="sec-fundamental-objects.html#sec-object.getownpropertydescriptor" title="link to this section">19.1.2.6</a></span> Object.getOwnPropertyDescriptor ( O, P )</h1>
 
         <p class="normalbefore">When the <code>getOwnPropertyDescriptor</code> function is called, the following steps are
         taken:</p>
 
         <ol class="proc">
-          <li>Let <i>obj</i> be <a href="#sec-toobject">ToObject</a>(<i>O</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
-          <li>Let <i>key</i> be <a href="#sec-topropertykey">ToPropertyKey</a>(<i>P</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>key</i>).</li>
+          <li>Let <i>obj</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>O</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
+          <li>Let <i>key</i> be <a href="sec-abstract-operations.html#sec-topropertykey">ToPropertyKey</a>(<i>P</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>key</i>).</li>
           <li>Let <i>desc</i> be <i>obj.</i>[[GetOwnProperty]](<i>key</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
-          <li>Return <a href="#sec-frompropertydescriptor">FromPropertyDescriptor</a>(<i>desc</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-frompropertydescriptor">FromPropertyDescriptor</a>(<i>desc</i>).</li>
         </ol>
       </section>
 
       <section id="sec-object.getownpropertynames">
-        <h1><span class="secnum" id="sec-19.1.2.7"><a href="#sec-object.getownpropertynames" title="link to this section">19.1.2.7</a></span> Object.getOwnPropertyNames ( O )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.7"><a href="sec-fundamental-objects.html#sec-object.getownpropertynames" title="link to this section">19.1.2.7</a></span> Object.getOwnPropertyNames ( O )</h1>
 
         <p class="normalbefore">When the <b>getOwnPropertyNames</b> function is called, the following steps are taken:</p>
 
         <ol class="proc">
-          <li>Return <a href="#sec-getownpropertykeys">GetOwnPropertyKeys</a>(<i>O</i>, String).</li>
+          <li>Return <a href="sec-fundamental-objects.html#sec-getownpropertykeys">GetOwnPropertyKeys</a>(<i>O</i>, String).</li>
         </ol>
       </section>
 
       <section id="sec-object.getownpropertysymbols">
         <div class="front">
-          <h1><span class="secnum" id="sec-19.1.2.8"><a href="#sec-object.getownpropertysymbols" title="link to this section">19.1.2.8</a></span> Object.getOwnPropertySymbols ( O )</h1>
+          <h1><span class="secnum" id="sec-19.1.2.8"><a href="sec-fundamental-objects.html#sec-object.getownpropertysymbols" title="link to this section">19.1.2.8</a></span> Object.getOwnPropertySymbols ( O )</h1>
 
           <p class="normalbefore">When the <b>getOwnPropertySymbols</b> function is called with argument <var>O</var>, the
           following steps are taken:</p>
 
           <ol class="proc">
-            <li>Return <a href="#sec-getownpropertykeys">GetOwnPropertyKeys</a>(<i>O</i>, Symbol).</li>
+            <li>Return <a href="sec-fundamental-objects.html#sec-getownpropertykeys">GetOwnPropertyKeys</a>(<i>O</i>, Symbol).</li>
           </ol>
         </div>
 
         <section id="sec-getownpropertykeys">
-          <h1><span class="secnum" id="sec-19.1.2.8.1"><a href="#sec-getownpropertykeys" title="link to this section">19.1.2.8.1</a></span> Runtime Semantics:  GetOwnPropertyKeys ( O, Type )</h1>
+          <h1><span class="secnum" id="sec-19.1.2.8.1"><a href="sec-fundamental-objects.html#sec-getownpropertykeys" title="link to this section">19.1.2.8.1</a></span> Runtime Semantics:  GetOwnPropertyKeys ( O, Type )</h1>
 
           <p class="normalbefore">The abstract operation GetOwnPropertyKeys is called with arguments <var>O</var> and <span class="nt">Type</span> where <var>O</var> is an Object and <span class="nt">Type</span> is one of the ECMAScript
           specification types String or Symbol. The following steps are taken:</p>
 
           <ol class="proc">
-            <li>Let <i>obj</i> be <a href="#sec-toobject">ToObject</a>(<i>O</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
+            <li>Let <i>obj</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>O</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
             <li>Let <i>keys</i> be <i>obj.</i>[[OwnPropertyKeys]]().</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
-            <li>Let <i>nameList</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-            <li>Repeat for each element <i>nextKey</i> of <i>keys</i> in <a href="#sec-list-and-record-specification-type">List</a> order,
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>keys</i>).</li>
+            <li>Let <i>nameList</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+            <li>Repeat for each element <i>nextKey</i> of <i>keys</i> in <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> order,
               <ol class="block">
                 <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>nextKey</i>) is <i>Type</i>, then
                   <ol class="block">
@@ -281,85 +281,85 @@
                 </li>
               </ol>
             </li>
-            <li>Return <a href="#sec-createarrayfromlist">CreateArrayFromList</a>(<i>nameList</i>).</li>
+            <li>Return <a href="sec-abstract-operations.html#sec-createarrayfromlist">CreateArrayFromList</a>(<i>nameList</i>).</li>
           </ol>
         </section>
       </section>
 
       <section id="sec-object.getprototypeof">
-        <h1><span class="secnum" id="sec-19.1.2.9"><a href="#sec-object.getprototypeof" title="link to this section">19.1.2.9</a></span> Object.getPrototypeOf ( O )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.9"><a href="sec-fundamental-objects.html#sec-object.getprototypeof" title="link to this section">19.1.2.9</a></span> Object.getPrototypeOf ( O )</h1>
 
         <p class="normalbefore">When the <code>getPrototypeOf</code> function is called with argument <var>O</var>, the following
         steps are taken:</p>
 
         <ol class="proc">
-          <li>Let <i>obj</i> be <a href="#sec-toobject">ToObject</a>(<i>O</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
+          <li>Let <i>obj</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>O</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
           <li>Return <i>obj.</i>[[GetPrototypeOf]]().</li>
         </ol>
       </section>
 
       <section id="sec-object.is">
-        <h1><span class="secnum" id="sec-19.1.2.10"><a href="#sec-object.is" title="link to this section">19.1.2.10</a></span>
+        <h1><span class="secnum" id="sec-19.1.2.10"><a href="sec-fundamental-objects.html#sec-object.is" title="link to this section">19.1.2.10</a></span>
             Object.is ( value1, value2 )</h1>
 
         <p class="normalbefore">When the <b>is</b> function is called with arguments <var>value1</var> and <var>value2</var> the
         following steps are taken:</p>
 
         <ol class="proc">
-          <li>Return <a href="#sec-samevalue">SameValue</a>(<i>value1</i>, <i>value2</i>).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>value1</i>, <i>value2</i>).</li>
         </ol>
       </section>
 
       <section id="sec-object.isextensible">
-        <h1><span class="secnum" id="sec-19.1.2.11"><a href="#sec-object.isextensible" title="link to this section">19.1.2.11</a></span> Object.isExtensible ( O )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.11"><a href="sec-fundamental-objects.html#sec-object.isextensible" title="link to this section">19.1.2.11</a></span> Object.isExtensible ( O )</h1>
 
         <p class="normalbefore">When the <b>isExtensible</b> function is called with argument <var>O</var>, the following steps
         are taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <b>false</b>.</li>
-          <li>Return <a href="#sec-isextensible-o">IsExtensible</a>(<i>O</i>).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-isextensible-o">IsExtensible</a>(<i>O</i>).</li>
         </ol>
       </section>
 
       <section id="sec-object.isfrozen">
-        <h1><span class="secnum" id="sec-19.1.2.12"><a href="#sec-object.isfrozen" title="link to this section">19.1.2.12</a></span> Object.isFrozen ( O )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.12"><a href="sec-fundamental-objects.html#sec-object.isfrozen" title="link to this section">19.1.2.12</a></span> Object.isFrozen ( O )</h1>
 
         <p class="normalbefore">When the <b>isFrozen</b> function is called with argument <var>O</var>, the following steps are
         taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <b>true</b>.</li>
-          <li>Return <a href="#sec-testintegritylevel">TestIntegrityLevel</a>(<i>O</i>, "<code>frozen</code>").</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-testintegritylevel">TestIntegrityLevel</a>(<i>O</i>, "<code>frozen</code>").</li>
         </ol>
       </section>
 
       <section id="sec-object.issealed">
-        <h1><span class="secnum" id="sec-19.1.2.13"><a href="#sec-object.issealed" title="link to this section">19.1.2.13</a></span> Object.isSealed ( O )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.13"><a href="sec-fundamental-objects.html#sec-object.issealed" title="link to this section">19.1.2.13</a></span> Object.isSealed ( O )</h1>
 
         <p class="normalbefore">When the <b>isSealed</b> function is called with argument <var>O</var>, the following steps are
         taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <b>true</b>.</li>
-          <li>Return <a href="#sec-testintegritylevel">TestIntegrityLevel</a>(<i>O</i>, "<code>sealed</code>").</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-testintegritylevel">TestIntegrityLevel</a>(<i>O</i>, "<code>sealed</code>").</li>
         </ol>
       </section>
 
       <section id="sec-object.keys">
-        <h1><span class="secnum" id="sec-19.1.2.14"><a href="#sec-object.keys" title="link to this section">19.1.2.14</a></span>
+        <h1><span class="secnum" id="sec-19.1.2.14"><a href="sec-fundamental-objects.html#sec-object.keys" title="link to this section">19.1.2.14</a></span>
             Object.keys ( O )</h1>
 
         <p class="normalbefore">When the <b>keys</b> function is called with argument <var>O</var>, the following steps are
         taken:</p>
 
         <ol class="proc">
-          <li>Let <i>obj</i> be <a href="#sec-toobject">ToObject</a>(<i>O</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
-          <li>Let <i>nameList</i> be <a href="#sec-enumerableownnames">EnumerableOwnNames</a>(<i>obj</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nameList</i>).</li>
-          <li>Return <a href="#sec-createarrayfromlist">CreateArrayFromList</a>(<i>nameList</i>).</li>
+          <li>Let <i>obj</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<i>O</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>obj</i>).</li>
+          <li>Let <i>nameList</i> be <a href="sec-abstract-operations.html#sec-enumerableownnames">EnumerableOwnNames</a>(<i>obj</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nameList</i>).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-createarrayfromlist">CreateArrayFromList</a>(<i>nameList</i>).</li>
         </ol>
 
         <p>If an implementation defines a specific order of enumeration for the for-in statement, the same order must be used for
@@ -367,57 +367,57 @@
       </section>
 
       <section id="sec-object.preventextensions">
-        <h1><span class="secnum" id="sec-19.1.2.15"><a href="#sec-object.preventextensions" title="link to this section">19.1.2.15</a></span> Object.preventExtensions ( O )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.15"><a href="sec-fundamental-objects.html#sec-object.preventextensions" title="link to this section">19.1.2.15</a></span> Object.preventExtensions ( O )</h1>
 
         <p class="normalbefore">When the <b>preventExtensions</b> function is called, the following steps are taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <i>O</i>.</li>
           <li>Let <i>status</i> be <i>O</i>.[[PreventExtensions]]().</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
           <li>If <i>status</i> is <b>false</b>, throw a <b>TypeError</b> exception.</li>
           <li>Return <i>O</i>.</li>
         </ol>
       </section>
 
       <section id="sec-object.prototype">
-        <h1><span class="secnum" id="sec-19.1.2.16"><a href="#sec-object.prototype" title="link to this section">19.1.2.16</a></span> Object.prototype</h1>
+        <h1><span class="secnum" id="sec-19.1.2.16"><a href="sec-fundamental-objects.html#sec-object.prototype" title="link to this section">19.1.2.16</a></span> Object.prototype</h1>
 
-        <p>The initial value of <code>Object.prototype</code> is the intrinsic object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
+        <p>The initial value of <code>Object.prototype</code> is the intrinsic object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
 
         <p>This property has the attributes {[[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-object.seal">
-        <h1><span class="secnum" id="sec-19.1.2.17"><a href="#sec-object.seal" title="link to this section">19.1.2.17</a></span>
+        <h1><span class="secnum" id="sec-19.1.2.17"><a href="sec-fundamental-objects.html#sec-object.seal" title="link to this section">19.1.2.17</a></span>
             Object.seal ( O )</h1>
 
         <p class="normalbefore">When the <b>seal</b> function is called, the following steps are taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <i>O</i>.</li>
-          <li>Let <i>status</i> be <a href="#sec-setintegritylevel">SetIntegrityLevel</a>( <i>O</i>,  "<code>sealed</code>").</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+          <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-setintegritylevel">SetIntegrityLevel</a>( <i>O</i>,  "<code>sealed</code>").</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
           <li>If <i>status</i> is <b>false</b>, throw a <b>TypeError</b> exception.</li>
           <li>Return <i>O</i>.</li>
         </ol>
       </section>
 
       <section id="sec-object.setprototypeof">
-        <h1><span class="secnum" id="sec-19.1.2.18"><a href="#sec-object.setprototypeof" title="link to this section">19.1.2.18</a></span> Object.setPrototypeOf ( O, proto )</h1>
+        <h1><span class="secnum" id="sec-19.1.2.18"><a href="sec-fundamental-objects.html#sec-object.setprototypeof" title="link to this section">19.1.2.18</a></span> Object.setPrototypeOf ( O, proto )</h1>
 
         <p class="normalbefore">When the <code>setPrototypeOf</code> function is called with arguments <span style="font-family:
         Times New Roman"><i>O</i> and</span> proto, the following steps are taken:</p>
 
         <ol class="proc">
-          <li>Let <i>O</i> be <a href="#sec-requireobjectcoercible">RequireObjectCoercible</a>(<i>O</i>)<i>.</i></li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+          <li>Let <i>O</i> be <a href="sec-abstract-operations.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(<i>O</i>)<i>.</i></li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>proto</i>) is neither Object nor Null, throw a
               <b>TypeError</b> exception.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, return <i>O</i>.</li>
           <li>Let <i>status</i> be <i>O</i>.[[SetPrototypeOf]](<i>proto</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
           <li>If <i>status</i> is <b>false</b>, throw a <b>TypeError</b> exception.</li>
           <li>Return <i>O</i>.</li>
         </ol>
@@ -426,33 +426,33 @@
 
     <section id="sec-properties-of-the-object-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.1.3"><a href="#sec-properties-of-the-object-prototype-object" title="link to this section">19.1.3</a></span> Properties of the Object Prototype Object</h1>
+        <h1><span class="secnum" id="sec-19.1.3"><a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object" title="link to this section">19.1.3</a></span> Properties of the Object Prototype Object</h1>
 
         <p>The Object prototype object is the intrinsic object %ObjectPrototype%. The Object prototype object is an ordinary
         object.</p>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        Object prototype object is <span class="value">null</span> and the initial value of the [[Extensible]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is <span class="value">true</span>.</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        Object prototype object is <span class="value">null</span> and the initial value of the [[Extensible]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is <span class="value">true</span>.</p>
       </div>
 
       <section id="sec-object.prototype.constructor">
-        <h1><span class="secnum" id="sec-19.1.3.1"><a href="#sec-object.prototype.constructor" title="link to this section">19.1.3.1</a></span> Object.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-19.1.3.1"><a href="sec-fundamental-objects.html#sec-object.prototype.constructor" title="link to this section">19.1.3.1</a></span> Object.prototype.constructor</h1>
 
         <p>The initial value of <code>Object.prototype.constructor</code> is the intrinsic object %Object%.</p>
       </section>
 
       <section id="sec-object.prototype.hasownproperty">
-        <h1><span class="secnum" id="sec-19.1.3.2"><a href="#sec-object.prototype.hasownproperty" title="link to this section">19.1.3.2</a></span> Object.prototype.hasOwnProperty ( V )</h1>
+        <h1><span class="secnum" id="sec-19.1.3.2"><a href="sec-fundamental-objects.html#sec-object.prototype.hasownproperty" title="link to this section">19.1.3.2</a></span> Object.prototype.hasOwnProperty ( V )</h1>
 
         <p class="normalbefore">When the <code>hasOwnProperty</code> method is called with argument <var>V</var>, the following
         steps are taken:</p>
 
         <ol class="proc">
-          <li>Let <i>P</i> be <a href="#sec-topropertykey">ToPropertyKey</a>(<i>V</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
-          <li>Let <i>O</i> be <a href="#sec-toobject">ToObject</a>(<b>this</b> value).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
-          <li>Return <a href="#sec-hasownproperty">HasOwnProperty</a>(<i>O</i>, <i>P</i>).</li>
+          <li>Let <i>P</i> be <a href="sec-abstract-operations.html#sec-topropertykey">ToPropertyKey</a>(<i>V</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
+          <li>Let <i>O</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<b>this</b> value).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-hasownproperty">HasOwnProperty</a>(<i>O</i>, <i>P</i>).</li>
         </ol>
 
         <div class="note">
@@ -463,20 +463,20 @@
       </section>
 
       <section id="sec-object.prototype.isprototypeof">
-        <h1><span class="secnum" id="sec-19.1.3.3"><a href="#sec-object.prototype.isprototypeof" title="link to this section">19.1.3.3</a></span> Object.prototype.isPrototypeOf ( V )</h1>
+        <h1><span class="secnum" id="sec-19.1.3.3"><a href="sec-fundamental-objects.html#sec-object.prototype.isprototypeof" title="link to this section">19.1.3.3</a></span> Object.prototype.isPrototypeOf ( V )</h1>
 
         <p class="normalbefore">When the <code>isPrototypeOf</code> method is called with argument <var>V</var>, the following
         steps are taken:</p>
 
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>V</i>) is not Object, return <b>false</b>.</li>
-          <li>Let <i>O</i> be <a href="#sec-toobject">ToObject</a>(<b>this</b> value).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+          <li>Let <i>O</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<b>this</b> value).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
           <li>Repeat
             <ol class="block">
               <li>Let <i>V</i> be <i>V</i>.[[GetPrototypeOf]]().</li>
               <li>If <i>V</i> is <b>null</b>, return <b>false</b></li>
-              <li>If <a href="#sec-samevalue">SameValue</a>(<i>O</i>, <i>V</i>) is <b>true</b>, return <b>true</b>.</li>
+              <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>O</i>, <i>V</i>) is <b>true</b>, return <b>true</b>.</li>
             </ol>
           </li>
         </ol>
@@ -488,18 +488,18 @@
       </section>
 
       <section id="sec-object.prototype.propertyisenumerable">
-        <h1><span class="secnum" id="sec-19.1.3.4"><a href="#sec-object.prototype.propertyisenumerable" title="link to this section">19.1.3.4</a></span> Object.prototype.propertyIsEnumerable ( V )</h1>
+        <h1><span class="secnum" id="sec-19.1.3.4"><a href="sec-fundamental-objects.html#sec-object.prototype.propertyisenumerable" title="link to this section">19.1.3.4</a></span> Object.prototype.propertyIsEnumerable ( V )</h1>
 
         <p class="normalbefore">When the <code>propertyIsEnumerable</code> method is called with argument <var>V</var>, the
         following steps are taken:</p>
 
         <ol class="proc">
-          <li>Let <i>P</i> be <a href="#sec-topropertykey">ToPropertyKey</a>(<i>V</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
-          <li>Let <i>O</i> be <a href="#sec-toobject">ToObject</a>(<b>this</b> value).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+          <li>Let <i>P</i> be <a href="sec-abstract-operations.html#sec-topropertykey">ToPropertyKey</a>(<i>V</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
+          <li>Let <i>O</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<b>this</b> value).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
           <li>Let <i>desc</i> be <i>O</i>.[[GetOwnProperty]](<i>P</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>desc</i>).</li>
           <li>If <i>desc</i> is <b>undefined</b>, return <b>false</b>.</li>
           <li>Return the value of <i>desc</i>.[[Enumerable]].</li>
         </ol>
@@ -516,14 +516,14 @@
       </section>
 
       <section id="sec-object.prototype.tolocalestring">
-        <h1><span class="secnum" id="sec-19.1.3.5"><a href="#sec-object.prototype.tolocalestring" title="link to this section">19.1.3.5</a></span> Object.prototype.toLocaleString ( [ reserved1 [ , reserved2 ] ]
+        <h1><span class="secnum" id="sec-19.1.3.5"><a href="sec-fundamental-objects.html#sec-object.prototype.tolocalestring" title="link to this section">19.1.3.5</a></span> Object.prototype.toLocaleString ( [ reserved1 [ , reserved2 ] ]
             )</h1>
 
         <p class="normalbefore">When the <b>toLocaleString</b> method is called, the following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>O</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-invoke">Invoke</a>(<i>O</i>, <code>"toString"</code>).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-invoke">Invoke</a>(<i>O</i>, <code>"toString"</code>).</li>
         </ol>
 
         <p>The optional parameters to this function are not used but are intended to correspond to the parameter pattern used by
@@ -546,34 +546,34 @@
       </section>
 
       <section id="sec-object.prototype.tostring">
-        <h1><span class="secnum" id="sec-19.1.3.6"><a href="#sec-object.prototype.tostring" title="link to this section">19.1.3.6</a></span> Object.prototype.toString ( )</h1>
+        <h1><span class="secnum" id="sec-19.1.3.6"><a href="sec-fundamental-objects.html#sec-object.prototype.tostring" title="link to this section">19.1.3.6</a></span> Object.prototype.toString ( )</h1>
 
         <p class="normalbefore">When the <code>toString</code> method is called, the following steps are taken:</p>
 
         <ol class="proc">
           <li>If the <b>this</b> value is <b>undefined</b>, return <code>"[object Undefined]"</code>.</li>
           <li>If the <b>this</b> value is <b>null</b>, return <code>"[object Null]"</code>.</li>
-          <li>Let <i>O</i> be <a href="#sec-toobject">ToObject</a>(<b>this</b> value).</li>
-          <li>Let <i>isArray</i> be <a href="#sec-isarray">IsArray</a>(<i>O</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
+          <li>Let <i>O</i> be <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<b>this</b> value).</li>
+          <li>Let <i>isArray</i> be <a href="sec-abstract-operations.html#sec-isarray">IsArray</a>(<i>O</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>isArray</i>).</li>
           <li>If <i>isArray</i> is <b>true</b>, let <i>builtinTag</i> be <code>"Array"</code>.</li>
           <li>Else, if <i>O</i> is an exotic String object, let <i>builtinTag</i> be <code>"String"</code>.</li>
-          <li>Else, if <i>O</i> has an [[ParameterMap]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Else, if <i>O</i> has an [[ParameterMap]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, let <i>builtinTag</i> be <code>"Arguments"</code>.</li>
           <li>Else, if <i>O</i> has a [[Call]] internal method, let <i>builtinTag</i> be <code>"Function"</code>.</li>
-          <li>Else, if <i>O</i> has an [[ErrorData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>Else, if <i>O</i> has an [[ErrorData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               let <i>builtinTag</i> be <code>"Error"</code>.</li>
-          <li>Else, if <i>O</i> has a [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>Else, if <i>O</i> has a [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               let <i>builtinTag</i> be <code>"Boolean"</code>.</li>
-          <li>Else, if <i>O</i> has a [[NumberData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>Else, if <i>O</i> has a [[NumberData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               let <i>builtinTag</i> be <code>"Number"</code>.</li>
-          <li>Else, if <i>O</i> has a [[DateValue]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+          <li>Else, if <i>O</i> has a [[DateValue]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               let <i>builtinTag</i> be <code>"Date"</code>.</li>
-          <li>Else, if <i>O</i> has a [[RegExpMatcher]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>Else, if <i>O</i> has a [[RegExpMatcher]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, let <i>builtinTag</i> be <code>"RegExp"</code>.</li>
           <li>Else, let <i>builtinTag</i> be <code>"Object"</code>.</li>
           <li>Let <i>tag</i> be Get (<i>O</i>, @@toStringTag).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>tag</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>tag</i>).</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>tag</i>) is not String, let <i>tag</i> be
               <i>builtinTag</i>.</li>
           <li>Return the String that is the result of concatenating <code>"[object "</code>, <i>tag</i>, and
@@ -584,7 +584,7 @@
 
         <div class="note">
           <p><span class="nh">NOTE</span> Historically, this function was occasionally used to access the String value of the
-          [[Class]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> that was used in previous editions
+          [[Class]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> that was used in previous editions
           of this specification as a nominal type tag for various built-in objects. The above definition of <code>toString</code>
           preserves compatibility for legacy code that uses <code>toString</code> as a test for those specific kinds of built-in
           objects. It does not provide a reliable type testing mechanism for other kinds of built-in or program defined objects.
@@ -593,18 +593,18 @@
       </section>
 
       <section id="sec-object.prototype.valueof">
-        <h1><span class="secnum" id="sec-19.1.3.7"><a href="#sec-object.prototype.valueof" title="link to this section">19.1.3.7</a></span> Object.prototype.valueOf ( )</h1>
+        <h1><span class="secnum" id="sec-19.1.3.7"><a href="sec-fundamental-objects.html#sec-object.prototype.valueof" title="link to this section">19.1.3.7</a></span> Object.prototype.valueOf ( )</h1>
 
         <p class="normalbefore">When the <b>valueOf</b> method is called, the following steps are taken:</p>
 
         <ol class="proc">
-          <li>Return <a href="#sec-toobject">ToObject</a>(<b>this</b> value).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-toobject">ToObject</a>(<b>this</b> value).</li>
         </ol>
       </section>
     </section>
 
     <section id="sec-properties-of-object-instances">
-      <h1><span class="secnum" id="sec-19.1.4"><a href="#sec-properties-of-object-instances" title="link to this section">19.1.4</a></span> Properties of Object Instances</h1>
+      <h1><span class="secnum" id="sec-19.1.4"><a href="sec-fundamental-objects.html#sec-properties-of-object-instances" title="link to this section">19.1.4</a></span> Properties of Object Instances</h1>
 
       <p>Object instances have no special properties beyond those inherited from the Object prototype object.</p>
     </section>
@@ -612,13 +612,13 @@
 
   <section id="sec-function-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-19.2"><a href="#sec-function-objects" title="link to this section">19.2</a></span> Function
+      <h1><span class="secnum" id="sec-19.2"><a href="sec-fundamental-objects.html#sec-function-objects" title="link to this section">19.2</a></span> Function
           Objects</h1>
     </div>
 
     <section id="sec-function-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.2.1"><a href="#sec-function-constructor" title="link to this section">19.2.1</a></span> The Function Constructor</h1>
+        <h1><span class="secnum" id="sec-19.2.1"><a href="sec-fundamental-objects.html#sec-function-constructor" title="link to this section">19.2.1</a></span> The Function Constructor</h1>
 
         <p>The Function constructor is the %Function% intrinsic object and the initial value of the <code>Function</code> property
         of the global object. When <code>Function</code> is called as a function rather than as a constructor, it creates and
@@ -635,7 +635,7 @@
 
       <section id="sec-function-p1-p2-pn-body">
         <div class="front">
-          <h1><span class="secnum" id="sec-19.2.1.1"><a href="#sec-function-p1-p2-pn-body" title="link to this section">19.2.1.1</a></span> Function ( p1, p2, … , pn, body )</h1>
+          <h1><span class="secnum" id="sec-19.2.1.1"><a href="sec-fundamental-objects.html#sec-function-p1-p2-pn-body" title="link to this section">19.2.1.1</a></span> Function ( p1, p2, … , pn, body )</h1>
 
           <p>The last argument specifies the body (executable code) of a function; any preceding arguments specify formal
           parameters.</p>
@@ -648,7 +648,7 @@
           <ol class="proc">
             <li>Let <i>C</i> be the active function object.</li>
             <li>Let <i>args</i> be the <i>argumentsList</i> that was passed to this function by [[Call]] or [[Construct]].</li>
-            <li>Return <a href="#sec-createdynamicfunction">CreateDynamicFunction</a>(<i>C</i>, NewTarget, <code>"normal"</code>,
+            <li>Return <a href="sec-fundamental-objects.html#sec-createdynamicfunction">CreateDynamicFunction</a>(<i>C</i>, NewTarget, <code>"normal"</code>,
                 <i>args</i>).</li>
           </ol>
 
@@ -663,13 +663,13 @@
         </div>
 
         <section id="sec-createdynamicfunction">
-          <h1><span class="secnum" id="sec-19.2.1.1.1"><a href="#sec-createdynamicfunction" title="link to this section">19.2.1.1.1</a></span> RuntimeSemantics: CreateDynamicFunction(constructor, newTarget,
+          <h1><span class="secnum" id="sec-19.2.1.1.1"><a href="sec-fundamental-objects.html#sec-createdynamicfunction" title="link to this section">19.2.1.1.1</a></span> RuntimeSemantics: CreateDynamicFunction(constructor, newTarget,
               kind, args)</h1>
 
           <p>The abstract operation CreateDynamicFunction is called with arguments <var>constructor</var>, <var>newTarget</var>,
           <var>kind</var>, and <var>args</var>. <var>constructor</var> is the constructor function that is performing this action,
           <var>newTarget</var> is the constructor that <code>new</code> was initially applied to, <var>kind</var> is either
-          <code>"normal"</code> or <code>"generator"</code>, and <var>args</var> is a <a href="#sec-list-and-record-specification-type">List</a> containing the actual argument values that were passed to
+          <code>"normal"</code> or <code>"generator"</code>, and <var>args</var> is a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the actual argument values that were passed to
           <var>constructor</var>. The following steps are taken:</p>
 
           <ol class="proc">
@@ -695,14 +695,14 @@
             <li>Else <i>argCount</i> &gt; 1,
               <ol class="block">
                 <li>Let <i>firstArg</i> be <i>args</i>[0].</li>
-                <li>Let <i>P</i> be <a href="#sec-tostring">ToString</a>(<i>firstArg</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
+                <li>Let <i>P</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>firstArg</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>P</i>).</li>
                 <li>Let <i>k</i> be 1.</li>
                 <li>Repeat, while <i>k</i> &lt; <i>argCount</i>-1
                   <ol class="block">
                     <li>Let <i>nextArg</i> be <i>args</i>[<i>k</i>].</li>
-                    <li>Let <i>nextArgString</i> be <a href="#sec-tostring">ToString</a>(<i>nextArg</i>).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextArgString</i>).</li>
+                    <li>Let <i>nextArgString</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>nextArg</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>nextArgString</i>).</li>
                     <li>Let <i>P</i> be the result of concatenating the previous value of <i>P</i>, the String <code>","</code> (a
                         comma), and <i>nextArgString</i>.</li>
                     <li>Increase <i>k</i> by 1.</li>
@@ -711,15 +711,15 @@
                 <li>Let <i>bodyText</i> be <i>args</i>[<i>k</i>].</li>
               </ol>
             </li>
-            <li>Let <i>bodyText</i> be <a href="#sec-tostring">ToString</a>(<i>bodyText</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>bodyText</i>).</li>
+            <li>Let <i>bodyText</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>bodyText</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>bodyText</i>).</li>
             <li>Let <i>body</i> be the result of parsing <i>bodyText</i>, interpreted as UTF-16 encoded Unicode text as described
-                in <a href="#sec-ecmascript-language-types-string-type">6.1.4</a><i>,</i> using <i>goal</i> as the goal symbol.
+                in <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types-string-type">6.1.4</a><i>,</i> using <i>goal</i> as the goal symbol.
                 Throw a <b>SyntaxError</b> exception if the parse fails or if any static semantics errors are detected.</li>
-            <li>If <i>bodyText</i> is <a href="#sec-strict-mode-code">strict mode code</a> (<a href="#sec-strict-mode-code">see
+            <li>If <i>bodyText</i> is <a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">strict mode code</a> (<a href="sec-ecmascript-language-source-code.html#sec-strict-mode-code">see
                 10.2.1</a>) then let <i>strict</i> be <b>true</b>, else let <i>strict</i> be <b>false</b>.</li>
             <li>Let <i>parameters</i> be the result of parsing <i>P</i>, interpreted as UTF-16 encoded Unicode text as described
-                in <a href="#sec-ecmascript-language-types-string-type">6.1.4</a><i>,</i> using <i>parameterGoal</i> as the goal
+                in <a href="sec-ecmascript-data-types-and-values.html#sec-ecmascript-language-types-string-type">6.1.4</a><i>,</i> using <i>parameterGoal</i> as the goal
                 symbol. Throw a <b>SyntaxError</b> exception if the parse fails or if any static semantics errors are detected. If
                 <i>strict</i> is <b>true</b>, the Early Error rules for <span class="prod"><span class="nt">StrictFormalParameters</span> <span class="geq">:</span> <span class="nt">FormalParameters</span></span> are applied.</li>
             <li>If any element of the BoundNames of <i>parameters</i> also occurs in the LexicallyDeclaredNames of <i>body</i>,
@@ -741,24 +741,24 @@
                     exception.</li>
               </ol>
             </li>
-            <li>Let <i>proto</i> be <a href="#sec-getprototypefromconstructor">GetPrototypeFromConstructor</a>(<i>newTarget</i>,
+            <li>Let <i>proto</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-getprototypefromconstructor">GetPrototypeFromConstructor</a>(<i>newTarget</i>,
                 <i>fallbackProto</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>proto</i>).</li>
-            <li>Let <i>F</i> be <a href="#sec-functionallocate">FunctionAllocate</a>(<i>proto</i>, <i>strict</i>,
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>proto</i>).</li>
+            <li>Let <i>F</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-functionallocate">FunctionAllocate</a>(<i>proto</i>, <i>strict</i>,
                 <i>kind</i>).</li>
-            <li>Let <i>realmF</i> be the value of <i>F’s</i> [[Realm]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+            <li>Let <i>realmF</i> be the value of <i>F’s</i> [[Realm]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
             <li>Let <i>scope</i> be <i>realmF</i>.[[globalEnv]].</li>
-            <li>Perform <a href="#sec-functioninitialize">FunctionInitialize</a>(<i>F</i>, <span style="font-family:
+            <li>Perform <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-functioninitialize">FunctionInitialize</a>(<i>F</i>, <span style="font-family:
                 sans-serif">Normal</span>, <i>parameters</i>, <i>body, scope</i>).</li>
             <li>If <i>kind</i> is <code>"generator"</code>, then
               <ol class="block">
-                <li>Let <i>prototype</i> be <a href="#sec-objectcreate">ObjectCreate</a>(<span style="font-family:
+                <li>Let <i>prototype</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-objectcreate">ObjectCreate</a>(<span style="font-family:
                     sans-serif">%GeneratorPrototype%</span>).</li>
-                <li>Perform <a href="#sec-makeconstructor">MakeConstructor</a>(<i>F</i>, <b>true</b>, <i>prototype</i>).</li>
+                <li>Perform <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-makeconstructor">MakeConstructor</a>(<i>F</i>, <b>true</b>, <i>prototype</i>).</li>
               </ol>
             </li>
-            <li>Else, perform <a href="#sec-makeconstructor">MakeConstructor</a>(<i>F</i>).</li>
-            <li>Perform <a href="#sec-setfunctionname">SetFunctionName</a>(<i>F</i>, <code>"<b>anonymous</b>"</code>).</li>
+            <li>Else, perform <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-makeconstructor">MakeConstructor</a>(<i>F</i>).</li>
+            <li>Perform <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-setfunctionname">SetFunctionName</a>(<i>F</i>, <code>"<b>anonymous</b>"</code>).</li>
             <li>Return <i>F</i>.</li>
           </ol>
 
@@ -772,28 +772,28 @@
 
     <section id="sec-properties-of-the-function-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.2.2"><a href="#sec-properties-of-the-function-constructor" title="link to this section">19.2.2</a></span> Properties of the Function Constructor</h1>
+        <h1><span class="secnum" id="sec-19.2.2"><a href="sec-fundamental-objects.html#sec-properties-of-the-function-constructor" title="link to this section">19.2.2</a></span> Properties of the Function Constructor</h1>
 
-        <p>The <code>Function</code> constructor is itself a built-in function object. The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the <code>Function</code> constructor is
-        %FunctionPrototype%, the intrinsic Function prototype object (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The <code>Function</code> constructor is itself a built-in function object. The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the <code>Function</code> constructor is
+        %FunctionPrototype%, the intrinsic Function prototype object (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
-        <p>The value of the [[Extensible]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        <p>The value of the [[Extensible]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
         Function constructor is <b>true</b>.</p>
 
         <p class="normalbefore">The Function constructor has the following properties:</p>
       </div>
 
       <section id="sec-function.length">
-        <h1><span class="secnum" id="sec-19.2.2.1"><a href="#sec-function.length" title="link to this section">19.2.2.1</a></span>
+        <h1><span class="secnum" id="sec-19.2.2.1"><a href="sec-fundamental-objects.html#sec-function.length" title="link to this section">19.2.2.1</a></span>
             Function.length</h1>
 
         <p>This is a data property with a value of 1. This property has the attributes { [[Writable]]: <span class="value">false</span>, [[Enumerable]]: <span class="value">false</span>, [[Configurable]]: <span class="value">true</span> }.</p>
       </section>
 
       <section id="sec-function.prototype">
-        <h1><span class="secnum" id="sec-19.2.2.2"><a href="#sec-function.prototype" title="link to this section">19.2.2.2</a></span> Function.prototype</h1>
+        <h1><span class="secnum" id="sec-19.2.2.2"><a href="sec-fundamental-objects.html#sec-function.prototype" title="link to this section">19.2.2.2</a></span> Function.prototype</h1>
 
-        <p>The value of <code>Function.prototype</code> is %FunctionPrototype%, the intrinsic Function prototype object (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of <code>Function.prototype</code> is %FunctionPrototype%, the intrinsic Function prototype object (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <span class="value">false</span>, [[Enumerable]]: <span class="value">false</span>, [[Configurable]]: <span class="value">false</span> }.</p>
       </section>
@@ -801,7 +801,7 @@
 
     <section id="sec-properties-of-the-function-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.2.3"><a href="#sec-properties-of-the-function-prototype-object" title="link to this section">19.2.3</a></span> Properties of the Function Prototype Object</h1>
+        <h1><span class="secnum" id="sec-19.2.3"><a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object" title="link to this section">19.2.3</a></span> Properties of the Function Prototype Object</h1>
 
         <p>The Function prototype object is the intrinsic object %FunctionPrototype%. The Function prototype object is itself a
         built-in function object. When invoked, it accepts any arguments and returns <span class="value">undefined</span>. It does
@@ -812,8 +812,8 @@
           compatibility with ECMAScript code that was created prior to the ECMAScript 2015 specification.</p>
         </div>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        Function prototype object is the intrinsic object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>). The initial value of the [[Extensible]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Function prototype object is <span class="value">true</span>.</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        Function prototype object is the intrinsic object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>). The initial value of the [[Extensible]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Function prototype object is <span class="value">true</span>.</p>
 
         <p>The Function prototype object does not have a <code>prototype</code> property.</p>
 
@@ -823,65 +823,65 @@
       </div>
 
       <section id="sec-function.prototype.apply">
-        <h1><span class="secnum" id="sec-19.2.3.1"><a href="#sec-function.prototype.apply" title="link to this section">19.2.3.1</a></span> Function.prototype.apply ( thisArg, argArray )</h1>
+        <h1><span class="secnum" id="sec-19.2.3.1"><a href="sec-fundamental-objects.html#sec-function.prototype.apply" title="link to this section">19.2.3.1</a></span> Function.prototype.apply ( thisArg, argArray )</h1>
 
         <p class="normalbefore">When the <code>apply</code> method is called on an object <var>func</var> with arguments
         <var>thisArg</var> and <var>argArray</var>, the following steps are taken:</p>
 
         <ol class="proc">
-          <li>If <a href="#sec-iscallable">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
+          <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
           <li>If <i>argArray</i> is <b>null</b> or <b>undefined</b>, then
             <ol class="block">
-              <li>Return <a href="#sec-call">Call</a>(<i>func</i>, <i>thisArg</i>).</li>
+              <li>Return <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>func</i>, <i>thisArg</i>).</li>
             </ol>
           </li>
-          <li>Let <i>argList</i> be <a href="#sec-createlistfromarraylike">CreateListFromArrayLike</a>(<i>argArray</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argList</i> ).</li>
-          <li>Perform <a href="#sec-preparefortailcall">PrepareForTailCall</a>().</li>
-          <li>Return <a href="#sec-call">Call</a>(<i>func</i>, <i>thisArg</i>, <i>argList</i>).</li>
+          <li>Let <i>argList</i> be <a href="sec-abstract-operations.html#sec-createlistfromarraylike">CreateListFromArrayLike</a>(<i>argArray</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>argList</i> ).</li>
+          <li>Perform <a href="sec-ecmascript-language-functions-and-classes.html#sec-preparefortailcall">PrepareForTailCall</a>().</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>func</i>, <i>thisArg</i>, <i>argList</i>).</li>
         </ol>
 
         <p>The <code>length</code> property of the <code>apply</code> method is <b>2</b>.</p>
 
         <div class="note">
           <p><span class="nh">NOTE 1</span> The thisArg value is passed without modification as the <b>this</b> value. This is a
-          change from Edition 3, where an <b>undefined</b> or <b>null</b> thisArg is replaced with the global object and <a href="#sec-toobject">ToObject</a> is applied to all other values and that result is passed as the <b>this</b> value.
+          change from Edition 3, where an <b>undefined</b> or <b>null</b> thisArg is replaced with the global object and <a href="sec-abstract-operations.html#sec-toobject">ToObject</a> is applied to all other values and that result is passed as the <b>this</b> value.
           Even though the thisArg is passed without modification, non-strict functions still perform these transformations upon
           entry to the function.</p>
         </div>
 
         <div class="note">
-          <p><span class="nh">NOTE 2</span> If <var>func</var> is an arrow function or a <a href="#sec-bound-function-exotic-objects">bound function</a> then the <var>thisArg</var> will be ignored by the function
+          <p><span class="nh">NOTE 2</span> If <var>func</var> is an arrow function or a <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">bound function</a> then the <var>thisArg</var> will be ignored by the function
           [[Call]] in step 6.</p>
         </div>
       </section>
 
       <section id="sec-function.prototype.bind">
-        <h1><span class="secnum" id="sec-19.2.3.2"><a href="#sec-function.prototype.bind" title="link to this section">19.2.3.2</a></span> Function.prototype.bind ( thisArg , ...args)</h1>
+        <h1><span class="secnum" id="sec-19.2.3.2"><a href="sec-fundamental-objects.html#sec-function.prototype.bind" title="link to this section">19.2.3.2</a></span> Function.prototype.bind ( thisArg , ...args)</h1>
 
         <p class="normalbefore">When the <code>bind</code> method is called with argument <var>thisArg</var> and zero or more
         <var>args</var>, it performs the following steps:</p>
 
         <ol class="proc">
           <li>Let <i>Target</i> be the <b>this</b> value.</li>
-          <li>If <a href="#sec-iscallable">IsCallable</a>(<i>Target</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>args</i> be a new (possibly empty) <a href="#sec-list-and-record-specification-type">List</a> consisting of
+          <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>Target</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
+          <li>Let <i>args</i> be a new (possibly empty) <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> consisting of
               all of the argument values provided after <i>thisArg</i>  in order.</li>
-          <li>Let <i>F</i> be <a href="#sec-boundfunctioncreate">BoundFunctionCreate</a>(<i>Target</i>, <i>thisArg</i>,
+          <li>Let <i>F</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-boundfunctioncreate">BoundFunctionCreate</a>(<i>Target</i>, <i>thisArg</i>,
               <i>args</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>F</i>).</li>
-          <li>Let <i>targetHasLength</i> be <a href="#sec-hasownproperty">HasOwnProperty</a>(<i>Target</i>,
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>F</i>).</li>
+          <li>Let <i>targetHasLength</i> be <a href="sec-abstract-operations.html#sec-hasownproperty">HasOwnProperty</a>(<i>Target</i>,
               <code>"length"</code>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetHasLength</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetHasLength</i>).</li>
           <li>If <i>targetHasLength</i> is <b>true</b>, then
             <ol class="block">
-              <li>Let <i>targetLen</i> be <a href="#sec-get-o-p">Get</a>(<i>Target</i>, <code>"length"</code>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetLen</i>).</li>
+              <li>Let <i>targetLen</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>Target</i>, <code>"length"</code>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetLen</i>).</li>
               <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>targetLen</i>) is not Number, let <i>L</i> be
                   0.</li>
               <li>Else,
                 <ol class="block">
-                  <li>Let <i>targetLen</i> be <a href="#sec-tointeger">ToInteger</a>(<i>targetLen</i>).</li>
+                  <li>Let <i>targetLen</i> be <a href="sec-abstract-operations.html#sec-tointeger">ToInteger</a>(<i>targetLen</i>).</li>
                   <li>Let <i>L</i> be the larger of 0 and the result of <i>targetLen</i> minus the number of elements of
                       <i>args</i>.</li>
                 </ol>
@@ -889,15 +889,15 @@
             </ol>
           </li>
           <li>Else let <i>L</i> be 0.</li>
-          <li>Let <i>status</i> be <a href="#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>F</i>, <code>"length"</code>,
+          <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>F</i>, <code>"length"</code>,
               PropertyDescriptor {[[Value]]: <i>L</i>, [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
               <b>true</b>}).</li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="#sec-completion-record-specification-type">abrupt completion</a>.</li>
-          <li>Let <i>targetName</i> be <a href="#sec-get-o-p">Get</a>(<i>Target</i>, <code>"name"</code>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetName</i>).</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>.</li>
+          <li>Let <i>targetName</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>Target</i>, <code>"name"</code>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>targetName</i>).</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>targetName</i>) is not String, let <i>targetName</i>
               be the empty string.</li>
-          <li>Perform <a href="#sec-setfunctionname">SetFunctionName</a>(<i>F</i>, <i>targetName</i>, <code>"bound"</code>).</li>
+          <li>Perform <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-setfunctionname">SetFunctionName</a>(<i>F</i>, <i>targetName</i>, <code>"bound"</code>).</li>
           <li>Return <i>F</i>.</li>
         </ol>
 
@@ -909,63 +909,63 @@
         </div>
 
         <div class="note">
-          <p><span class="nh">NOTE 2</span> If <span class="nt">Target</span> is an arrow function or a <a href="#sec-bound-function-exotic-objects">bound function</a> then the <var>thisArg</var> passed to this method will not
+          <p><span class="nh">NOTE 2</span> If <span class="nt">Target</span> is an arrow function or a <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">bound function</a> then the <var>thisArg</var> passed to this method will not
           be used by subsequent calls to <var>F</var>.</p>
         </div>
       </section>
 
       <section id="sec-function.prototype.call">
-        <h1><span class="secnum" id="sec-19.2.3.3"><a href="#sec-function.prototype.call" title="link to this section">19.2.3.3</a></span> Function.prototype.call (thisArg , ...args)</h1>
+        <h1><span class="secnum" id="sec-19.2.3.3"><a href="sec-fundamental-objects.html#sec-function.prototype.call" title="link to this section">19.2.3.3</a></span> Function.prototype.call (thisArg , ...args)</h1>
 
         <p class="normalbefore">When the <code>call</code> method is called on an object <var>func</var> with argument,
         <var>thisArg</var> and zero or more <var>args</var>, the following steps are taken:</p>
 
         <ol class="proc">
-          <li>If <a href="#sec-iscallable">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
-          <li>Let <i>argList</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>If <a href="sec-abstract-operations.html#sec-iscallable">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b> exception.</li>
+          <li>Let <i>argList</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>If this method was called with more than one argument then in left to right order, starting with the second
               argument, append each argument as the last element of <i>argList</i>.</li>
-          <li>Perform <a href="#sec-preparefortailcall">PrepareForTailCall</a>().</li>
-          <li>Return <a href="#sec-call">Call</a>(<i>func</i>, <i>thisArg</i>, <i>argList</i>).</li>
+          <li>Perform <a href="sec-ecmascript-language-functions-and-classes.html#sec-preparefortailcall">PrepareForTailCall</a>().</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-call">Call</a>(<i>func</i>, <i>thisArg</i>, <i>argList</i>).</li>
         </ol>
 
         <p>The <code>length</code> property of the <code>call</code> method is <b>1</b>.</p>
 
         <div class="note">
           <p><span class="nh">NOTE 1</span> The thisArg value is passed without modification as the <b>this</b> value. This is a
-          change from Edition 3, where an <b>undefined</b> or <b>null</b> thisArg is replaced with the global object and <a href="#sec-toobject">ToObject</a> is applied to all other values and that result is passed as the <b>this</b> value.
+          change from Edition 3, where an <b>undefined</b> or <b>null</b> thisArg is replaced with the global object and <a href="sec-abstract-operations.html#sec-toobject">ToObject</a> is applied to all other values and that result is passed as the <b>this</b> value.
           Even though the thisArg is passed without modification, non-strict functions still perform these transformations upon
           entry to the function.</p>
         </div>
 
         <div class="note">
-          <p><span class="nh">NOTE 2</span> If <var>func</var> is an arrow function or a <a href="#sec-bound-function-exotic-objects">bound function</a> then the <var>thisArg</var> will be ignored by the function
+          <p><span class="nh">NOTE 2</span> If <var>func</var> is an arrow function or a <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">bound function</a> then the <var>thisArg</var> will be ignored by the function
           [[Call]] in step 5.</p>
         </div>
       </section>
 
       <section id="sec-function.prototype.constructor">
-        <h1><span class="secnum" id="sec-19.2.3.4"><a href="#sec-function.prototype.constructor" title="link to this section">19.2.3.4</a></span> Function.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-19.2.3.4"><a href="sec-fundamental-objects.html#sec-function.prototype.constructor" title="link to this section">19.2.3.4</a></span> Function.prototype.constructor</h1>
 
         <p>The initial value of <code>Function.prototype.constructor</code> is the intrinsic object %Function%.</p>
       </section>
 
       <section id="sec-function.prototype.tostring">
-        <h1><span class="secnum" id="sec-19.2.3.5"><a href="#sec-function.prototype.tostring" title="link to this section">19.2.3.5</a></span> Function.prototype.toString ( )</h1>
+        <h1><span class="secnum" id="sec-19.2.3.5"><a href="sec-fundamental-objects.html#sec-function.prototype.tostring" title="link to this section">19.2.3.5</a></span> Function.prototype.toString ( )</h1>
 
         <p class="normalbefore">When the <code>toString</code> method is called on an object <var>func</var> the following steps
         are taken:</p>
 
         <ol class="proc">
-          <li>If <i>func</i> is a <a href="#sec-bound-function-exotic-objects">Bound Function</a> exotic object, then
+          <li>If <i>func</i> is a <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">Bound Function</a> exotic object, then
             <ol class="block">
               <li>Return an implementation-dependent String source code representation of <i>func</i>. The representation must
-                  conform to the rules below. It is implementation dependent whether the representation includes <a href="#sec-bound-function-exotic-objects">bound function</a> information or information about the target
+                  conform to the rules below. It is implementation dependent whether the representation includes <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">bound function</a> information or information about the target
                   function.</li>
             </ol>
           </li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>func</i>) is Object and is either a built-in function
-              object or  has an [[ECMAScriptCode]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>,
+              object or  has an [[ECMAScriptCode]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
               then
             <ol class="block">
               <li>Return an implementation-dependent String source code representation of <i>func</i>. The representation must
@@ -1007,14 +1007,14 @@
       </section>
 
       <section id="sec-function.prototype-@@hasinstance">
-        <h1><span class="secnum" id="sec-19.2.3.6"><a href="#sec-function.prototype-@@hasinstance" title="link to this section">19.2.3.6</a></span> Function.prototype[@@hasInstance] ( V )</h1>
+        <h1><span class="secnum" id="sec-19.2.3.6"><a href="sec-fundamental-objects.html#sec-function.prototype-@@hasinstance" title="link to this section">19.2.3.6</a></span> Function.prototype[@@hasInstance] ( V )</h1>
 
         <p class="normalbefore">When the @@hasInstance method of an object <var>F</var> is called with value <var>V</var>, the
         following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>F</i> be the <b>this</b> value.</li>
-          <li>Return <a href="#sec-ordinaryhasinstance">OrdinaryHasInstance</a>(<i>F</i>, <i>V</i>).</li>
+          <li>Return <a href="sec-abstract-operations.html#sec-ordinaryhasinstance">OrdinaryHasInstance</a>(<i>F</i>, <i>V</i>).</li>
         </ol>
 
         <p>The value of the <code>name</code> property of this function is <code>"[Symbol.hasInstance]"</code>.</p>
@@ -1038,23 +1038,23 @@
         </div>
 
         <p>This property is non-writable and non-configurable to prevent tampering that could be used to globally expose the
-        target function of a <a href="#sec-bound-function-exotic-objects">bound function</a>.</p>
+        target function of a <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-bound-function-exotic-objects">bound function</a>.</p>
       </section>
     </section>
 
     <section id="sec-function-instances">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.2.4"><a href="#sec-function-instances" title="link to this section">19.2.4</a></span>
+        <h1><span class="secnum" id="sec-19.2.4"><a href="sec-fundamental-objects.html#sec-function-instances" title="link to this section">19.2.4</a></span>
             Function Instances</h1>
 
-        <p>Every function instance is an <a href="#sec-ecmascript-function-objects">ECMAScript function object</a> and has the
-        internal slots listed in <a href="#table-27">Table 27</a>. Function instances created using the <code><a href="#sec-function.prototype.bind">Function.prototype.bind</a></code> method (<a href="#sec-function.prototype.bind">19.2.3.2</a>) have the internal slots listed in <a href="#table-28">Table 28</a>.</p>
+        <p>Every function instance is an <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ecmascript-function-objects">ECMAScript function object</a> and has the
+        internal slots listed in <a href="sec-ordinary-and-exotic-objects-behaviours.html#table-27">Table 27</a>. Function instances created using the <code><a href="sec-fundamental-objects.html#sec-function.prototype.bind">Function.prototype.bind</a></code> method (<a href="sec-fundamental-objects.html#sec-function.prototype.bind">19.2.3.2</a>) have the internal slots listed in <a href="sec-ordinary-and-exotic-objects-behaviours.html#table-28">Table 28</a>.</p>
 
         <p>The Function instances have the following properties:</p>
       </div>
 
       <section id="sec-function-instances-length">
-        <h1><span class="secnum" id="sec-19.2.4.1"><a href="#sec-function-instances-length" title="link to this section">19.2.4.1</a></span> length</h1>
+        <h1><span class="secnum" id="sec-19.2.4.1"><a href="sec-fundamental-objects.html#sec-function-instances-length" title="link to this section">19.2.4.1</a></span> length</h1>
 
         <p>The value of the <code>length</code> property is an integer that indicates the typical number of arguments expected by
         the function. However, the language permits the function to be invoked with some other number of arguments. The behaviour
@@ -1064,7 +1064,7 @@
       </section>
 
       <section id="sec-function-instances-name">
-        <h1><span class="secnum" id="sec-19.2.4.2"><a href="#sec-function-instances-name" title="link to this section">19.2.4.2</a></span> name</h1>
+        <h1><span class="secnum" id="sec-19.2.4.2"><a href="sec-fundamental-objects.html#sec-function-instances-name" title="link to this section">19.2.4.2</a></span> name</h1>
 
         <p>The value of the <code>name</code> property is an String that is descriptive of the function. The name has no semantic
         significance but is typically a variable or property name that is used to refer to the function at its point of definition
@@ -1076,19 +1076,19 @@
       </section>
 
       <section id="sec-function-instances-prototype">
-        <h1><span class="secnum" id="sec-19.2.4.3"><a href="#sec-function-instances-prototype" title="link to this section">19.2.4.3</a></span> prototype</h1>
+        <h1><span class="secnum" id="sec-19.2.4.3"><a href="sec-fundamental-objects.html#sec-function-instances-prototype" title="link to this section">19.2.4.3</a></span> prototype</h1>
 
         <p>Function instances that can be used as a constructor have a <code>prototype</code> property. Whenever such a function
         instance is created another ordinary object is also created and is the initial value of the function’s
         <code>prototype</code> property. Unless otherwise specified, the value of the <code>prototype</code> property is used to
-        initialize the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the object
+        initialize the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the object
         created when that function is invoked as a constructor.</p>
 
         <p>This property has the attributes {&nbsp;[[Writable]]: <b>true</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
 
         <div class="note">
-          <p><span class="nh">NOTE</span> Function objects created using <code><a href="#sec-function.prototype.bind">Function.prototype.bind</a></code>, or by evaluating a <span class="nt">MethodDefinition</span> (that are not a <span class="nt">GeneratorMethod</span>) or an <span class="nt">ArrowFunction</span> grammar production do not have a <code>prototype</code> property.</p>
+          <p><span class="nh">NOTE</span> Function objects created using <code><a href="sec-fundamental-objects.html#sec-function.prototype.bind">Function.prototype.bind</a></code>, or by evaluating a <span class="nt">MethodDefinition</span> (that are not a <span class="nt">GeneratorMethod</span>) or an <span class="nt">ArrowFunction</span> grammar production do not have a <code>prototype</code> property.</p>
         </div>
       </section>
     </section>
@@ -1096,13 +1096,13 @@
 
   <section id="sec-boolean-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-19.3"><a href="#sec-boolean-objects" title="link to this section">19.3</a></span> Boolean
+      <h1><span class="secnum" id="sec-19.3"><a href="sec-fundamental-objects.html#sec-boolean-objects" title="link to this section">19.3</a></span> Boolean
           Objects</h1>
     </div>
 
     <section id="sec-boolean-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.3.1"><a href="#sec-boolean-constructor" title="link to this section">19.3.1</a></span>
+        <h1><span class="secnum" id="sec-19.3.1"><a href="sec-fundamental-objects.html#sec-boolean-constructor" title="link to this section">19.3.1</a></span>
             The Boolean Constructor</h1>
 
         <p>The Boolean constructor is the %Boolean% intrinsic object and the initial value of the <code>Boolean</code> property of
@@ -1112,22 +1112,22 @@
         <p>The <code>Boolean</code> constructor is designed to be subclassable. It may be used as the value of an
         <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified
         <code>Boolean</code> behaviour must include a <code>super</code> call to the <code>Boolean</code> constructor to create
-        and initialize the subclass instance with a [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        and initialize the subclass instance with a [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
       </div>
 
       <section id="sec-boolean-constructor-boolean-value">
-        <h1><span class="secnum" id="sec-19.3.1.1"><a href="#sec-boolean-constructor-boolean-value" title="link to this section">19.3.1.1</a></span> Boolean ( value )</h1>
+        <h1><span class="secnum" id="sec-19.3.1.1"><a href="sec-fundamental-objects.html#sec-boolean-constructor-boolean-value" title="link to this section">19.3.1.1</a></span> Boolean ( value )</h1>
 
         <p class="normalbefore">When <code>Boolean</code> is called with argument <var>value</var>, the following steps are
         taken:</p>
 
         <ol class="proc">
-          <li>Let <i>b</i> be <a href="#sec-toboolean">ToBoolean</a>(<i>value</i>).</li>
+          <li>Let <i>b</i> be <a href="sec-abstract-operations.html#sec-toboolean">ToBoolean</a>(<i>value</i>).</li>
           <li>If NewTarget is <b>undefined</b><i>,</i> return <i>b</i>.</li>
-          <li>Let <i>O</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
+          <li>Let <i>O</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(NewTarget,
               <code>"%BooleanPrototype%"</code>, «[[BooleanData]]» ).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
-          <li>Set the value of <i>O’s</i> [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+          <li>Set the value of <i>O’s</i> [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a> to <i>b</i>.</li>
           <li>Return <i>O</i>.</li>
         </ol>
@@ -1136,19 +1136,19 @@
 
     <section id="sec-properties-of-the-boolean-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.3.2"><a href="#sec-properties-of-the-boolean-constructor" title="link to this section">19.3.2</a></span> Properties of the Boolean Constructor</h1>
+        <h1><span class="secnum" id="sec-19.3.2"><a href="sec-fundamental-objects.html#sec-properties-of-the-boolean-constructor" title="link to this section">19.3.2</a></span> Properties of the Boolean Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        Boolean constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        Boolean constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p>Besides the <code>length</code> property (whose value is <b>1</b>), the Boolean constructor has the following
         properties:</p>
       </div>
 
       <section id="sec-boolean.prototype">
-        <h1><span class="secnum" id="sec-19.3.2.1"><a href="#sec-boolean.prototype" title="link to this section">19.3.2.1</a></span> Boolean.prototype</h1>
+        <h1><span class="secnum" id="sec-19.3.2.1"><a href="sec-fundamental-objects.html#sec-boolean.prototype" title="link to this section">19.3.2.1</a></span> Boolean.prototype</h1>
 
-        <p>The initial value of <code>Boolean.prototype</code> is the intrinsic object %BooleanPrototype% (<a href="#sec-properties-of-the-boolean-prototype-object">19.3.3</a>).</p>
+        <p>The initial value of <code>Boolean.prototype</code> is the intrinsic object %BooleanPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-boolean-prototype-object">19.3.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
@@ -1157,13 +1157,13 @@
 
     <section id="sec-properties-of-the-boolean-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.3.3"><a href="#sec-properties-of-the-boolean-prototype-object" title="link to this section">19.3.3</a></span> Properties of the Boolean Prototype Object</h1>
+        <h1><span class="secnum" id="sec-19.3.3"><a href="sec-fundamental-objects.html#sec-properties-of-the-boolean-prototype-object" title="link to this section">19.3.3</a></span> Properties of the Boolean Prototype Object</h1>
 
         <p>The Boolean prototype object is the intrinsic object %BooleanPrototype%. The Boolean prototype object is an ordinary
-        object. It is not a Boolean instance and does not have a [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        object. It is not a Boolean instance and does not have a [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        Boolean prototype object is the intrinsic object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        Boolean prototype object is the intrinsic object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
 
         <p class="normalbefore">The abstract operation <span style="font-family: Times New
         Roman">thisBooleanValue(<i>value</i>)</span> performs the following steps:</p>
@@ -1171,10 +1171,10 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Boolean, return <i>value</i>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>value</i>) is Object and <i>value</i> has a
-              [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>, then
+              [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>, then
             <ol class="block">
-              <li><a href="#sec-algorithm-conventions">Assert</a>: <i>value</i>’s [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is a Boolean value.</li>
-              <li>Return the value of <i>value’s</i> [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+              <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>value</i>’s [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is a Boolean value.</li>
+              <li>Return the value of <i>value’s</i> [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
             </ol>
           </li>
           <li>Throw a <b>TypeError</b> exception.</li>
@@ -1182,25 +1182,25 @@
       </div>
 
       <section id="sec-boolean.prototype.constructor">
-        <h1><span class="secnum" id="sec-19.3.3.1"><a href="#sec-boolean.prototype.constructor" title="link to this section">19.3.3.1</a></span> Boolean.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-19.3.3.1"><a href="sec-fundamental-objects.html#sec-boolean.prototype.constructor" title="link to this section">19.3.3.1</a></span> Boolean.prototype.constructor</h1>
 
         <p>The initial value of <code>Boolean.prototype.constructor</code> is the intrinsic object %Boolean%.</p>
       </section>
 
       <section id="sec-boolean.prototype.tostring">
-        <h1><span class="secnum" id="sec-19.3.3.2"><a href="#sec-boolean.prototype.tostring" title="link to this section">19.3.3.2</a></span> Boolean.prototype.toString ( )</h1>
+        <h1><span class="secnum" id="sec-19.3.3.2"><a href="sec-fundamental-objects.html#sec-boolean.prototype.tostring" title="link to this section">19.3.3.2</a></span> Boolean.prototype.toString ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
         <ol class="proc">
           <li>Let <i>b</i> be thisBooleanValue(<b>this</b> value).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>b</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>b</i>).</li>
           <li>If <i>b</i> is <b>true</b>, return <code>"true"</code>; else return <code>"false"</code>.</li>
         </ol>
       </section>
 
       <section id="sec-boolean.prototype.valueof">
-        <h1><span class="secnum" id="sec-19.3.3.3"><a href="#sec-boolean.prototype.valueof" title="link to this section">19.3.3.3</a></span> Boolean.prototype.valueOf ( )</h1>
+        <h1><span class="secnum" id="sec-19.3.3.3"><a href="sec-fundamental-objects.html#sec-boolean.prototype.valueof" title="link to this section">19.3.3.3</a></span> Boolean.prototype.valueOf ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1211,23 +1211,23 @@
     </section>
 
     <section id="sec-properties-of-boolean-instances">
-      <h1><span class="secnum" id="sec-19.3.4"><a href="#sec-properties-of-boolean-instances" title="link to this section">19.3.4</a></span> Properties of Boolean Instances</h1>
+      <h1><span class="secnum" id="sec-19.3.4"><a href="sec-fundamental-objects.html#sec-properties-of-boolean-instances" title="link to this section">19.3.4</a></span> Properties of Boolean Instances</h1>
 
       <p>Boolean instances are ordinary objects that inherit properties from the Boolean prototype object. Boolean instances have
-      a [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>. The [[BooleanData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is the Boolean value represented by this Boolean
+      a [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>. The [[BooleanData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is the Boolean value represented by this Boolean
       object.</p>
     </section>
   </section>
 
   <section id="sec-symbol-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-19.4"><a href="#sec-symbol-objects" title="link to this section">19.4</a></span> Symbol
+      <h1><span class="secnum" id="sec-19.4"><a href="sec-fundamental-objects.html#sec-symbol-objects" title="link to this section">19.4</a></span> Symbol
           Objects</h1>
     </div>
 
     <section id="sec-symbol-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.4.1"><a href="#sec-symbol-constructor" title="link to this section">19.4.1</a></span>
+        <h1><span class="secnum" id="sec-19.4.1"><a href="sec-fundamental-objects.html#sec-symbol-constructor" title="link to this section">19.4.1</a></span>
             The Symbol Constructor</h1>
 
         <p>The Symbol constructor is the %Symbol% intrinsic object and the initial value of the <code>Symbol</code> property of
@@ -1239,7 +1239,7 @@
       </div>
 
       <section id="sec-symbol-description">
-        <h1><span class="secnum" id="sec-19.4.1.1"><a href="#sec-symbol-description" title="link to this section">19.4.1.1</a></span> Symbol ( [ description ] )</h1>
+        <h1><span class="secnum" id="sec-19.4.1.1"><a href="sec-fundamental-objects.html#sec-symbol-description" title="link to this section">19.4.1.1</a></span> Symbol ( [ description ] )</h1>
 
         <p class="normalbefore">When <code>Symbol</code> is called with optional argument <var>description</var>, the following
         steps are taken:</p>
@@ -1247,8 +1247,8 @@
         <ol class="proc">
           <li>If NewTarget is not <b>undefined</b><i>,</i> throw a <b>TypeError</b> exception.</li>
           <li>If <i>description</i> is <b>undefined</b>, let <i>descString</i> be <b>undefined</b>.</li>
-          <li>Else, let <i>descString</i> be <a href="#sec-tostring">ToString</a>(<i>description</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>descString</i>).</li>
+          <li>Else, let <i>descString</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>description</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>descString</i>).</li>
           <li>Return a new unique Symbol value whose [[Description]] value is <i>descString</i>.</li>
         </ol>
       </section>
@@ -1256,41 +1256,41 @@
 
     <section id="sec-properties-of-the-symbol-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.4.2"><a href="#sec-properties-of-the-symbol-constructor" title="link to this section">19.4.2</a></span> Properties of the Symbol Constructor</h1>
+        <h1><span class="secnum" id="sec-19.4.2"><a href="sec-fundamental-objects.html#sec-properties-of-the-symbol-constructor" title="link to this section">19.4.2</a></span> Properties of the Symbol Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        Symbol constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        Symbol constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p class="normalbefore">Besides the <code>length</code> property (whose value is <b>0</b>), the Symbol constructor has the
         following properties:</p>
       </div>
 
       <section id="sec-symbol.for">
-        <h1><span class="secnum" id="sec-19.4.2.1"><a href="#sec-symbol.for" title="link to this section">19.4.2.1</a></span>
+        <h1><span class="secnum" id="sec-19.4.2.1"><a href="sec-fundamental-objects.html#sec-symbol.for" title="link to this section">19.4.2.1</a></span>
             Symbol.for ( key )</h1>
 
         <p class="normalbefore">When <code>Symbol.for</code> is called with argument <var>key</var> it performs the following
         steps:</p>
 
         <ol class="proc">
-          <li>Let <i>stringKey</i> be <a href="#sec-tostring">ToString</a>(<i>key</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>stringKey</i>).</li>
-          <li>For each element <i>e</i> of the GlobalSymbolRegistry <a href="#sec-list-and-record-specification-type">List</a>,
+          <li>Let <i>stringKey</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>key</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>stringKey</i>).</li>
+          <li>For each element <i>e</i> of the GlobalSymbolRegistry <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>,
             <ol class="block">
-              <li>If <a href="#sec-samevalue">SameValue</a>(<i>e</i>.[[key]], <i>stringKey</i>) is <b>true</b>, return
+              <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>e</i>.[[key]], <i>stringKey</i>) is <b>true</b>, return
                   <i>e</i>.[[symbol]].</li>
             </ol>
           </li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: GlobalSymbolRegistry does not currently contain an entry for
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: GlobalSymbolRegistry does not currently contain an entry for
               <i>stringKey</i>.</li>
           <li>Let <i>newSymbol</i> be a new unique Symbol value whose [[Description]] value is <i>stringKey</i>.</li>
-          <li>Append the record { [[key]]: <i>stringKey</i>, [[symbol]]: <i>newSymbol</i> } to the GlobalSymbolRegistry <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Append the record { [[key]]: <i>stringKey</i>, [[symbol]]: <i>newSymbol</i> } to the GlobalSymbolRegistry <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>Return <i>newSymbol</i>.</li>
         </ol>
 
-        <p>The GlobalSymbolRegistry is a <a href="#sec-list-and-record-specification-type">List</a> that is globally available. It
-        is shared by all Code Realms. Prior to the evaluation of any ECMAScript code it is initialized as an empty <a href="#sec-list-and-record-specification-type">List</a>. Elements of the GlobalSymbolRegistry are Records with the
-        structure defined in <a href="#table-44">Table 44</a>.</p>
+        <p>The GlobalSymbolRegistry is a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> that is globally available. It
+        is shared by all Code Realms. Prior to the evaluation of any ECMAScript code it is initialized as an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>. Elements of the GlobalSymbolRegistry are Records with the
+        structure defined in <a href="sec-fundamental-objects.html#table-44">Table 44</a>.</p>
 
         <figure>
           <figcaption><span id="table-44">Table 44</span> — GlobalSymbolRegistry Record Fields</figcaption>
@@ -1308,16 +1308,16 @@
             <tr>
               <td>[[symbol]]</td>
               <td>A Symbol</td>
-              <td>A symbol that can be retrieved from any <a href="#sec-code-realms">Realm</a>.</td>
+              <td>A symbol that can be retrieved from any <a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a>.</td>
             </tr>
           </tbody></table>
         </figure>
       </section>
 
       <section id="sec-symbol.hasinstance">
-        <h1><span class="secnum" id="sec-19.4.2.2"><a href="#sec-symbol.hasinstance" title="link to this section">19.4.2.2</a></span> Symbol.hasInstance</h1>
+        <h1><span class="secnum" id="sec-19.4.2.2"><a href="sec-fundamental-objects.html#sec-symbol.hasinstance" title="link to this section">19.4.2.2</a></span> Symbol.hasInstance</h1>
 
-        <p>The initial value of <code>Symbol.hasInstance</code> is the well known symbol @@hasInstance (<a href="#table-1">Table
+        <p>The initial value of <code>Symbol.hasInstance</code> is the well known symbol @@hasInstance (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table
         1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1325,19 +1325,19 @@
       </section>
 
       <section id="sec-symbol.isconcatspreadable">
-        <h1><span class="secnum" id="sec-19.4.2.3"><a href="#sec-symbol.isconcatspreadable" title="link to this section">19.4.2.3</a></span> Symbol.isConcatSpreadable</h1>
+        <h1><span class="secnum" id="sec-19.4.2.3"><a href="sec-fundamental-objects.html#sec-symbol.isconcatspreadable" title="link to this section">19.4.2.3</a></span> Symbol.isConcatSpreadable</h1>
 
-        <p>The initial value of <code>Symbol.isConcatSpreadable</code> is the well known symbol @@isConcatSpreadable (<a href="#table-1">Table 1</a>).</p>
+        <p>The initial value of <code>Symbol.isConcatSpreadable</code> is the well known symbol @@isConcatSpreadable (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table 1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-symbol.iterator">
-        <h1><span class="secnum" id="sec-19.4.2.4"><a href="#sec-symbol.iterator" title="link to this section">19.4.2.4</a></span>
+        <h1><span class="secnum" id="sec-19.4.2.4"><a href="sec-fundamental-objects.html#sec-symbol.iterator" title="link to this section">19.4.2.4</a></span>
             Symbol.iterator</h1>
 
-        <p>The initial value of <code>Symbol.iterator</code> is the well known symbol @@iterator (<a href="#table-1">Table
+        <p>The initial value of <code>Symbol.iterator</code> is the well known symbol @@iterator (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table
         1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1345,7 +1345,7 @@
       </section>
 
       <section id="sec-symbol.keyfor">
-        <h1><span class="secnum" id="sec-19.4.2.5"><a href="#sec-symbol.keyfor" title="link to this section">19.4.2.5</a></span>
+        <h1><span class="secnum" id="sec-19.4.2.5"><a href="sec-fundamental-objects.html#sec-symbol.keyfor" title="link to this section">19.4.2.5</a></span>
             Symbol.keyFor ( sym )</h1>
 
         <p class="normalbefore">When <code>Symbol.keyFor</code> is called with argument <var>sym</var> it performs the following
@@ -1354,42 +1354,42 @@
         <ol class="proc">
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>sym</i>) is not Symbol, throw a <b>TypeError</b>
               exception.</li>
-          <li>For each element <i>e</i> of the GlobalSymbolRegistry <a href="#sec-list-and-record-specification-type">List</a> (<a href="#sec-symbol.for">see 19.4.2.1</a>),
+          <li>For each element <i>e</i> of the GlobalSymbolRegistry <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> (<a href="sec-fundamental-objects.html#sec-symbol.for">see 19.4.2.1</a>),
             <ol class="block">
-              <li>If <a href="#sec-samevalue">SameValue</a>(<i>e</i>.[[symbol]], <i>sym</i>) is <b>true</b>, return
+              <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>e</i>.[[symbol]], <i>sym</i>) is <b>true</b>, return
                   <i>e</i>.[[key]].</li>
             </ol>
           </li>
-          <li><a href="#sec-algorithm-conventions">Assert</a>: GlobalSymbolRegistry does not currently contain an entry for
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: GlobalSymbolRegistry does not currently contain an entry for
               <i>sym</i>.</li>
           <li>Return <b>undefined</b>.</li>
         </ol>
       </section>
 
       <section id="sec-symbol.match">
-        <h1><span class="secnum" id="sec-19.4.2.6"><a href="#sec-symbol.match" title="link to this section">19.4.2.6</a></span>
+        <h1><span class="secnum" id="sec-19.4.2.6"><a href="sec-fundamental-objects.html#sec-symbol.match" title="link to this section">19.4.2.6</a></span>
             Symbol.match</h1>
 
-        <p>The initial value of <code>Symbol.match</code> is the well known symbol @@match (<a href="#table-1">Table 1</a>).</p>
+        <p>The initial value of <code>Symbol.match</code> is the well known symbol @@match (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table 1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-symbol.prototype">
-        <h1><span class="secnum" id="sec-19.4.2.7"><a href="#sec-symbol.prototype" title="link to this section">19.4.2.7</a></span> Symbol.prototype</h1>
+        <h1><span class="secnum" id="sec-19.4.2.7"><a href="sec-fundamental-objects.html#sec-symbol.prototype" title="link to this section">19.4.2.7</a></span> Symbol.prototype</h1>
 
-        <p>The initial value of <code>Symbol.prototype</code> is the intrinsic object %SymbolPrototype% (<a href="#sec-properties-of-the-symbol-prototype-object">19.4.3</a>).</p>
+        <p>The initial value of <code>Symbol.prototype</code> is the intrinsic object %SymbolPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-symbol-prototype-object">19.4.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-symbol.replace">
-        <h1><span class="secnum" id="sec-19.4.2.8"><a href="#sec-symbol.replace" title="link to this section">19.4.2.8</a></span>
+        <h1><span class="secnum" id="sec-19.4.2.8"><a href="sec-fundamental-objects.html#sec-symbol.replace" title="link to this section">19.4.2.8</a></span>
             Symbol.replace</h1>
 
-        <p>The initial value of <code>Symbol.replace</code> is the well known symbol @@replace (<a href="#table-1">Table
+        <p>The initial value of <code>Symbol.replace</code> is the well known symbol @@replace (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table
         1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1397,19 +1397,19 @@
       </section>
 
       <section id="sec-symbol.search">
-        <h1><span class="secnum" id="sec-19.4.2.9"><a href="#sec-symbol.search" title="link to this section">19.4.2.9</a></span>
+        <h1><span class="secnum" id="sec-19.4.2.9"><a href="sec-fundamental-objects.html#sec-symbol.search" title="link to this section">19.4.2.9</a></span>
             Symbol.search</h1>
 
-        <p>The initial value of <code>Symbol.search</code> is the well known symbol @@search (<a href="#table-1">Table 1</a>).</p>
+        <p>The initial value of <code>Symbol.search</code> is the well known symbol @@search (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table 1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-symbol.species">
-        <h1><span class="secnum" id="sec-19.4.2.10"><a href="#sec-symbol.species" title="link to this section">19.4.2.10</a></span> Symbol.species</h1>
+        <h1><span class="secnum" id="sec-19.4.2.10"><a href="sec-fundamental-objects.html#sec-symbol.species" title="link to this section">19.4.2.10</a></span> Symbol.species</h1>
 
-        <p>The initial value of <code>Symbol.species</code> is the well known symbol @@species (<a href="#table-1">Table
+        <p>The initial value of <code>Symbol.species</code> is the well known symbol @@species (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table
         1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1417,19 +1417,19 @@
       </section>
 
       <section id="sec-symbol.split">
-        <h1><span class="secnum" id="sec-19.4.2.11"><a href="#sec-symbol.split" title="link to this section">19.4.2.11</a></span>
+        <h1><span class="secnum" id="sec-19.4.2.11"><a href="sec-fundamental-objects.html#sec-symbol.split" title="link to this section">19.4.2.11</a></span>
             Symbol.split</h1>
 
-        <p>The initial value of <code>Symbol.split</code> is the well known symbol @@split (<a href="#table-1">Table 1</a>).</p>
+        <p>The initial value of <code>Symbol.split</code> is the well known symbol @@split (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table 1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
       </section>
 
       <section id="sec-symbol.toprimitive">
-        <h1><span class="secnum" id="sec-19.4.2.12"><a href="#sec-symbol.toprimitive" title="link to this section">19.4.2.12</a></span> Symbol.toPrimitive</h1>
+        <h1><span class="secnum" id="sec-19.4.2.12"><a href="sec-fundamental-objects.html#sec-symbol.toprimitive" title="link to this section">19.4.2.12</a></span> Symbol.toPrimitive</h1>
 
-        <p>The initial value of <code>Symbol.toPrimitive</code> is the well known symbol @@toPrimitive (<a href="#table-1">Table
+        <p>The initial value of <code>Symbol.toPrimitive</code> is the well known symbol @@toPrimitive (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table
         1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1437,9 +1437,9 @@
       </section>
 
       <section id="sec-symbol.tostringtag">
-        <h1><span class="secnum" id="sec-19.4.2.13"><a href="#sec-symbol.tostringtag" title="link to this section">19.4.2.13</a></span> Symbol.toStringTag</h1>
+        <h1><span class="secnum" id="sec-19.4.2.13"><a href="sec-fundamental-objects.html#sec-symbol.tostringtag" title="link to this section">19.4.2.13</a></span> Symbol.toStringTag</h1>
 
-        <p>The initial value of <code>Symbol.toStringTag</code> is the well known symbol @@toStringTag (<a href="#table-1">Table
+        <p>The initial value of <code>Symbol.toStringTag</code> is the well known symbol @@toStringTag (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table
         1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1447,9 +1447,9 @@
       </section>
 
       <section id="sec-symbol.unscopables">
-        <h1><span class="secnum" id="sec-19.4.2.14"><a href="#sec-symbol.unscopables" title="link to this section">19.4.2.14</a></span> Symbol.unscopables</h1>
+        <h1><span class="secnum" id="sec-19.4.2.14"><a href="sec-fundamental-objects.html#sec-symbol.unscopables" title="link to this section">19.4.2.14</a></span> Symbol.unscopables</h1>
 
-        <p>The initial value of <code>Symbol.unscopables</code> is the well known symbol @@unscopables (<a href="#table-1">Table
+        <p>The initial value of <code>Symbol.unscopables</code> is the well known symbol @@unscopables (<a href="sec-ecmascript-data-types-and-values.html#table-1">Table
         1</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1459,24 +1459,24 @@
 
     <section id="sec-properties-of-the-symbol-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.4.3"><a href="#sec-properties-of-the-symbol-prototype-object" title="link to this section">19.4.3</a></span> Properties of the Symbol Prototype Object</h1>
+        <h1><span class="secnum" id="sec-19.4.3"><a href="sec-fundamental-objects.html#sec-properties-of-the-symbol-prototype-object" title="link to this section">19.4.3</a></span> Properties of the Symbol Prototype Object</h1>
 
         <p>The Symbol prototype object is the intrinsic object %SymbolPrototype%. The Symbol prototype object is an ordinary
-        object. It is not a Symbol instance and does not have a [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        object. It is not a Symbol instance and does not have a [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
-        Symbol prototype object is the intrinsic object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the
+        Symbol prototype object is the intrinsic object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
       </div>
 
       <section id="sec-symbol.prototype.constructor">
-        <h1><span class="secnum" id="sec-19.4.3.1"><a href="#sec-symbol.prototype.constructor" title="link to this section">19.4.3.1</a></span> Symbol.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-19.4.3.1"><a href="sec-fundamental-objects.html#sec-symbol.prototype.constructor" title="link to this section">19.4.3.1</a></span> Symbol.prototype.constructor</h1>
 
         <p>The initial value of <code>Symbol.prototype.constructor</code> is the intrinsic object %Symbol%.</p>
       </section>
 
       <section id="sec-symbol.prototype.tostring">
         <div class="front">
-          <h1><span class="secnum" id="sec-19.4.3.2"><a href="#sec-symbol.prototype.tostring" title="link to this section">19.4.3.2</a></span> Symbol.prototype.toString ( )</h1>
+          <h1><span class="secnum" id="sec-19.4.3.2"><a href="sec-fundamental-objects.html#sec-symbol.prototype.tostring" title="link to this section">19.4.3.2</a></span> Symbol.prototype.toString ( )</h1>
 
           <p class="normalbefore">The following steps are taken:</p>
 
@@ -1487,33 +1487,33 @@
               <ol class="block">
                 <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>s</i>) is not Object, throw a <b>TypeError</b>
                     exception.</li>
-                <li>If <i>s</i> does not have a [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+                <li>If <i>s</i> does not have a [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
                     slot</a>, throw a <b>TypeError</b> exception.</li>
-                <li>Let <i>sym</i> be the value of <i>s’s</i> [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+                <li>Let <i>sym</i> be the value of <i>s’s</i> [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
               </ol>
             </li>
-            <li>Return <a href="#sec-symboldescriptivestring">SymbolDescriptiveString</a>(<i>sym</i>).</li>
+            <li>Return <a href="sec-fundamental-objects.html#sec-symboldescriptivestring">SymbolDescriptiveString</a>(<i>sym</i>).</li>
           </ol>
         </div>
 
         <section id="sec-symboldescriptivestring">
-          <h1><span class="secnum" id="sec-19.4.3.2.1"><a href="#sec-symboldescriptivestring" title="link to this section">19.4.3.2.1</a></span> Runtime Semantics:  SymbolDescriptiveString ( sym )</h1>
+          <h1><span class="secnum" id="sec-19.4.3.2.1"><a href="sec-fundamental-objects.html#sec-symboldescriptivestring" title="link to this section">19.4.3.2.1</a></span> Runtime Semantics:  SymbolDescriptiveString ( sym )</h1>
 
           <p class="normalbefore">When the abstract operation SymbolDescriptiveString is called with argument <var>sym</var>, the
           following steps are taken:</p>
 
           <ol class="proc">
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>sym</i>) is Symbol.</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>sym</i>) is Symbol.</li>
             <li>Let <i>desc</i> be <i>sym’s</i> [[Description]] value.</li>
             <li>If <i>desc</i> is <b>undefined</b>, let <i>desc</i> be the empty string.</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>desc</i>) is String.</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>desc</i>) is String.</li>
             <li>Return the result of concatenating the strings <code>"Symbol("</code>, <i>desc</i>, and <code>")"</code>.</li>
           </ol>
         </section>
       </section>
 
       <section id="sec-symbol.prototype.valueof">
-        <h1><span class="secnum" id="sec-19.4.3.3"><a href="#sec-symbol.prototype.valueof" title="link to this section">19.4.3.3</a></span> Symbol.prototype.valueOf ( )</h1>
+        <h1><span class="secnum" id="sec-19.4.3.3"><a href="sec-fundamental-objects.html#sec-symbol.prototype.valueof" title="link to this section">19.4.3.3</a></span> Symbol.prototype.valueOf ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1522,14 +1522,14 @@
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>s</i>) is Symbol, return <i>s</i>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>s</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>s</i> does not have a [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>s</i> does not have a [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Return the value of <i>s’s</i> [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Return the value of <i>s’s</i> [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
         </ol>
       </section>
 
       <section id="sec-symbol.prototype-@@toprimitive">
-        <h1><span class="secnum" id="sec-19.4.3.4"><a href="#sec-symbol.prototype-@@toprimitive" title="link to this section">19.4.3.4</a></span> Symbol.prototype [ @@toPrimitive ] ( hint )</h1>
+        <h1><span class="secnum" id="sec-19.4.3.4"><a href="sec-fundamental-objects.html#sec-symbol.prototype-@@toprimitive" title="link to this section">19.4.3.4</a></span> Symbol.prototype [ @@toPrimitive ] ( hint )</h1>
 
         <p>This function is called by ECMAScript language operators to convert a Symbol object to a primitive value. The allowed
         values for <var>hint</var> are <code>"default"</code>,  <code>"number"</code>, and <code>"string"</code>.</p>
@@ -1542,9 +1542,9 @@
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>s</i>) is Symbol, return <i>s</i>.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>s</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>If <i>s</i> does not have a [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          <li>If <i>s</i> does not have a [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
               slot</a>, throw a <b>TypeError</b> exception.</li>
-          <li>Return the value of <i>s’s</i> [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
+          <li>Return the value of <i>s’s</i> [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
         </ol>
 
         <p>The value of the <code>name</code> property of this function is <code>"[Symbol.toPrimitive]"</code>.</p>
@@ -1553,7 +1553,7 @@
       </section>
 
       <section id="sec-symbol.prototype-@@tostringtag">
-        <h1><span class="secnum" id="sec-19.4.3.5"><a href="#sec-symbol.prototype-@@tostringtag" title="link to this section">19.4.3.5</a></span> Symbol.prototype [ @@toStringTag ]</h1>
+        <h1><span class="secnum" id="sec-19.4.3.5"><a href="sec-fundamental-objects.html#sec-symbol.prototype-@@tostringtag" title="link to this section">19.4.3.5</a></span> Symbol.prototype [ @@toStringTag ]</h1>
 
         <p>The initial value of the @@toStringTag property is the String value <code>"Symbol"</code>.</p>
 
@@ -1562,17 +1562,17 @@
     </section>
 
     <section id="sec-properties-of-symbol-instances">
-      <h1><span class="secnum" id="sec-19.4.4"><a href="#sec-properties-of-symbol-instances" title="link to this section">19.4.4</a></span> Properties of Symbol Instances</h1>
+      <h1><span class="secnum" id="sec-19.4.4"><a href="sec-fundamental-objects.html#sec-properties-of-symbol-instances" title="link to this section">19.4.4</a></span> Properties of Symbol Instances</h1>
 
       <p>Symbol instances are ordinary objects that inherit properties from the Symbol prototype object. Symbol instances have a
-      [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>. The [[SymbolData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> is the Symbol value represented by this Symbol
+      [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>. The [[SymbolData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> is the Symbol value represented by this Symbol
       object.</p>
     </section>
   </section>
 
   <section id="sec-error-objects">
     <div class="front">
-      <h1><span class="secnum" id="sec-19.5"><a href="#sec-error-objects" title="link to this section">19.5</a></span> Error
+      <h1><span class="secnum" id="sec-19.5"><a href="sec-fundamental-objects.html#sec-error-objects" title="link to this section">19.5</a></span> Error
           Objects</h1>
 
       <p>Instances of Error objects are thrown as exceptions when runtime errors occur. The Error objects may also serve as base
@@ -1581,7 +1581,7 @@
 
     <section id="sec-error-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.5.1"><a href="#sec-error-constructor" title="link to this section">19.5.1</a></span>
+        <h1><span class="secnum" id="sec-19.5.1"><a href="sec-fundamental-objects.html#sec-error-constructor" title="link to this section">19.5.1</a></span>
             The Error Constructor</h1>
 
         <p>The Error constructor is the %Error% intrinsic object and the initial value of the <code>Error</code> property of the
@@ -1592,12 +1592,12 @@
         <p>The <code>Error</code> constructor is designed to be subclassable. It may be used as the value of an
         <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified
         <code>Error</code> behaviour must include a <code>super</code> call to the <code>Error</code> constructor to create and
-        initialize subclass instances with a [[ErrorData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+        initialize subclass instances with a [[ErrorData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
         slot</a>.</p>
       </div>
 
       <section id="sec-error-message">
-        <h1><span class="secnum" id="sec-19.5.1.1"><a href="#sec-error-message" title="link to this section">19.5.1.1</a></span>
+        <h1><span class="secnum" id="sec-19.5.1.1"><a href="sec-fundamental-objects.html#sec-error-message" title="link to this section">19.5.1.1</a></span>
             Error ( message )</h1>
 
         <p class="normalbefore">When the <code>Error</code> function is called with argument <i>message</i> the following steps
@@ -1606,18 +1606,18 @@
         <ol class="proc">
           <li>If NewTarget is <b>undefined</b><i>,</i> let <i>newTarget</i> be the active function object, else let
               <i>newTarget</i> be NewTarget.</li>
-          <li>Let <i>O</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(<i>newTarget</i>,
+          <li>Let <i>O</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(<i>newTarget</i>,
               <code>"%ErrorPrototype%"</code>, «[[ErrorData]]»).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
           <li>If <i>message</i> is not <b>undefined</b>, then
             <ol class="block">
-              <li>Let <i>msg</i> be <a href="#sec-tostring">ToString</a>(<i>message</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>msg</i>).</li>
+              <li>Let <i>msg</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>message</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>msg</i>).</li>
               <li>Let <i>msgDesc</i> be the PropertyDescriptor{[[Value]]: <i>msg</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
                   <b>false</b>, [[Configurable]]: <b>true</b>}.</li>
-              <li>Let <i>status</i> be <a href="#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>,
+              <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>,
                   "<code>message</code>", <i>msgDesc</i>).</li>
-              <li><a href="#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="#sec-completion-record-specification-type">abrupt completion</a>.</li>
+              <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>.</li>
             </ol>
           </li>
           <li>Return <i>O</i>.</li>
@@ -1627,20 +1627,20 @@
 
     <section id="sec-properties-of-the-error-constructor">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.5.2"><a href="#sec-properties-of-the-error-constructor" title="link to this section">19.5.2</a></span> Properties of the Error Constructor</h1>
+        <h1><span class="secnum" id="sec-19.5.2"><a href="sec-fundamental-objects.html#sec-properties-of-the-error-constructor" title="link to this section">19.5.2</a></span> Properties of the Error Constructor</h1>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Error
-        constructor is the intrinsic object %FunctionPrototype% (<a href="#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Error
+        constructor is the intrinsic object %FunctionPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-function-prototype-object">19.2.3</a>).</p>
 
         <p class="normalbefore">Besides the <code>length</code> property (whose value is <b>1</b>), the Error constructor has the
         following properties:</p>
       </div>
 
       <section id="sec-error.prototype">
-        <h1><span class="secnum" id="sec-19.5.2.1"><a href="#sec-error.prototype" title="link to this section">19.5.2.1</a></span>
+        <h1><span class="secnum" id="sec-19.5.2.1"><a href="sec-fundamental-objects.html#sec-error.prototype" title="link to this section">19.5.2.1</a></span>
             Error.prototype</h1>
 
-        <p>The initial value of <code>Error.prototype</code> is the intrinsic object %ErrorPrototype% (<a href="#sec-properties-of-the-error-prototype-object">19.5.3</a>).</p>
+        <p>The initial value of <code>Error.prototype</code> is the intrinsic object %ErrorPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-error-prototype-object">19.5.3</a>).</p>
 
         <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
         <b>false</b> }.</p>
@@ -1649,35 +1649,35 @@
 
     <section id="sec-properties-of-the-error-prototype-object">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.5.3"><a href="#sec-properties-of-the-error-prototype-object" title="link to this section">19.5.3</a></span> Properties of the Error Prototype Object</h1>
+        <h1><span class="secnum" id="sec-19.5.3"><a href="sec-fundamental-objects.html#sec-properties-of-the-error-prototype-object" title="link to this section">19.5.3</a></span> Properties of the Error Prototype Object</h1>
 
         <p>The Error prototype object is the intrinsic object %ErrorPrototype%. The Error prototype object is an ordinary object.
-        It is not an Error instance and does not have an [[ErrorData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+        It is not an Error instance and does not have an [[ErrorData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
 
-        <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Error
-        prototype object is the intrinsic object %ObjectPrototype% (<a href="#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
+        <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of the Error
+        prototype object is the intrinsic object %ObjectPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-object-prototype-object">19.1.3</a>).</p>
       </div>
 
       <section id="sec-error.prototype.constructor">
-        <h1><span class="secnum" id="sec-19.5.3.1"><a href="#sec-error.prototype.constructor" title="link to this section">19.5.3.1</a></span> Error.prototype.constructor</h1>
+        <h1><span class="secnum" id="sec-19.5.3.1"><a href="sec-fundamental-objects.html#sec-error.prototype.constructor" title="link to this section">19.5.3.1</a></span> Error.prototype.constructor</h1>
 
         <p>The initial value of <code>Error.prototype.constructor</code> is the intrinsic object %Error%.</p>
       </section>
 
       <section id="sec-error.prototype.message">
-        <h1><span class="secnum" id="sec-19.5.3.2"><a href="#sec-error.prototype.message" title="link to this section">19.5.3.2</a></span> Error.prototype.message</h1>
+        <h1><span class="secnum" id="sec-19.5.3.2"><a href="sec-fundamental-objects.html#sec-error.prototype.message" title="link to this section">19.5.3.2</a></span> Error.prototype.message</h1>
 
         <p>The initial value of <code>Error.prototype.message</code> is the empty String.</p>
       </section>
 
       <section id="sec-error.prototype.name">
-        <h1><span class="secnum" id="sec-19.5.3.3"><a href="#sec-error.prototype.name" title="link to this section">19.5.3.3</a></span> Error.prototype.name</h1>
+        <h1><span class="secnum" id="sec-19.5.3.3"><a href="sec-fundamental-objects.html#sec-error.prototype.name" title="link to this section">19.5.3.3</a></span> Error.prototype.name</h1>
 
         <p>The initial value of <code>Error.prototype.name</code> is <code>"<b>Error</b>"</code>.</p>
       </section>
 
       <section id="sec-error.prototype.tostring">
-        <h1><span class="secnum" id="sec-19.5.3.4"><a href="#sec-error.prototype.tostring" title="link to this section">19.5.3.4</a></span> Error.prototype.toString ( )</h1>
+        <h1><span class="secnum" id="sec-19.5.3.4"><a href="sec-fundamental-objects.html#sec-error.prototype.tostring" title="link to this section">19.5.3.4</a></span> Error.prototype.toString ( )</h1>
 
         <p class="normalbefore">The following steps are taken:</p>
 
@@ -1685,14 +1685,14 @@
           <li>Let <i>O</i> be the <b>this</b> value.</li>
           <li>If <a href="#sec-ecmascript-data-types-and-values">Type</a>(<i>O</i>) is not Object, throw a <b>TypeError</b>
               exception.</li>
-          <li>Let <i>name</i> be <a href="#sec-get-o-p">Get</a>(<i>O</i>, <code>"name"</code>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>name</i>).</li>
-          <li>If <i>name</i> is <b>undefined</b>, let <i>name</i> be <code>"<b>Error</b>"</code>; otherwise let <i>name</i> be <a href="#sec-tostring">ToString</a>(<i>name</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>name</i>).</li>
-          <li>Let <i>msg</i> be <a href="#sec-get-o-p">Get</a>(<i>O</i>, <code>"message"</code>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>msg</i>).</li>
-          <li>If <i>msg</i> is <b>undefined</b>, let <i>msg</i> be the empty String; otherwise let <i>msg</i> be <a href="#sec-tostring">ToString</a>(<i>msg</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>msg</i>).</li>
+          <li>Let <i>name</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>O</i>, <code>"name"</code>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>name</i>).</li>
+          <li>If <i>name</i> is <b>undefined</b>, let <i>name</i> be <code>"<b>Error</b>"</code>; otherwise let <i>name</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>name</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>name</i>).</li>
+          <li>Let <i>msg</i> be <a href="sec-abstract-operations.html#sec-get-o-p">Get</a>(<i>O</i>, <code>"message"</code>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>msg</i>).</li>
+          <li>If <i>msg</i> is <b>undefined</b>, let <i>msg</i> be the empty String; otherwise let <i>msg</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>msg</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>msg</i>).</li>
           <li>If <i>name</i> is the empty String, return <i>msg</i>.</li>
           <li>If <i>msg</i> is the empty String, return <i>name</i>.</li>
           <li>Return the result of concatenating <i>name</i>, the code unit 0x003A (COLON), the code unit 0x0020 (SPACE), and
@@ -1702,53 +1702,53 @@
     </section>
 
     <section id="sec-properties-of-error-instances">
-      <h1><span class="secnum" id="sec-19.5.4"><a href="#sec-properties-of-error-instances" title="link to this section">19.5.4</a></span> Properties of Error Instances</h1>
+      <h1><span class="secnum" id="sec-19.5.4"><a href="sec-fundamental-objects.html#sec-properties-of-error-instances" title="link to this section">19.5.4</a></span> Properties of Error Instances</h1>
 
-      <p>Error instances are ordinary objects that inherit properties from the Error prototype object and have an [[ErrorData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is <span class="value">undefined</span>. The only specified uses of [[ErrorData]] is to identify Error and <i>NativeError</i>
-      instances as Error objects within <code><a href="#sec-object.prototype.tostring">Object.prototype.toString</a></code>.</p>
+      <p>Error instances are ordinary objects that inherit properties from the Error prototype object and have an [[ErrorData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value is <span class="value">undefined</span>. The only specified uses of [[ErrorData]] is to identify Error and <i>NativeError</i>
+      instances as Error objects within <code><a href="sec-fundamental-objects.html#sec-object.prototype.tostring">Object.prototype.toString</a></code>.</p>
     </section>
 
     <section id="sec-native-error-types-used-in-this-standard">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.5.5"><a href="#sec-native-error-types-used-in-this-standard" title="link to this section">19.5.5</a></span> Native Error Types Used in This Standard</h1>
+        <h1><span class="secnum" id="sec-19.5.5"><a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard" title="link to this section">19.5.5</a></span> Native Error Types Used in This Standard</h1>
 
         <p>A new instance of one of the <i>NativeError</i> objects below is thrown when a runtime error is detected. All of these
-        objects share the same structure, as described in <a href="#sec-nativeerror-object-structure">19.5.6</a>.</p>
+        objects share the same structure, as described in <a href="sec-fundamental-objects.html#sec-nativeerror-object-structure">19.5.6</a>.</p>
       </div>
 
       <section id="sec-native-error-types-used-in-this-standard-evalerror">
-        <h1><span class="secnum" id="sec-19.5.5.1"><a href="#sec-native-error-types-used-in-this-standard-evalerror" title="link to this section">19.5.5.1</a></span> EvalError</h1>
+        <h1><span class="secnum" id="sec-19.5.5.1"><a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard-evalerror" title="link to this section">19.5.5.1</a></span> EvalError</h1>
 
         <p>This exception is not currently used within this specification. This object remains for compatibility with previous
         editions of this specification.</p>
       </section>
 
       <section id="sec-native-error-types-used-in-this-standard-rangeerror">
-        <h1><span class="secnum" id="sec-19.5.5.2"><a href="#sec-native-error-types-used-in-this-standard-rangeerror" title="link to this section">19.5.5.2</a></span> RangeError</h1>
+        <h1><span class="secnum" id="sec-19.5.5.2"><a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard-rangeerror" title="link to this section">19.5.5.2</a></span> RangeError</h1>
 
         <p>Indicates a value that is not in the set or range of allowable values.</p>
       </section>
 
       <section id="sec-native-error-types-used-in-this-standard-referenceerror">
-        <h1><span class="secnum" id="sec-19.5.5.3"><a href="#sec-native-error-types-used-in-this-standard-referenceerror" title="link to this section">19.5.5.3</a></span> ReferenceError</h1>
+        <h1><span class="secnum" id="sec-19.5.5.3"><a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard-referenceerror" title="link to this section">19.5.5.3</a></span> ReferenceError</h1>
 
         <p>Indicate that an invalid reference value has been detected.</p>
       </section>
 
       <section id="sec-native-error-types-used-in-this-standard-syntaxerror">
-        <h1><span class="secnum" id="sec-19.5.5.4"><a href="#sec-native-error-types-used-in-this-standard-syntaxerror" title="link to this section">19.5.5.4</a></span> SyntaxError</h1>
+        <h1><span class="secnum" id="sec-19.5.5.4"><a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard-syntaxerror" title="link to this section">19.5.5.4</a></span> SyntaxError</h1>
 
         <p>Indicates that a parsing error has occurred.</p>
       </section>
 
       <section id="sec-native-error-types-used-in-this-standard-typeerror">
-        <h1><span class="secnum" id="sec-19.5.5.5"><a href="#sec-native-error-types-used-in-this-standard-typeerror" title="link to this section">19.5.5.5</a></span> TypeError</h1>
+        <h1><span class="secnum" id="sec-19.5.5.5"><a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard-typeerror" title="link to this section">19.5.5.5</a></span> TypeError</h1>
 
         <p>Indicates the actual type of an operand is different than the expected type.</p>
       </section>
 
       <section id="sec-native-error-types-used-in-this-standard-urierror">
-        <h1><span class="secnum" id="sec-19.5.5.6"><a href="#sec-native-error-types-used-in-this-standard-urierror" title="link to this section">19.5.5.6</a></span> URIError</h1>
+        <h1><span class="secnum" id="sec-19.5.5.6"><a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard-urierror" title="link to this section">19.5.5.6</a></span> URIError</h1>
 
         <p>Indicates that one of the global URI handling functions was used in a way that is incompatible with its definition.</p>
       </section>
@@ -1756,21 +1756,21 @@
 
     <section id="sec-nativeerror-object-structure">
       <div class="front">
-        <h1><span class="secnum" id="sec-19.5.6"><a href="#sec-nativeerror-object-structure" title="link to this section">19.5.6</a></span> <i>NativeError</i> Object Structure</h1>
+        <h1><span class="secnum" id="sec-19.5.6"><a href="sec-fundamental-objects.html#sec-nativeerror-object-structure" title="link to this section">19.5.6</a></span> <i>NativeError</i> Object Structure</h1>
 
         <p>When an ECMAScript implementation detects a runtime error, it throws a new instance of one of the <i>NativeError</i>
-        objects defined in <a href="#sec-native-error-types-used-in-this-standard">19.5.5</a>. Each of these objects has the
+        objects defined in <a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard">19.5.5</a>. Each of these objects has the
         structure described below, differing only in the name used as the constructor name instead of <i>NativeError</i>, in the
         <b>name</b> property of the prototype object, and in the implementation-defined <code>message</code> property of the
         prototype object.</p>
 
         <p>For each error object, references to <i>NativeError</i> in the definition should be replaced with the appropriate error
-        object name from <a href="#sec-native-error-types-used-in-this-standard">19.5.5</a>.</p>
+        object name from <a href="sec-fundamental-objects.html#sec-native-error-types-used-in-this-standard">19.5.5</a>.</p>
       </div>
 
       <section id="sec-nativeerror-constructors">
         <div class="front">
-          <h1><span class="secnum" id="sec-19.5.6.1"><a href="#sec-nativeerror-constructors" title="link to this section">19.5.6.1</a></span> <i>NativeError</i> Constructors</h1>
+          <h1><span class="secnum" id="sec-19.5.6.1"><a href="sec-fundamental-objects.html#sec-nativeerror-constructors" title="link to this section">19.5.6.1</a></span> <i>NativeError</i> Constructors</h1>
 
           <p>When a <i>NativeError</i> constructor is called as a function rather than as a constructor, it creates and
           initializes a new <i>NativeError</i> object. A call of the object as a function is equivalent to calling it as a
@@ -1781,12 +1781,12 @@
           <p>Each <i>NativeError</i> constructor is designed to be subclassable. It may be used as the value of an
           <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified
           <i>NativeError</i> behaviour must include a <code>super</code> call to the <i>NativeError</i> constructor to create and
-          initialize subclass instances with a [[ErrorData]] <a href="#sec-object-internal-methods-and-internal-slots">internal
+          initialize subclass instances with a [[ErrorData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal
           slot</a>.</p>
         </div>
 
         <section id="sec-nativeerror">
-          <h1><span class="secnum" id="sec-19.5.6.1.1"><a href="#sec-nativeerror" title="link to this section">19.5.6.1.1</a></span> NativeError ( message )</h1>
+          <h1><span class="secnum" id="sec-19.5.6.1.1"><a href="sec-fundamental-objects.html#sec-nativeerror" title="link to this section">19.5.6.1.1</a></span> NativeError ( message )</h1>
 
           <p class="normalbefore">When a <i>NativeError</i> function is called with argument <i>message</i> the following steps
           are taken:</p>
@@ -1794,17 +1794,17 @@
           <ol class="proc">
             <li>If NewTarget is <b>undefined</b><i>,</i> let <i>newTarget</i> be the active function object, else let
                 <i>newTarget</i> be NewTarget.</li>
-            <li>Let <i>O</i> be <a href="#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(<i>newTarget</i>,
+            <li>Let <i>O</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a>(<i>newTarget</i>,
                 <code>"%<i>NativeError</i>Prototype%"</code>, «[[ErrorData]]» ).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>O</i>).</li>
             <li>If <i>message</i> is not <b>undefined</b>, then
               <ol class="block">
-                <li>Let <i>msg</i> be <a href="#sec-tostring">ToString</a>(<i>message</i>).</li>
+                <li>Let <i>msg</i> be <a href="sec-abstract-operations.html#sec-tostring">ToString</a>(<i>message</i>).</li>
                 <li>Let <i>msgDesc</i> be the PropertyDescriptor{[[Value]]: <i>msg</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
                     <b>false</b>, [[Configurable]]: <b>true</b>}.</li>
-                <li>Let <i>status</i> be <a href="#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>,
+                <li>Let <i>status</i> be <a href="sec-abstract-operations.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<i>O</i>,
                     "<code>message</code>", <i>msgDesc</i>).</li>
-                <li><a href="#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="#sec-completion-record-specification-type">abrupt completion</a>.</li>
+                <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>.</li>
               </ol>
             </li>
             <li>Return <i>O</i>.</li>
@@ -1819,19 +1819,19 @@
 
       <section id="sec-properties-of-the-nativeerror-constructors">
         <div class="front">
-          <h1><span class="secnum" id="sec-19.5.6.2"><a href="#sec-properties-of-the-nativeerror-constructors" title="link to this section">19.5.6.2</a></span> Properties of the <i>NativeError</i> Constructors</h1>
+          <h1><span class="secnum" id="sec-19.5.6.2"><a href="sec-fundamental-objects.html#sec-properties-of-the-nativeerror-constructors" title="link to this section">19.5.6.2</a></span> Properties of the <i>NativeError</i> Constructors</h1>
 
-          <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of a
-          <i>NativeError</i> constructor is the intrinsic object %Error% (<a href="#sec-error-constructor">19.5.1</a>).</p>
+          <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of a
+          <i>NativeError</i> constructor is the intrinsic object %Error% (<a href="sec-fundamental-objects.html#sec-error-constructor">19.5.1</a>).</p>
 
           <p>Besides the <code>length</code> property (whose value is <b>1</b>), each <i>NativeError</i> constructor has the
           following properties:</p>
         </div>
 
         <section id="sec-nativeerror.prototype">
-          <h1><span class="secnum" id="sec-19.5.6.2.1"><a href="#sec-nativeerror.prototype" title="link to this section">19.5.6.2.1</a></span> NativeError.prototype</h1>
+          <h1><span class="secnum" id="sec-19.5.6.2.1"><a href="sec-fundamental-objects.html#sec-nativeerror.prototype" title="link to this section">19.5.6.2.1</a></span> NativeError.prototype</h1>
 
-          <p>The initial value of <b><i>NativeError</i><code>.prototype</code></b> is a <i>NativeError</i> prototype object (<a href="#sec-properties-of-the-nativeerror-prototype-objects">19.5.6.3</a>). Each <i>NativeError</i> constructor has a
+          <p>The initial value of <b><i>NativeError</i><code>.prototype</code></b> is a <i>NativeError</i> prototype object (<a href="sec-fundamental-objects.html#sec-properties-of-the-nativeerror-prototype-objects">19.5.6.3</a>). Each <i>NativeError</i> constructor has a
           distinct prototype object.</p>
 
           <p>This property has the attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
@@ -1841,31 +1841,31 @@
 
       <section id="sec-properties-of-the-nativeerror-prototype-objects">
         <div class="front">
-          <h1><span class="secnum" id="sec-19.5.6.3"><a href="#sec-properties-of-the-nativeerror-prototype-objects" title="link to this section">19.5.6.3</a></span> Properties of the <i>NativeError</i> Prototype Objects</h1>
+          <h1><span class="secnum" id="sec-19.5.6.3"><a href="sec-fundamental-objects.html#sec-properties-of-the-nativeerror-prototype-objects" title="link to this section">19.5.6.3</a></span> Properties of the <i>NativeError</i> Prototype Objects</h1>
 
           <p>Each <i>NativeError</i> prototype object is an ordinary object. It is not an Error instance and does not have an
-          [[ErrorData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
+          [[ErrorData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a>.</p>
 
-          <p>The value of the [[Prototype]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> of each
-          <i>NativeError</i> prototype object is the intrinsic object %ErrorPrototype% (<a href="#sec-properties-of-the-error-prototype-object">19.5.3</a>).</p>
+          <p>The value of the [[Prototype]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> of each
+          <i>NativeError</i> prototype object is the intrinsic object %ErrorPrototype% (<a href="sec-fundamental-objects.html#sec-properties-of-the-error-prototype-object">19.5.3</a>).</p>
         </div>
 
         <section id="sec-nativeerror.prototype.constructor">
-          <h1><span class="secnum" id="sec-19.5.6.3.1"><a href="#sec-nativeerror.prototype.constructor" title="link to this section">19.5.6.3.1</a></span> <i>NativeError</i>.prototype.constructor</h1>
+          <h1><span class="secnum" id="sec-19.5.6.3.1"><a href="sec-fundamental-objects.html#sec-nativeerror.prototype.constructor" title="link to this section">19.5.6.3.1</a></span> <i>NativeError</i>.prototype.constructor</h1>
 
           <p>The initial value of the <code>constructor</code> property of the prototype for a given <i>NativeError</i>
-          constructor is the corresponding intrinsic object %<i>NativeError</i>% (<a href="#sec-nativeerror-constructors">19.5.6.1</a>).</p>
+          constructor is the corresponding intrinsic object %<i>NativeError</i>% (<a href="sec-fundamental-objects.html#sec-nativeerror-constructors">19.5.6.1</a>).</p>
         </section>
 
         <section id="sec-nativeerror.prototype.message">
-          <h1><span class="secnum" id="sec-19.5.6.3.2"><a href="#sec-nativeerror.prototype.message" title="link to this section">19.5.6.3.2</a></span> <i>NativeError</i>.prototype.message</h1>
+          <h1><span class="secnum" id="sec-19.5.6.3.2"><a href="sec-fundamental-objects.html#sec-nativeerror.prototype.message" title="link to this section">19.5.6.3.2</a></span> <i>NativeError</i>.prototype.message</h1>
 
           <p>The initial value of the <code>message</code> property of the prototype for a given <i>NativeError</i> constructor is
           the empty String.</p>
         </section>
 
         <section id="sec-nativeerror.prototype.name">
-          <h1><span class="secnum" id="sec-19.5.6.3.3"><a href="#sec-nativeerror.prototype.name" title="link to this section">19.5.6.3.3</a></span> <i>NativeError</i>.prototype.name</h1>
+          <h1><span class="secnum" id="sec-19.5.6.3.3"><a href="sec-fundamental-objects.html#sec-nativeerror.prototype.name" title="link to this section">19.5.6.3.3</a></span> <i>NativeError</i>.prototype.name</h1>
 
           <p>The initial value of the <code>name</code> property of the prototype for a given <i>NativeError</i> constructor is a
           string consisting of the name of the constructor (the name used instead of <i>NativeError</i>).</p>
@@ -1873,11 +1873,11 @@
       </section>
 
       <section id="sec-properties-of-nativeerror-instances">
-        <h1><span class="secnum" id="sec-19.5.6.4"><a href="#sec-properties-of-nativeerror-instances" title="link to this section">19.5.6.4</a></span> Properties of <i>NativeError</i> Instances</h1>
+        <h1><span class="secnum" id="sec-19.5.6.4"><a href="sec-fundamental-objects.html#sec-properties-of-nativeerror-instances" title="link to this section">19.5.6.4</a></span> Properties of <i>NativeError</i> Instances</h1>
 
         <p><i>NativeError</i> instances are ordinary objects that inherit properties from their <i>NativeError</i> prototype
-        object and have an [[ErrorData]] <a href="#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value
-        is <span class="value">undefined</span>. The only specified use of [[ErrorData]] is by <code><a href="#sec-object.prototype.tostring">Object.prototype.toString</a></code> (<a href="#sec-object.prototype.tostring">19.1.3.6</a>) to identify Error or <i>NativeError</i> instances.</p>
+        object and have an [[ErrorData]] <a href="sec-ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots">internal slot</a> whose value
+        is <span class="value">undefined</span>. The only specified use of [[ErrorData]] is by <code><a href="sec-fundamental-objects.html#sec-object.prototype.tostring">Object.prototype.toString</a></code> (<a href="sec-fundamental-objects.html#sec-object.prototype.tostring">19.1.3.6</a>) to identify Error or <i>NativeError</i> instances.</p>
       </section>
     </section>
   </section>

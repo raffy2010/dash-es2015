@@ -13,7 +13,7 @@
 
   <section id="sec-scripts">
     <div class="front">
-      <h1><span class="secnum" id="sec-15.1"><a href="#sec-scripts" title="link to this section">15.1</a></span> Scripts</h1>
+      <h1><span class="secnum" id="sec-15.1"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts" title="link to this section">15.1</a></span> Scripts</h1>
       <h2>Syntax</h2>
 
       <div class="gp">
@@ -28,7 +28,7 @@
     </div>
 
     <section id="sec-scripts-static-semantics-early-errors">
-      <h1><span class="secnum" id="sec-15.1.1"><a href="#sec-scripts-static-semantics-early-errors" title="link to this section">15.1.1</a></span> Static Semantics:  Early Errors</h1>
+      <h1><span class="secnum" id="sec-15.1.1"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-early-errors" title="link to this section">15.1.1</a></span> Static Semantics:  Early Errors</h1>
       <div class="gp prod"><span class="nt">Script</span> <span class="geq">:</span> <span class="nt">ScriptBody</span></div>
       <ul>
         <li>
@@ -74,18 +74,18 @@
     </section>
 
     <section id="sec-static-semantics-isstrict">
-      <h1><span class="secnum" id="sec-15.1.2"><a href="#sec-static-semantics-isstrict" title="link to this section">15.1.2</a></span> Static Semantics:  IsStrict</h1>
+      <h1><span class="secnum" id="sec-15.1.2"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-static-semantics-isstrict" title="link to this section">15.1.2</a></span> Static Semantics:  IsStrict</h1>
       <div class="gp prod"><span class="nt">ScriptBody</span> <span class="geq">:</span> <span class="nt">StatementList</span></div>
       <ol class="proc">
-        <li>If the DirectivePrologue of <i>StatementList</i> contains a <a href="#sec-directive-prologues-and-the-use-strict-directive">Use Strict Directive</a>, return <b>true</b>; otherwise,
+        <li>If the DirectivePrologue of <i>StatementList</i> contains a <a href="sec-ecmascript-language-functions-and-classes.html#sec-directive-prologues-and-the-use-strict-directive">Use Strict Directive</a>, return <b>true</b>; otherwise,
             return <b>false</b>.</li>
       </ol>
     </section>
 
     <section id="sec-scripts-static-semantics-lexicallydeclarednames">
-      <h1><span class="secnum" id="sec-15.1.3"><a href="#sec-scripts-static-semantics-lexicallydeclarednames" title="link to this section">15.1.3</a></span> Static Semantics:  LexicallyDeclaredNames</h1>
+      <h1><span class="secnum" id="sec-15.1.3"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-lexicallydeclarednames" title="link to this section">15.1.3</a></span> Static Semantics:  LexicallyDeclaredNames</h1>
 
-      <p>See also: <a href="#sec-block-static-semantics-lexicallydeclarednames">13.2.5</a>, <a href="#sec-switch-statement-static-semantics-lexicallydeclarednames">13.12.5</a>, <a href="#sec-labelled-statements-static-semantics-lexicallydeclarednames">13.13.6</a>, <a href="#sec-function-definitions-static-semantics-lexicallydeclarednames">14.1.13</a>, <a href="#sec-arrow-function-definitions-static-semantics-lexicallydeclarednames">14.2.10</a>, <a href="#sec-module-semantics-static-semantics-lexicallydeclarednames">15.2.1.11</a>.</p>
+      <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-lexicallydeclarednames">13.2.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-lexicallydeclarednames">13.12.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-lexicallydeclarednames">13.13.6</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-lexicallydeclarednames">14.1.13</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-lexicallydeclarednames">14.2.10</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-lexicallydeclarednames">15.2.1.11</a>.</p>
 
       <div class="gp prod"><span class="nt">ScriptBody</span> <span class="geq">:</span> <span class="nt">StatementList</span></div>
       <ol class="proc">
@@ -99,9 +99,9 @@
     </section>
 
     <section id="sec-scripts-static-semantics-lexicallyscopeddeclarations">
-      <h1><span class="secnum" id="sec-15.1.4"><a href="#sec-scripts-static-semantics-lexicallyscopeddeclarations" title="link to this section">15.1.4</a></span> Static Semantics:  LexicallyScopedDeclarations</h1>
+      <h1><span class="secnum" id="sec-15.1.4"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-lexicallyscopeddeclarations" title="link to this section">15.1.4</a></span> Static Semantics:  LexicallyScopedDeclarations</h1>
 
-      <p>See also: <a href="#sec-block-static-semantics-lexicallyscopeddeclarations">13.2.6</a>, <a href="#sec-switch-statement-static-semantics-lexicallyscopeddeclarations">13.12.6</a>, <a href="#sec-labelled-statements-static-semantics-lexicallyscopeddeclarations">13.13.7</a>, <a href="#sec-function-definitions-static-semantics-lexicallyscopeddeclarations">14.1.14</a>, <a href="#sec-arrow-function-definitions-static-semantics-lexicallyscopeddeclarations">14.2.11</a>, <a href="#sec-module-semantics-static-semantics-lexicallyscopeddeclarations">15.2.1.12</a>, <a href="#sec-exports-static-semantics-lexicallyscopeddeclarations">15.2.3.8</a>.</p>
+      <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-lexicallyscopeddeclarations">13.2.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-lexicallyscopeddeclarations">13.12.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-lexicallyscopeddeclarations">13.13.7</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-lexicallyscopeddeclarations">14.1.14</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-lexicallyscopeddeclarations">14.2.11</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-lexicallyscopeddeclarations">15.2.1.12</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-lexicallyscopeddeclarations">15.2.3.8</a>.</p>
 
       <div class="gp prod"><span class="nt">ScriptBody</span> <span class="geq">:</span> <span class="nt">StatementList</span></div>
       <ol class="proc">
@@ -110,9 +110,9 @@
     </section>
 
     <section id="sec-scripts-static-semantics-vardeclarednames">
-      <h1><span class="secnum" id="sec-15.1.5"><a href="#sec-scripts-static-semantics-vardeclarednames" title="link to this section">15.1.5</a></span> Static Semantics:  VarDeclaredNames</h1>
+      <h1><span class="secnum" id="sec-15.1.5"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-vardeclarednames" title="link to this section">15.1.5</a></span> Static Semantics:  VarDeclaredNames</h1>
 
-      <p>See also: <a href="#sec-statement-semantics-static-semantics-vardeclarednames">13.1.5</a>, <a href="#sec-block-static-semantics-vardeclarednames">13.2.11</a>, <a href="#sec-variable-statement-static-semantics-vardeclarednames">13.3.2.2</a>, <a href="#sec-if-statement-static-semantics-vardeclarednames">13.6.5</a>, <a href="#sec-do-while-statement-static-semantics-vardeclarednames">13.7.2.4</a>, <a href="#sec-while-statement-static-semantics-vardeclarednames">13.7.3.4</a>, <a href="#sec-for-statement-static-semantics-vardeclarednames">13.7.4.5</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-vardeclarednames">13.7.5.7</a>, <a href="#sec-with-statement-static-semantics-vardeclarednames">13.11.5</a>, <a href="#sec-switch-statement-static-semantics-vardeclarednames">13.12.7</a>, <a href="#sec-labelled-statements-static-semantics-vardeclarednames">13.13.12</a>, <a href="#sec-try-statement-static-semantics-vardeclarednames">13.15.5</a>, <a href="#sec-function-definitions-static-semantics-vardeclarednames">14.1.15</a>, <a href="#sec-arrow-function-definitions-static-semantics-vardeclarednames">14.2.12</a>, <a href="#sec-module-semantics-static-semantics-vardeclarednames">15.2.1.13</a>.</p>
+      <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-statement-semantics-static-semantics-vardeclarednames">13.1.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-vardeclarednames">13.2.11</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-variable-statement-static-semantics-vardeclarednames">13.3.2.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-if-statement-static-semantics-vardeclarednames">13.6.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement-static-semantics-vardeclarednames">13.7.2.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-while-statement-static-semantics-vardeclarednames">13.7.3.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement-static-semantics-vardeclarednames">13.7.4.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-vardeclarednames">13.7.5.7</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-with-statement-static-semantics-vardeclarednames">13.11.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-vardeclarednames">13.12.7</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-vardeclarednames">13.13.12</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-try-statement-static-semantics-vardeclarednames">13.15.5</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-vardeclarednames">14.1.15</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-vardeclarednames">14.2.12</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-vardeclarednames">15.2.1.13</a>.</p>
 
       <div class="gp prod"><span class="nt">ScriptBody</span> <span class="geq">:</span> <span class="nt">StatementList</span></div>
       <ol class="proc">
@@ -121,9 +121,9 @@
     </section>
 
     <section id="sec-scripts-static-semantics-varscopeddeclarations">
-      <h1><span class="secnum" id="sec-15.1.6"><a href="#sec-scripts-static-semantics-varscopeddeclarations" title="link to this section">15.1.6</a></span> Static Semantics:  VarScopedDeclarations</h1>
+      <h1><span class="secnum" id="sec-15.1.6"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-varscopeddeclarations" title="link to this section">15.1.6</a></span> Static Semantics:  VarScopedDeclarations</h1>
 
-      <p>See also: <a href="#sec-statement-semantics-static-semantics-varscopeddeclarations">13.1.6</a>, <a href="#sec-block-static-semantics-varscopeddeclarations">13.2.12</a>, <a href="#sec-variable-statement-static-semantics-varscopeddeclarations">13.3.2.3</a>, <a href="#sec-if-statement-static-semantics-varscopeddeclarations">13.6.6</a>, <a href="#sec-do-while-statement-static-semantics-varscopeddeclarations">13.7.2.5</a>, <a href="#sec-while-statement-static-semantics-varscopeddeclarations">13.7.3.5</a>, <a href="#sec-for-statement-static-semantics-varscopeddeclarations">13.7.4.6</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-varscopeddeclarations">13.7.5.8</a>, <a href="#sec-with-statement-static-semantics-varscopeddeclarations">13.11.6</a>, <a href="#sec-switch-statement-static-semantics-varscopeddeclarations">13.12.8</a>, <a href="#sec-labelled-statements-static-semantics-varscopeddeclarations">13.13.13</a>, <a href="#sec-try-statement-static-semantics-varscopeddeclarations">13.15.6</a>, <a href="#sec-function-definitions-static-semantics-varscopeddeclarations">14.1.16</a>, <a href="#sec-arrow-function-definitions-static-semantics-varscopeddeclarations">14.2.13</a>, <a href="#sec-module-semantics-static-semantics-varscopeddeclarations">15.2.1.14</a>.</p>
+      <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-statement-semantics-static-semantics-varscopeddeclarations">13.1.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-varscopeddeclarations">13.2.12</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-variable-statement-static-semantics-varscopeddeclarations">13.3.2.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-if-statement-static-semantics-varscopeddeclarations">13.6.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement-static-semantics-varscopeddeclarations">13.7.2.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-while-statement-static-semantics-varscopeddeclarations">13.7.3.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement-static-semantics-varscopeddeclarations">13.7.4.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-varscopeddeclarations">13.7.5.8</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-with-statement-static-semantics-varscopeddeclarations">13.11.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-varscopeddeclarations">13.12.8</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-varscopeddeclarations">13.13.13</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-try-statement-static-semantics-varscopeddeclarations">13.15.6</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-varscopeddeclarations">14.1.16</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-varscopeddeclarations">14.2.13</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-varscopeddeclarations">15.2.1.14</a>.</p>
 
       <div class="gp prod"><span class="nt">ScriptBody</span> <span class="geq">:</span> <span class="nt">StatementList</span></div>
       <ol class="proc">
@@ -132,24 +132,24 @@
     </section>
 
     <section id="sec-runtime-semantics-scriptevaluation">
-      <h1><span class="secnum" id="sec-15.1.7"><a href="#sec-runtime-semantics-scriptevaluation" title="link to this section">15.1.7</a></span> Runtime Semantics: ScriptEvaluation</h1>
+      <h1><span class="secnum" id="sec-15.1.7"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-runtime-semantics-scriptevaluation" title="link to this section">15.1.7</a></span> Runtime Semantics: ScriptEvaluation</h1>
 
       <p>With argument <var>realm</var>.</p>
 
       <div class="gp prod"><span class="nt">Script</span> <span class="geq">:</span> <span class="nt">ScriptBody</span><sub class="g-opt">opt</sub></div>
       <ol class="proc">
-        <li>If <i>ScriptBody</i> is not present, return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family: sans-serif">empty</span>).</li>
+        <li>If <i>ScriptBody</i> is not present, return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family: sans-serif">empty</span>).</li>
         <li>Let <i>globalEnv</i> be <i>realm</i>.[[globalEnv]].</li>
-        <li>Let <i>scriptCxt</i> be a new <a href="#sec-execution-contexts">ECMAScript code execution context</a>.</li>
+        <li>Let <i>scriptCxt</i> be a new <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">ECMAScript code execution context</a>.</li>
         <li>Set the Function of <i>scriptCxt</i> to <b>null</b>.</li>
-        <li>Set the <a href="#sec-code-realms">Realm</a> of <i>scriptCxt</i> to <i>realm</i>.</li>
-        <li>Set the <a href="#sec-execution-contexts">VariableEnvironment</a> of <i>scriptCxt</i> to <i>globalEnv</i>.</li>
-        <li>Set the <a href="#sec-execution-contexts">LexicalEnvironment</a> of <i>scriptCxt</i> to <i>globalEnv</i>.</li>
-        <li><a href="#sec-execution-contexts">Suspend</a> <a href="#sec-execution-contexts">the currently running execution
+        <li>Set the <a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a> of <i>scriptCxt</i> to <i>realm</i>.</li>
+        <li>Set the <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">VariableEnvironment</a> of <i>scriptCxt</i> to <i>globalEnv</i>.</li>
+        <li>Set the <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">LexicalEnvironment</a> of <i>scriptCxt</i> to <i>globalEnv</i>.</li>
+        <li><a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">Suspend</a> <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the currently running execution
             context</a>.</li>
-        <li>Push <i>scriptCxt</i> on to <a href="#sec-execution-contexts">the execution context stack</a>; <i>scriptCxt</i> is now
-            <a href="#sec-execution-contexts">the running execution context</a>.</li>
-        <li>Let <i>result</i> be <a href="#sec-globaldeclarationinstantiation">GlobalDeclarationInstantiation</a>(<i>ScriptBody</i>,
+        <li>Push <i>scriptCxt</i> on to <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the execution context stack</a>; <i>scriptCxt</i> is now
+            <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>.</li>
+        <li>Let <i>result</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-globaldeclarationinstantiation">GlobalDeclarationInstantiation</a>(<i>ScriptBody</i>,
             <i>globalEnv</i>).</li>
         <li>If <i>result</i>.[[type]] is <span style="font-family: sans-serif">normal</span>, then
           <ol class="block">
@@ -158,66 +158,66 @@
         </li>
         <li>If <i>result</i>.[[type]] is <span style="font-family: sans-serif">normal</span> and <i>result</i>.[[value]] is <span style="font-family: sans-serif">empty</span>, then
           <ol class="block">
-            <li>Let <i>result</i> be <a href="#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
+            <li>Let <i>result</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
           </ol>
         </li>
-        <li><a href="#sec-execution-contexts">Suspend</a> <i>scriptCxt</i> and remove it from <a href="#sec-execution-contexts">the execution context stack</a>.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-execution-contexts">the execution context stack</a> is
+        <li><a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">Suspend</a> <i>scriptCxt</i> and remove it from <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the execution context stack</a>.</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the execution context stack</a> is
             not empty.</li>
-        <li>Resume the context that is now on the top of <a href="#sec-execution-contexts">the execution context stack</a> as <a href="#sec-execution-contexts">the running execution context</a>.</li>
-        <li>Return <a href="#sec-completion-record-specification-type">Completion</a>(<i>result</i>).</li>
+        <li>Resume the context that is now on the top of <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the execution context stack</a> as <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>.</li>
+        <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>result</i>).</li>
       </ol>
     </section>
 
     <section id="sec-globaldeclarationinstantiation">
-      <h1><span class="secnum" id="sec-15.1.8"><a href="#sec-globaldeclarationinstantiation" title="link to this section">15.1.8</a></span> Runtime Semantics: GlobalDeclarationInstantiation (script, env)</h1>
+      <h1><span class="secnum" id="sec-15.1.8"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-globaldeclarationinstantiation" title="link to this section">15.1.8</a></span> Runtime Semantics: GlobalDeclarationInstantiation (script, env)</h1>
 
       <div class="note">
-        <p><span class="nh">NOTE 1</span> When an <a href="#sec-execution-contexts">execution context</a> is established for
+        <p><span class="nh">NOTE 1</span> When an <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">execution context</a> is established for
         evaluating scripts, declarations are instantiated in the current global environment. Each global binding declared in the
         code is instantiated.</p>
       </div>
 
       <p class="normalbefore">GlobalDeclarationInstantiation is performed as follows using arguments <var>script</var> and
-      <var>env</var>. <var>script</var> is the <span class="nt">ScriptBody</span> for which the <a href="#sec-execution-contexts">execution context</a> is being established. <var>env</var> is the global <a href="#sec-lexical-environments">lexical environment</a> in which bindings are to be created.</p>
+      <var>env</var>. <var>script</var> is the <span class="nt">ScriptBody</span> for which the <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">execution context</a> is being established. <var>env</var> is the global <a href="sec-executable-code-and-execution-contexts.html#sec-lexical-environments">lexical environment</a> in which bindings are to be created.</p>
 
       <ol class="proc">
-        <li>Let <i>envRec</i> be <i>env</i>’s <a href="#sec-lexical-environments">EnvironmentRecord</a>.</li>
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <i>envRec</i> is a global <a href="#sec-environment-records">Environment Record</a>.</li>
+        <li>Let <i>envRec</i> be <i>env</i>’s <a href="sec-executable-code-and-execution-contexts.html#sec-lexical-environments">EnvironmentRecord</a>.</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>envRec</i> is a global <a href="sec-executable-code-and-execution-contexts.html#sec-environment-records">Environment Record</a>.</li>
         <li>Let <i>lexNames</i> be the LexicallyDeclaredNames of <i>script</i>.</li>
         <li>Let <i>varNames</i> be the VarDeclaredNames of <i>script</i>.</li>
         <li>For each <i>name</i> in <i>lexNames</i>, do
           <ol class="block">
-            <li>If <i>envRec.</i><a href="#sec-hasvardeclaration">HasVarDeclaration</a>(<i>name</i>) is <b>true</b>, throw a
+            <li>If <i>envRec.</i><a href="sec-executable-code-and-execution-contexts.html#sec-hasvardeclaration">HasVarDeclaration</a>(<i>name</i>) is <b>true</b>, throw a
                 <b>SyntaxError</b> exception.</li>
-            <li>If <i>envRec.</i><a href="#sec-haslexicaldeclaration">HasLexicalDeclaration</a>(<i>name</i>) is <b>true</b>, throw
+            <li>If <i>envRec.</i><a href="sec-executable-code-and-execution-contexts.html#sec-haslexicaldeclaration">HasLexicalDeclaration</a>(<i>name</i>) is <b>true</b>, throw
                 a <b>SyntaxError</b> exception.</li>
-            <li>Let <i>hasRestrictedGlobal</i> be <i>envRec.</i><a href="#sec-hasrestrictedglobalproperty">HasRestrictedGlobalProperty</a>(<i>name</i>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>hasRestrictedGlobal</i>).</li>
+            <li>Let <i>hasRestrictedGlobal</i> be <i>envRec.</i><a href="sec-executable-code-and-execution-contexts.html#sec-hasrestrictedglobalproperty">HasRestrictedGlobalProperty</a>(<i>name</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>hasRestrictedGlobal</i>).</li>
             <li>If <i>hasRestrictedGlobal</i> is <b>true</b>, throw a <b>SyntaxError</b> exception.</li>
           </ol>
         </li>
         <li>For each <i>name</i> in <i>varNames</i>, do
           <ol class="block">
-            <li>If <i>envRec.</i><a href="#sec-haslexicaldeclaration">HasLexicalDeclaration</a>(<i>name</i>) is <b>true</b>, throw
+            <li>If <i>envRec.</i><a href="sec-executable-code-and-execution-contexts.html#sec-haslexicaldeclaration">HasLexicalDeclaration</a>(<i>name</i>) is <b>true</b>, throw
                 a <b>SyntaxError</b> exception.</li>
           </ol>
         </li>
         <li>Let <i>varDeclarations</i> be the VarScopedDeclarations of <i>script</i>.</li>
-        <li>Let <i>functionsToInitialize</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-        <li>Let <i>declaredFunctionNames</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+        <li>Let <i>functionsToInitialize</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+        <li>Let <i>declaredFunctionNames</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         <li>For each <i>d</i> in <i>varDeclarations</i>, in reverse list order do
           <ol class="block">
             <li>If <i>d</i> is neither a <i>VariableDeclaration</i> or a <i>ForBinding</i>, then
               <ol class="block">
-                <li><a href="#sec-algorithm-conventions">Assert</a>: <i>d</i> is either a <i>FunctionDeclaration</i> or a
+                <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>d</i> is either a <i>FunctionDeclaration</i> or a
                     <i>GeneratorDeclaration</i>.</li>
                 <li>NOTE	If there are multiple <span style="font-family: Times New Roman"><i>FunctionDeclarations</i></span>
                     for the same name, the last declaration is used.</li>
                 <li>Let <i>fn</i> be the sole element of the BoundNames of <i>d.</i></li>
                 <li>If <i>fn</i> is not an element of <i>declaredFunctionNames</i>, then
                   <ol class="block">
-                    <li>Let <i>fnDefinable</i> be <i>envRec.</i><a href="#sec-candeclareglobalfunction">CanDeclareGlobalFunction</a>(<i>fn</i>).</li>
+                    <li>Let <i>fnDefinable</i> be <i>envRec.</i><a href="sec-executable-code-and-execution-contexts.html#sec-candeclareglobalfunction">CanDeclareGlobalFunction</a>(<i>fn</i>).</li>
                     <li>If <i>fnDefinable</i> is <b>false</b>, throw <b>TypeError</b> exception.</li>
                     <li>Append <i>fn</i> to <i>declaredFunctionNames</i>.</li>
                     <li>Insert <i>d</i> as the first element of <i>functionsToInitialize</i>.</li>
@@ -227,7 +227,7 @@
             </li>
           </ol>
         </li>
-        <li>Let <i>declaredVarNames</i> be an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+        <li>Let <i>declaredVarNames</i> be an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         <li>For each <i>d</i> in <i>varDeclarations</i>, do
           <ol class="block">
             <li>If <i>d</i> is a <i>VariableDeclaration</i> or a <i>ForBinding</i>, then
@@ -236,8 +236,8 @@
                   <ol class="block">
                     <li>If <i>vn</i> is not an element of <i>declaredFunctionNames</i>, then
                       <ol class="block">
-                        <li>Let <i>vnDefinable</i> be <i>envRec.</i><a href="#sec-candeclareglobalvar">CanDeclareGlobalVar</a>(<i>vn</i>).</li>
-                        <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>vnDefinable</i>).</li>
+                        <li>Let <i>vnDefinable</i> be <i>envRec.</i><a href="sec-executable-code-and-execution-contexts.html#sec-candeclareglobalvar">CanDeclareGlobalVar</a>(<i>vn</i>).</li>
+                        <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>vnDefinable</i>).</li>
                         <li>If <i>vnDefinable</i> is <b>false</b>, throw <b>TypeError</b> exception.</li>
                         <li>If <i>vn</i> is not an element of <i>declaredVarNames</i>, then
                           <ol class="block">
@@ -271,7 +271,7 @@
                     <li>Let <i>status</i> be <i>envRec</i>.CreateMutableBinding(<i>dn</i>, <b>false</b>).</li>
                   </ol>
                 </li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
               </ol>
             </li>
           </ol>
@@ -280,28 +280,28 @@
           <ol class="block">
             <li>Let <i>fn</i> be the sole element of the BoundNames of <i>f.</i></li>
             <li>Let <i>fo</i> be the result of performing InstantiateFunctionObject  for <i>f</i> with argument <i>env</i>.</li>
-            <li>Let <i>status</i> be <i>envRec</i>.<a href="#sec-createglobalfunctionbinding">CreateGlobalFunctionBinding</a>(<i>fn</i>, <i>fo</i>, <b>false</b>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+            <li>Let <i>status</i> be <i>envRec</i>.<a href="sec-executable-code-and-execution-contexts.html#sec-createglobalfunctionbinding">CreateGlobalFunctionBinding</a>(<i>fn</i>, <i>fo</i>, <b>false</b>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
           </ol>
         </li>
         <li>For each String <i>vn</i> in <i>declaredVarNames</i>, in list order do
           <ol class="block">
-            <li>Let <i>status</i> be <i>envRec.</i><a href="#sec-createglobalvarbinding">CreateGlobalVarBinding</a>(<i>vn</i>,
+            <li>Let <i>status</i> be <i>envRec.</i><a href="sec-executable-code-and-execution-contexts.html#sec-createglobalvarbinding">CreateGlobalVarBinding</a>(<i>vn</i>,
                 <b>false</b>).</li>
-            <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+            <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
           </ol>
         </li>
-        <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family: sans-serif">empty</span>)</li>
+        <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family: sans-serif">empty</span>)</li>
       </ol>
 
       <div class="note">
-        <p><span class="nh">NOTE 2</span> Early errors specified in <a href="#sec-scripts-static-semantics-early-errors">15.1.1</a>
+        <p><span class="nh">NOTE 2</span> Early errors specified in <a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-early-errors">15.1.1</a>
         prevent name conflicts between function/var declarations and let/const/class declarations as well as redeclaration of
         let/const/class bindings for declaration contained within a single <span class="nt">Script</span>. However, such conflicts
         and redeclarations that span more than one <span class="nt">Script</span> are detected as runtime errors during
         GlobalDeclarationInstantiation. If any such errors are detected, no bindings are instantiated for the script. However, if
         the global object is defined using Proxy exotic objects then the runtime tests for conflicting declarations may be
-        unreliable resulting in an <a href="#sec-completion-record-specification-type">abrupt completion</a> and some global
+        unreliable resulting in an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a> and some global
         declarations not being instantiated. If this occurs, the code for the <span class="nt">Script</span> is not evaluated.</p>
 
         <p>Unlike explicit var or function declarations, properties that are directly created on the global object result in
@@ -310,14 +310,14 @@
     </section>
 
     <section id="sec-scriptevaluationjob">
-      <h1><span class="secnum" id="sec-15.1.9"><a href="#sec-scriptevaluationjob" title="link to this section">15.1.9</a></span>
+      <h1><span class="secnum" id="sec-15.1.9"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-scriptevaluationjob" title="link to this section">15.1.9</a></span>
           Runtime Semantics: ScriptEvaluationJob ( sourceText )</h1>
 
       <p class="normalbefore">The job ScriptEvaluationJob with parameter <var>sourceText</var> parses, validates, and evaluates
       <var>sourceText</var> as a <span class="nt">Script</span>.</p>
 
       <ol class="proc">
-        <li><a href="#sec-algorithm-conventions">Assert</a>: <i>sourceText</i> is an ECMAScript source text (see <a href="#sec-ecmascript-language-source-code">clause 10</a>).</li>
+        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>sourceText</i> is an ECMAScript source text (see <a href="#sec-ecmascript-language-source-code">clause 10</a>).</li>
         <li>Parse <i>sourceText</i> using <i>Script</i> as the goal symbol and analyze the parse result for any Early Error
             conditions. If the parse was successful and no early errors were found, let <i>code</i> be the resulting parse tree.
             Otherwise, let <i>code</i> be an indication of one or more parsing errors and/or early errors. Parsing and early error
@@ -326,16 +326,16 @@
         <li>If <i>code</i> is an error indication, then
           <ol class="block">
             <li>Report or log the error(s) in an implementation dependent manner.</li>
-            <li>Let <i>status</i> be <a href="#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
+            <li>Let <i>status</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
           </ol>
         </li>
         <li>Else,
           <ol class="block">
-            <li>Let <i>realm</i> be <a href="#sec-execution-contexts">the running execution context</a>’s <a href="#sec-code-realms">Realm</a>.</li>
+            <li>Let <i>realm</i> be <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>’s <a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a>.</li>
             <li>Let <i>status</i> be the result of ScriptEvaluation of <i>code</i> with argument <i>realm</i>.</li>
           </ol>
         </li>
-        <li>NextJob <a href="#sec-completion-record-specification-type">Completion</a>(<i>status</i>).</li>
+        <li>NextJob <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>status</i>).</li>
       </ol>
 
       <div class="note">
@@ -349,7 +349,7 @@
 
   <section id="sec-modules">
     <div class="front">
-      <h1><span class="secnum" id="sec-15.2"><a href="#sec-modules" title="link to this section">15.2</a></span> Modules</h1>
+      <h1><span class="secnum" id="sec-15.2"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-modules" title="link to this section">15.2</a></span> Modules</h1>
       <h2>Syntax</h2>
 
       <div class="gp">
@@ -378,12 +378,12 @@
 
     <section id="sec-module-semantics">
       <div class="front">
-        <h1><span class="secnum" id="sec-15.2.1"><a href="#sec-module-semantics" title="link to this section">15.2.1</a></span>
+        <h1><span class="secnum" id="sec-15.2.1"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics" title="link to this section">15.2.1</a></span>
             Module Semantics</h1>
       </div>
 
       <section id="sec-module-semantics-static-semantics-early-errors">
-        <h1><span class="secnum" id="sec-15.2.1.1"><a href="#sec-module-semantics-static-semantics-early-errors" title="link to this section">15.2.1.1</a></span> Static Semantics:  Early Errors</h1>
+        <h1><span class="secnum" id="sec-15.2.1.1"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-early-errors" title="link to this section">15.2.1.1</a></span> Static Semantics:  Early Errors</h1>
         <div class="gp prod"><span class="nt">ModuleBody</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span></div>
         <ul>
           <li>
@@ -438,11 +438,11 @@
       </section>
 
       <section id="sec-module-semantics-static-semantics-containsduplicatelabels">
-        <h1><span class="secnum" id="sec-15.2.1.2"><a href="#sec-module-semantics-static-semantics-containsduplicatelabels" title="link to this section">15.2.1.2</a></span> Static Semantics:  ContainsDuplicateLabels</h1>
+        <h1><span class="secnum" id="sec-15.2.1.2"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-containsduplicatelabels" title="link to this section">15.2.1.2</a></span> Static Semantics:  ContainsDuplicateLabels</h1>
 
         <p>With argument <var>labelSet</var>.</p>
 
-        <p>See also: <a href="#sec-statement-semantics-static-semantics-containsduplicatelabels">13.1.1</a>, <a href="#sec-block-static-semantics-containsduplicatelabels">13.2.2</a>, <a href="#sec-if-statement-static-semantics-containsduplicatelabels">13.6.2</a>, <a href="#sec-do-while-statement-static-semantics-containsduplicatelabels">13.7.2.1</a>, <a href="#sec-while-statement-static-semantics-containsduplicatelabels">13.7.3.1</a>, <a href="#sec-for-statement-static-semantics-containsduplicatelabels">13.7.4.2</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-containsduplicatelabels">13.7.5.3</a>, <a href="#sec-with-statement-static-semantics-containsduplicatelabels">13.11.2</a>, <a href="#sec-switch-statement-static-semantics-containsduplicatelabels">13.12.2</a>, <a href="#sec-labelled-statements-static-semantics-containsduplicatelabels">13.13.2</a>, <a href="#sec-try-statement-static-semantics-containsduplicatelabels">13.15.2</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-statement-semantics-static-semantics-containsduplicatelabels">13.1.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-containsduplicatelabels">13.2.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-if-statement-static-semantics-containsduplicatelabels">13.6.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement-static-semantics-containsduplicatelabels">13.7.2.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-while-statement-static-semantics-containsduplicatelabels">13.7.3.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement-static-semantics-containsduplicatelabels">13.7.4.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-containsduplicatelabels">13.7.5.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-with-statement-static-semantics-containsduplicatelabels">13.11.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-containsduplicatelabels">13.12.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-containsduplicatelabels">13.13.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-try-statement-static-semantics-containsduplicatelabels">13.15.2</a>.</p>
 
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -463,11 +463,11 @@
       </section>
 
       <section id="sec-module-semantics-static-semantics-containsundefinedbreaktarget">
-        <h1><span class="secnum" id="sec-15.2.1.3"><a href="#sec-module-semantics-static-semantics-containsundefinedbreaktarget" title="link to this section">15.2.1.3</a></span> Static Semantics:  ContainsUndefinedBreakTarget</h1>
+        <h1><span class="secnum" id="sec-15.2.1.3"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-containsundefinedbreaktarget" title="link to this section">15.2.1.3</a></span> Static Semantics:  ContainsUndefinedBreakTarget</h1>
 
         <p>With argument <var>labelSet</var>.</p>
 
-        <p>See also: <a href="#sec-statement-semantics-static-semantics-containsundefinedbreaktarget">13.1.2</a>, <a href="#sec-block-static-semantics-containsundefinedbreaktarget">13.2.3</a>, <a href="#sec-if-statement-static-semantics-containsundefinedbreaktarget">13.6.3</a>, <a href="#sec-do-while-statement-static-semantics-containsundefinedbreaktarget">13.7.2.2</a>, <a href="#sec-while-statement-static-semantics-containsundefinedbreaktarget">13.7.3.2</a>, <a href="#sec-for-statement-static-semantics-containsundefinedbreaktarget">13.7.4.3</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-containsundefinedbreaktarget">13.7.5.4</a>, <a href="#sec-break-statement-static-semantics-containsundefinedbreaktarget">13.9.2</a>, <a href="#sec-with-statement-static-semantics-containsundefinedbreaktarget">13.11.3</a>, <a href="#sec-switch-statement-static-semantics-containsundefinedbreaktarget">13.12.3</a>, <a href="#sec-labelled-statements-static-semantics-containsundefinedbreaktarget">13.13.3</a>, <a href="#sec-try-statement-static-semantics-containsundefinedbreaktarget">13.15.3</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-statement-semantics-static-semantics-containsundefinedbreaktarget">13.1.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-containsundefinedbreaktarget">13.2.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-if-statement-static-semantics-containsundefinedbreaktarget">13.6.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement-static-semantics-containsundefinedbreaktarget">13.7.2.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-while-statement-static-semantics-containsundefinedbreaktarget">13.7.3.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement-static-semantics-containsundefinedbreaktarget">13.7.4.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-containsundefinedbreaktarget">13.7.5.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-break-statement-static-semantics-containsundefinedbreaktarget">13.9.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-with-statement-static-semantics-containsundefinedbreaktarget">13.11.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-containsundefinedbreaktarget">13.12.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-containsundefinedbreaktarget">13.13.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-try-statement-static-semantics-containsundefinedbreaktarget">13.15.3</a>.</p>
 
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -489,11 +489,11 @@
       </section>
 
       <section id="sec-module-semantics-static-semantics-containsundefinedcontinuetarget">
-        <h1><span class="secnum" id="sec-15.2.1.4"><a href="#sec-module-semantics-static-semantics-containsundefinedcontinuetarget" title="link to this section">15.2.1.4</a></span> Static Semantics:  ContainsUndefinedContinueTarget</h1>
+        <h1><span class="secnum" id="sec-15.2.1.4"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-containsundefinedcontinuetarget" title="link to this section">15.2.1.4</a></span> Static Semantics:  ContainsUndefinedContinueTarget</h1>
 
         <p>With arguments <var>iterationSet</var> and <var>labelSet</var>.</p>
 
-        <p>See also: <a href="#sec-statement-semantics-static-semantics-containsundefinedcontinuetarget">13.1.3</a>, <a href="#sec-block-static-semantics-containsundefinedcontinuetarget">13.2.4</a>, <a href="#sec-if-statement-static-semantics-containsundefinedcontinuetarget">13.6.4</a>, <a href="#sec-do-while-statement-static-semantics-containsundefinedcontinuetarget">13.7.2.3</a>, <a href="#sec-while-statement-static-semantics-containsundefinedcontinuetarget">13.7.3.3</a>, <a href="#sec-for-statement-static-semantics-containsundefinedcontinuetarget">13.7.4.4</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-containsundefinedcontinuetarget">13.7.5.5</a>, <a href="#sec-continue-statement-static-semantics-containsundefinedcontinuetarget">13.8.2</a>, <a href="#sec-with-statement-static-semantics-containsundefinedcontinuetarget">13.11.4</a>, <a href="#sec-switch-statement-static-semantics-containsundefinedcontinuetarget">13.12.4</a>, <a href="#sec-labelled-statements-static-semantics-containsundefinedcontinuetarget">13.13.4</a>, <a href="#sec-try-statement-static-semantics-containsundefinedcontinuetarget">13.15.4</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-statement-semantics-static-semantics-containsundefinedcontinuetarget">13.1.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-containsundefinedcontinuetarget">13.2.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-if-statement-static-semantics-containsundefinedcontinuetarget">13.6.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement-static-semantics-containsundefinedcontinuetarget">13.7.2.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-while-statement-static-semantics-containsundefinedcontinuetarget">13.7.3.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement-static-semantics-containsundefinedcontinuetarget">13.7.4.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-containsundefinedcontinuetarget">13.7.5.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-continue-statement-static-semantics-containsundefinedcontinuetarget">13.8.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-with-statement-static-semantics-containsundefinedcontinuetarget">13.11.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-containsundefinedcontinuetarget">13.12.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-containsundefinedcontinuetarget">13.13.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-try-statement-static-semantics-containsundefinedcontinuetarget">13.15.4</a>.</p>
 
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -516,9 +516,9 @@
       </section>
 
       <section id="sec-module-semantics-static-semantics-exportedbindings">
-        <h1><span class="secnum" id="sec-15.2.1.5"><a href="#sec-module-semantics-static-semantics-exportedbindings" title="link to this section">15.2.1.5</a></span> Static Semantics:  ExportedBindings</h1>
+        <h1><span class="secnum" id="sec-15.2.1.5"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-exportedbindings" title="link to this section">15.2.1.5</a></span> Static Semantics:  ExportedBindings</h1>
 
-        <p>See also: <a href="#sec-exports-static-semantics-exportedbindings">15.2.3.3</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-exportedbindings">15.2.3.3</a>.</p>
 
         <div class="note">
           <p><span class="nh">NOTE</span> ExportedBindings are the locally bound names that are explicitly associated with a <span style="font-family: Times New Roman"><i>Module</i>’s</span> ExportedNames.</p>
@@ -538,14 +538,14 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-module-semantics-static-semantics-exportednames">
-        <h1><span class="secnum" id="sec-15.2.1.6"><a href="#sec-module-semantics-static-semantics-exportednames" title="link to this section">15.2.1.6</a></span> Static Semantics:  ExportedNames</h1>
+        <h1><span class="secnum" id="sec-15.2.1.6"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-exportednames" title="link to this section">15.2.1.6</a></span> Static Semantics:  ExportedNames</h1>
 
-        <p>See also: <a href="#sec-exports-static-semantics-exportednames">15.2.3.4</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-exportednames">15.2.3.4</a>.</p>
 
         <div class="note">
           <p><span class="nh">NOTE</span> ExportedNames are the externally visible names that a <span class="nt">Module</span>
@@ -570,18 +570,18 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-module-semantics-static-semantics-exportentries">
-        <h1><span class="secnum" id="sec-15.2.1.7"><a href="#sec-module-semantics-static-semantics-exportentries" title="link to this section">15.2.1.7</a></span> Static Semantics:  ExportEntries</h1>
+        <h1><span class="secnum" id="sec-15.2.1.7"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-exportentries" title="link to this section">15.2.1.7</a></span> Static Semantics:  ExportEntries</h1>
 
-        <p>See also: <a href="#sec-exports-static-semantics-exportentries">15.2.3.5</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-exportentries">15.2.3.5</a>.</p>
 
         <div class="gp prod"><span class="nt">Module</span> <span class="geq">:</span> <span class="grhsannot">[empty]</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -597,18 +597,18 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-module-semantics-static-semantics-importentries">
-        <h1><span class="secnum" id="sec-15.2.1.8"><a href="#sec-module-semantics-static-semantics-importentries" title="link to this section">15.2.1.8</a></span> Static Semantics:  ImportEntries</h1>
+        <h1><span class="secnum" id="sec-15.2.1.8"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-importentries" title="link to this section">15.2.1.8</a></span> Static Semantics:  ImportEntries</h1>
 
-        <p>See also: <a href="#sec-imports-static-semantics-importentries">15.2.2.3</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-importentries">15.2.2.3</a>.</p>
 
         <div class="gp prod"><span class="nt">Module</span> <span class="geq">:</span> <span class="grhsannot">[empty]</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -624,18 +624,18 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-importedlocalnames">
-        <h1><span class="secnum" id="sec-15.2.1.9"><a href="#sec-importedlocalnames" title="link to this section">15.2.1.9</a></span> Static Semantics:  ImportedLocalNames ( importEntries )</h1>
+        <h1><span class="secnum" id="sec-15.2.1.9"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-importedlocalnames" title="link to this section">15.2.1.9</a></span> Static Semantics:  ImportedLocalNames ( importEntries )</h1>
 
-        <p class="normalbefore">The abstract operation ImportedLocalNames with argument <var>importEntries</var> creates a <a href="#sec-list-and-record-specification-type">List</a> of all of the local name bindings defined by a <a href="#sec-list-and-record-specification-type">List</a> of ImportEntry Records (see <a href="#table-39">Table
+        <p class="normalbefore">The abstract operation ImportedLocalNames with argument <var>importEntries</var> creates a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of all of the local name bindings defined by a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ImportEntry Records (see <a href="sec-ecmascript-language-scripts-and-modules.html#table-39">Table
         39</a>)<var>.</var> ImportedLocalNames performs the following steps:</p>
 
         <ol class="proc">
-          <li>Let <i>localNames</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Let <i>localNames</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>For each ImportEntry Record <i>i</i> in <i>importEntries</i>, do
             <ol class="block">
               <li>Append <i>i</i>.[[LocalName]] to <i>localNames</i>.</li>
@@ -646,13 +646,13 @@
       </section>
 
       <section id="sec-module-semantics-static-semantics-modulerequests">
-        <h1><span class="secnum" id="sec-15.2.1.10"><a href="#sec-module-semantics-static-semantics-modulerequests" title="link to this section">15.2.1.10</a></span> Static Semantics:  ModuleRequests</h1>
+        <h1><span class="secnum" id="sec-15.2.1.10"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-modulerequests" title="link to this section">15.2.1.10</a></span> Static Semantics:  ModuleRequests</h1>
 
-        <p>See also: <a href="#sec-imports-static-semantics-modulerequests">15.2.2.5</a>,<a href="#sec-exports-static-semantics-modulerequests">15.2.3.9</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-modulerequests">15.2.2.5</a>,<a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-modulerequests">15.2.3.9</a>.</p>
 
         <div class="gp prod"><span class="nt">Module</span> <span class="geq">:</span> <span class="grhsannot">[empty]</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -668,14 +668,14 @@
         </ol>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">StatementListItem</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-module-semantics-static-semantics-lexicallydeclarednames">
-        <h1><span class="secnum" id="sec-15.2.1.11"><a href="#sec-module-semantics-static-semantics-lexicallydeclarednames" title="link to this section">15.2.1.11</a></span> Static Semantics:  LexicallyDeclaredNames</h1>
+        <h1><span class="secnum" id="sec-15.2.1.11"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-lexicallydeclarednames" title="link to this section">15.2.1.11</a></span> Static Semantics:  LexicallyDeclaredNames</h1>
 
-        <p>See also: <a href="#sec-block-static-semantics-lexicallydeclarednames">13.2.5</a>, <a href="#sec-switch-statement-static-semantics-lexicallydeclarednames">13.12.5</a>, <a href="#sec-labelled-statements-static-semantics-lexicallydeclarednames">13.13.6</a>, <a href="#sec-function-definitions-static-semantics-lexicallydeclarednames">14.1.13</a>, <a href="#sec-arrow-function-definitions-static-semantics-lexicallydeclarednames">14.2.10</a>, <a href="#sec-scripts-static-semantics-lexicallydeclarednames">15.1.3</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-lexicallydeclarednames">13.2.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-lexicallydeclarednames">13.12.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-lexicallydeclarednames">13.13.6</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-lexicallydeclarednames">14.1.13</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-lexicallydeclarednames">14.2.10</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-lexicallydeclarednames">15.1.3</a>.</p>
 
         <div class="note">
           <p><span class="nh">NOTE 1</span> The LexicallyDeclaredNames of a <span class="nt">Module</span> includes the names of
@@ -695,7 +695,7 @@
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ExportDeclaration</span></div>
         <ol class="proc">
           <li>If <i>ExportDeclaration</i> is <code>export</code> <i>VariableStatement</i><span style="font-family:
-              sans-serif">,</span> return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+              sans-serif">,</span> return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>Return the BoundNames of <i>ExportDeclaration</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">StatementListItem</span></div>
@@ -710,13 +710,13 @@
       </section>
 
       <section id="sec-module-semantics-static-semantics-lexicallyscopeddeclarations">
-        <h1><span class="secnum" id="sec-15.2.1.12"><a href="#sec-module-semantics-static-semantics-lexicallyscopeddeclarations" title="link to this section">15.2.1.12</a></span> Static Semantics:  LexicallyScopedDeclarations</h1>
+        <h1><span class="secnum" id="sec-15.2.1.12"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-lexicallyscopeddeclarations" title="link to this section">15.2.1.12</a></span> Static Semantics:  LexicallyScopedDeclarations</h1>
 
-        <p>See also: <a href="#sec-block-static-semantics-lexicallyscopeddeclarations">13.2.6</a>, <a href="#sec-switch-statement-static-semantics-lexicallyscopeddeclarations">13.12.6</a>, <a href="#sec-labelled-statements-static-semantics-lexicallyscopeddeclarations">13.13.7</a>, <a href="#sec-function-definitions-static-semantics-lexicallyscopeddeclarations">14.1.14</a>, <a href="#sec-arrow-function-definitions-static-semantics-lexicallyscopeddeclarations">14.2.11</a>, <a href="#sec-scripts-static-semantics-lexicallyscopeddeclarations">15.1.4</a>, <a href="#sec-exports-static-semantics-lexicallyscopeddeclarations">15.2.3.8</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-lexicallyscopeddeclarations">13.2.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-lexicallyscopeddeclarations">13.12.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-lexicallyscopeddeclarations">13.13.7</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-lexicallyscopeddeclarations">14.1.14</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-lexicallyscopeddeclarations">14.2.11</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-lexicallyscopeddeclarations">15.1.4</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-lexicallyscopeddeclarations">15.2.3.8</a>.</p>
 
         <div class="gp prod"><span class="nt">Module</span> <span class="geq">:</span> <span class="grhsannot">[empty]</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -726,18 +726,18 @@
         </ol>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ImportDeclaration</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-module-semantics-static-semantics-vardeclarednames">
-        <h1><span class="secnum" id="sec-15.2.1.13"><a href="#sec-module-semantics-static-semantics-vardeclarednames" title="link to this section">15.2.1.13</a></span> Static Semantics:  VarDeclaredNames</h1>
+        <h1><span class="secnum" id="sec-15.2.1.13"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-vardeclarednames" title="link to this section">15.2.1.13</a></span> Static Semantics:  VarDeclaredNames</h1>
 
-        <p>See also: <a href="#sec-statement-semantics-static-semantics-vardeclarednames">13.1.5</a>, <a href="#sec-block-static-semantics-vardeclarednames">13.2.11</a>, <a href="#sec-variable-statement-static-semantics-vardeclarednames">13.3.2.2</a>, <a href="#sec-if-statement-static-semantics-vardeclarednames">13.6.5</a>, <a href="#sec-do-while-statement-static-semantics-vardeclarednames">13.7.2.4</a>, <a href="#sec-while-statement-static-semantics-vardeclarednames">13.7.3.4</a>, <a href="#sec-for-statement-static-semantics-vardeclarednames">13.7.4.5</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-vardeclarednames">13.7.5.7</a>, <a href="#sec-with-statement-static-semantics-vardeclarednames">13.11.5</a>, <a href="#sec-switch-statement-static-semantics-vardeclarednames">13.12.7</a>, <a href="#sec-labelled-statements-static-semantics-vardeclarednames">13.13.12</a>, <a href="#sec-try-statement-static-semantics-vardeclarednames">13.15.5</a>, <a href="#sec-function-definitions-static-semantics-vardeclarednames">14.1.15</a>, <a href="#sec-arrow-function-definitions-static-semantics-vardeclarednames">14.2.12</a>, <a href="#sec-scripts-static-semantics-vardeclarednames">15.1.5</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-statement-semantics-static-semantics-vardeclarednames">13.1.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-vardeclarednames">13.2.11</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-variable-statement-static-semantics-vardeclarednames">13.3.2.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-if-statement-static-semantics-vardeclarednames">13.6.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement-static-semantics-vardeclarednames">13.7.2.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-while-statement-static-semantics-vardeclarednames">13.7.3.4</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement-static-semantics-vardeclarednames">13.7.4.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-vardeclarednames">13.7.5.7</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-with-statement-static-semantics-vardeclarednames">13.11.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-vardeclarednames">13.12.7</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-vardeclarednames">13.13.12</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-try-statement-static-semantics-vardeclarednames">13.15.5</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-vardeclarednames">14.1.15</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-vardeclarednames">14.2.12</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-vardeclarednames">15.1.5</a>.</p>
 
         <div class="gp prod"><span class="nt">Module</span> <span class="geq">:</span> <span class="grhsannot">[empty]</span></div>
         <ol class="proc">
-          <li>Return an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
 
         <p><span class="prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></span></p>
@@ -749,24 +749,24 @@
         </ol>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ImportDeclaration</span></div>
         <ol class="proc">
-          <li>Return an empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return an empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ExportDeclaration</span></div>
         <ol class="proc">
           <li>If <i>ExportDeclaration</i> is <code>export</code> <i>VariableStatement</i>, return BoundNames of
               <i>ExportDeclaration</i>.</li>
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-module-semantics-static-semantics-varscopeddeclarations">
-        <h1><span class="secnum" id="sec-15.2.1.14"><a href="#sec-module-semantics-static-semantics-varscopeddeclarations" title="link to this section">15.2.1.14</a></span> Static Semantics:  VarScopedDeclarations</h1>
+        <h1><span class="secnum" id="sec-15.2.1.14"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-varscopeddeclarations" title="link to this section">15.2.1.14</a></span> Static Semantics:  VarScopedDeclarations</h1>
 
-        <p>See also: <a href="#sec-statement-semantics-static-semantics-varscopeddeclarations">13.1.6</a>, <a href="#sec-block-static-semantics-varscopeddeclarations">13.2.12</a>, <a href="#sec-variable-statement-static-semantics-varscopeddeclarations">13.3.2.3</a>, <a href="#sec-if-statement-static-semantics-varscopeddeclarations">13.6.6</a>, <a href="#sec-do-while-statement-static-semantics-varscopeddeclarations">13.7.2.5</a>, <a href="#sec-while-statement-static-semantics-varscopeddeclarations">13.7.3.5</a>, <a href="#sec-for-statement-static-semantics-varscopeddeclarations">13.7.4.6</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-varscopeddeclarations">13.7.5.8</a>, <a href="#sec-with-statement-static-semantics-varscopeddeclarations">13.11.6</a>, <a href="#sec-switch-statement-static-semantics-varscopeddeclarations">13.12.8</a>, <a href="#sec-labelled-statements-static-semantics-varscopeddeclarations">13.13.13</a>, <a href="#sec-try-statement-static-semantics-varscopeddeclarations">13.15.6</a>, <a href="#sec-function-definitions-static-semantics-varscopeddeclarations">14.1.16</a>, <a href="#sec-arrow-function-definitions-static-semantics-varscopeddeclarations">14.2.13</a>, <a href="#sec-scripts-static-semantics-varscopeddeclarations">15.1.6</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-statement-semantics-static-semantics-varscopeddeclarations">13.1.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-varscopeddeclarations">13.2.12</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-variable-statement-static-semantics-varscopeddeclarations">13.3.2.3</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-if-statement-static-semantics-varscopeddeclarations">13.6.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-do-while-statement-static-semantics-varscopeddeclarations">13.7.2.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-while-statement-static-semantics-varscopeddeclarations">13.7.3.5</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-statement-static-semantics-varscopeddeclarations">13.7.4.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-varscopeddeclarations">13.7.5.8</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-with-statement-static-semantics-varscopeddeclarations">13.11.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-varscopeddeclarations">13.12.8</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-varscopeddeclarations">13.13.13</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-try-statement-static-semantics-varscopeddeclarations">13.15.6</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-varscopeddeclarations">14.1.16</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-varscopeddeclarations">14.2.13</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-varscopeddeclarations">15.1.6</a>.</p>
 
         <div class="gp prod"><span class="nt">Module</span> <span class="geq">:</span> <span class="grhsannot">[empty]</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
@@ -776,18 +776,18 @@
         </ol>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ImportDeclaration</span></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ExportDeclaration</span></div>
         <ol class="proc">
           <li>If <i>ExportDeclaration</i> is <code>export</code> <i>VariableStatement</i>, return VarScopedDeclarations of
               <i>VariableStatement</i>.</li>
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-abstract-module-records">
-        <h1><span class="secnum" id="sec-15.2.1.15"><a href="#sec-abstract-module-records" title="link to this section">15.2.1.15</a></span> Abstract Module Records</h1>
+        <h1><span class="secnum" id="sec-15.2.1.15"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records" title="link to this section">15.2.1.15</a></span> Abstract Module Records</h1>
 
         <p>A Module Record encapsulates structural information about the imports and exports of a single module. This information
         is used to link the imports and exports of sets of connected modules. A Module Record includes four fields that are only
@@ -795,12 +795,12 @@
 
         <p>For specification purposes Module Record values are values of the Record specification type and can be thought of as
         existing in a simple object-oriented hierarchy where Module Record is an abstract class with concrete subclasses. This
-        specification only defines a single Module Record concrete subclass named <a href="#sec-source-text-module-records">Source
+        specification only defines a single Module Record concrete subclass named <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source
         Text Module Record</a>. Other specifications and implementations may define additional Module Record subclasses
         corresponding to alternative module definition facilities that they defined.</p>
 
-        <p class="normalbefore">Module Record defines the fields listed in <a href="#table-36">Table 36</a>. All Module Definition
-        subclasses include at least those fields. Module Record also defines the abstract method list in <a href="#table-37">Table
+        <p class="normalbefore">Module Record defines the fields listed in <a href="sec-ecmascript-language-scripts-and-modules.html#table-36">Table 36</a>. All Module Definition
+        subclasses include at least those fields. Module Record also defines the abstract method list in <a href="sec-ecmascript-language-scripts-and-modules.html#table-37">Table
         37</a>. All Module definition subclasses must provide concrete implementations of these abstract methods.</p>
 
         <figure>
@@ -813,23 +813,23 @@
             </tr>
             <tr>
               <td>[[Realm]]</td>
-              <td><a href="#sec-code-realms">Realm</a> Record | <span class="value">undefined</span></td>
-              <td>The <a href="#sec-code-realms">Realm</a> within which this module was created. <span class="value">undefined</span> if not yet assigned.</td>
+              <td><a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a> Record | <span class="value">undefined</span></td>
+              <td>The <a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a> within which this module was created. <span class="value">undefined</span> if not yet assigned.</td>
             </tr>
             <tr>
               <td>[[Environment]]</td>
-              <td><a href="#sec-lexical-environments">Lexical Environment</a> | <span class="value">undefined</span></td>
-              <td>The <a href="#sec-lexical-environments">Lexical Environment</a> containing the top level bindings for this module. This field is set when the module is instantiated.</td>
+              <td><a href="sec-executable-code-and-execution-contexts.html#sec-lexical-environments">Lexical Environment</a> | <span class="value">undefined</span></td>
+              <td>The <a href="sec-executable-code-and-execution-contexts.html#sec-lexical-environments">Lexical Environment</a> containing the top level bindings for this module. This field is set when the module is instantiated.</td>
             </tr>
             <tr>
               <td>[[Namespace]]</td>
               <td>Object | <span class="value">undefined</span></td>
-              <td>The Module Namespace Object (<a href="#sec-module-namespace-objects">26.3</a>) if one has been created  for this module. Otherwise <span class="value">undefined</span>.</td>
+              <td>The Module Namespace Object (<a href="sec-reflection.html#sec-module-namespace-objects">26.3</a>) if one has been created  for this module. Otherwise <span class="value">undefined</span>.</td>
             </tr>
             <tr>
               <td>[[Evaluated]]</td>
               <td>Boolean</td>
-              <td>Initially <span class="value">false</span>, <span class="value">true</span> if evaluation of this module has started. Remains <span class="value">true</span> when evaluation completes, even if it is an <a href="#sec-completion-record-specification-type">abrupt completion</a>.</td>
+              <td>Initially <span class="value">false</span>, <span class="value">true</span> if evaluation of this module has started. Remains <span class="value">true</span> when evaluation completes, even if it is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>.</td>
             </tr>
           </tbody></table>
         </figure>
@@ -842,25 +842,25 @@
               <th>Purpose</th>
             </tr>
             <tr>
-              <td><a href="#sec-getexportednames">GetExportedNames</a>(exportStarSet)</td>
+              <td><a href="sec-ecmascript-language-scripts-and-modules.html#sec-getexportednames">GetExportedNames</a>(exportStarSet)</td>
               <td>Return a list of all names that are either directly or indirectly exported from this module.</td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid black"><a href="#sec-resolveexport">ResolveExport</a>(exportName, resolveSet, exportStarSet)</td>
+              <td style="border-bottom: 1px solid black"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-resolveexport">ResolveExport</a>(exportName, resolveSet, exportStarSet)</td>
               <td style="border-bottom: 1px solid black">Return the binding of a name exported by this modules. Bindings are represented by a Record of the form {[[module]]: Module Record, [[bindingName]]: String}</td>
             </tr>
             <tr>
-              <td style="border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black"><a href="#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a>()</td>
-              <td style="border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black">Transitively resolve all module dependencies and create a module <a href="#sec-environment-records">Environment Record</a> for the module.</td>
+              <td style="border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a>()</td>
+              <td style="border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; border-top: 1px solid black">Transitively resolve all module dependencies and create a module <a href="sec-executable-code-and-execution-contexts.html#sec-environment-records">Environment Record</a> for the module.</td>
             </tr>
             <tr>
-              <td style="border-top: 1px solid black"><a href="#sec-moduleevaluation">ModuleEvaluation</a>()</td>
+              <td style="border-top: 1px solid black"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduleevaluation">ModuleEvaluation</a>()</td>
 
               <td style="border-top: 1px solid black">
                 <p>Do nothing if this module has already been evaluated. Otherwise, transitively evaluate all module dependences
                 of this module and then evaluate this module.</p>
 
-                <p><a href="#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a> must be completed prior to
+                <p><a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a> must be completed prior to
                 invoking this method.</p>
               </td>
             </tr>
@@ -870,14 +870,14 @@
 
       <section id="sec-source-text-module-records">
         <div class="front">
-          <h1><span class="secnum" id="sec-15.2.1.16"><a href="#sec-source-text-module-records" title="link to this section">15.2.1.16</a></span> Source Text Module Records</h1>
+          <h1><span class="secnum" id="sec-15.2.1.16"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records" title="link to this section">15.2.1.16</a></span> Source Text Module Records</h1>
 
-          <p>A Source Text <a href="#sec-abstract-module-records">Module Record</a> is used to represent information about a
+          <p>A Source Text <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> is used to represent information about a
           module that was defined from ECMAScript source text (10) that was parsed using the goal symbol <span class="nt">Module</span>. Its fields contain digested information about the names that are imported by the module and
           its concrete methods use this digest to link, instantiate, and evaluate the module.</p>
 
-          <p>In addition to the fields, defined in <a href="#table-36">Table 36</a>, Source Text Module Records have the
-          additional fields listed in <a href="#table-38">Table 38</a>. Each of these fields initially has the value <span class="value">undefined</span>.</p>
+          <p>In addition to the fields, defined in <a href="sec-ecmascript-language-scripts-and-modules.html#table-36">Table 36</a>, Source Text Module Records have the
+          additional fields listed in <a href="sec-ecmascript-language-scripts-and-modules.html#table-38">Table 38</a>. Each of these fields initially has the value <span class="value">undefined</span>.</p>
 
           <figure>
             <figcaption><span id="table-38">Table 38</span> — Additional Fields of Source Text Module Records</figcaption>
@@ -894,34 +894,34 @@
               </tr>
               <tr>
                 <td>[[RequestedModules]]</td>
-                <td><a href="#sec-list-and-record-specification-type">List</a> of String</td>
-                <td>A <a href="#sec-list-and-record-specification-type">List</a> of all the <span class="nt">ModuleSpecifier</span> strings used by the module represented by this record to request the importation of a module. The <a href="#sec-list-and-record-specification-type">List</a> is source code occurrence ordered.</td>
+                <td><a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of String</td>
+                <td>A <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of all the <span class="nt">ModuleSpecifier</span> strings used by the module represented by this record to request the importation of a module. The <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> is source code occurrence ordered.</td>
               </tr>
               <tr>
                 <td>[[ImportEntries]]</td>
-                <td><a href="#sec-list-and-record-specification-type">List</a> of ImportEntry Records</td>
-                <td>A <a href="#sec-list-and-record-specification-type">List</a> of ImportEntry records derived from the code of this module.</td>
+                <td><a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ImportEntry Records</td>
+                <td>A <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ImportEntry records derived from the code of this module.</td>
               </tr>
               <tr>
                 <td>[[LocalExportEntries]]</td>
-                <td><a href="#sec-list-and-record-specification-type">List</a> of ExportEntry Records</td>
-                <td>A <a href="#sec-list-and-record-specification-type">List</a> of ExportEntry records derived from the code of this module that correspond to declarations that occur within the module.</td>
+                <td><a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ExportEntry Records</td>
+                <td>A <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ExportEntry records derived from the code of this module that correspond to declarations that occur within the module.</td>
               </tr>
               <tr>
                 <td>[[IndirectExportEntries]]</td>
-                <td><a href="#sec-list-and-record-specification-type">List</a> of ExportEntry Records</td>
-                <td>A <a href="#sec-list-and-record-specification-type">List</a> of ExportEntry records derived from the code of this module that correspond to reexported imports that occur within the module.</td>
+                <td><a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ExportEntry Records</td>
+                <td>A <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ExportEntry records derived from the code of this module that correspond to reexported imports that occur within the module.</td>
               </tr>
               <tr>
                 <td>[[StarExportEntries]]</td>
-                <td><a href="#sec-list-and-record-specification-type">List</a> of ExportEntry Records</td>
-                <td>A <a href="#sec-list-and-record-specification-type">List</a> of ExportEntry records derived from the code of this module that correspond to export * declarations that occur within the module.</td>
+                <td><a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ExportEntry Records</td>
+                <td>A <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> of ExportEntry records derived from the code of this module that correspond to export * declarations that occur within the module.</td>
               </tr>
             </tbody></table>
           </figure>
 
           <p>An ImportEntry Record is a Record that digests information about a single declarative import. Each ImportEntry Record
-          has the fields defined in <a href="#table-39">Table 39</a>:</p>
+          has the fields defined in <a href="sec-ecmascript-language-scripts-and-modules.html#table-39">Table 39</a>:</p>
 
           <figure>
             <figcaption><span id="table-39">Table 39</span> — ImportEntry Record Fields</figcaption>
@@ -950,7 +950,7 @@
           </figure>
 
           <div class="note">
-            <p><span class="nh">NOTE 1</span> <a href="#table-40">Table 40</a> gives examples of ImportEntry records fields used
+            <p><span class="nh">NOTE 1</span> <a href="sec-ecmascript-language-scripts-and-modules.html#table-40">Table 40</a> gives examples of ImportEntry records fields used
             to represent the syntactic import forms:</p>
           </div>
 
@@ -1050,7 +1050,7 @@
           </figure>
 
           <p>An ExportEntry Record is a Record that digests information about a single declarative export. Each ExportEntry Record
-          has the fields defined in <a href="#table-41">Table 41</a>:</p>
+          has the fields defined in <a href="sec-ecmascript-language-scripts-and-modules.html#table-41">Table 41</a>:</p>
 
           <figure>
             <figcaption><span id="table-41">Table 41</span> — ExportEntry Record Fields</figcaption>
@@ -1084,7 +1084,7 @@
           </figure>
 
           <div class="note">
-            <p><span class="nh">NOTE 2</span> <a href="#table-42">Table 42</a> gives examples of the ExportEntry record fields
+            <p><span class="nh">NOTE 2</span> <a href="sec-ecmascript-language-scripts-and-modules.html#table-42">Table 42</a> gives examples of the ExportEntry record fields
             used to represent the syntactic export forms:</p>
           </div>
 
@@ -1305,20 +1305,20 @@
         </div>
 
         <section id="sec-parsemodule">
-          <h1><span class="secnum" id="sec-15.2.1.16.1"><a href="#sec-parsemodule" title="link to this section">15.2.1.16.1</a></span> Runtime Semantics: ParseModule ( sourceText )</h1>
+          <h1><span class="secnum" id="sec-15.2.1.16.1"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-parsemodule" title="link to this section">15.2.1.16.1</a></span> Runtime Semantics: ParseModule ( sourceText )</h1>
 
-          <p class="normalbefore">The abstract operation ParseModule with argument <var>sourceText</var> creates a <a href="#sec-source-text-module-records">Source Text Module Record</a> based upon the result of parsing
+          <p class="normalbefore">The abstract operation ParseModule with argument <var>sourceText</var> creates a <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text Module Record</a> based upon the result of parsing
           <var>sourceText</var> as a <var>Module.</var> ParseModule performs the following steps:</p>
 
           <ol class="proc">
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <i>sourceText</i> is an ECMAScript source text (see <a href="#sec-ecmascript-language-source-code">clause 10</a>).</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>sourceText</i> is an ECMAScript source text (see <a href="#sec-ecmascript-language-source-code">clause 10</a>).</li>
             <li>Parse <i>sourceText</i> using <i>Module</i> as the goal symbol and analyze the parse result for any Early Error
                 conditions. If the parse was successful and no early errors were found, let <i>body</i> be the resulting parse
                 tree. Otherwise, let <i>body</i> be an indication of one or more parsing errors and/or early errors. Parsing and
                 early error detection may be interweaved in an implementation dependent manner. If more than one parse or early
                 error is present, the number and ordering of reported errors is implementation dependent but at least one error
                 must be reported.</li>
-            <li>If <i>body</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a> or error
+            <li>If <i>body</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a> or error
                 indication, then
               <ol class="block">
                 <li>Throw a <b>SyntaxError</b> exception.</li>
@@ -1326,10 +1326,10 @@
             </li>
             <li>Let <i>requestedModules</i> be the ModuleRequests of <i>body</i>.</li>
             <li>Let <i>importEntries</i> be ImportEntries of <i>body</i>.</li>
-            <li>Let <i>importedBoundNames</i> be <a href="#sec-importedlocalnames">ImportedLocalNames</a>(<i>importEntries</i>).</li>
-            <li>Let <i>indirectExportEntries</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-            <li>Let <i>localExportEntries</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
-            <li>Let <i>starExportEntries</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+            <li>Let <i>importedBoundNames</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-importedlocalnames">ImportedLocalNames</a>(<i>importEntries</i>).</li>
+            <li>Let <i>indirectExportEntries</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+            <li>Let <i>localExportEntries</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
+            <li>Let <i>starExportEntries</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
             <li>Let <i>exportEntries</i> be ExportEntries of <i>body</i>.</li>
             <li>For each record <i>ee</i> in <i>exportEntries</i>, do
               <ol class="block">
@@ -1346,7 +1346,7 @@
                             <i>ee</i>.[[LocalName]].</li>
                         <li>If <i>ie</i>.[[ImportName]] is <code>"*"</code>, then
                           <ol class="block">
-                            <li><a href="#sec-algorithm-conventions">Assert</a>: this is a re-export of an imported module
+                            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: this is a re-export of an imported module
                                 namespace object.</li>
                             <li>Append <i>ee</i> to <i>localExportEntries</i>.</li>
                           </ol>
@@ -1374,7 +1374,7 @@
                 </li>
               </ol>
             </li>
-            <li>Return <a href="#sec-source-text-module-records">Source Text Module Record</a> {[[Realm]]: <b>undefined</b>,
+            <li>Return <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text Module Record</a> {[[Realm]]: <b>undefined</b>,
                 [[Environment]]: <b>undefined</b>, [[Namespace]]: <b>undefined</b>, [[Evaluated]]: <b>false</b>,
                 [[ECMAScriptCode]]: <i>body</i>, [[RequestedModules]]: <i>requestedModules</i>, [[ImportEntries]]:
                 <i>importEntries</i>, [[LocalExportEntries]]: <i>localExportEntries</i>, [[StarExportEntries]]:
@@ -1389,45 +1389,45 @@
         </section>
 
         <section id="sec-getexportednames">
-          <h1><span class="secnum" id="sec-15.2.1.16.2"><a href="#sec-getexportednames" title="link to this section">15.2.1.16.2</a></span> GetExportedNames( exportStarSet ) Concrete Method</h1>
+          <h1><span class="secnum" id="sec-15.2.1.16.2"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-getexportednames" title="link to this section">15.2.1.16.2</a></span> GetExportedNames( exportStarSet ) Concrete Method</h1>
 
-          <p class="normalbefore">The GetExportedNames concrete method of a <a href="#sec-source-text-module-records">Source Text
+          <p class="normalbefore">The GetExportedNames concrete method of a <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text
           Module Record</a> with argument <var>exportStarSet</var> performs the following steps:</p>
 
           <ol class="proc">
-            <li>Let <i>module</i> be this <a href="#sec-source-text-module-records">Source Text Module Record</a>.</li>
+            <li>Let <i>module</i> be this <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text Module Record</a>.</li>
             <li>If <i>exportStarSet</i> contains <i>module</i>, then
               <ol class="block">
-                <li><a href="#sec-algorithm-conventions">Assert</a>: We’ve reached the starting point of an import *
+                <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: We’ve reached the starting point of an import *
                     circularity.</li>
-                <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+                <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
               </ol>
             </li>
             <li>Append <i>module</i> to <i>exportStarSet</i>.</li>
-            <li>Let <i>exportedNames</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+            <li>Let <i>exportedNames</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
             <li>For each ExportEntry Record <i>e</i> in <i>module</i>.[[LocalExportEntries]], do
               <ol class="block">
-                <li><a href="#sec-algorithm-conventions">Assert</a>: <i>module</i> provides the direct binding for this
+                <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>module</i> provides the direct binding for this
                     export.</li>
                 <li>Append <i>e</i>.[[ExportName]] to <i>exportedNames</i>.</li>
               </ol>
             </li>
             <li>For each ExportEntry Record <i>e</i> in <i>module</i>.[[IndirectExportEntries]], do
               <ol class="block">
-                <li><a href="#sec-algorithm-conventions">Assert</a>: <i>module</i> imports a specific binding for this
+                <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>module</i> imports a specific binding for this
                     export.</li>
                 <li>Append <i>e</i>.[[ExportName]] to <i>exportedNames</i>.</li>
               </ol>
             </li>
             <li>For each ExportEntry Record <i>e</i> in <i>module</i>.[[StarExportEntries]], do
               <ol class="block">
-                <li>Let <i>requestedModule</i> be <a href="#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
+                <li>Let <i>requestedModule</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
                     <i>e</i>.[[ModuleRequest]]).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>requestedModule</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>requestedModule</i>).</li>
                 <li>Let <i>starNames</i> be <i>requestedModule.</i>GetExportedNames(<i>exportStarSet</i>).</li>
                 <li>For each element <i>n</i> of <i>starNames</i>, do
                   <ol class="block">
-                    <li>If <a href="#sec-samevalue">SameValue</a>(<i>n</i>, <code>"default"</code>) is <b>false</b>, then
+                    <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>n</i>, <code>"default"</code>) is <b>false</b>, then
                       <ol class="block">
                         <li>If <i>n</i> is not an element of <i>exportedNames</i>, then
                           <ol class="block">
@@ -1450,21 +1450,21 @@
         </section>
 
         <section id="sec-resolveexport">
-          <h1><span class="secnum" id="sec-15.2.1.16.3"><a href="#sec-resolveexport" title="link to this section">15.2.1.16.3</a></span> ResolveExport( exportName, resolveSet, exportStarSet ) Concrete
+          <h1><span class="secnum" id="sec-15.2.1.16.3"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-resolveexport" title="link to this section">15.2.1.16.3</a></span> ResolveExport( exportName, resolveSet, exportStarSet ) Concrete
               Method</h1>
 
-          <p class="normalbefore">The ResolveExport concrete method of a <a href="#sec-source-text-module-records">Source Text
+          <p class="normalbefore">The ResolveExport concrete method of a <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text
           Module Record</a> with arguments <var>exportName</var>, <var>resolveSet</var>, and <var>exportStarSet</var> performs the
           following steps:</p>
 
           <ol class="proc">
-            <li>Let <i>module</i> be this <a href="#sec-source-text-module-records">Source Text Module Record</a>.</li>
+            <li>Let <i>module</i> be this <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text Module Record</a>.</li>
             <li>For each Record {[[module]], [[exportName]]} <i>r</i> in <i>resolveSet</i>, do:
               <ol class="block">
-                <li>If <i>module</i> and <i>r</i>.[[module]] are the same <a href="#sec-abstract-module-records">Module Record</a>
-                    and <a href="#sec-samevalue">SameValue</a>(<i>exportName</i>, <i>r</i>.[[exportName]]) is <b>true</b>, then
+                <li>If <i>module</i> and <i>r</i>.[[module]] are the same <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a>
+                    and <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>exportName</i>, <i>r</i>.[[exportName]]) is <b>true</b>, then
                   <ol class="block">
-                    <li><a href="#sec-algorithm-conventions">Assert</a>: this is a circular import request.</li>
+                    <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: this is a circular import request.</li>
                     <li>Return <b>null</b>.</li>
                   </ol>
                 </li>
@@ -1473,9 +1473,9 @@
             <li>Append the Record {[[module]]: <i>module</i>, [[exportName]]: <i>exportName</i>} to <i>resolveSet</i>.</li>
             <li>For each ExportEntry Record <i>e</i> in <i>module</i>.[[LocalExportEntries]], do
               <ol class="block">
-                <li>If <a href="#sec-samevalue">SameValue</a>(<i>exportName</i>, <i>e</i>.[[ExportName]]) is <b>true</b>, then
+                <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>exportName</i>, <i>e</i>.[[ExportName]]) is <b>true</b>, then
                   <ol class="block">
-                    <li><a href="#sec-algorithm-conventions">Assert</a>: <i>module</i> provides the direct binding for this
+                    <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>module</i> provides the direct binding for this
                         export.</li>
                     <li>Return Record{[[module]]: <i>module,</i> [[bindingName]]: <i>e</i>.[[LocalName]]}.</li>
                   </ol>
@@ -1484,24 +1484,24 @@
             </li>
             <li>For each ExportEntry Record <i>e</i> in <i>module</i>.[[IndirectExportEntries]], do
               <ol class="block">
-                <li>If <a href="#sec-samevalue">SameValue</a>(<i>exportName</i>, <i>e</i>.[[ExportName]]) is <b>true</b>, then
+                <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>exportName</i>, <i>e</i>.[[ExportName]]) is <b>true</b>, then
                   <ol class="block">
-                    <li><a href="#sec-algorithm-conventions">Assert</a>: <i>module</i> imports a specific binding for this
+                    <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>module</i> imports a specific binding for this
                         export.</li>
-                    <li>Let <i>importedModule</i> be <a href="#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
+                    <li>Let <i>importedModule</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
                         <i>e</i>.[[ModuleRequest]]).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>importedModule</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>importedModule</i>).</li>
                     <li>Let <i>indirectResolution</i> be <i>importedModule.</i>ResolveExport(<i>e</i>.[[ImportName]],
                         <i>resolveSet</i>, <i>exportStarSet</i>).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>indirectResolution</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>indirectResolution</i>).</li>
                     <li>If <i>indirectResolution</i> is not <b>null</b>, return <i>indirectResolution</i>.</li>
                   </ol>
                 </li>
               </ol>
             </li>
-            <li>If <a href="#sec-samevalue">SameValue</a>(<i>exportName</i>, <code>"default"</code>) is <b>true</b>, then
+            <li>If <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>exportName</i>, <code>"default"</code>) is <b>true</b>, then
               <ol class="block">
-                <li><a href="#sec-algorithm-conventions">Assert</a>: A <code>default</code> export was not explicitly defined by
+                <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: A <code>default</code> export was not explicitly defined by
                     this module.</li>
                 <li>Throw a <b>SyntaxError</b> exception.</li>
                 <li>NOTE  A <code>default</code> export cannot be provided by an <code>export *</code>.</li>
@@ -1512,21 +1512,21 @@
             <li>Let <i>starResolution</i> be <b>null</b>.</li>
             <li>For each ExportEntry Record <i>e</i> in <i>module</i>.[[StarExportEntries]], do
               <ol class="block">
-                <li>Let <i>importedModule</i> be <a href="#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
+                <li>Let <i>importedModule</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
                     <i>e</i>.[[ModuleRequest]]).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>importedModule</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>importedModule</i>).</li>
                 <li>Let <i>resolution</i> be <i>importedModule</i>.ResolveExport(<i>exportName</i>, <i>resolveSet</i>,
                     <i>exportStarSet</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
                 <li>If <i>resolution</i> is <code>"ambiguous"</code>, return <code>"ambiguous"</code>.</li>
                 <li>If <i>resolution</i> is not <b>null</b>, then
                   <ol class="block">
                     <li>If <i>starResolution</i> is <b>null</b>, let <i>starResolution</i> be <i>resolution</i>.</li>
                     <li>Else
                       <ol class="block">
-                        <li><a href="#sec-algorithm-conventions">Assert</a>: there is more than one * import that includes the
+                        <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: there is more than one * import that includes the
                             requested name.</li>
-                        <li>If <i>resolution</i>.[[module]] and <i>starResolution</i>.[[module]] are not the same <a href="#sec-abstract-module-records">Module Record</a> or <a href="#sec-samevalue">SameValue</a>(<i>resolution.</i>[[exportName]],
+                        <li>If <i>resolution</i>.[[module]] and <i>starResolution</i>.[[module]] are not the same <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> or <a href="sec-abstract-operations.html#sec-samevalue">SameValue</a>(<i>resolution.</i>[[exportName]],
                             <i>starResolution</i>.[[exportName]]) is <b>false</b>, return <code>"ambiguous"</code>.</li>
                       </ol>
                     </li>
@@ -1539,9 +1539,9 @@
 
           <div class="note">
             <p><span class="nh">NOTE</span> ResolveExport attempts to resolve an imported binding to the actual defining module
-            and local binding name. The defining module may be the module represented by the <a href="#sec-abstract-module-records">Module Record</a> this method was invoked on or some other module that is imported
+            and local binding name. The defining module may be the module represented by the <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> this method was invoked on or some other module that is imported
             by that module. The parameter <var>resolveSet</var> is use to detect unresolved circular import/export paths. If a
-            pair consisting of specific <a href="#sec-abstract-module-records">Module Record</a> and <var>exportName</var> is
+            pair consisting of specific <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> and <var>exportName</var> is
             reached that is already in <span style="font-family: Times New Roman"><i>resolveSet</i>, an</span> import circularity
             has been encountered. Before recursively calling ResolveExport, a pair consisting of <var>module</var> and
             <var>exportName</var> is added to <span style="font-family: Times New Roman"><i>resolveSet</i>.</span></p>
@@ -1554,62 +1554,62 @@
         </section>
 
         <section id="sec-moduledeclarationinstantiation">
-          <h1><span class="secnum" id="sec-15.2.1.16.4"><a href="#sec-moduledeclarationinstantiation" title="link to this section">15.2.1.16.4</a></span> ModuleDeclarationInstantiation( ) Concrete Method</h1>
+          <h1><span class="secnum" id="sec-15.2.1.16.4"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduledeclarationinstantiation" title="link to this section">15.2.1.16.4</a></span> ModuleDeclarationInstantiation( ) Concrete Method</h1>
 
-          <p class="normalbefore">The ModuleDeclarationInstantiation concrete method of a <a href="#sec-source-text-module-records">Source Text Module Record</a> performs the following steps:</p>
+          <p class="normalbefore">The ModuleDeclarationInstantiation concrete method of a <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text Module Record</a> performs the following steps:</p>
 
           <ol class="proc">
-            <li>Let <i>module</i> be this <a href="#sec-source-text-module-records">Source Text Module Record</a>.</li>
+            <li>Let <i>module</i> be this <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text Module Record</a>.</li>
             <li>Let <i>realm</i> be <i>module</i>.[[Realm]].</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <i>realm</i> is not <b>undefined</b>.</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>realm</i> is not <b>undefined</b>.</li>
             <li>Let <i>code</i> be <i>module</i>.[[ECMAScriptCode]].</li>
-            <li>If <i>module</i>.[[Environment]] is not <b>undefined</b>, return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family: sans-serif">empty</span>).</li>
-            <li>Let <i>env</i> be <a href="#sec-newmoduleenvironment">NewModuleEnvironment</a>(<i>realm</i>.[[globalEnv]]).</li>
+            <li>If <i>module</i>.[[Environment]] is not <b>undefined</b>, return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family: sans-serif">empty</span>).</li>
+            <li>Let <i>env</i> be <a href="sec-executable-code-and-execution-contexts.html#sec-newmoduleenvironment">NewModuleEnvironment</a>(<i>realm</i>.[[globalEnv]]).</li>
             <li>Set <i>module</i>.[[Environment]] to <i>env</i>.</li>
             <li>For each String <i>required</i> that is an element of <i>module</i>.[[RequestedModules]] do,
               <ol class="block">
                 <li>NOTE:  Before instantiating a module, all of the modules it requested must be available. An implementation may
                     perform this test at any time prior to this point,</li>
-                <li>Let <i>requiredModule</i> be <a href="#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>, <i>required</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>requiredModule</i>).</li>
+                <li>Let <i>requiredModule</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>, <i>required</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>requiredModule</i>).</li>
                 <li>Let <i>status</i> be <i>requiredModule</i>.ModuleDeclarationInstantiation().</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
               </ol>
             </li>
             <li>For each ExportEntry Record <i>e</i> in <i>module</i>.[[IndirectExportEntries]], do
               <ol class="block">
-                <li>Let <i>resolution</i> be <i>module</i>.<a href="#sec-resolveexport">ResolveExport</a>(<i>e</i>.[[ExportName]],
+                <li>Let <i>resolution</i> be <i>module</i>.<a href="sec-ecmascript-language-scripts-and-modules.html#sec-resolveexport">ResolveExport</a>(<i>e</i>.[[ExportName]],
                     «‍ », «‍ »).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
                 <li>If <i>resolution</i> is <b>null</b> or <i>resolution</i> is <code>"ambiguous"</code>, throw a
                     <b>SyntaxError</b> exception.</li>
               </ol>
             </li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>: all named exports from <i>module</i> are resolvable.</li>
-            <li>Let <i>envRec</i> be <i>env</i>’s <a href="#sec-lexical-environments">EnvironmentRecord</a>.</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: all named exports from <i>module</i> are resolvable.</li>
+            <li>Let <i>envRec</i> be <i>env</i>’s <a href="sec-executable-code-and-execution-contexts.html#sec-lexical-environments">EnvironmentRecord</a>.</li>
             <li>For each ImportEntry Record <i>in</i> in <i>module</i>.[[ImportEntries]], do
               <ol class="block">
-                <li>Let <i>importedModule</i> be <a href="#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
+                <li>Let <i>importedModule</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>,
                     <i>in</i>.[[ModuleRequest]]).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>importedModule</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>importedModule</i>).</li>
                 <li>If <i>in</i>.[[ImportName]] is <code>"*"</code>, then
                   <ol class="block">
-                    <li>Let <i>namespace</i> be <a href="#sec-getmodulenamespace">GetModuleNamespace</a>(<i>importedModule</i>).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>module</i>).</li>
+                    <li>Let <i>namespace</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-getmodulenamespace">GetModuleNamespace</a>(<i>importedModule</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>module</i>).</li>
                     <li>Let <i>status</i> be <i>envRec</i>.CreateImmutableBinding(<i>in</i>.[[LocalName]], <b>true</b>).</li>
-                    <li><a href="#sec-algorithm-conventions">Assert</a>:  <i>status</i> is not an <a href="#sec-completion-record-specification-type">abrupt completion</a>.</li>
-                    <li><a href="#sec-call">Call</a> <i>envRec</i>.InitializeBinding(<i>in</i>.[[LocalName]],
+                    <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>:  <i>status</i> is not an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>.</li>
+                    <li><a href="sec-abstract-operations.html#sec-call">Call</a> <i>envRec</i>.InitializeBinding(<i>in</i>.[[LocalName]],
                         <i>namespace</i>).</li>
                   </ol>
                 </li>
                 <li>else,
                   <ol class="block">
-                    <li>Let <i>resolution</i> be <i>importedModule</i>.<a href="#sec-resolveexport">ResolveExport</a>(<i>in</i>.[[ImportName]], «&nbsp;», «‍
+                    <li>Let <i>resolution</i> be <i>importedModule</i>.<a href="sec-ecmascript-language-scripts-and-modules.html#sec-resolveexport">ResolveExport</a>(<i>in</i>.[[ImportName]], «&nbsp;», «‍
                         »).</li>
-                    <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
+                    <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
                     <li>If <i>resolution</i> is <b>null</b> or <i>resolution</i> is <code>"ambiguous"</code>, throw a
                         <b>SyntaxError</b> exception.</li>
-                    <li><a href="#sec-call">Call</a> <i>envRec</i>.<a href="#sec-createimportbinding">CreateImportBinding</a>(<i>in</i>.[[LocalName]],
+                    <li><a href="sec-abstract-operations.html#sec-call">Call</a> <i>envRec</i>.<a href="sec-executable-code-and-execution-contexts.html#sec-createimportbinding">CreateImportBinding</a>(<i>in</i>.[[LocalName]],
                         <i>resolution</i>.[[module]], <i>resolution</i>.[[bindingName]]).</li>
                   </ol>
                 </li>
@@ -1621,8 +1621,8 @@
                 <li>For each element <i>dn</i> of the BoundNames of <i>d</i> do
                   <ol class="block">
                     <li>Let <i>status</i> be <i>envRec</i>.CreateMutableBinding(<i>dn</i>, <b>false</b>).</li>
-                    <li><a href="#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="#sec-completion-record-specification-type">abrupt completion</a>.</li>
-                    <li><a href="#sec-call">Call</a> <i>envRec</i>.InitializeBinding(<i>dn</i>, <b>undefined</b>).</li>
+                    <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>.</li>
+                    <li><a href="sec-abstract-operations.html#sec-call">Call</a> <i>envRec</i>.InitializeBinding(<i>dn</i>, <b>undefined</b>).</li>
                   </ol>
                 </li>
               </ol>
@@ -1642,122 +1642,122 @@
                         <li>Let <i>status</i> be <i>envRec</i>.CreateMutableBinding(<i>dn</i>, <b>false</b>).</li>
                       </ol>
                     </li>
-                    <li><a href="#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="#sec-completion-record-specification-type">abrupt completion</a>.</li>
+                    <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>status</i> is not an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>.</li>
                     <li>If <i>d</i> is a <i>GeneratorDeclaration</i> production or a <i>FunctionDeclaration</i> production, then
                       <ol class="block">
                         <li>Let <i>fo</i> be the result of performing  InstantiateFunctionObject  for <i>d</i> with argument
                             <i>env</i>.</li>
-                        <li><a href="#sec-call">Call</a> <i>envRec</i>.InitializeBinding(<i>dn</i>, <i>fo</i>).</li>
+                        <li><a href="sec-abstract-operations.html#sec-call">Call</a> <i>envRec</i>.InitializeBinding(<i>dn</i>, <i>fo</i>).</li>
                       </ol>
                     </li>
                   </ol>
                 </li>
               </ol>
             </li>
-            <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
+            <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
                 sans-serif">empty</span>).</li>
           </ol>
         </section>
 
         <section id="sec-moduleevaluation">
-          <h1><span class="secnum" id="sec-15.2.1.16.5"><a href="#sec-moduleevaluation" title="link to this section">15.2.1.16.5</a></span> ModuleEvaluation() Concrete Method</h1>
+          <h1><span class="secnum" id="sec-15.2.1.16.5"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduleevaluation" title="link to this section">15.2.1.16.5</a></span> ModuleEvaluation() Concrete Method</h1>
 
-          <p class="normalbefore">The ModuleEvaluation concrete method of a <a href="#sec-source-text-module-records">Source Text
+          <p class="normalbefore">The ModuleEvaluation concrete method of a <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text
           Module Record</a> performs the following steps:</p>
 
           <ol class="proc">
-            <li>Let <i>module</i> be this <a href="#sec-source-text-module-records">Source Text Module Record</a>.</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <a href="#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a> has already been invoked on
+            <li>Let <i>module</i> be this <a href="sec-ecmascript-language-scripts-and-modules.html#sec-source-text-module-records">Source Text Module Record</a>.</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a> has already been invoked on
                 <i>module</i> and successfully completed.</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <i>module</i>.[[Realm]] is not <b>undefined</b>.</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>module</i>.[[Realm]] is not <b>undefined</b>.</li>
             <li>If <i>module.</i>[[Evaluated]] is <b>true</b>, return <b>undefined</b>.</li>
             <li>Set <i>module.</i>[[Evaluated]] to <b>true</b>.</li>
             <li>For each String <i>required</i> that is an element of <i>module</i>.[[RequestedModules]] do,
               <ol class="block">
-                <li>Let <i>requiredModule</i> be <a href="#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>, <i>required</i>).</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>requiredModule</i>).</li>
+                <li>Let <i>requiredModule</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-hostresolveimportedmodule">HostResolveImportedModule</a>(<i>module</i>, <i>required</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>requiredModule</i>).</li>
                 <li>Let <i>status</i> be <i>requiredModule.</i>ModuleEvaluation().</li>
-                <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+                <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
               </ol>
             </li>
-            <li>Let <i>moduleCxt</i> be a new <a href="#sec-execution-contexts">ECMAScript code execution context</a>.</li>
+            <li>Let <i>moduleCxt</i> be a new <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">ECMAScript code execution context</a>.</li>
             <li>Set the Function of <i>moduleCxt</i> to <b>null</b>.</li>
-            <li>Set the <a href="#sec-code-realms">Realm</a> of <i>moduleCxt</i> to <i>module</i>.[[Realm]].</li>
-            <li><a href="#sec-algorithm-conventions">Assert</a>: <i>module</i> has been linked and declarations in its module
+            <li>Set the <a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a> of <i>moduleCxt</i> to <i>module</i>.[[Realm]].</li>
+            <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>module</i> has been linked and declarations in its module
                 environment have been instantiated.</li>
-            <li>Set the <a href="#sec-execution-contexts">VariableEnvironment</a> of <i>moduleCxt</i> to
+            <li>Set the <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">VariableEnvironment</a> of <i>moduleCxt</i> to
                 <i>module</i>.[[Environment]].</li>
-            <li>Set the <a href="#sec-execution-contexts">LexicalEnvironment</a> of <i>moduleCxt</i> to
+            <li>Set the <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">LexicalEnvironment</a> of <i>moduleCxt</i> to
                 <i>module</i>.[[Environment]].</li>
-            <li><a href="#sec-execution-contexts">Suspend</a> <a href="#sec-execution-contexts">the currently running execution
+            <li><a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">Suspend</a> <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the currently running execution
                 context</a>.</li>
-            <li>Push <i>moduleCxt</i> on to <a href="#sec-execution-contexts">the execution context stack</a>; <i>moduleCxt</i> is
-                now <a href="#sec-execution-contexts">the running execution context</a>.</li>
+            <li>Push <i>moduleCxt</i> on to <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the execution context stack</a>; <i>moduleCxt</i> is
+                now <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>.</li>
             <li>Let <i>result</i> be the result of evaluating <i>module</i>.[[ECMAScriptCode]].</li>
-            <li><a href="#sec-execution-contexts">Suspend</a> <i>moduleCxt</i> and remove it from <a href="#sec-execution-contexts">the execution context stack</a>.</li>
-            <li>Resume the context that is now on the top of <a href="#sec-execution-contexts">the execution context stack</a> as
-                <a href="#sec-execution-contexts">the running execution context</a>.</li>
-            <li>Return <a href="#sec-completion-record-specification-type">Completion</a>(<i>result</i>).</li>
+            <li><a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">Suspend</a> <i>moduleCxt</i> and remove it from <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the execution context stack</a>.</li>
+            <li>Resume the context that is now on the top of <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the execution context stack</a> as
+                <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>.</li>
+            <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>result</i>).</li>
           </ol>
         </section>
       </section>
 
       <section id="sec-hostresolveimportedmodule">
-        <h1><span class="secnum" id="sec-15.2.1.17"><a href="#sec-hostresolveimportedmodule" title="link to this section">15.2.1.17</a></span> Runtime Semantics: HostResolveImportedModule (referencingModule,
+        <h1><span class="secnum" id="sec-15.2.1.17"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-hostresolveimportedmodule" title="link to this section">15.2.1.17</a></span> Runtime Semantics: HostResolveImportedModule (referencingModule,
             specifier )</h1>
 
         <p class="normalbefore">HostResolveImportedModule is an implementation defined abstract operation that provides the
-        concrete <a href="#sec-abstract-module-records">Module Record</a> subclass instance that corresponds to the <span class="nt">ModuleSpecifier</span> <var>String, specifier, occurring within the context of the module represented by the <a href="#sec-abstract-module-records">Module Record</a> referencingModule.</var></p>
+        concrete <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> subclass instance that corresponds to the <span class="nt">ModuleSpecifier</span> <var>String, specifier, occurring within the context of the module represented by the <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> referencingModule.</var></p>
 
         <p class="normalbefore">The implementation of HostResolveImportedModule must conform to the following requirements:</p>
 
         <ul>
           <li>
-            <p>The normal return value must be an instance of a concrete subclass of <a href="#sec-abstract-module-records">Module
+            <p>The normal return value must be an instance of a concrete subclass of <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module
             Record</a>.</p>
           </li>
 
           <li>
-            <p>If a <a href="#sec-abstract-module-records">Module Record</a> corresponding to the pair <var>referencingModule,
+            <p>If a <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> corresponding to the pair <var>referencingModule,
             specifier</var> does not exist or cannot be created, an exception must be thrown.</p>
           </li>
 
           <li>
             <p>This operation must be idempotent if it completes normally. Each time it is called with a specific
-            <var>referencingModule, specifier</var> pair as arguments it must return the same <a href="#sec-abstract-module-records">Module Record</a> instance.</p>
+            <var>referencingModule, specifier</var> pair as arguments it must return the same <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> instance.</p>
           </li>
         </ul>
 
-        <p class="normalbefore">Multiple different <var>referencingModule, specifier</var> pairs may map to the same <a href="#sec-abstract-module-records">Module Record</a> instance. The actual mapping semantic is implementation defined but
+        <p class="normalbefore">Multiple different <var>referencingModule, specifier</var> pairs may map to the same <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a> instance. The actual mapping semantic is implementation defined but
         typically a normalization process is applied to <var>specifier</var> as part of the mapping process. A typical
         normalization process would include actions such as alphabetic case folding and expansion of relative and abbreviated path
         specifiers.</p>
       </section>
 
       <section id="sec-getmodulenamespace">
-        <h1><span class="secnum" id="sec-15.2.1.18"><a href="#sec-getmodulenamespace" title="link to this section">15.2.1.18</a></span> Runtime Semantics: GetModuleNamespace( module )</h1>
+        <h1><span class="secnum" id="sec-15.2.1.18"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-getmodulenamespace" title="link to this section">15.2.1.18</a></span> Runtime Semantics: GetModuleNamespace( module )</h1>
 
         <p>The abstract operation GetModuleNamespace called with argument <var>module</var> performs the following steps:</p>
 
         <ol class="proc">
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>module</i> is an instance of a concrete subclass of <a href="#sec-abstract-module-records">Module Record</a>.</li>
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>module</i> is an instance of a concrete subclass of <a href="sec-ecmascript-language-scripts-and-modules.html#sec-abstract-module-records">Module Record</a>.</li>
           <li>Let <i>namespace</i> be <i>module</i>.[[Namespace]].</li>
           <li>If <i>namespace</i> is <b>undefined</b>, then
             <ol class="block">
-              <li>Let <i>exportedNames</i> be <i>module</i>.<a href="#sec-getexportednames">GetExportedNames</a>(«
+              <li>Let <i>exportedNames</i> be <i>module</i>.<a href="sec-ecmascript-language-scripts-and-modules.html#sec-getexportednames">GetExportedNames</a>(«
                   »).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>exportedNames</i>).</li>
-              <li>Let <i>unambiguousNames</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>exportedNames</i>).</li>
+              <li>Let <i>unambiguousNames</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
               <li>For each <i>name</i> that is an element of <i>exportedNames</i>,
                 <ol class="block">
-                  <li>Let <i>resolution</i> be <i>module</i>.<a href="#sec-resolveexport">ResolveExport</a>(<i>name</i>, «
+                  <li>Let <i>resolution</i> be <i>module</i>.<a href="sec-ecmascript-language-scripts-and-modules.html#sec-resolveexport">ResolveExport</a>(<i>name</i>, «
                       », « »).</li>
-                  <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
+                  <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>resolution</i>).</li>
                   <li>If <i>resolution</i> is <b>null</b>, throw a <b>SyntaxError</b> exception.</li>
                   <li>If <i>resolution</i> is not <code>"ambiguous"</code>, append <i>name</i> to <i>unambiguousNames</i>.</li>
                 </ol>
               </li>
-              <li>Let <i>namespace</i> be <a href="#sec-modulenamespacecreate">ModuleNamespaceCreate</a>(<i>module</i>,
+              <li>Let <i>namespace</i> be <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-modulenamespacecreate">ModuleNamespaceCreate</a>(<i>module</i>,
                   <i>unambiguousNames</i>).</li>
             </ol>
           </li>
@@ -1766,32 +1766,32 @@
       </section>
 
       <section id="sec-toplevelmoduleevaluationjob">
-        <h1><span class="secnum" id="sec-15.2.1.19"><a href="#sec-toplevelmoduleevaluationjob" title="link to this section">15.2.1.19</a></span> Runtime Semantics: TopLevelModuleEvaluationJob ( sourceText)</h1>
+        <h1><span class="secnum" id="sec-15.2.1.19"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-toplevelmoduleevaluationjob" title="link to this section">15.2.1.19</a></span> Runtime Semantics: TopLevelModuleEvaluationJob ( sourceText)</h1>
 
         <p class="normalbefore">A TopLevelModuleEvaluationJob with parameter <var>sourceText</var> is a job that parses,
         validates, and evaluates <var>sourceText</var> as a <span class="nt">Module</span>.</p>
 
         <ol class="proc">
-          <li><a href="#sec-algorithm-conventions">Assert</a>: <i>sourceText</i> is an ECMAScript source text (see <a href="#sec-ecmascript-language-source-code">clause 10</a>).</li>
-          <li>Let <i>realm</i> be <a href="#sec-execution-contexts">the running execution context</a>’s <a href="#sec-code-realms">Realm</a>.</li>
-          <li>Let <i>m</i> be <a href="#sec-parsemodule">ParseModule</a>(<i>sourceText</i>).</li>
-          <li>If <i>m</i> is an <a href="#sec-completion-record-specification-type">abrupt completion</a> or any other
+          <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: <i>sourceText</i> is an ECMAScript source text (see <a href="#sec-ecmascript-language-source-code">clause 10</a>).</li>
+          <li>Let <i>realm</i> be <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>’s <a href="sec-executable-code-and-execution-contexts.html#sec-code-realms">Realm</a>.</li>
+          <li>Let <i>m</i> be <a href="sec-ecmascript-language-scripts-and-modules.html#sec-parsemodule">ParseModule</a>(<i>sourceText</i>).</li>
+          <li>If <i>m</i> is an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a> or any other
               implementation defined error indication, then
             <ol class="block">
               <li>Report or log the error(s) in an implementation dependent manner.</li>
-              <li>NextJob <a href="#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
+              <li>NextJob <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
             </ol>
           </li>
           <li>Set <i>m</i>.[[Realm]] to <i>realm</i>.</li>
-          <li>Let <i>status</i> be <i>m</i>.<a href="#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a>().</li>
-          <li>If <i>status</i> is not an <a href="#sec-completion-record-specification-type">abrupt completion</a>, then
+          <li>Let <i>status</i> be <i>m</i>.<a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduledeclarationinstantiation">ModuleDeclarationInstantiation</a>().</li>
+          <li>If <i>status</i> is not an <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">abrupt completion</a>, then
             <ol class="block">
-              <li><a href="#sec-algorithm-conventions">Assert</a>: all dependencies of <i>m</i> have been transitively resolved
+              <li><a href="sec-notational-conventions.html#sec-algorithm-conventions">Assert</a>: all dependencies of <i>m</i> have been transitively resolved
                   and <i>m</i> is ready for evaluation.</li>
-              <li>Let <i>status</i> be <i>m</i>.<a href="#sec-moduleevaluation">ModuleEvaluation</a>().</li>
+              <li>Let <i>status</i> be <i>m</i>.<a href="sec-ecmascript-language-scripts-and-modules.html#sec-moduleevaluation">ModuleEvaluation</a>().</li>
             </ol>
           </li>
-          <li>NextJob <a href="#sec-completion-record-specification-type">Completion</a>(<i>status</i>).</li>
+          <li>NextJob <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>status</i>).</li>
         </ol>
 
         <div class="note">
@@ -1804,10 +1804,10 @@
       </section>
 
       <section id="sec-module-semantics-runtime-semantics-evaluation">
-        <h1><span class="secnum" id="sec-15.2.1.20"><a href="#sec-module-semantics-runtime-semantics-evaluation" title="link to this section">15.2.1.20</a></span> Runtime Semantics: Evaluation</h1>
+        <h1><span class="secnum" id="sec-15.2.1.20"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-runtime-semantics-evaluation" title="link to this section">15.2.1.20</a></span> Runtime Semantics: Evaluation</h1>
         <div class="gp prod"><span class="nt">Module</span> <span class="geq">:</span> <span class="grhsannot">[empty]</span></div>
         <ol class="proc">
-          <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleBody</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span></div>
         <ol class="proc">
@@ -1815,17 +1815,17 @@
           <li>If <i>result</i>.[[type]] is <span style="font-family: sans-serif">normal</span> and <i>result</i>.[[value]] is
               <span style="font-family: sans-serif">empty</span>, then
             <ol class="block">
-              <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
+              <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<b>undefined</b>).</li>
             </ol>
           </li>
-          <li>Return <a href="#sec-completion-record-specification-type">Completion</a>(<i>result</i>).</li>
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<i>result</i>).</li>
         </ol>
         <div class="gp prod"><span class="nt">ModuleItemList</span> <span class="geq">:</span> <span class="nt">ModuleItemList</span> <span class="nt">ModuleItem</span></div>
         <ol class="proc">
           <li>Let <i>sl</i> be the result of evaluating <i>ModuleItemList</i>.</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>sl</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>sl</i>).</li>
           <li>Let <i>s</i> be the result of evaluating <i>ModuleItem</i>.</li>
-          <li>Return <a href="#sec-completion-record-specification-type">Completion</a>(<a href="#sec-updateempty">UpdateEmpty</a>(<i>s</i>, <i>sl</i>.[[value]])).</li>
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-completion-record-specification-type">Completion</a>(<a href="sec-ecmascript-data-types-and-values.html#sec-updateempty">UpdateEmpty</a>(<i>s</i>, <i>sl</i>.[[value]])).</li>
         </ol>
 
         <div class="note">
@@ -1835,7 +1835,7 @@
 
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ImportDeclaration</span></div>
         <ol class="proc">
-          <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
               sans-serif">empty</span>).</li>
         </ol>
       </section>
@@ -1843,7 +1843,7 @@
 
     <section id="sec-imports">
       <div class="front">
-        <h1><span class="secnum" id="sec-15.2.2"><a href="#sec-imports" title="link to this section">15.2.2</a></span>
+        <h1><span class="secnum" id="sec-15.2.2"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports" title="link to this section">15.2.2</a></span>
             Imports</h1>
         <h2>Syntax</h2>
 
@@ -1908,7 +1908,7 @@
       </div>
 
       <section id="sec-imports-static-semantics-early-errors">
-        <h1><span class="secnum" id="sec-15.2.2.1"><a href="#sec-imports-static-semantics-early-errors" title="link to this section">15.2.2.1</a></span> Static Semantics: Early Errors</h1>
+        <h1><span class="secnum" id="sec-15.2.2.1"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-early-errors" title="link to this section">15.2.2.1</a></span> Static Semantics: Early Errors</h1>
         <div class="gp prod"><span class="nt">ModuleItem</span> <span class="geq">:</span> <span class="nt">ImportDeclaration</span></div>
         <ul>
           <li>
@@ -1919,9 +1919,9 @@
       </section>
 
       <section id="sec-imports-static-semantics-boundnames">
-        <h1><span class="secnum" id="sec-15.2.2.2"><a href="#sec-imports-static-semantics-boundnames" title="link to this section">15.2.2.2</a></span> Static Semantics: BoundNames</h1>
+        <h1><span class="secnum" id="sec-15.2.2.2"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-boundnames" title="link to this section">15.2.2.2</a></span> Static Semantics: BoundNames</h1>
 
-        <p>See also: <a href="#sec-identifiers-static-semantics-boundnames">12.1.2</a>, <a href="#sec-let-and-const-declarations-static-semantics-boundnames">13.3.1.2</a>, <a href="#sec-variable-statement-static-semantics-boundnames">13.3.2.1</a>, <a href="#sec-destructuring-binding-patterns-static-semantics-boundnames">13.3.3.1</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-boundnames">13.7.5.2</a>, <a href="#sec-function-definitions-static-semantics-boundnames">14.1.3</a>, <a href="#sec-arrow-function-definitions-static-semantics-boundnames">14.2.2</a>, <a href="#sec-generator-function-definitions-static-semantics-boundnames">14.4.2</a>, <a href="#sec-class-definitions-static-semantics-boundnames">14.5.2</a>, <a href="#sec-exports-static-semantics-boundnames">15.2.3.2</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-expressions.html#sec-identifiers-static-semantics-boundnames">12.1.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-let-and-const-declarations-static-semantics-boundnames">13.3.1.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-variable-statement-static-semantics-boundnames">13.3.2.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-destructuring-binding-patterns-static-semantics-boundnames">13.3.3.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-boundnames">13.7.5.2</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-boundnames">14.1.3</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-boundnames">14.2.2</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-generator-function-definitions-static-semantics-boundnames">14.4.2</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-class-definitions-static-semantics-boundnames">14.5.2</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-boundnames">15.2.3.2</a>.</p>
 
         <div class="gp prod"><span class="nt">ImportDeclaration</span> <span class="geq">:</span> <code class="t">import</code> <span class="nt">ImportClause</span> <span class="nt">FromClause</span> <code class="t">;</code></div>
         <ol class="proc">
@@ -1929,7 +1929,7 @@
         </ol>
         <div class="gp prod"><span class="nt">ImportDeclaration</span> <span class="geq">:</span> <code class="t">import</code> <span class="nt">ModuleSpecifier</span> <code class="t">;</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ImportClause</span> <span class="geq">:</span> <span class="nt">ImportedDefaultBinding</span> <code class="t">,</code> <span class="nt">NameSpaceImport</span></div>
         <ol class="proc">
@@ -1945,7 +1945,7 @@
         </ol>
         <div class="gp prod"><span class="nt">NamedImports</span> <span class="geq">:</span> <code class="t">{</code> <code class="t">}</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ImportsList</span> <span class="geq">:</span> <span class="nt">ImportsList</span> <code class="t">,</code> <span class="nt">ImportSpecifier</span></div>
         <ol class="proc">
@@ -1960,9 +1960,9 @@
       </section>
 
       <section id="sec-imports-static-semantics-importentries">
-        <h1><span class="secnum" id="sec-15.2.2.3"><a href="#sec-imports-static-semantics-importentries" title="link to this section">15.2.2.3</a></span> Static Semantics: ImportEntries</h1>
+        <h1><span class="secnum" id="sec-15.2.2.3"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-importentries" title="link to this section">15.2.2.3</a></span> Static Semantics: ImportEntries</h1>
 
-        <p>See also: <a href="#sec-module-semantics-static-semantics-importentries">15.2.1.8</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-importentries">15.2.1.8</a>.</p>
 
         <div class="gp prod"><span class="nt">ImportDeclaration</span> <span class="geq">:</span> <code class="t">import</code> <span class="nt">ImportClause</span> <span class="nt">FromClause</span> <code class="t">;</code></div>
         <ol class="proc">
@@ -1971,12 +1971,12 @@
         </ol>
         <div class="gp prod"><span class="nt">ImportDeclaration</span> <span class="geq">:</span> <code class="t">import</code> <span class="nt">ModuleSpecifier</span> <code class="t">;</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-static-semantics-importentriesformodule">
-        <h1><span class="secnum" id="sec-15.2.2.4"><a href="#sec-static-semantics-importentriesformodule" title="link to this section">15.2.2.4</a></span> Static Semantics: ImportEntriesForModule</h1>
+        <h1><span class="secnum" id="sec-15.2.2.4"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-static-semantics-importentriesformodule" title="link to this section">15.2.2.4</a></span> Static Semantics: ImportEntriesForModule</h1>
 
         <p>With parameter <var>module</var>.</p>
 
@@ -2001,18 +2001,18 @@
           <li>Let <i>localName</i> be the sole element of BoundNames of <i>ImportedBinding</i>.</li>
           <li>Let <i>defaultEntry</i> be the Record {[[ModuleRequest]]: <i>module</i>, [[ImportName]]: <code>"default"</code>,
               [[LocalName]]: <i>localName</i> }.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing <i>defaultEntry.</i></li>
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing <i>defaultEntry.</i></li>
         </ol>
         <div class="gp prod"><span class="nt">NameSpaceImport</span> <span class="geq">:</span> <code class="t">*</code> <code class="t">as</code> <span class="nt">ImportedBinding</span></div>
         <ol class="proc">
           <li>Let <i>localName</i> be the StringValue of <i>ImportedBinding</i>.</li>
           <li>Let <i>entry</i> be the Record {[[ModuleRequest]]: <i>module</i>, [[ImportName]]: <code>"*"</code>, [[LocalName]]:
               <i>localName</i> }.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">NamedImports</span> <span class="geq">:</span> <code class="t">{</code> <code class="t">}</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ImportsList</span> <span class="geq">:</span> <span class="nt">ImportsList</span> <code class="t">,</code> <span class="nt">ImportSpecifier</span></div>
         <ol class="proc">
@@ -2026,7 +2026,7 @@
           <li>Let <i>localName</i> be the sole element of BoundNames of <i>ImportedBinding</i>.</li>
           <li>Let <i>entry</i> be the Record {[[ModuleRequest]]: <i>module</i>, [[ImportName]]: <i>localName</i> , [[LocalName]]:
               <i>localName</i> }.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ImportSpecifier</span> <span class="geq">:</span> <span class="nt">IdentifierName</span> <code class="t">as</code> <span class="nt">ImportedBinding</span></div>
         <ol class="proc">
@@ -2034,14 +2034,14 @@
           <li>Let <i>localName</i> be the StringValue of <i>ImportedBinding</i>.</li>
           <li>Let <i>entry</i> be the Record {[[ModuleRequest]]: <i>module</i>, [[ImportName]]: <i>importName</i>, [[LocalName]]:
               <i>localName</i> }.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
         </ol>
       </section>
 
       <section id="sec-imports-static-semantics-modulerequests">
-        <h1><span class="secnum" id="sec-15.2.2.5"><a href="#sec-imports-static-semantics-modulerequests" title="link to this section">15.2.2.5</a></span> Static Semantics: ModuleRequests</h1>
+        <h1><span class="secnum" id="sec-15.2.2.5"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-modulerequests" title="link to this section">15.2.2.5</a></span> Static Semantics: ModuleRequests</h1>
 
-        <p>See also: <a href="#sec-module-semantics-static-semantics-modulerequests">15.2.1.10</a>,<a href="#sec-exports-static-semantics-modulerequests">15.2.3.9</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-modulerequests">15.2.1.10</a>,<a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-modulerequests">15.2.3.9</a>.</p>
 
         <div class="gp prod"><span class="nt">ImportDeclaration</span> <span class="geq">:</span> <code class="t">import</code> <span class="nt">ImportClause</span> <span class="nt">FromClause</span> <code class="t">;</code></div>
         <ol class="proc">
@@ -2049,7 +2049,7 @@
         </ol>
         <div class="gp prod"><span class="nt">ModuleSpecifier</span> <span class="geq">:</span> <span class="nt">StringLiteral</span></div>
         <ol class="proc">
-          <li>Return a <a href="#sec-list-and-record-specification-type">List</a> containing the StringValue of
+          <li>Return a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the StringValue of
               <i>StringLiteral</i>.</li>
         </ol>
       </section>
@@ -2057,7 +2057,7 @@
 
     <section id="sec-exports">
       <div class="front">
-        <h1><span class="secnum" id="sec-15.2.3"><a href="#sec-exports" title="link to this section">15.2.3</a></span>
+        <h1><span class="secnum" id="sec-15.2.3"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports" title="link to this section">15.2.3</a></span>
             Exports</h1>
         <h2>Syntax</h2>
 
@@ -2094,7 +2094,7 @@
       </div>
 
       <section id="sec-exports-static-semantics-early-errors">
-        <h1><span class="secnum" id="sec-15.2.3.1"><a href="#sec-exports-static-semantics-early-errors" title="link to this section">15.2.3.1</a></span> Static Semantics:  Early Errors</h1>
+        <h1><span class="secnum" id="sec-15.2.3.1"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-early-errors" title="link to this section">15.2.3.1</a></span> Static Semantics:  Early Errors</h1>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">ExportClause</span> <code class="t">;</code></div>
         <ul>
           <li>
@@ -2111,9 +2111,9 @@
       </section>
 
       <section id="sec-exports-static-semantics-boundnames">
-        <h1><span class="secnum" id="sec-15.2.3.2"><a href="#sec-exports-static-semantics-boundnames" title="link to this section">15.2.3.2</a></span> Static Semantics: BoundNames</h1>
+        <h1><span class="secnum" id="sec-15.2.3.2"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-boundnames" title="link to this section">15.2.3.2</a></span> Static Semantics: BoundNames</h1>
 
-        <p>See also: <a href="#sec-identifiers-static-semantics-boundnames">12.1.2</a>, <a href="#sec-let-and-const-declarations-static-semantics-boundnames">13.3.1.2</a>, <a href="#sec-variable-statement-static-semantics-boundnames">13.3.2.1</a>, <a href="#sec-destructuring-binding-patterns-static-semantics-boundnames">13.3.3.1</a>, <a href="#sec-for-in-and-for-of-statements-static-semantics-boundnames">13.7.5.2</a>, <a href="#sec-function-definitions-static-semantics-boundnames">14.1.3</a>, <a href="#sec-arrow-function-definitions-static-semantics-boundnames">14.2.2</a>, <a href="#sec-generator-function-definitions-static-semantics-boundnames">14.4.2</a>, <a href="#sec-class-definitions-static-semantics-boundnames">14.5.2</a>, <a href="#sec-imports-static-semantics-boundnames">15.2.2.2</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-expressions.html#sec-identifiers-static-semantics-boundnames">12.1.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-let-and-const-declarations-static-semantics-boundnames">13.3.1.2</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-variable-statement-static-semantics-boundnames">13.3.2.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-destructuring-binding-patterns-static-semantics-boundnames">13.3.3.1</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements-static-semantics-boundnames">13.7.5.2</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-boundnames">14.1.3</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-boundnames">14.2.2</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-generator-function-definitions-static-semantics-boundnames">14.4.2</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-class-definitions-static-semantics-boundnames">14.5.2</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-boundnames">15.2.2.2</a>.</p>
 
         <div class="gp">
           <div class="lhs"><span class="nt">ExportDeclaration</span> <span class="geq">:</span></div>
@@ -2123,7 +2123,7 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">VariableStatement</span></div>
         <ol class="proc">
@@ -2157,9 +2157,9 @@
       </section>
 
       <section id="sec-exports-static-semantics-exportedbindings">
-        <h1><span class="secnum" id="sec-15.2.3.3"><a href="#sec-exports-static-semantics-exportedbindings" title="link to this section">15.2.3.3</a></span> Static Semantics:  ExportedBindings</h1>
+        <h1><span class="secnum" id="sec-15.2.3.3"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-exportedbindings" title="link to this section">15.2.3.3</a></span> Static Semantics:  ExportedBindings</h1>
 
-        <p>See also: <a href="#sec-module-semantics-static-semantics-exportedbindings">15.2.1.5</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-exportedbindings">15.2.1.5</a>.</p>
 
         <div class="gp">
           <div class="lhs"><span class="nt">ExportDeclaration</span> <span class="geq">:</span></div>
@@ -2168,7 +2168,7 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">ExportClause</span> <code class="t">;</code></div>
         <ol class="proc">
@@ -2191,7 +2191,7 @@
         </ol>
         <div class="gp prod"><span class="nt">ExportClause</span> <span class="geq">:</span> <code class="t">{</code> <code class="t">}</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportsList</span> <span class="geq">:</span> <span class="nt">ExportsList</span> <code class="t">,</code> <span class="nt">ExportSpecifier</span></div>
         <ol class="proc">
@@ -2201,24 +2201,24 @@
         </ol>
         <div class="gp prod"><span class="nt">ExportSpecifier</span> <span class="geq">:</span> <span class="nt">IdentifierName</span></div>
         <ol class="proc">
-          <li>Return a <a href="#sec-list-and-record-specification-type">List</a> containing the StringValue of
+          <li>Return a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the StringValue of
               <i>IdentifierName</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportSpecifier</span> <span class="geq">:</span> <span class="nt">IdentifierName</span> <code class="t">as</code> <span class="nt">IdentifierName</span></div>
         <ol class="proc">
-          <li>Return a <a href="#sec-list-and-record-specification-type">List</a> containing the StringValue of the first
+          <li>Return a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the StringValue of the first
               <i>IdentifierName</i>.</li>
         </ol>
       </section>
 
       <section id="sec-exports-static-semantics-exportednames">
-        <h1><span class="secnum" id="sec-15.2.3.4"><a href="#sec-exports-static-semantics-exportednames" title="link to this section">15.2.3.4</a></span> Static Semantics:  ExportedNames</h1>
+        <h1><span class="secnum" id="sec-15.2.3.4"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-exportednames" title="link to this section">15.2.3.4</a></span> Static Semantics:  ExportedNames</h1>
 
-        <p>See also: <a href="#sec-module-semantics-static-semantics-exportednames">15.2.1.6</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-exportednames">15.2.1.6</a>.</p>
 
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <code class="t">*</code> <span class="nt">FromClause</span> <code class="t">;</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
 
         <div class="gp">
@@ -2247,7 +2247,7 @@
         </ol>
         <div class="gp prod"><span class="nt">ExportClause</span> <span class="geq">:</span> <code class="t">{</code> <code class="t">}</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportsList</span> <span class="geq">:</span> <span class="nt">ExportsList</span> <code class="t">,</code> <span class="nt">ExportSpecifier</span></div>
         <ol class="proc">
@@ -2257,27 +2257,27 @@
         </ol>
         <div class="gp prod"><span class="nt">ExportSpecifier</span> <span class="geq">:</span> <span class="nt">IdentifierName</span></div>
         <ol class="proc">
-          <li>Return a <a href="#sec-list-and-record-specification-type">List</a> containing the StringValue of
+          <li>Return a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the StringValue of
               <i>IdentifierName</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportSpecifier</span> <span class="geq">:</span> <span class="nt">IdentifierName</span> <code class="t">as</code> <span class="nt">IdentifierName</span></div>
         <ol class="proc">
-          <li>Return a <a href="#sec-list-and-record-specification-type">List</a> containing the StringValue of the second
+          <li>Return a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the StringValue of the second
               <i>IdentifierName</i>.</li>
         </ol>
       </section>
 
       <section id="sec-exports-static-semantics-exportentries">
-        <h1><span class="secnum" id="sec-15.2.3.5"><a href="#sec-exports-static-semantics-exportentries" title="link to this section">15.2.3.5</a></span> Static Semantics:  ExportEntries</h1>
+        <h1><span class="secnum" id="sec-15.2.3.5"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-exportentries" title="link to this section">15.2.3.5</a></span> Static Semantics:  ExportEntries</h1>
 
-        <p>See also: <a href="#sec-module-semantics-static-semantics-exportentries">15.2.1.7</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-exportentries">15.2.1.7</a>.</p>
 
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <code class="t">*</code> <span class="nt">FromClause</span> <code class="t">;</code></div>
         <ol class="proc">
           <li>Let <i>module</i> be the sole element of ModuleRequests of <i>FromClause</i>.</li>
           <li>Let <i>entry</i> be the Record {[[ModuleRequest]]: <i>module</i>, [[ImportName]]: <code>"*"</code>, [[LocalName]]:
               <b>null</b>, [[ExportName]]: <b>null</b> }.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">ExportClause</span> <span class="nt">FromClause</span> <code class="t">;</code></div>
         <ol class="proc">
@@ -2290,7 +2290,7 @@
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">VariableStatement</span></div>
         <ol class="proc">
-          <li>Let <i>entries</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Let <i>entries</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>Let <i>names</i> be the BoundNames of <i>VariableStatement</i>.</li>
           <li>Repeat for each <i>name</i> in <i>names,</i>
             <ol class="block">
@@ -2302,7 +2302,7 @@
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">Declaration</span></div>
         <ol class="proc">
-          <li>Let <i>entries</i> be a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Let <i>entries</i> be a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
           <li>Let <i>names</i> be the BoundNames of <i>Declaration</i>.</li>
           <li>Repeat for each <i>name</i> in <i>names,</i>
             <ol class="block">
@@ -2316,7 +2316,7 @@
         <ol class="proc">
           <li>Let <i>names</i> be BoundNames of <i>HoistableDeclaration</i>.</li>
           <li>Let <i>localName</i> be the sole element of <i>names</i>.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
               <b>null</b>, [[ImportName]]: <b>null</b>, [[LocalName]]: <i>localName</i>, [[ExportName]]:
               <code>"default"</code>}.</li>
         </ol>
@@ -2324,7 +2324,7 @@
         <ol class="proc">
           <li>Let <i>names</i> be BoundNames of <i>ClassDeclaration</i>.</li>
           <li>Let <i>localName</i> be the sole element of <i>names</i>.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
               <b>null</b>, [[ImportName]]: <b>null</b>, [[LocalName]]: <i>localName</i>, [[ExportName]]:
               <code>"default"</code>}.</li>
         </ol>
@@ -2334,7 +2334,7 @@
         <ol class="proc">
           <li>Let <i>entry</i> be the Record {[[ModuleRequest]]: <b>null</b>, [[ImportName]]: <b>null</b>, [[LocalName]]:
               <code>"*default*"</code>, [[ExportName]]: <code>"default"</code>}.</li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing <i>entry</i>.</li>
         </ol>
 
         <div class="note">
@@ -2344,13 +2344,13 @@
       </section>
 
       <section id="sec-static-semantics-exportentriesformodule">
-        <h1><span class="secnum" id="sec-15.2.3.6"><a href="#sec-static-semantics-exportentriesformodule" title="link to this section">15.2.3.6</a></span> Static Semantics: ExportEntriesForModule</h1>
+        <h1><span class="secnum" id="sec-15.2.3.6"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-static-semantics-exportentriesformodule" title="link to this section">15.2.3.6</a></span> Static Semantics: ExportEntriesForModule</h1>
 
         <p>With parameter <var>module</var>.</p>
 
         <div class="gp prod"><span class="nt">ExportClause</span> <span class="geq">:</span> <code class="t">{</code> <code class="t">}</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportsList</span> <span class="geq">:</span> <span class="nt">ExportsList</span> <code class="t">,</code> <span class="nt">ExportSpecifier</span></div>
         <ol class="proc">
@@ -2374,7 +2374,7 @@
               <li>Let <i>importName</i> be <i>sourceName</i>.</li>
             </ol>
           </li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
               <i>module</i>, [[ImportName]]: <i>importName</i>, [[LocalName]]: <i>localName</i>, [[ExportName]]: <i>sourceName</i>
               }.</li>
         </ol>
@@ -2394,16 +2394,16 @@
               <li>Let <i>importName</i> be <i>sourceName</i>.</li>
             </ol>
           </li>
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the Record {[[ModuleRequest]]:
               <i>module</i>, [[ImportName]]: <i>importName</i>, [[LocalName]]: <i>localName</i>, [[ExportName]]: <i>exportName</i>
               }.</li>
         </ol>
       </section>
 
       <section id="sec-exports-static-semantics-isconstantdeclaration">
-        <h1><span class="secnum" id="sec-15.2.3.7"><a href="#sec-exports-static-semantics-isconstantdeclaration" title="link to this section">15.2.3.7</a></span> Static Semantics:  IsConstantDeclaration</h1>
+        <h1><span class="secnum" id="sec-15.2.3.7"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-isconstantdeclaration" title="link to this section">15.2.3.7</a></span> Static Semantics:  IsConstantDeclaration</h1>
 
-        <p>See also: <a href="#sec-let-and-const-declarations-static-semantics-isconstantdeclaration">13.3.1.3</a>, <a href="#sec-function-definitions-static-semantics-isconstantdeclaration">14.1.10</a>, <a href="#sec-generator-function-definitions-static-semantics-isconstantdeclaration">14.4.8</a>, <a href="#sec-class-definitions-static-semantics-isconstantdeclaration">14.5.7</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-let-and-const-declarations-static-semantics-isconstantdeclaration">13.3.1.3</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-isconstantdeclaration">14.1.10</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-generator-function-definitions-static-semantics-isconstantdeclaration">14.4.8</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-class-definitions-static-semantics-isconstantdeclaration">14.5.7</a>.</p>
 
         <div class="gp">
           <div class="lhs"><span class="nt">ExportDeclaration</span> <span class="geq">:</span></div>
@@ -2424,9 +2424,9 @@
       </section>
 
       <section id="sec-exports-static-semantics-lexicallyscopeddeclarations">
-        <h1><span class="secnum" id="sec-15.2.3.8"><a href="#sec-exports-static-semantics-lexicallyscopeddeclarations" title="link to this section">15.2.3.8</a></span> Static Semantics:  LexicallyScopedDeclarations</h1>
+        <h1><span class="secnum" id="sec-15.2.3.8"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-lexicallyscopeddeclarations" title="link to this section">15.2.3.8</a></span> Static Semantics:  LexicallyScopedDeclarations</h1>
 
-        <p>See also: <a href="#sec-block-static-semantics-lexicallyscopeddeclarations">13.2.6</a>, <a href="#sec-switch-statement-static-semantics-lexicallyscopeddeclarations">13.12.6</a>, <a href="#sec-labelled-statements-static-semantics-lexicallyscopeddeclarations">13.13.7</a>, <a href="#sec-function-definitions-static-semantics-lexicallyscopeddeclarations">14.1.14</a>, <a href="#sec-arrow-function-definitions-static-semantics-lexicallyscopeddeclarations">14.2.11</a>, <a href="#sec-scripts-static-semantics-lexicallyscopeddeclarations">15.1.4</a>, <a href="#sec-module-semantics-static-semantics-lexicallyscopeddeclarations">15.2.1.12</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-statements-and-declarations.html#sec-block-static-semantics-lexicallyscopeddeclarations">13.2.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-switch-statement-static-semantics-lexicallyscopeddeclarations">13.12.6</a>, <a href="sec-ecmascript-language-statements-and-declarations.html#sec-labelled-statements-static-semantics-lexicallyscopeddeclarations">13.13.7</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-function-definitions-static-semantics-lexicallyscopeddeclarations">14.1.14</a>, <a href="sec-ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions-static-semantics-lexicallyscopeddeclarations">14.2.11</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-scripts-static-semantics-lexicallyscopeddeclarations">15.1.4</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-lexicallyscopeddeclarations">15.2.1.12</a>.</p>
 
         <div class="gp">
           <div class="lhs"><span class="nt">ExportDeclaration</span> <span class="geq">:</span></div>
@@ -2437,36 +2437,36 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">Declaration</span></div>
         <ol class="proc">
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing DeclarationPart of
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing DeclarationPart of
               <i>Declaration</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <code class="t">default</code> <span class="nt">HoistableDeclaration</span></div>
         <ol class="proc">
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing DeclarationPart of
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing DeclarationPart of
               <i>HoistableDeclaration</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <code class="t">default</code> <span class="nt">ClassDeclaration</span></div>
         <ol class="proc">
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing <i>ClassDeclaration</i>.</li>
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing <i>ClassDeclaration</i>.</li>
         </ol>
 
         <p><span style="font-family: Times New Roman"><span class="prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span></span></span> <code>export default</code> <span class="nt">AssignmentExpression</span>
         <code>;</code></p>
 
         <ol class="proc">
-          <li>Return a new <a href="#sec-list-and-record-specification-type">List</a> containing this
+          <li>Return a new <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing this
               <i>ExportDeclaration</i>.</li>
         </ol>
       </section>
 
       <section id="sec-exports-static-semantics-modulerequests">
-        <h1><span class="secnum" id="sec-15.2.3.9"><a href="#sec-exports-static-semantics-modulerequests" title="link to this section">15.2.3.9</a></span> Static Semantics: ModuleRequests</h1>
+        <h1><span class="secnum" id="sec-15.2.3.9"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-static-semantics-modulerequests" title="link to this section">15.2.3.9</a></span> Static Semantics: ModuleRequests</h1>
 
-        <p>See also: <a href="#sec-module-semantics-static-semantics-modulerequests">15.2.1.10</a>, <a href="#sec-imports-static-semantics-modulerequests">15.2.2.5</a>.</p>
+        <p>See also: <a href="sec-ecmascript-language-scripts-and-modules.html#sec-module-semantics-static-semantics-modulerequests">15.2.1.10</a>, <a href="sec-ecmascript-language-scripts-and-modules.html#sec-imports-static-semantics-modulerequests">15.2.2.5</a>.</p>
 
         <p><span class="prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code>
         <code class="t">*</code> <span class="nt">FromClause</span> <code class="t">;</code></span></p>
@@ -2487,15 +2487,15 @@
         </div>
 
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
       </section>
 
       <section id="sec-static-semantics-referencedbindings">
-        <h1><span class="secnum" id="sec-15.2.3.10"><a href="#sec-static-semantics-referencedbindings" title="link to this section">15.2.3.10</a></span> Static Semantics:  ReferencedBindings</h1>
+        <h1><span class="secnum" id="sec-15.2.3.10"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-static-semantics-referencedbindings" title="link to this section">15.2.3.10</a></span> Static Semantics:  ReferencedBindings</h1>
         <div class="gp prod"><span class="nt">ExportClause</span> <span class="geq">:</span> <code class="t">{</code> <code class="t">}</code></div>
         <ol class="proc">
-          <li>Return a new empty <a href="#sec-list-and-record-specification-type">List</a>.</li>
+          <li>Return a new empty <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportsList</span> <span class="geq">:</span> <span class="nt">ExportsList</span> <code class="t">,</code> <span class="nt">ExportSpecifier</span></div>
         <ol class="proc">
@@ -2505,16 +2505,16 @@
         </ol>
         <div class="gp prod"><span class="nt">ExportSpecifier</span> <span class="geq">:</span> <span class="nt">IdentifierName</span></div>
         <ol class="proc">
-          <li>Return a <a href="#sec-list-and-record-specification-type">List</a> containing the <i>IdentifierName</i>.</li>
+          <li>Return a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the <i>IdentifierName</i>.</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportSpecifier</span> <span class="geq">:</span> <span class="nt">IdentifierName</span> <code class="t">as</code> <span class="nt">IdentifierName</span></div>
         <ol class="proc">
-          <li>Return a <a href="#sec-list-and-record-specification-type">List</a> containing the first <i>IdentifierName</i>.</li>
+          <li>Return a <a href="sec-ecmascript-data-types-and-values.html#sec-list-and-record-specification-type">List</a> containing the first <i>IdentifierName</i>.</li>
         </ol>
       </section>
 
       <section id="sec-exports-runtime-semantics-evaluation">
-        <h1><span class="secnum" id="sec-15.2.3.11"><a href="#sec-exports-runtime-semantics-evaluation" title="link to this section">15.2.3.11</a></span> Runtime Semantics: Evaluation</h1>
+        <h1><span class="secnum" id="sec-15.2.3.11"><a href="sec-ecmascript-language-scripts-and-modules.html#sec-exports-runtime-semantics-evaluation" title="link to this section">15.2.3.11</a></span> Runtime Semantics: Evaluation</h1>
 
         <div class="gp">
           <div class="lhs"><span class="nt">ExportDeclaration</span> <span class="geq">:</span></div>
@@ -2524,7 +2524,7 @@
         </div>
 
         <ol class="proc">
-          <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
               sans-serif">empty</span>).</li>
         </ol>
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <span class="nt">VariableStatement</span></div>
@@ -2542,21 +2542,21 @@
         <div class="gp prod"><span class="nt">ExportDeclaration</span> <span class="geq">:</span> <code class="t">export</code> <code class="t">default</code> <span class="nt">ClassDeclaration</span></div>
         <ol class="proc">
           <li>Let <i>value</i> be the result of BindingClassDeclarationEvaluation of <i>ClassDeclaration</i>.</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
           <li>Let <i>className</i> be the sole element of BoundNames of <i>ClassDeclaration</i>.</li>
           <li>If <i>className</i> is <code>"*default*"</code>, then
             <ol class="block">
-              <li>Let <i>hasNameProperty</i> be <a href="#sec-hasownproperty">HasOwnProperty</a>(<i>value</i>,
+              <li>Let <i>hasNameProperty</i> be <a href="sec-abstract-operations.html#sec-hasownproperty">HasOwnProperty</a>(<i>value</i>,
                   <code>"name"</code>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>hasNameProperty</i>).</li>
-              <li>If <i>hasNameProperty</i> is <b>false</b>, perform <a href="#sec-setfunctionname">SetFunctionName</a>(<i>value</i>, <code>"default"</code>).</li>
-              <li>Let <i>env</i> be <a href="#sec-execution-contexts">the running execution context</a>’s <a href="#sec-execution-contexts">LexicalEnvironment</a>.</li>
-              <li>Let <i>status</i> be <a href="#sec-initializeboundname">InitializeBoundName</a>(<code>"*default*"</code>,
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>hasNameProperty</i>).</li>
+              <li>If <i>hasNameProperty</i> is <b>false</b>, perform <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-setfunctionname">SetFunctionName</a>(<i>value</i>, <code>"default"</code>).</li>
+              <li>Let <i>env</i> be <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>’s <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">LexicalEnvironment</a>.</li>
+              <li>Let <i>status</i> be <a href="sec-ecmascript-language-expressions.html#sec-initializeboundname">InitializeBoundName</a>(<code>"*default*"</code>,
                   <i>value</i>, <i>env</i>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>status</i>).</li>
             </ol>
           </li>
-          <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
               sans-serif">empty</span>).</li>
         </ol>
 
@@ -2565,21 +2565,21 @@
 
         <ol class="proc">
           <li>Let <i>rhs</i> be the result of evaluating <i>AssignmentExpression</i>.</li>
-          <li>Let <i>value</i> be <a href="#sec-getvalue">GetValue</a>(<i>rhs</i>).</li>
-          <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
-          <li>If <a href="#sec-isanonymousfunctiondefinition">IsAnonymousFunctionDefinition</a>(<i>AssignmentExpression)</i> is
+          <li>Let <i>value</i> be <a href="sec-ecmascript-data-types-and-values.html#sec-getvalue">GetValue</a>(<i>rhs</i>).</li>
+          <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>value</i>).</li>
+          <li>If <a href="sec-ecmascript-language-functions-and-classes.html#sec-isanonymousfunctiondefinition">IsAnonymousFunctionDefinition</a>(<i>AssignmentExpression)</i> is
               <b>true</b>, then
             <ol class="block">
-              <li>Let <i>hasNameProperty</i> be <a href="#sec-hasownproperty">HasOwnProperty</a>(<i>value</i>,
+              <li>Let <i>hasNameProperty</i> be <a href="sec-abstract-operations.html#sec-hasownproperty">HasOwnProperty</a>(<i>value</i>,
                   <code>"name"</code>).</li>
-              <li><a href="#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>hasNameProperty</i>).</li>
-              <li>If <i>hasNameProperty</i> is <b>false</b>, perform <a href="#sec-setfunctionname">SetFunctionName</a>(<i>value</i>, <code>"default"</code>).</li>
+              <li><a href="sec-ecmascript-data-types-and-values.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<i>hasNameProperty</i>).</li>
+              <li>If <i>hasNameProperty</i> is <b>false</b>, perform <a href="sec-ordinary-and-exotic-objects-behaviours.html#sec-setfunctionname">SetFunctionName</a>(<i>value</i>, <code>"default"</code>).</li>
             </ol>
           </li>
-          <li>Let <i>env</i> be <a href="#sec-execution-contexts">the running execution context</a>’s <a href="#sec-execution-contexts">LexicalEnvironment</a>.</li>
-          <li>Let <i>status</i> be <a href="#sec-initializeboundname">InitializeBoundName</a>(<code>"*default*"</code>,
+          <li>Let <i>env</i> be <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">the running execution context</a>’s <a href="sec-executable-code-and-execution-contexts.html#sec-execution-contexts">LexicalEnvironment</a>.</li>
+          <li>Let <i>status</i> be <a href="sec-ecmascript-language-expressions.html#sec-initializeboundname">InitializeBoundName</a>(<code>"*default*"</code>,
               <i>value</i>, <i>env</i>).</li>
-          <li>Return <a href="#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
+          <li>Return <a href="sec-ecmascript-data-types-and-values.html#sec-normalcompletion">NormalCompletion</a>(<span style="font-family:
               sans-serif">empty</span>).</li>
         </ol>
       </section>
